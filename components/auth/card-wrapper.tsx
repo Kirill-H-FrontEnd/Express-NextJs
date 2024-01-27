@@ -44,7 +44,7 @@ export const CardWrapper: FC<TCardWrapper> = ({
     }),
   };
   return (
-    <section className="sm:w-[500px] relative z-10 bg-white h-full grid place-items-center">
+    <section className="sm:w-[500px] relative z-10 bg-white h-full grid place-items-center overflow-hidden">
       <Link
         className="absolute top-4 left-6 grid grid-cols-2-auto items-center"
         href={"/"}
