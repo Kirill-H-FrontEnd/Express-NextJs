@@ -70,7 +70,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
                     <Input
                       disabled={isPending}
                       {...field}
-                      placeholder="Your name"
+                      placeholder="Enter your name"
                       type="name"
                     />
                   </FormControl>
@@ -106,7 +106,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
                     <Input
                       disabled={isPending}
                       {...field}
-                      placeholder="******"
+                      placeholder="Create password"
                       type="password"
                     />
                   </FormControl>

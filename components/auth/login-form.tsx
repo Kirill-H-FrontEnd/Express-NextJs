@@ -87,7 +87,7 @@ export const LoginForm: FC<TLoginForm> = ({}) => {
                     <Input
                       disabled={isPending}
                       {...field}
-                      placeholder="******"
+                      placeholder="Enter your password"
                       type="password"
                     />
                   </FormControl>
