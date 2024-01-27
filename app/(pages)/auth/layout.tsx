@@ -3,7 +3,7 @@ import Image from "next/image";
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="relative w-full bg-black overflow-hidden">
+      <div className="relative w-full h-screen bg-black overflow-hidden">
         <Image
           src={"/gradientBg.svg"}
           alt="gradientBg"
