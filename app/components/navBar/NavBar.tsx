@@ -1,6 +1,6 @@
 "use client";
 // > React
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useState, forwardRef } from "react";
 // > Styles
 import s from "./styles/NavBar.module.scss";
 // > Icons
@@ -24,9 +24,10 @@ import {
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { motion } from "framer-motion";
 type TNavBar = {};
 
-export const NavBar: FC = ({}) => {
+export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
   const pathName = usePathname().replace("", "");
   let hideNavigation =
@@ -61,18 +62,33 @@ export const NavBar: FC = ({}) => {
     { value: "Customers", href: "#" },
     { value: "Integrations", href: "#" },
   ];
+  // Animation
+  const animation = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: () => ({
+      opacity: 1,
+      transition: { delay: 0.1, duration: 0.3, ease: "easeOut" },
+    }),
+  };
   return (
     <>
       {!hideNavigation && (
         <Navbar
+          ref={ref}
           maxWidth="full"
-          className={`${s.navBar} fixed shadow-lg  bg-transparent sm:py-1 ${
-            isMenuOpen ? "bg-black transition-transform-background" : ""
+          className={`${s.navBar} fixed shadow-lg  bg-transparent py-1 ${
+            isMenuOpen ? "shadow-black/40" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
         >
           <div className="container">
-            <section
+            <motion.section
+              initial="hidden"
+              whileInView="visible"
+              variants={animation}
+              viewport={{ once: true }}
               className={`${s.wrapper} grid grid-cols-2 justify-between`}
             >
               <Link
@@ -131,10 +147,10 @@ export const NavBar: FC = ({}) => {
                   />
                 </div>
               </nav>
-            </section>
+            </motion.section>
           </div>
           {/* ToggleMenu */}
-          <NavbarMenu className="bg-black/100 ">
+          <NavbarMenu className="bg-transparent pt-6">
             {toggleMenuItems.map((item, index) => (
               <NavbarMenuItem key={`${item}-${index}`}>
                 <Link
@@ -150,4 +166,4 @@ export const NavBar: FC = ({}) => {
       )}
     </>
   );
-};
+});

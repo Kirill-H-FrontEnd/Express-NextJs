@@ -1,5 +1,8 @@
+"use client";
 // > React
 import { FC } from "react";
+// > FramerMotion
+import { motion } from "framer-motion";
 // > Next
 import Image from "next/image";
 // > Styles
@@ -8,8 +11,23 @@ import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
 export const Hero: FC = ({}) => {
+  // Animation
+  const animation = {
+    hidden: {
+      y: 30,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+    }),
+  };
   return (
-    <section
+    <motion.section
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
       className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden`}
     >
       {/* Background */}
@@ -25,18 +43,28 @@ export const Hero: FC = ({}) => {
           className={`${s.wrapper} relative z-10 grid place-items-center h-screen`}
         >
           <article className={`${s.article} sm:text-center`}>
-            <h1
+            <motion.h1
+              variants={animation}
+              custom={1}
               className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-semibold leading-tight sm:leading-normal mb-3
             "
             >
               The API Documentation
-            </h1>
-            <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[1000px] m-auto mb-6">
+            </motion.h1>
+            <motion.p
+              variants={animation}
+              custom={2}
+              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[1000px] m-auto mb-6"
+            >
               It doesn't matter if you have an API if nobody knows how to use
               it. Teach people the ins and outs of OAuth 2.0 and JWTs in style
               with Protocol, a beautiful API documentation template.
-            </p>
-            <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3">
+            </motion.p>
+            <motion.div
+              variants={animation}
+              custom={3}
+              className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3"
+            >
               <Button
                 as={Link}
                 href="/dashboard"
@@ -51,7 +79,7 @@ export const Hero: FC = ({}) => {
               >
                 learn more
               </Button>
-            </div>
+            </motion.div>
           </article>
         </section>
       </div>
@@ -140,6 +168,6 @@ export const Hero: FC = ({}) => {
           </svg>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

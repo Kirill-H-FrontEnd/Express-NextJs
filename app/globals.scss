@@ -75,6 +75,12 @@
   }
 }
 html {
+  // Scroll-bar
+  &::-webkit-scrollbar {
+    background-color: #fff;
+    width: 0px;
+  }
+
   body {
     .container {
       width: min(100% - 40px, 1320px);
