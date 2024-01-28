@@ -121,7 +121,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
             disabled={isPending}
             size={"lg"}
             type="submit"
-            className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-purple-900 to-black hover:shadow-lg transition-shadow "
+            className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black hover:shadow-lg transition-shadow "
           >
             Create an account
           </Button>

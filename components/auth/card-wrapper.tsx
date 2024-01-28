@@ -3,7 +3,6 @@ import { FC } from "react";
 // > Next
 import Link from "next/link";
 // > Icons
-import { LiaAtomSolid } from "react-icons/lia";
 import { IoLogoElectron } from "react-icons/io5";
 // > Components
 import {
@@ -33,18 +32,8 @@ export const CardWrapper: FC<TCardWrapper> = ({
   headerLabel,
   showSocial,
 }) => {
-  // Animation
-  const animation = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: () => ({
-      opacity: 1,
-      transition: { delay: 0.1, duration: 0.2, ease: "easeOut" },
-    }),
-  };
   return (
-    <section className="sm:w-[500px] relative z-10 bg-white min-h-screen grid place-items-center overflow-hidden">
+    <section className="sm:w-[500px] relative z-10 bg-white h-full grid place-items-center overflow-hidden">
       <Link
         className="absolute top-4 left-6 grid grid-cols-2-auto items-center"
         href={"/"}

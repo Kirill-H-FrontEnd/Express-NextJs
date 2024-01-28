@@ -1,10 +1,11 @@
 // > Globals styles
-import { NavBar } from "@/components/navBar/NavBar";
-import "./globals.css";
+import "./globals.scss";
 // > Next
 import type { Metadata } from "next";
 // > Font
 import { Inter } from "next/font/google";
+import { NavBar } from "./components/navBar/NavBar";
+import NextUiProvider from "./providers/nextUiProvider";
 const font = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -23,10 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <main>
+        <NextUiProvider>
           <NavBar />
-          {children}
-        </main>
+          <main>{children}</main>
+        </NextUiProvider>
       </body>
     </html>
   );
