@@ -5,6 +5,7 @@ import Image from "next/image";
 // > Styles
 import s from "./styles/Hero.module.scss";
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 export const Hero: FC = ({}) => {
   return (
@@ -25,7 +26,7 @@ export const Hero: FC = ({}) => {
         >
           <article className={`${s.article} sm:text-center`}>
             <h1
-              className="text-transparent bg-clip-text bg-gradient-to-t from-white to-violet  font-semibold leading-tight sm:leading-normal mb-3
+              className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-semibold leading-tight sm:leading-normal mb-3
             "
             >
               The API Documentation
@@ -37,13 +38,15 @@ export const Hero: FC = ({}) => {
             </p>
             <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3">
               <Button
-                className="px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium"
+                as={Link}
+                href="/dashboard"
+                className="shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-normal"
                 size={"md"}
               >
                 get started
               </Button>
               <Button
-                className="px-10 rounded-full capitalize bg-white text-black hover:bg-slate-300 font-medium"
+                className="shadow-lg px-10 rounded-full capitalize bg-white text-black hover:bg-slate-300 font-medium"
                 size={"md"}
               >
                 learn more
