@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { NavBar } from "./components/navBar/NavBar";
 import NextUiProvider from "./providers/nextUiProvider";
+import { Footer } from "./components/footer/Footer";
 const font = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <NextUiProvider>
           <NavBar />
           <main>{children}</main>
+          <Footer />
         </NextUiProvider>
       </body>
     </html>

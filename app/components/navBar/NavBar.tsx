@@ -3,8 +3,11 @@
 import { FC, useEffect, useState, forwardRef } from "react";
 // > Styles
 import s from "./styles/NavBar.module.scss";
+// > NextUI
+import { Tooltip } from "@nextui-org/react";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
+import { VscGithub } from "react-icons/vsc";
 // > Font
 import { Ubuntu } from "next/font/google";
 const font = Ubuntu({
@@ -14,9 +17,6 @@ const font = Ubuntu({
 // > NextUi
 import {
   Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
   NavbarMenuToggle,
   NavbarMenu,
   NavbarMenuItem,
@@ -25,11 +25,10 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
-type TNavBar = {};
 
 export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
-  const pathName = usePathname().replace("", "");
+  const pathName = usePathname();
   let hideNavigation =
     pathName === "/auth/login" ||
     pathName === "/auth/register" ||
@@ -126,7 +125,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                     </Link>
                   ))}
                 </ul>
-                <div className="grid grid-cols-2-auto gap-4 items-center">
+                <div className="grid grid-cols-3-auto gap-4 items-center">
                   <Link
                     className="hidden md:block hover:text-slate-300 text-white"
                     href="/auth/login"
@@ -145,6 +144,17 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                     className="md:hidden text-white"
                   />
+                  <div className="relative hidden md:grid grid-cols-2-auto items-center gap-2 ">
+                    <span className="absolute top-1/2 left-0 translate-x-1/2 -translate-y-1/2 w-[1px] h-[80%] bg-slate-500 rounded-full pointer-events-none"></span>
+                    <Tooltip size="sm" content="GitHub" placement="right-start">
+                      <Link href={"/"} className="ml-[16px]">
+                        <VscGithub
+                          className="text-slate-400 hover:text-slate-200 transition-colors"
+                          size={22}
+                        />
+                      </Link>
+                    </Tooltip>
+                  </div>
                 </div>
               </nav>
             </motion.section>

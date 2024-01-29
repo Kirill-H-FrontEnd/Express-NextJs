@@ -1,0 +1,74 @@
+.footer {
+	.wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		grid-column-gap: 100px;
+		.nav {
+			display: grid;
+			grid-template-columns: repeat(4, auto);
+			grid-gap: 80px;
+			li {
+				div {
+					display: grid;
+					grid-row-gap: 10px;
+					a {
+						transition: transform 0.3s ease;
+						position: relative;
+						&.active {
+							transform: translate(4px, 0px);
+							&::after {
+								left: -10px;
+								opacity: 1;
+							}
+						}
+						&::after {
+							content: "";
+							width: 4px;
+							height: 4px;
+							border-radius: 50%;
+							position: absolute;
+							top: 50%;
+							left: -20px;
+							transform: translate(0%, -50%);
+							background-color: #10b981;
+							opacity: 0;
+							transition: all 0.2s ease;
+						}
+						&:hover {
+							transform: translate(4px, 0px);
+							&::after {
+								left: -10px;
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (width <= 1150px) {
+	.footer {
+		.wrapper {
+			grid-column-gap: 50px;
+			.nav {
+				grid-gap: 50px;
+			}
+		}
+	}
+}
+@media screen and (width <= 920px) {
+	.footer {
+		.wrapper {
+			grid-template-columns: auto;
+			grid-row-gap: 50px;
+			.logo {
+				height: 100%;
+			}
+			.nav {
+				grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+				gap: 40px 70px;
+			}
+		}
+	}
+}

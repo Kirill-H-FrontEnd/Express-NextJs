@@ -22,11 +22,13 @@ const config = {
       gridTemplateColumns: {
         "2-auto": "repeat(2,auto)",
         "3-auto": "repeat(3,auto)",
+        "4-auto": "repeat(4,auto)",
         "2-1fr": "repeat(2,1fr)",
       },
       colors: {
         black: "#0D0F14",
         violet: "#581C87",
+        gray: "#4B5563",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
