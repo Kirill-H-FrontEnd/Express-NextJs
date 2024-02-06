@@ -52,7 +52,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
   return (
     <CardWrapper
       headerTitle="Create an account."
-      headerLabel="Please enter tour details to sign in"
+      headerLabel="Please enter tour details to sign up."
       backButtonLabel="Already have an account?"
       backButtonHref="/auth/login"
       showSocial

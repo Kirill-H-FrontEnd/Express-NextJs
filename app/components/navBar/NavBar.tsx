@@ -32,7 +32,8 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
   let hideNavigation =
     pathName === "/auth/login" ||
     pathName === "/auth/register" ||
-    pathName === "/dashboard";
+    pathName === "/dashboard" ||
+    pathName === "/auth/error";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // SetScroll
   useEffect(() => {
@@ -135,7 +136,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   <Button
                     as={Link}
                     radius="full"
-                    className="text-black bg-white font-medium px-6 hover:bg-slate-300"
+                    className="text-black bg-white font-semibold px-6 hover:bg-slate-300"
                     href="/auth/register"
                   >
                     Sign Up

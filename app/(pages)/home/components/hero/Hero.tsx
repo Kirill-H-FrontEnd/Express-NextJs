@@ -5,11 +5,17 @@ import { FC } from "react";
 import { motion } from "framer-motion";
 // > Next
 import Image from "next/image";
+import Link from "next/link";
 // > Styles
 import s from "./styles/Hero.module.scss";
+// > NextUI
 import { Button } from "@nextui-org/react";
-import Link from "next/link";
-
+// > Font
+import { Open_Sans } from "next/font/google";
+const font = Open_Sans({
+  subsets: ["latin"],
+  weight: ["700"],
+});
 export const Hero: FC = ({}) => {
   // Animation
   const animation = {
@@ -28,25 +34,26 @@ export const Hero: FC = ({}) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden`}
+      className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none`}
     >
       {/* Background */}
       <Image
         src={"/home/gradientBg.svg"}
         alt="gradientBg"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover z-0 pointer-events-none"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover z-0 pointer-events-none select-none"
         width={1000}
         height={1000}
       />
       <div className="container">
         <section
-          className={`${s.wrapper} relative z-10 grid place-items-center h-screen`}
+          className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
         >
-          <article className={`${s.article} sm:text-center`}>
+          <article className={`${s.article} sm:text-center select-text`}>
             <motion.h1
+              style={font.style}
               variants={animation}
               custom={1}
-              className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-semibold leading-tight sm:leading-normal mb-3
+              className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-bold leading-tight sm:leading-normal mb-3
             "
             >
               The API Documentation
@@ -68,13 +75,13 @@ export const Hero: FC = ({}) => {
               <Button
                 as={Link}
                 href="/dashboard"
-                className="shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-normal"
+                className="shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium"
                 size={"md"}
               >
                 get started
               </Button>
               <Button
-                className="shadow-lg px-10 rounded-full capitalize bg-white text-black hover:bg-slate-300 font-medium"
+                className="shadow-lg px-10 rounded-full capitalize bg-white text-black hover:bg-slate-300 font-semibold"
                 size={"md"}
               >
                 learn more

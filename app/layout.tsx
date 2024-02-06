@@ -3,14 +3,16 @@ import "./globals.scss";
 // > Next
 import type { Metadata } from "next";
 // > Font
-import { Inter } from "next/font/google";
-import { NavBar } from "./components/navBar/NavBar";
-import NextUiProvider from "./providers/nextUiProvider";
-import { Footer } from "./components/footer/Footer";
-const font = Inter({
+import { Nunito } from "next/font/google";
+const font = Nunito({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
+// > Components
+import { NavBar } from "./components/navBar/NavBar";
+import { Footer } from "./components/footer/Footer";
+// > NextUi
+import NextUiProvider from "./providers/nextUiProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",

@@ -20,7 +20,8 @@ export const Footer: FC = ({}) => {
   let hideFooter =
     pathName === "/auth/login" ||
     pathName === "/auth/register" ||
-    pathName === "/dashboard";
+    pathName === "/dashboard" ||
+    pathName === "/auth/error";
   const DATA_LINKS = [
     {
       title: "Resources",

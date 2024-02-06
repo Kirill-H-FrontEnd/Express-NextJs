@@ -2,9 +2,11 @@
 import { FC } from "react";
 // > Font
 import { Roboto } from "next/font/google";
-const font = Roboto({
+// > Font
+import { Open_Sans } from "next/font/google";
+const font = Open_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  weight: ["700"],
 });
 type THeader = {
   label: string;

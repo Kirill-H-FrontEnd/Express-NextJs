@@ -17,7 +17,10 @@ const Label = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <LabelPrimitive.Root
     ref={ref}
-    className={cn(labelVariants(), (className = "text-slate-900 font-medium"))}
+    className={cn(
+      labelVariants(),
+      (className = "text-slate-900 font-semibold")
+    )}
     {...props}
   />
 ));

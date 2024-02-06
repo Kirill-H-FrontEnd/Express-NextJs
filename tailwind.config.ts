@@ -25,6 +25,7 @@ const config = {
         "4-auto": "repeat(4,auto)",
         "2-1fr": "repeat(2,1fr)",
       },
+
       colors: {
         black: "#0D0F14",
         violet: "#581C87",

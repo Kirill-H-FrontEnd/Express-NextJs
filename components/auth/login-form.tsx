@@ -24,10 +24,16 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { login } from "@/actions/login";
+import { useSearchParams } from "next/navigation";
 
 type TLoginForm = {};
 
 export const LoginForm: FC<TLoginForm> = ({}) => {
+  const searchParams = useSearchParams();
+  const urlError =
+    searchParams.get("error") === "OAuthAccountNotLinked"
+      ? "Email already in use with different provider!"
+      : "";
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
@@ -51,7 +57,7 @@ export const LoginForm: FC<TLoginForm> = ({}) => {
   return (
     <CardWrapper
       headerTitle="Welcome back!"
-      headerLabel="Please enter tour details to sign in"
+      headerLabel="Please enter tour details to sign in."
       backButtonLabel="Don`t have an account?"
       backButtonHref="/auth/register"
       showSocial
@@ -96,7 +102,7 @@ export const LoginForm: FC<TLoginForm> = ({}) => {
               )}
             />
           </div>
-          <FormError message={error} />
+          <FormError message={error || urlError} />
           <FormSuccess message={success} />
           <Button
             disabled={isPending}
