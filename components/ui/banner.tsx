@@ -1,11 +1,13 @@
+"use client";
 import { Button } from "@nextui-org/react";
-import { FC } from "react";
+import { FC, useContext } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useModalContext } from "@/app/providers/modalProvider";
 type TBanner = {
   title: string;
   supTitle: string;
   text: string;
-  href: string;
   btnValue?: string;
   isActions?: boolean;
 };
@@ -14,15 +16,24 @@ export const Banner: FC<TBanner> = ({
   title,
   supTitle,
   text,
-  href,
+
   btnValue,
   isActions,
 }) => {
+  const { onOpen } = useContext(useModalContext);
   return (
-    <section className="bg-black py-24">
+    <section className="relative bg-black py-24">
+      <Image
+        src={"/bg.svg"}
+        width={1000}
+        height={1000}
+        alt=""
+        className="absolute top-0 right-0 w-full h-full object-cover z-10"
+      />
+      <div className="absolute z-20 bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-black/30 "></div>
       <div className="container">
         <section>
-          <article className="text-center grid gap-2 max-w-[450px] m-auto">
+          <article className="relative z-20 text-center grid gap-2 max-w-[450px] m-auto">
             <h3 className="text-violet font-medium sm:font-semibold">
               {supTitle}
             </h3>
@@ -33,9 +44,8 @@ export const Banner: FC<TBanner> = ({
             {isActions && (
               <div className="mt-4">
                 <Button
+                  onClick={onOpen}
                   radius="full"
-                  as={Link}
-                  href={href}
                   className=" sm:w-auto shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-normal"
                 >
                   {btnValue}

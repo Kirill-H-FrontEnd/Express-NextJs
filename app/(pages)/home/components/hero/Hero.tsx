@@ -56,16 +56,16 @@ export const Hero: FC = ({}) => {
               className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-bold leading-tight sm:leading-normal mb-3
             "
             >
-              The API Documentation
+              Protocol is a web Framework
             </motion.h1>
             <motion.p
               variants={animation}
               custom={2}
-              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[1000px] m-auto mb-6"
+              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[1000px] m-auto mb-6 font-normal"
             >
-              It doesn't matter if you have an API if nobody knows how to use
-              it. Teach people the ins and outs of OAuth 2.0 and JWTs in style
-              with Protocol, a beautiful API documentation template.
+              Used by some of the world's largest companies, Protocol enables
+              you to create high-quality web applications with the power of
+              React components.
             </motion.p>
             <motion.div
               variants={animation}

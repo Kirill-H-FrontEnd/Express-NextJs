@@ -117,7 +117,7 @@ export const Footer: FC = ({}) => {
       {!hideFooter && (
         <footer className={`${s.footer} bg-black`}>
           <div className="container">
-            <section className={`${s.wrapper} py-14 border-y-1 border-gray/20`}>
+            <section className={`${s.wrapper} py-14 border-b-1 border-gray/20`}>
               <Link
                 href={"/"}
                 className={`${s.logo} grid grid-cols-2-auto items-center gap-1 justify-start hover:opacity-80 transition-opacity h-0`}
