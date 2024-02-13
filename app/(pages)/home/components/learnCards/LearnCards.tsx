@@ -5,7 +5,12 @@ import { RiErrorWarningLine } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa6";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-
+// > Font
+import { Inter } from "next/font/google";
+const font = Inter({
+  subsets: ["latin"],
+  weight: ["300", "500"],
+});
 export const LearnCards: FC = ({}) => {
   const DATA_CARDS = [
     {
@@ -64,14 +69,20 @@ export const LearnCards: FC = ({}) => {
     },
   ];
   return (
-    <section className={`${s.learnCards} bg-black py-12`}>
+    <section className={`${s.learnCards} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <article className="grid md:grid-cols-2-auto md:justify-center gap-2 items-end ">
-            <h2 className="text-white text-2xl lg:text-4xl font-semibold">
+            <h2
+              style={font.style}
+              className="text-white text-2xl lg:text-4xl font-medium"
+            >
               What will I learn?
             </h2>
-            <p className="text-slate-300 text-xl lg:text-2xl font-light">
+            <p
+              style={font.style}
+              className="text-slate-300 text-xl lg:text-2xl font-extralight"
+            >
               Here’s everything that’s covered in the course.
             </p>
           </article>

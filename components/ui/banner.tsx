@@ -1,7 +1,12 @@
 "use client";
 import { Button } from "@nextui-org/react";
 import { FC, useContext } from "react";
-import Link from "next/link";
+// > Font
+import { Inter } from "next/font/google";
+const font = Inter({
+  subsets: ["latin"],
+  weight: ["500"],
+});
 import Image from "next/image";
 import { useModalContext } from "@/app/providers/modalProvider";
 type TBanner = {
@@ -37,7 +42,10 @@ export const Banner: FC<TBanner> = ({
             <h3 className="text-violet font-medium sm:font-semibold">
               {supTitle}
             </h3>
-            <h2 className="text-white text-2xl sm:text-4xl font-semibold">
+            <h2
+              style={font.style}
+              className="text-white text-2xl sm:text-4xl font-medium"
+            >
               {title}
             </h2>
             <p className="text-slate-300 text-md sm:text-lg">{text}</p>

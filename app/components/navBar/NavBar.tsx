@@ -5,6 +5,7 @@ import { FC, useEffect, useState, forwardRef } from "react";
 import s from "./styles/NavBar.module.scss";
 // > NextUI
 import { Tooltip } from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
 import { VscGithub } from "react-icons/vsc";
@@ -45,18 +46,139 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
       }
     });
   }, [isScroll]);
-  const toggleMenuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+  const DATA_TOGGLE_MENU_LINKS = [
+    {
+      title: "What will I Learn",
+      links: [
+        {
+          value: "Docs",
+          href: "/",
+        },
+        {
+          value: "Learn",
+          href: "",
+        },
+        {
+          value: "Showcase",
+          href: "",
+        },
+        {
+          value: "Blog",
+          href: "",
+        },
+        {
+          value: "Analytics",
+          href: "",
+        },
+        {
+          value: "Previews",
+          href: "",
+        },
+      ],
+    },
+    {
+      title: "Account",
+      links: [
+        {
+          value: "Login",
+          href: "/auth/login",
+        },
+        {
+          value: "Register",
+          href: "/auth/register",
+        },
+      ],
+    },
+    {
+      title: "Resources",
+      links: [
+        {
+          value: "Docs",
+          href: "/",
+        },
+        {
+          value: "Learn",
+          href: "",
+        },
+        {
+          value: "Showcase",
+          href: "",
+        },
+        {
+          value: "Blog",
+          href: "",
+        },
+        {
+          value: "Analytics",
+          href: "",
+        },
+        {
+          value: "Previews",
+          href: "",
+        },
+      ],
+    },
+    {
+      title: "More",
+      links: [
+        {
+          value: "Commerce",
+          href: "",
+        },
+        {
+          value: "Contact Sales",
+          href: "",
+        },
+        {
+          value: "GitHub",
+          href: "",
+        },
+        {
+          value: "Releases",
+          href: "",
+        },
+        {
+          value: "Telemetry",
+          href: "",
+        },
+      ],
+    },
+    {
+      title: "About ",
+      links: [
+        {
+          value: "DevWorkshop + studio",
+          href: "",
+        },
+        {
+          value: "Open Source Software",
+          href: "",
+        },
+        {
+          value: "GitHub",
+          href: "",
+        },
+        {
+          value: "Twitter",
+          href: "",
+        },
+      ],
+    },
+    {
+      title: "Legal ",
+      links: [
+        {
+          value: "Privacy Policy",
+          href: "",
+        },
+        {
+          value: "Cookie Preferences",
+          href: "",
+        },
+      ],
+    },
   ];
+
   const menuItems = [
     { value: "Features", href: "#" },
     { value: "Customers", href: "#" },
@@ -82,6 +204,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
             isMenuOpen ? "shadow-black/40" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
+          isMenuOpen={isMenuOpen}
         >
           <div className="container">
             <motion.section
@@ -147,7 +270,14 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   />
                   <div className="relative hidden md:grid grid-cols-2-auto items-center gap-2 ">
                     <span className="absolute top-1/2 left-0 translate-x-1/2 -translate-y-1/2 w-[1px] h-[80%] bg-slate-500 rounded-full pointer-events-none"></span>
-                    <Tooltip size="sm" content="GitHub" placement="right-start">
+                    <Tooltip
+                      closeDelay={200}
+                      offset={10}
+                      size="sm"
+                      content="GitHub"
+                      placement="right-start"
+                      classNames={{ content: "font-semibold" }}
+                    >
                       <Link href={"/"} className="ml-[16px]">
                         <VscGithub
                           className="text-slate-400 hover:text-slate-200 transition-colors"
@@ -162,16 +292,40 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           </div>
           {/* ToggleMenu */}
           <NavbarMenu className="bg-transparent pt-6">
-            {toggleMenuItems.map((item, index) => (
-              <NavbarMenuItem key={`${item}-${index}`}>
-                <Link
-                  className="w-full text-white text-medium"
-                  href="/auth/login"
+            <Accordion showDivider={false} className="px-0 border-none">
+              {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
+                <AccordionItem
+                  isCompact
+                  classNames={{
+                    trigger: ["py-2"],
+                    title: ["text-white", "font-extralight"],
+                    content: ["font-extralight"],
+                  }}
+                  title={item.title}
+                  key={`${item}-${index}`}
                 >
-                  {item}
-                </Link>
-              </NavbarMenuItem>
-            ))}
+                  <NavbarMenuItem
+                    className="grid gap-3"
+                    key={`${item}-${index}`}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.links.map((link, i) => (
+                      <Link
+                        className={`relative text-sm  ml-2 pl-3 before:block before:absolute before:w-1 before:h-1 before:top-2 before:left-0 before:rounded-full ${
+                          pathName === link.href
+                            ? `text-white  before:bg-violet`
+                            : "before:bg-slate-300/50 text-white "
+                        }`}
+                        key={i}
+                        href={link.href}
+                      >
+                        {link.value}
+                      </Link>
+                    ))}
+                  </NavbarMenuItem>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </NavbarMenu>
         </Navbar>
       )}

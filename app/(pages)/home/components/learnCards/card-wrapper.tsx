@@ -2,6 +2,12 @@ import { FC } from "react";
 import s from "./styles/LearnCards.module.scss";
 import Link from "next/link";
 import { FiExternalLink } from "react-icons/fi";
+// > Font
+import { Inter } from "next/font/google";
+const font = Inter({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+});
 type TCardWrapper = {
   icon: string | any;
   title: string;
@@ -12,7 +18,7 @@ export const CardWrapper: FC<TCardWrapper> = ({ icon, title, text, href }) => {
   return (
     <Link
       href={href}
-      className={`${s.card} relative border-1 border-slate-300/20 rounded-2xl p-5 bg-slate-300/5 hover:bg-slate-300/15 `}
+      className={`${s.card} relative border-1 border-slate-300/20 rounded-2xl p-5 bg-purple-900/5 hover:bg-slate-500/30 `}
     >
       <div className="grid grid-cols-2-auto justify-start gap-3 items-center mb-3">
         <p className="w-[32px] h-[32px] relative text-white bg-violet/30 rounded-full">
@@ -20,7 +26,9 @@ export const CardWrapper: FC<TCardWrapper> = ({ icon, title, text, href }) => {
             {icon}
           </span>
         </p>
-        <h3 className="text-white text-xl font-semibold">{title}</h3>
+        <h3 style={font.style} className="text-white text-xl sm:font-semibold">
+          {title}
+        </h3>
       </div>
       <p className="text-white ">{text}</p>
       <FiExternalLink

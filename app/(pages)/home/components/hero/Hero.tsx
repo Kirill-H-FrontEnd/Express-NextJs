@@ -11,8 +11,8 @@ import s from "./styles/Hero.module.scss";
 // > NextUI
 import { Button } from "@nextui-org/react";
 // > Font
-import { Open_Sans } from "next/font/google";
-const font = Open_Sans({
+import { Inter } from "next/font/google";
+const font = Inter({
   subsets: ["latin"],
   weight: ["700"],
 });
@@ -53,10 +53,10 @@ export const Hero: FC = ({}) => {
               style={font.style}
               variants={animation}
               custom={1}
-              className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-bold leading-tight sm:leading-normal mb-3
+              className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-extrabold leading-tight sm:leading-normal mb-3 text-balance
             "
             >
-              Protocol is a web Framework
+              Protocol is a Web Framework
             </motion.h1>
             <motion.p
               variants={animation}
