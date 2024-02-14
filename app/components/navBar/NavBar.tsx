@@ -224,8 +224,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   className="animate-spin-slow "
                 />
                 <p
-                  style={font.style}
-                  className=" font-normal text-xl sm:text-2xl text-inherit text-white"
+                  className={`${font.className} font-normal text-xl sm:text-2xl text-inherit text-white`}
                 >
                   Protocol
                 </p>

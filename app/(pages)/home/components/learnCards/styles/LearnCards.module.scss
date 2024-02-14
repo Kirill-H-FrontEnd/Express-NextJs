@@ -2,8 +2,8 @@
 	.wrapper {
 		.cards {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-			gap: 20px;
+			grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+			gap: 15px;
 			.card {
 				transition: all 0.4s ease;
 				&:hover {
@@ -15,6 +15,7 @@
 						p {
 							transition: all 0.4s ease;
 							background-color: white;
+
 							span {
 								transition: all 0.4s ease;
 								color: #0d0f14;

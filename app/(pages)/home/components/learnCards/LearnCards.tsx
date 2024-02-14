@@ -69,7 +69,7 @@ export const LearnCards: FC = ({}) => {
     },
   ];
   return (
-    <section className={`${s.learnCards} bg-black py-24`}>
+    <section id="learnCards" className={`${s.learnCards} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <article className="grid md:grid-cols-2-auto md:justify-center gap-2 items-end ">

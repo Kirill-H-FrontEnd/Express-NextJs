@@ -10,6 +10,8 @@ import Link from "next/link";
 import s from "./styles/Hero.module.scss";
 // > NextUI
 import { Button } from "@nextui-org/react";
+// > ScrollLink
+import { Link as ScrollLink } from "react-scroll";
 // > Font
 import { Inter } from "next/font/google";
 const font = Inter({
@@ -81,10 +83,22 @@ export const Hero: FC = ({}) => {
                 get started
               </Button>
               <Button
-                className="shadow-lg px-10 rounded-full capitalize bg-white text-black hover:bg-slate-300 font-semibold"
+                className="shadow-lg rounded-full capitalize bg-white text-black hover:bg-slate-300 font-semibold px-0"
                 size={"md"}
               >
-                learn more
+                <ScrollLink
+                  className="px-10"
+                  activeStyle={{
+                    backgroundColor: "#f1f5f9",
+                    color: "#2563EB",
+                  }}
+                  to={"learnCards"}
+                  spy={true}
+                  smooth={true}
+                  duration={800}
+                >
+                  Learn More
+                </ScrollLink>
               </Button>
             </motion.div>
           </article>
@@ -98,7 +112,7 @@ export const Hero: FC = ({}) => {
           >
             <defs>
               <pattern
-                id=":R56hdsqla:"
+                id=":bg1"
                 width="72"
                 height="56"
                 patternUnits="userSpaceOnUse"
@@ -112,55 +126,7 @@ export const Hero: FC = ({}) => {
               width="100%"
               height="100%"
               strokeWidth="0"
-              fill="url(#:R56hdsqla:)"
-            ></rect>
-            <svg x="50%" y="16" className="overflow-visible">
-              <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
-              <rect
-                strokeWidth="0"
-                width="73"
-                height="57"
-                x="72"
-                y="168"
-              ></rect>
-            </svg>
-          </svg>
-        </div>
-        <div
-          className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#392870] to-[#392870] opacity-0 transition duration-300 group-hover:opacity-100 dark:from-[#202D2E] dark:to-[#303428]"
-          style={{
-            maskImage:
-              "radial-gradient(180px at 0px 0px, white, transparent);-webkit-mask-image:radial-gradient(180px at 0px 0px, white, transparent)",
-          }}
-        ></div>
-        <div
-          className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay transition duration-300 group-hover:opacity-100"
-          style={{
-            maskImage:
-              "radial-gradient(180px at 0px 0px, white, transparent);-webkit-mask-image:radial-gradient(180px at 0px 0px, white, transparent)",
-          }}
-        >
-          <svg
-            aria-hidden="true"
-            className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-[#392870] stroke-[#392870] dark:fill-white/2.5 dark:stroke-white/10"
-          >
-            <defs>
-              <pattern
-                id=":R1d6hdsqla:"
-                width="72"
-                height="56"
-                patternUnits="userSpaceOnUse"
-                x="50%"
-                y="16"
-              >
-                <path d="M.5 56V.5H72" fill="none"></path>
-              </pattern>
-            </defs>
-            <rect
-              width="100%"
-              height="100%"
-              strokeWidth="0"
-              fill="url(#:R1d6hdsqla:)"
+              fill="url(#:bg1)"
             ></rect>
             <svg x="50%" y="16" className="overflow-visible">
               <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
