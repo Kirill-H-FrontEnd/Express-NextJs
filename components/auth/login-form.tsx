@@ -6,7 +6,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
-
 // > Schemas
 import { LoginSchema } from "@/schemas/";
 // > Components
@@ -66,6 +65,7 @@ export const LoginForm: FC = ({}) => {
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input
+                      className="py-5"
                       disabled={isPending}
                       {...field}
                       placeholder="john.doe@example.com"
@@ -84,6 +84,7 @@ export const LoginForm: FC = ({}) => {
                   <FormLabel>Password</FormLabel>
                   <FormControl>
                     <Input
+                      className="py-5"
                       disabled={isPending}
                       {...field}
                       placeholder="Enter your password"

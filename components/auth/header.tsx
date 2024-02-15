@@ -1,13 +1,7 @@
 // > React
 import { FC } from "react";
 // > Font
-import { Roboto } from "next/font/google";
-// > Font
-import { Open_Sans } from "next/font/google";
-const font = Open_Sans({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import { GeistSans } from "geist/font/sans";
 type THeader = {
   label: string;
   title: string;
@@ -16,7 +10,7 @@ type THeader = {
 export const Header: FC<THeader> = ({ label, title }) => {
   return (
     <div className="">
-      <h1 style={font.style} className="text-3xl font-bold text-slate-900">
+      <h1 style={GeistSans.style} className="text-3xl font-bold text-slate-900">
         {title}
       </h1>
       <p

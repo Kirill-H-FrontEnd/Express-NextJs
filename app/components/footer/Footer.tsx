@@ -6,13 +6,9 @@ import Link from "next/link";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
 // > Font
-import { Ubuntu } from "next/font/google";
-import { Button } from "@/components/ui/button";
+import { GeistSans } from "geist/font/sans";
 import { Input } from "@/components/ui/input";
-const font = Ubuntu({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+import { Button } from "@nextui-org/react";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
@@ -127,17 +123,16 @@ export const Footer: FC = ({}) => {
                   size={35}
                   className="animate-spin-slow "
                 />
-                <p
-                  style={font.style}
-                  className=" font-normal text-xl sm:text-xl text-inherit text-white"
-                >
+                <p className=" font-semibold text-xl sm:text-xl text-inherit text-white">
                   Protocol
                 </p>
               </Link>
               <nav className={`${s.nav} `}>
                 {DATA_LINKS.map((item, i) => (
                   <li key={i}>
-                    <h5 className="text-white mb-4">{item.title}</h5>
+                    <h5 style={GeistSans.style} className="text-white mb-4">
+                      {item.title}
+                    </h5>
                     <div className="">
                       {item.links.map((link, i) => (
                         <Link
@@ -157,23 +152,34 @@ export const Footer: FC = ({}) => {
                 ))}
               </nav>
               <div className="">
-                <h5 className="text-white mb-4">Subscribe to our newsletter</h5>
-                <p className="text-gray mb-4">
+                <h5 style={GeistSans.style} className="text-white mb-4">
+                  Subscribe to our newsletter
+                </h5>
+                <p className="text-gray mb-4 text-sm">
                   Stay updated on new releases and features, guides, and case
                   studies.
                 </p>
-                <Input
-                  placeholder="Enter your email for subscription!"
-                  className="bg-white border-none "
-                />
-              </div>
-            </section>
-            <section className="relative">
-              <div className="text-gray text-sm py-4 text-center">
-                Copyright © {getFullYear} Protocol.
+                <div className={`${s.actions} relative`}>
+                  <Input
+                    placeholder="example@gmail.com "
+                    className="bg-white border-none text-base"
+                  />
+                  <Button
+                    size="sm"
+                    className={`absolute text-white top-0 h-full right-[-1px] text-xs bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium`}
+                  >
+                    Subscribe!
+                  </Button>
+                </div>
               </div>
             </section>
           </div>
+          <section className="">
+            <div className="text-gray text-sm py-3 text-center">
+              Copyright © {getFullYear} Protocol.This is just a documentation
+              template for the framework.
+            </div>
+          </section>
         </footer>
       )}
     </>

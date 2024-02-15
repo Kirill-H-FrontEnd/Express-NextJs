@@ -76,6 +76,10 @@
 }
 html {
   * {
+    ::selection {
+      background-color: white;
+      color: #252054;
+    }
     li {
       list-style: none;
     }

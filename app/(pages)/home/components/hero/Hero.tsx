@@ -13,11 +13,8 @@ import { Button } from "@nextui-org/react";
 // > ScrollLink
 import { Link as ScrollLink } from "react-scroll";
 // > Font
-import { Inter } from "next/font/google";
-const font = Inter({
-  subsets: ["latin"],
-  weight: ["700"],
-});
+import { GeistSans } from "geist/font/sans";
+
 export const Hero: FC = ({}) => {
   // Animation
   const animation = {
@@ -50,24 +47,31 @@ export const Hero: FC = ({}) => {
         <section
           className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
         >
-          <article className={`${s.article} sm:text-center select-text`}>
+          <article className={`${s.article} text-center select-text`}>
             <motion.h1
-              style={font.style}
+              translate="no"
               variants={animation}
               custom={1}
-              className="text-transparent bg-clip-text bg-gradient-to-br sm:bg-gradient-to-t from-white to-violet  font-extrabold leading-tight sm:leading-normal mb-3 text-balance
-            "
+              className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
+            `}
             >
-              Protocol is a Web Framework
+              The{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-500 via-purple-700  to-purple-950 ">
+                Progressive
+              </span>{" "}
+              JavaScript Framework
             </motion.h1>
             <motion.p
               variants={animation}
               custom={2}
-              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[1000px] m-auto mb-6 font-normal"
+              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal"
             >
               Used by some of the world's largest companies, Protocol enables
-              you to create high-quality web applications with the power of
-              React components.
+              you to create{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
+                high-quality web applications
+              </span>{" "}
+              with the power of Java Script.
             </motion.p>
             <motion.div
               variants={animation}

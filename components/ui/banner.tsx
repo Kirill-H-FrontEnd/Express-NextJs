@@ -1,13 +1,15 @@
 "use client";
+// > NextuI
 import { Button } from "@nextui-org/react";
+// > React
 import { FC, useContext } from "react";
 // > Font
-import { Inter } from "next/font/google";
-const font = Inter({
-  subsets: ["latin"],
-  weight: ["500"],
-});
+import { GeistSans } from "geist/font/sans";
+// > FramerMotion
+import { motion } from "framer-motion";
+// > Next
 import Image from "next/image";
+// > Providers
 import { useModalContext } from "@/app/providers/modalProvider";
 type TBanner = {
   title: string;
@@ -21,11 +23,21 @@ export const Banner: FC<TBanner> = ({
   title,
   supTitle,
   text,
-
   btnValue,
   isActions,
 }) => {
   const { onOpen } = useContext(useModalContext);
+  const animation = {
+    hidden: {
+      y: 10,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+    }),
+  };
   return (
     <section className="relative bg-black py-24">
       <Image
@@ -33,24 +45,41 @@ export const Banner: FC<TBanner> = ({
         width={1000}
         height={1000}
         alt=""
-        className="absolute top-0 right-0 w-full h-full object-cover z-10"
+        className="pointer-events-none absolute top-0 right-0 w-full h-full object-cover z-10"
       />
       <div className="absolute z-20 bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-black/30 "></div>
       <div className="container">
         <section>
-          <article className="relative z-20 text-center grid gap-2 max-w-[450px] m-auto">
-            <h3 className="text-violet font-medium sm:font-semibold">
+          <motion.article
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="relative z-20 text-center grid gap-2 max-w-[450px] m-auto"
+          >
+            <motion.h3
+              custom={1}
+              variants={animation}
+              className="text-violet font-medium sm:font-semibold"
+            >
               {supTitle}
-            </h3>
-            <h2
-              style={font.style}
+            </motion.h3>
+            <motion.h2
+              custom={2}
+              variants={animation}
+              style={GeistSans.style}
               className="text-white text-2xl sm:text-4xl font-medium"
             >
               {title}
-            </h2>
-            <p className="text-slate-300 text-md sm:text-lg">{text}</p>
+            </motion.h2>
+            <motion.p
+              custom={3}
+              variants={animation}
+              className="text-slate-300 text-md sm:text-lg"
+            >
+              {text}
+            </motion.p>
             {isActions && (
-              <div className="mt-4">
+              <motion.div custom={4} variants={animation} className="mt-4">
                 <Button
                   onClick={onOpen}
                   radius="full"
@@ -58,9 +87,9 @@ export const Banner: FC<TBanner> = ({
                 >
                   {btnValue}
                 </Button>
-              </div>
+              </motion.div>
             )}
-          </article>
+          </motion.article>
         </section>
       </div>
     </section>

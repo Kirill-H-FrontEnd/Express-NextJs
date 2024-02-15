@@ -3,11 +3,7 @@ import "./globals.scss";
 // > Next
 import type { Metadata } from "next";
 // > Font
-import { Nunito } from "next/font/google";
-const font = Nunito({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-});
+import { GeistMono } from "geist/font/mono";
 // > Components
 import { NavBar } from "./components/navBar/NavBar";
 import { Footer } from "./components/footer/Footer";
@@ -28,7 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>
+      <body className={GeistMono.className}>
         <NextUiProvider>
           <ModalProvider>
             <NavBar />

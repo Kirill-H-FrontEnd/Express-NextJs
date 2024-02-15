@@ -9,12 +9,6 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
 import { VscGithub } from "react-icons/vsc";
-// > Font
-import { Ubuntu } from "next/font/google";
-const font = Ubuntu({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 // > NextUi
 import {
   Navbar,
@@ -212,7 +206,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
               whileInView="visible"
               variants={animation}
               viewport={{ once: true }}
-              className={`${s.wrapper} grid grid-cols-2 justify-between`}
+              className={`${s.wrapper} grid grid-cols-2-auto justify-between`}
             >
               <Link
                 href={"/"}
@@ -220,34 +214,16 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
               >
                 <IoLogoElectron
                   color="#fff"
-                  size={40}
+                  size={38}
                   className="animate-spin-slow "
                 />
                 <p
-                  className={`${font.className} font-normal text-xl sm:text-2xl text-inherit text-white`}
+                  className={` font-bold text-xl sm:text-2xl text-inherit text-white`}
                 >
                   Protocol
                 </p>
               </Link>
-              <nav
-                className={`${s.nav} grid md:grid-cols-2-auto items-center gap-14 justify-end`}
-              >
-                <ul className="hidden md:grid grid-cols-3-auto items-center gap-6">
-                  {menuItems.map((item, i) => (
-                    <Link
-                      className={`text-white hover:text-purple-600 transition-colors ${
-                        pathName === item.href
-                          ? `${s.active} text-purple-600`
-                          : ""
-                      }`}
-                      key={i}
-                      color="foreground"
-                      href={item.href}
-                    >
-                      {item.value}
-                    </Link>
-                  ))}
-                </ul>
+              <nav className={`${s.nav}`}>
                 <div className="grid grid-cols-3-auto gap-4 items-center">
                   <Link
                     className="hidden md:block hover:text-slate-300 text-white"
@@ -297,7 +273,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   isCompact
                   classNames={{
                     trigger: ["py-2"],
-                    title: ["text-white", "font-extralight"],
+                    title: ["text-white", "font-normal", "text-md"],
                     content: ["font-extralight"],
                   }}
                   title={item.title}

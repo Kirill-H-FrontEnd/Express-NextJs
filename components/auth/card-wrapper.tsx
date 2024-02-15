@@ -14,7 +14,8 @@ import {
 import { Header } from "./header";
 import { Social } from "./social";
 import { BackButton } from "./back-button";
-
+// > Font
+import { GeistSans } from "geist/font/sans";
 type TCardWrapper = {
   children: React.ReactNode;
   headerLabel: string;

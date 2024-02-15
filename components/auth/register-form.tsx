@@ -68,6 +68,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
                   <FormLabel>Name</FormLabel>
                   <FormControl>
                     <Input
+                      className="py-5"
                       disabled={isPending}
                       {...field}
                       placeholder="Enter your name"
@@ -86,6 +87,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
                   <FormLabel>Email</FormLabel>
                   <FormControl>
                     <Input
+                      className="py-5"
                       disabled={isPending}
                       {...field}
                       placeholder="john.doe@example.com"
@@ -104,6 +106,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
                   <FormLabel>Password</FormLabel>
                   <FormControl>
                     <Input
+                      className="py-5"
                       disabled={isPending}
                       {...field}
                       placeholder="Create password"

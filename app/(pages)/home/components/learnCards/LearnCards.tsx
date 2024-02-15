@@ -1,16 +1,21 @@
+"use client";
+// > React
 import { FC } from "react";
+// > Next
+import Link from "next/link";
+// > Styles
 import s from "./styles/LearnCards.module.scss";
-import { CardWrapper } from "./card-wrapper";
+// > Components
+import { MCardWrapper } from "./card-wrapper";
+// > Icons
 import { RiErrorWarningLine } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa6";
+// > NextUi
 import { Button } from "@nextui-org/react";
-import Link from "next/link";
+// > FramerMotion
+import { motion } from "framer-motion";
 // > Font
-import { Inter } from "next/font/google";
-const font = Inter({
-  subsets: ["latin"],
-  weight: ["300", "500"],
-});
+import { GeistSans } from "geist/font/sans";
 export const LearnCards: FC = ({}) => {
   const DATA_CARDS = [
     {
@@ -68,27 +73,68 @@ export const LearnCards: FC = ({}) => {
       text: "Create a new Next.js application using the dashboard starter example and explore the project.",
     },
   ];
+  // Animation
+  const animationText = {
+    hidden: {
+      x: -30,
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      x: 0,
+      opacity: 1,
+      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+    }),
+  };
+  const animationCard = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      opacity: 1,
+      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+    }),
+  };
   return (
     <section id="learnCards" className={`${s.learnCards} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
-          <article className="grid md:grid-cols-2-auto md:justify-center gap-2 items-end ">
-            <h2
-              style={font.style}
-              className="text-white text-2xl lg:text-4xl font-medium"
+          <motion.article
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid gap-3 "
+          >
+            <motion.h3
+              variants={animationText}
+              custom={1}
+              className="relative text-violet font-medium sm:font-semibold before:block before:absolute before:w-[10px] before:h-[1px] before:top-1/2 before:-translate-y-1/2 before:left-0 before:rounded-full before:bg-violet pl-4"
+            >
+              Our Learn
+            </motion.h3>
+            <motion.h2
+              variants={animationText}
+              custom={1}
+              style={GeistSans.style}
+              className="text-white text-3xl lg:text-4xl font-semibold sm:font-bold"
             >
               What will I learn?
-            </h2>
-            <p
-              style={font.style}
-              className="text-slate-300 text-xl lg:text-2xl font-extralight"
+            </motion.h2>
+            <motion.p
+              variants={animationText}
+              custom={3}
+              className="text-slate-300 text-lg sm:text-xl  font-normal"
             >
               Here’s everything that’s covered in the course.
-            </p>
-          </article>
+            </motion.p>
+          </motion.article>
           <section className={`${s.cards} relative`}>
             {DATA_CARDS.map((card, i) => (
-              <CardWrapper
+              <MCardWrapper
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={animationCard}
+                custom={i}
                 href={card.href}
                 key={i}
                 icon={card.icon}
@@ -103,7 +149,7 @@ export const LearnCards: FC = ({}) => {
               as={Link}
               href="/dashboard"
               radius="full"
-              className="w-[200px] font-semibold hover:bg-slate-300"
+              className="w-[200px] font-semibold hover:bg-slate-300 bg-white"
             >
               <p>Start Learning</p>
               <FaArrowRight size={13} />
