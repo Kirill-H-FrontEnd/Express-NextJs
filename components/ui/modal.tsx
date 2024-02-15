@@ -43,7 +43,6 @@ export const SubscribeModal: FC = ({}) => {
         size="sm"
         className="bg-white dark:bg-black"
         placement="center"
-        isDismissible={false}
         isOpen={isOpen}
         onOpenChange={onOpenChange}
       >
