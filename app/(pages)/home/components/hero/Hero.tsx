@@ -49,7 +49,6 @@ export const Hero: FC = ({}) => {
         >
           <article className={`${s.article} text-center select-text`}>
             <motion.h1
-              translate="no"
               variants={animation}
               custom={1}
               className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
