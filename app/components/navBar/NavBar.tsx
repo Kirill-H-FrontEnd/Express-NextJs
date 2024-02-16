@@ -266,7 +266,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
             </motion.section>
           </div>
           {/* ToggleMenu */}
-          <NavbarMenu className="bg-transparent pt-6">
+          <NavbarMenu className="bg-transparent pt-6 z-[1000]">
             <Accordion showDivider={false} className="px-0 border-none">
               {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
                 <AccordionItem

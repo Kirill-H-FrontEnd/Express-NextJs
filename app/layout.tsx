@@ -11,6 +11,7 @@ import { Footer } from "./components/footer/Footer";
 import NextUiProvider from "./providers/nextUiProvider";
 import ModalProvider from "./providers/modalProvider";
 import { SubscribeModal } from "@/components/ui/modal";
+import { ButtonTop } from "./components/buttontTop/ButtonTop";
 
 export const metadata: Metadata = {
   title: "Protocol | Home",
@@ -30,6 +31,7 @@ export default function RootLayout({
             <NavBar />
             <main>{children}</main>
             <Footer />
+            <ButtonTop />
             <SubscribeModal />
           </ModalProvider>
         </NextUiProvider>

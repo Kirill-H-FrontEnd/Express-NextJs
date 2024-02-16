@@ -82,7 +82,7 @@ export const LearnCards: FC = ({}) => {
     visible: (custom: number) => ({
       x: 0,
       opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+      transition: { delay: custom * 0.2, duration: 0.4, ease: "easeOut" },
     }),
   };
   const animationCard = {
@@ -91,7 +91,7 @@ export const LearnCards: FC = ({}) => {
     },
     visible: (custom: number) => ({
       opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+      transition: { delay: custom * 0.2, duration: 0.8, ease: "easeOut" },
     }),
   };
   return (
@@ -113,7 +113,7 @@ export const LearnCards: FC = ({}) => {
             </motion.h3>
             <motion.h2
               variants={animationText}
-              custom={1}
+              custom={2}
               style={GeistSans.style}
               className="text-white text-3xl lg:text-4xl font-semibold sm:font-bold"
             >

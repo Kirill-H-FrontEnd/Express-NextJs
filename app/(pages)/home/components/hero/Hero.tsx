@@ -25,7 +25,7 @@ export const Hero: FC = ({}) => {
     visible: (custom: number) => ({
       y: 0,
       opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+      transition: { delay: custom * 0.2, duration: 0.4, ease: "easeOut" },
     }),
   };
   return (
@@ -55,7 +55,7 @@ export const Hero: FC = ({}) => {
             `}
             >
               The{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-500 via-purple-700  to-purple-950 ">
+              <span className="text-transparent bg-clip-text bg-gradient-to-t from-purple-200 via-purple-600 to-[#2D1445] ">
                 Progressive
               </span>{" "}
               JavaScript Framework
@@ -70,7 +70,7 @@ export const Hero: FC = ({}) => {
               <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
                 high-quality web applications
               </span>{" "}
-              with the power of Java Script.
+              with the power of JavaScript.
             </motion.p>
             <motion.div
               variants={animation}
