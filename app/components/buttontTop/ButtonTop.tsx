@@ -32,7 +32,7 @@ export const ButtonTop: FC = ({}) => {
       isIconOnly
       onClick={() => scrollToTop()}
       className={`${
-        isActive ? "opacity-1" : "opacity-0 pointer-events-none"
+        isActive ? "opacity-1 " : "opacity-0 pointer-events-none"
       } bg-white fixed bottom-5 right-5 rounded-full px-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black z-50`}
     >
       <FaChevronUp size={18} color="#fff" />

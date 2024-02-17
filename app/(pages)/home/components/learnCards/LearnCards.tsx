@@ -16,6 +16,7 @@ import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 // > Font
 import { GeistSans } from "geist/font/sans";
+
 export const LearnCards: FC = ({}) => {
   const DATA_CARDS = [
     {
@@ -102,15 +103,8 @@ export const LearnCards: FC = ({}) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid gap-3 "
+            className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center"
           >
-            <motion.h3
-              variants={animationText}
-              custom={1}
-              className="relative text-violet font-medium sm:font-semibold before:block before:absolute before:w-[10px] before:h-[1px] before:top-1/2 before:-translate-y-1/2 before:left-0 before:rounded-full before:bg-violet pl-4"
-            >
-              Our Learn
-            </motion.h3>
             <motion.h2
               variants={animationText}
               custom={2}
@@ -122,17 +116,19 @@ export const LearnCards: FC = ({}) => {
             <motion.p
               variants={animationText}
               custom={3}
-              className="text-slate-300 text-lg sm:text-xl  font-normal"
+              className="text-slate-300 text-lg lg:text-xl  font-normal"
             >
               Here’s everything that’s covered in the course.
             </motion.p>
           </motion.article>
-          <section className={`${s.cards} relative`}>
+          <motion.section
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={`${s.cards} relative`}
+          >
             {DATA_CARDS.map((card, i) => (
               <MCardWrapper
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
                 variants={animationCard}
                 custom={i}
                 href={card.href}
@@ -142,7 +138,7 @@ export const LearnCards: FC = ({}) => {
                 text={card.text}
               />
             ))}
-          </section>
+          </motion.section>
 
           <div className={`${s.actions} text-center`}>
             <Button

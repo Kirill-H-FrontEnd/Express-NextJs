@@ -1,38 +1,21 @@
 "use client";
 // > React
 import { FC } from "react";
-// > FramerMotion
-import { motion } from "framer-motion";
 // > Next
 import Image from "next/image";
 import Link from "next/link";
 // > Styles
 import s from "./styles/Hero.module.scss";
 // > NextUI
-import { Button } from "@nextui-org/react";
+import { Button, Snippet } from "@nextui-org/react";
 // > ScrollLink
 import { Link as ScrollLink } from "react-scroll";
 // > Font
 import { GeistSans } from "geist/font/sans";
 
 export const Hero: FC = ({}) => {
-  // Animation
-  const animation = {
-    hidden: {
-      y: 30,
-      opacity: 0,
-    },
-    visible: (custom: number) => ({
-      y: 0,
-      opacity: 1,
-      transition: { delay: custom * 0.2, duration: 0.4, ease: "easeOut" },
-    }),
-  };
   return (
-    <motion.section
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
+    <section
       className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none`}
     >
       {/* Background */}
@@ -48,9 +31,7 @@ export const Hero: FC = ({}) => {
           className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
         >
           <article className={`${s.article} text-center select-text`}>
-            <motion.h1
-              variants={animation}
-              custom={1}
+            <h1
               className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
             `}
             >
@@ -59,24 +40,16 @@ export const Hero: FC = ({}) => {
                 Progressive
               </span>{" "}
               JavaScript Framework
-            </motion.h1>
-            <motion.p
-              variants={animation}
-              custom={2}
-              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal"
-            >
+            </h1>
+            <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
               Used by some of the world's largest companies, Protocol enables
               you to create{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
                 high-quality web applications
               </span>{" "}
               with the power of JavaScript.
-            </motion.p>
-            <motion.div
-              variants={animation}
-              custom={3}
-              className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3"
-            >
+            </p>
+            <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3">
               <Button
                 as={Link}
                 href="/dashboard"
@@ -103,7 +76,17 @@ export const Hero: FC = ({}) => {
                   Learn More
                 </ScrollLink>
               </Button>
-            </motion.div>
+            </div>
+            <Snippet
+              symbol={`# ~`}
+              classNames={{
+                base: "bg-transparent text-gray",
+                pre: "font-medium text-sm",
+              }}
+              size="sm"
+            >
+              npx create-protocol-app@lates
+            </Snippet>
           </article>
         </section>
       </div>
@@ -144,6 +127,6 @@ export const Hero: FC = ({}) => {
           </svg>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };

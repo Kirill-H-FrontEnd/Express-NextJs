@@ -1,15 +1,14 @@
 "use client";
 // > React
 import { FC, useEffect, useState, forwardRef } from "react";
+// > Next
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 // > Styles
 import s from "./styles/NavBar.module.scss";
 // > NextUI
 import { Tooltip } from "@nextui-org/react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-// > Icons
-import { IoLogoElectron } from "react-icons/io5";
-import { VscGithub } from "react-icons/vsc";
-// > NextUi
 import {
   Navbar,
   NavbarMenuToggle,
@@ -17,9 +16,9 @@ import {
   NavbarMenuItem,
   Button,
 } from "@nextui-org/react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { motion } from "framer-motion";
+// > Icons
+import { IoLogoElectron } from "react-icons/io5";
+import { VscGithub } from "react-icons/vsc";
 
 export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
@@ -172,22 +171,6 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
       ],
     },
   ];
-
-  const menuItems = [
-    { value: "Features", href: "#" },
-    { value: "Customers", href: "#" },
-    { value: "Integrations", href: "#" },
-  ];
-  // Animation
-  const animation = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: () => ({
-      opacity: 1,
-      transition: { delay: 0.1, duration: 0.3, ease: "easeOut" },
-    }),
-  };
   return (
     <>
       {!hideNavigation && (
@@ -201,11 +184,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           isMenuOpen={isMenuOpen}
         >
           <div className="container">
-            <motion.section
-              initial="hidden"
-              whileInView="visible"
-              variants={animation}
-              viewport={{ once: true }}
+            <section
               className={`${s.wrapper} grid grid-cols-2-auto justify-between`}
             >
               <Link
@@ -263,7 +242,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   </div>
                 </div>
               </nav>
-            </motion.section>
+            </section>
           </div>
           {/* ToggleMenu */}
           <NavbarMenu className="bg-transparent pt-6 z-[1000]">

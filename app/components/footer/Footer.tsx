@@ -139,7 +139,7 @@ export const Footer: FC = ({}) => {
                           key={i}
                           className={`text-gray text-sm hover:text-purple-500 ${
                             pathName === link.href
-                              ? `${s.active} text-purple-600`
+                              ? `${s.active} text-purple-500`
                               : ""
                           }`}
                           href={link.href}

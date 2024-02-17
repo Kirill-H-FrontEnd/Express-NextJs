@@ -1,0 +1,33 @@
+html {
+	body {
+		header {
+			grid-area: header;
+		}
+		nav {
+			grid-area: nav;
+			// Scroll-bar
+			// Scroll-bar
+			&::-webkit-scrollbar {
+				background-color: #0d0f14;
+				width: 0px;
+			}
+		}
+		aside {
+			grid-area: aside;
+		}
+		#main {
+			grid-area: main;
+		}
+
+		main {
+			height: 100vh;
+			display: grid;
+			grid-template-columns: 300px 1fr auto auto;
+			grid-template-rows: auto 1fr auto auto;
+			grid-template-areas:
+				"nav header header"
+				"nav main aside"
+				"nav main aside";
+		}
+	}
+}
