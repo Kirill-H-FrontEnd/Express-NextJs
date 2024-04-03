@@ -1,6 +1,7 @@
 import { Banner } from "@/components/ui/banner";
 import { Hero } from "./components/hero/Hero";
 import { LearnCards } from "./components/learnCards/LearnCards";
+import { Reviews } from "./components/reviews/Reviews";
 
 const HomePage = ({}) => {
   return (
@@ -14,6 +15,7 @@ const HomePage = ({}) => {
         btnValue="Subscribe"
         isActions
       />
+      <Reviews />
     </>
   );
 };

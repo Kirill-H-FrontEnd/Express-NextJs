@@ -1,6 +1,7 @@
 "use client";
 // > React
 import { FC, useEffect, useState, forwardRef } from "react";
+
 // > Next
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -23,11 +24,7 @@ import { VscGithub } from "react-icons/vsc";
 export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
   const pathName = usePathname();
-  let hideNavigation =
-    pathName === "/auth/login" ||
-    pathName === "/auth/register" ||
-    pathName === "/dashboard" ||
-    pathName === "/auth/error";
+  let hideNavigation = pathName === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // SetScroll
   useEffect(() => {
@@ -173,7 +170,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
   ];
   return (
     <>
-      {!hideNavigation && (
+      {hideNavigation && (
         <Navbar
           ref={ref}
           maxWidth="full"
@@ -189,7 +186,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
             >
               <Link
                 href={"/"}
-                className="grid grid-cols-2-auto items-center gap-1 justify-start hover:opacity-80 transition-opacity"
+                className="grid grid-cols-2-auto items-center gap-1 justify-start hover:opacity-80 transition-opacity select-none"
               >
                 <IoLogoElectron
                   color="#fff"
@@ -197,7 +194,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   className="animate-spin-slow "
                 />
                 <p
-                  className={` font-bold text-xl sm:text-2xl text-inherit text-white`}
+                  className={` font-bold text-xl sm:text-2xl text-inherit text-white `}
                 >
                   Protocol
                 </p>

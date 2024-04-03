@@ -1,0 +1,30 @@
+.reviews {
+	.wrapper {
+		.cards {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+
+			justify-content: center;
+		}
+	}
+}
+// > Media
+@media screen and (width <= 1120px) {
+	.reviews {
+		.wrapper {
+			.cards {
+				gap: 15px;
+			}
+		}
+	}
+}
+@media screen and (width <= 768px) {
+	.reviews {
+		.wrapper {
+			.cards {
+				grid-template-columns: 1fr;
+				gap: 0px;
+			}
+		}
+	}
+}

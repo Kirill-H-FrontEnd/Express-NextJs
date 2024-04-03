@@ -13,11 +13,7 @@ import { Button } from "@nextui-org/react";
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
   const pathName = usePathname();
-  let hideFooter =
-    pathName === "/auth/login" ||
-    pathName === "/auth/register" ||
-    pathName === "/dashboard" ||
-    pathName === "/auth/error";
+  let hideFooter = pathName === "/";
   const DATA_LINKS = [
     {
       title: "Resources",
@@ -110,8 +106,8 @@ export const Footer: FC = ({}) => {
   ];
   return (
     <>
-      {!hideFooter && (
-        <footer className={`${s.footer} bg-black`}>
+      {hideFooter && (
+        <footer className={`${s.footer} bg-black border-t-1 border-gray/20`}>
           <div className="container">
             <section className={`${s.wrapper} py-14 border-b-1 border-gray/20`}>
               <Link

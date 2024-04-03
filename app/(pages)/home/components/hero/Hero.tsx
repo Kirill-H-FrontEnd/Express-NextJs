@@ -16,7 +16,7 @@ import { GeistSans } from "geist/font/sans";
 export const Hero: FC = ({}) => {
   return (
     <section
-      className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none`}
+      className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
     >
       {/* Background */}
       <Image
@@ -41,6 +41,7 @@ export const Hero: FC = ({}) => {
               </span>{" "}
               JavaScript Framework
             </h1>
+
             <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
               Used by some of the world's largest companies, Protocol enables
               you to create{" "}
@@ -78,6 +79,7 @@ export const Hero: FC = ({}) => {
               </Button>
             </div>
             <Snippet
+              disableTooltip
               symbol={`# ~`}
               classNames={{
                 base: "bg-transparent text-gray",

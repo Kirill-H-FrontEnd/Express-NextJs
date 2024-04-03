@@ -12,6 +12,8 @@ import NextUiProvider from "./providers/nextUiProvider";
 import ModalProvider from "./providers/modalProvider";
 import { SubscribeModal } from "@/components/ui/modal";
 import { ButtonTop } from "./components/buttontTop/ButtonTop";
+import ThemeProvider from "./providers/ThemeProvider";
+import { Loader } from "@/components/ui/Loader/Loader";
 
 export const metadata: Metadata = {
   title: "Protocol | Home",
@@ -24,17 +26,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={GeistMono.className}>
-        <NextUiProvider>
-          <ModalProvider>
-            <NavBar />
-            <main>{children}</main>
-            <Footer />
-            <ButtonTop />
-            <SubscribeModal />
-          </ModalProvider>
-        </NextUiProvider>
+        <ThemeProvider>
+          <NextUiProvider>
+            <ModalProvider>
+              <NavBar />
+              <main>{children}</main>
+              <Footer />
+              <ButtonTop />
+              <SubscribeModal />
+            </ModalProvider>
+          </NextUiProvider>
+          <Loader />
+        </ThemeProvider>
       </body>
     </html>
   );
