@@ -63,7 +63,7 @@ export const Hero: FC = ({}) => {
                 className="shadow-lg rounded-full capitalize bg-white text-black hover:bg-slate-300 font-semibold px-0"
                 size={"md"}
               >
-                <ScrollLink
+                {/* <ScrollLink
                   className="px-10"
                   activeStyle={{
                     backgroundColor: "#f1f5f9",
@@ -75,7 +75,7 @@ export const Hero: FC = ({}) => {
                   duration={800}
                 >
                   Learn More
-                </ScrollLink>
+                </ScrollLink> */}
               </Button>
             </div>
             <Snippet

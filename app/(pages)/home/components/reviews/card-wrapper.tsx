@@ -1,7 +1,8 @@
 import { FC } from "react";
 import s from "./styles/card-wrapper.module.scss";
 import Image from "next/image";
-
+// > FramerMotion
+import { motion } from "framer-motion";
 export const CardWrapper: FC = ({}) => {
   const DATA_CARDS = [
     {
@@ -23,11 +24,25 @@ export const CardWrapper: FC = ({}) => {
       info: "Joe Doe, Frontend Developer",
     },
   ];
+  // Animation
+  const animation = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: (custom: number) => ({
+      opacity: 1,
+      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+    }),
+  };
   return (
     <>
       {DATA_CARDS.map((card, i) => (
-        <article
-          className={`${s.card} relative w-full h-full bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none p-5 `}
+        <motion.article
+          initial="hidden"
+          whileInView="visible"
+          variants={animation}
+          viewport={{ once: true }}
+          className={`${s.card} relative w-full h-full bg-[url('/home/reviews/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none p-5 `}
           key={i}
         >
           <section className="relative z-20">
@@ -38,7 +53,7 @@ export const CardWrapper: FC = ({}) => {
             </div>
           </section>
           {/* BG */}
-        </article>
+        </motion.article>
       ))}
     </>
   );

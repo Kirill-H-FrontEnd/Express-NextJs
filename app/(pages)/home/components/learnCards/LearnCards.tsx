@@ -106,12 +106,7 @@ export const LearnCards: FC = ({}) => {
     <section id="learnCards" className={`${s.learnCards} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
-          <motion.article
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center"
-          >
+          <article className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center">
             <h2
               style={GeistSans.style}
               className=" text-white text-3xl lg:text-4xl font-semibold sm:font-bold"
@@ -121,7 +116,7 @@ export const LearnCards: FC = ({}) => {
             <p className="text-slate-300 text-lg lg:text-xl  font-normal">
               Here’s everything that’s covered in the course.
             </p>
-          </motion.article>
+          </article>
           <motion.section
             initial="hidden"
             whileInView="visible"
