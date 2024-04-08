@@ -4,7 +4,7 @@ import { Suspense } from "react";
 const NewVerificationPage = () => {
   return (
     <>
-      <Suspense fallback={<div>loading</div>}>
+      <Suspense fallback={<div className="text-white">loading</div>}>
         <NewVerificationForm />
       </Suspense>
     </>

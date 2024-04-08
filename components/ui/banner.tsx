@@ -6,7 +6,7 @@ import { FC, useContext } from "react";
 // > Font
 import { GeistSans } from "geist/font/sans";
 // > FramerMotion
-import { motion } from "framer-motion";
+import { Variants, motion } from "framer-motion";
 // > Next
 import Image from "next/image";
 // > Providers
@@ -27,15 +27,21 @@ export const Banner: FC<TBanner> = ({
   isActions,
 }) => {
   const { onOpen } = useContext(useModalContext);
-  const animation = {
-    hidden: {
-      y: 10,
+  // Animation
+  const Variants: Variants = {
+    offscreen: {
+      y: 50,
       opacity: 0,
     },
-    visible: (custom: number) => ({
+    onscreen: (custom: number) => ({
       y: 0,
       opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+      transition: {
+        delay: custom * 0.1,
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
     }),
   };
   return (
@@ -51,21 +57,21 @@ export const Banner: FC<TBanner> = ({
       <div className="container">
         <section>
           <motion.article
-            initial="hidden"
-            whileInView="visible"
+            initial="offscreen"
+            whileInView="onscreen"
             viewport={{ once: true }}
             className="relative z-20 text-center grid gap-2 max-w-[450px] m-auto"
           >
             <motion.h3
               custom={1}
-              variants={animation}
+              variants={Variants}
               className="text-violet font-medium sm:font-semibold"
             >
               {supTitle}
             </motion.h3>
             <motion.h2
               custom={2}
-              variants={animation}
+              variants={Variants}
               style={GeistSans.style}
               className="text-white text-2xl sm:text-4xl font-medium"
             >
@@ -73,13 +79,17 @@ export const Banner: FC<TBanner> = ({
             </motion.h2>
             <motion.p
               custom={3}
-              variants={animation}
+              variants={Variants}
               className="text-slate-300 text-md sm:text-lg"
             >
               {text}
             </motion.p>
             {isActions && (
-              <motion.div custom={4} variants={animation} className="mt-4">
+              <motion.div
+                custom={4}
+                variants={Variants}
+                className="mt-4 animate-bounce"
+              >
                 <Button
                   onClick={onOpen}
                   radius="full"

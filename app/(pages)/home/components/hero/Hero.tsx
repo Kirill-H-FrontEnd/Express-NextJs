@@ -8,12 +8,54 @@ import Link from "next/link";
 import s from "./styles/Hero.module.scss";
 // > NextUI
 import { Button, Snippet } from "@nextui-org/react";
-// > ScrollLink
-import { Link as ScrollLink } from "react-scroll";
 // > Font
 import { GeistSans } from "geist/font/sans";
-
+import { Link as ScrollLink } from "react-scroll";
+import { Variants, motion } from "framer-motion";
 export const Hero: FC = ({}) => {
+  // Animations
+  const opacityVariant: Variants = {
+    offscreen: {
+      opacity: 0,
+    },
+    onscreen: {
+      opacity: 1,
+      transition: {
+        delay: 0.1,
+        duration: 0.4,
+      },
+    },
+  };
+  const transformVariant: Variants = {
+    offscreen: {
+      opacity: 0,
+      y: 20,
+    },
+    onscreen: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.1,
+        duration: 0.4,
+      },
+    },
+  };
+  const Variants: Variants = {
+    offscreen: {
+      y: 30,
+      opacity: 0,
+    },
+    onscreen: (custom: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: custom * 0.1,
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    }),
+  };
   return (
     <section
       className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
@@ -27,11 +69,16 @@ export const Hero: FC = ({}) => {
         height={1000}
       />
       <div className="container">
-        <section
+        <motion.section
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
           className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
         >
           <article className={`${s.article} text-center select-text`}>
-            <h1
+            <motion.h1
+              variants={Variants}
+              custom={1}
               className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
             `}
             >
@@ -40,17 +87,25 @@ export const Hero: FC = ({}) => {
                 Progressive
               </span>{" "}
               JavaScript Framework
-            </h1>
+            </motion.h1>
 
-            <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
+            <motion.p
+              custom={2}
+              variants={Variants}
+              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal"
+            >
               Used by some of the world's largest companies, Protocol enables
               you to create{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
                 high-quality web applications
               </span>{" "}
               with the power of JavaScript.
-            </p>
-            <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3">
+            </motion.p>
+            <motion.div
+              custom={3}
+              variants={Variants}
+              className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3"
+            >
               <Button
                 as={Link}
                 href="/dashboard"
@@ -59,25 +114,16 @@ export const Hero: FC = ({}) => {
               >
                 get started
               </Button>
+
               <Button
                 className="shadow-lg rounded-full capitalize bg-white text-black hover:bg-slate-300 font-semibold px-0"
                 size={"md"}
               >
-                {/* <ScrollLink
-                  className="px-10"
-                  activeStyle={{
-                    backgroundColor: "#f1f5f9",
-                    color: "#2563EB",
-                  }}
-                  to={"learnCards"}
-                  spy={true}
-                  smooth={true}
-                  duration={800}
-                >
+                <Link className="px-10" href={""}>
                   Learn More
-                </ScrollLink> */}
+                </Link>
               </Button>
-            </div>
+            </motion.div>
             <Snippet
               disableTooltip
               symbol={`# ~`}
@@ -90,7 +136,7 @@ export const Hero: FC = ({}) => {
               npx create-protocol-app@lates
             </Snippet>
           </article>
-        </section>
+        </motion.section>
       </div>
       <div className="pointer-events-none ">
         <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">

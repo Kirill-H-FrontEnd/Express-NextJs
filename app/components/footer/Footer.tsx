@@ -158,7 +158,7 @@ export const Footer: FC = ({}) => {
                 <div className={`${s.actions} relative`}>
                   <Input
                     placeholder="example@gmail.com "
-                    className="bg-white border-none text-base"
+                    className="bg-white focus-visible:ring-0  text-base"
                   />
                   <Button
                     size="sm"

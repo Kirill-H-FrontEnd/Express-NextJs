@@ -102,7 +102,7 @@ export const LoginForm: FC = ({}) => {
             disabled={isPending}
             size={"lg"}
             type="submit"
-            className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black hover:shadow-lg transition-shadow
+            className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black hover:shadow-lg transition-shadow text-white
             "
           >
             Login

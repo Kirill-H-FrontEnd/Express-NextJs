@@ -20,16 +20,16 @@ export const Social: FC = ({}) => {
       <div className="grid grid-cols-2-auto gap-3">
         <Button
           size="lg"
-          className="hover:bg-red-50 active:bg-red-100"
-          variant={"outline"}
+          className="hover:bg-red-50 active:bg-red-100 bg-white"
+          variant={"default"}
           onClick={() => onClick("google")}
         >
           <FcGoogle size={22} />
         </Button>
         <Button
-          className="hover:bg-[#24292F]/10 active:bg-[#24292F]/20"
+          className="hover:bg-[#24292F]/10 active:bg-[#24292F]/20 bg-white"
           size="lg"
-          variant={"outline"}
+          variant={"default"}
           onClick={() => onClick("github")}
         >
           <FaGithub color="#24292F" size={22} />

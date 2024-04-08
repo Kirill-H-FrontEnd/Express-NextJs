@@ -12,11 +12,9 @@ import { RiErrorWarningLine } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa6";
 // > NextUi
 import { Button } from "@nextui-org/react";
-// > FramerMotion
-import { motion } from "framer-motion";
 // > Font
 import { GeistSans } from "geist/font/sans";
-
+import { Variants } from "framer-motion";
 export const LearnCards: FC = ({}) => {
   const DATA_CARDS = [
     {
@@ -93,13 +91,16 @@ export const LearnCards: FC = ({}) => {
     },
   ];
   // Animation
-  const animationCard = {
-    hidden: {
+  const cardVariants: Variants = {
+    offscreen: {
       opacity: 0,
     },
-    visible: (custom: number) => ({
+    onscreen: (custom: number) => ({
       opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
+      transition: {
+        delay: custom * 0.1,
+        duration: 0.6,
+      },
     }),
   };
   return (
@@ -117,15 +118,13 @@ export const LearnCards: FC = ({}) => {
               Here’s everything that’s covered in the course.
             </p>
           </article>
-          <motion.section
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className={`${s.cards} relative`}
-          >
+          <section className={`${s.cards} relative`}>
             {DATA_CARDS.map((card, i) => (
               <MCardWrapper
-                variants={animationCard}
+                initial="offscreen"
+                whileInView="onscreen"
+                viewport={{ once: true }}
+                variants={cardVariants}
                 custom={i}
                 href={card.href}
                 key={i}
@@ -134,7 +133,7 @@ export const LearnCards: FC = ({}) => {
                 text={card.text}
               />
             ))}
-          </motion.section>
+          </section>
 
           <div className={`${s.actions} text-center`}>
             <Button
