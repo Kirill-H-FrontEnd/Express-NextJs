@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="">
-      <body className={GeistMono.className}>
+      <body className={`${GeistMono.className} bg-black`}>
         <ThemeProvider>
           <NextUiProvider>
             <ModalProvider>

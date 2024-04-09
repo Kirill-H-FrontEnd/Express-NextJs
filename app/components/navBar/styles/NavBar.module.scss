@@ -1,4 +1,6 @@
 .navBar {
+	opacity: 0;
+	animation: NavbarAnimation 0.5s ease forwards 0.2s;
 	header {
 		padding-left: 0;
 		padding-right: 0;
@@ -37,5 +39,16 @@
 				}
 			}
 		}
+	}
+}
+// > KeyFrames
+@keyframes NavbarAnimation {
+	from {
+		opacity: 0;
+		transform: translateY(-64px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0px);
 	}
 }
