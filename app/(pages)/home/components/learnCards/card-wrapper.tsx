@@ -10,6 +10,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 // > Font
 import { GeistSans } from "geist/font/sans";
+import Image from "next/image";
 
 type TCardWrapper = {
   icon: string | any;
@@ -23,28 +24,20 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
       <Link
         ref={ref}
         href={href}
-        className={`${s.card} relative border-1 border-slate-300/20 rounded-2xl p-5 bg-purple-900/5 hover:border-white overflow-hidden`}
+        className={`${s.card} relative border-1 border-slate-300/20 rounded-2xl p-5 bg-black bg-[url('/dashboard/animBgDark.svg')] bg-no-repeat bg-center bg-cover hover:border-white  overflow-hidden `}
       >
-        <div className="relative z-20 grid grid-cols-2-auto justify-start gap-3 items-center mb-3">
-          <p className="w-[32px] h-[32px] relative bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium rounded-full">
-            <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white font-normal text-md">
-              {icon}
-            </span>
-          </p>
-          <h3
-            style={GeistSans.style}
-            className="text-white text-xl font-medium sm:font-semibold"
-          >
+        <div className="absolute z-[100] bottom-[20px] left-[20px] right-[20px] ">
+          <h5 style={GeistSans.style} className=" font-semibold">
             {title}
-          </h3>
+          </h5>
+          <p className="line-clamp-3 text-sm ">{text}</p>
         </div>
-        <p className="relative z-20 text-white line-clamp-2">{text}</p>
         <FiExternalLink
           className={`${s.iconLink} absolute top-2 right-2 text-slate-300/10 z-20`}
         />
-        {/* BG */}
-        <div className="pointer-events-none ">
-          <div className="absolute inset-0 rounded-2xl transition duration-300 bg-gradient-to-r from-[#151B2D] to-transparent [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
+        {/* /* BG */}
+        {/* <div className="pointer-events-none w-full">
+          <div className="absolute inset-0 rounded-2xl transition duration-300 bg-gradient-to-r from-[#151B2D] to-transparent [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50 z-10">
             <svg
               aria-hidden="true"
               className="absolute inset-x-[2px] inset-y-[-80%] h-[160%] w-full skew-y-[-18deg] fill-transparent stroke-[#131828]  text-purple-950/5 dark:fill-white/1 dark:stroke-white/2.5"
@@ -69,7 +62,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
               ></rect>
             </svg>
           </div>
-        </div>
+        </div> */}
       </Link>
     );
   }

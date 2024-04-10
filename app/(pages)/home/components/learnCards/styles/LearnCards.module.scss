@@ -2,19 +2,34 @@
 	.wrapper {
 		.cards {
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+			// grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+			grid-template-columns: 550px 1fr;
 			gap: 15px;
+			div {
+				&:nth-of-type(1) {
+					.card {
+						h5 {
+							font-size: 50px;
+							margin-bottom: 2px;
+						}
+					}
+				}
+				&:nth-of-type(2) {
+					.card {
+						h5 {
+							font-size: 20px;
+							margin-bottom: 5px;
+						}
+						height: 260px;
+					}
+				}
+			}
 			.card {
 				transition: all 0.4s ease;
 				&:hover {
 					transform: translate(-5px, -5px);
 					.iconLink {
 						color: white;
-					}
-					div {
-						p {
-							transition: all 0.4s ease;
-						}
 					}
 				}
 			}
@@ -25,6 +40,34 @@
 					svg {
 						transition: all 0.1s ease;
 						transform: translate(3px, 0px);
+					}
+				}
+			}
+		}
+	}
+}
+// > Media
+@media screen and (width <= 1105px) {
+	.learnCards {
+		.wrapper {
+			.cards {
+				grid-template-columns: auto;
+				div {
+					&:nth-of-type(1) {
+						.card {
+							height: 260px;
+							h5 {
+								font-size: 20px;
+							}
+						}
+					}
+					&:nth-of-type(2) {
+						grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+					}
+				}
+				.card {
+					&:hover {
+						transform: translate(0px, 0px);
 					}
 				}
 			}

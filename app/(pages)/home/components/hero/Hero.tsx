@@ -58,7 +58,7 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-screen bg-[url('/home/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
+      className={`${s.home} relative w-full h-screen bg-[url('/home/hero/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
     >
       {/* Background */}
       <Image

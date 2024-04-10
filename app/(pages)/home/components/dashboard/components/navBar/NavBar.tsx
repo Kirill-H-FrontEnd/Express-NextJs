@@ -189,30 +189,17 @@ export const NavBar: FC = ({}) => {
       ],
     },
   ];
-  useEffect(() => {
-    iconRefs[0].current?.playFromBeginning();
-    iconRefs[1].current?.playFromBeginning();
-    iconRefs[2].current?.playFromBeginning();
-    iconRefs[3].current?.playFromBeginning();
-    iconRefs[4].current?.playFromBeginning();
-  }, []);
+
   return (
     <nav
-      id="navbar"
-      className={`${s.navbar} bg-[#F6F7F9] dark:bg-[#121222] border-r-1 border-slate-300 dark:border-slate-700 z-[1000] w-[280px] transition-[width] overflow-hidden`}
+      id="navbarDash"
+      className={`${s.navbar} bg-[#F6F7F9] dark:bg-[#121222] border-x-1 border-b-1 border-slate-300 dark:border-slate-700 z-[100] w-[280px] transition-[width] overflow-hidden`}
     >
       <section className="relative z-10 h-full overflow-y-scroll pt-5 pb-10 px-[13px]">
         <ul className={``}>
-          <Accordion
-            className="grid gap-2 px-0"
-            selectionMode="multiple"
-            defaultExpandedKeys={["0", "1"]}
-          >
+          <Accordion className="grid gap-2 px-0">
             {DATA_LINKS_NAVBAR.map((item, i) => (
               <AccordionItem
-                onClick={() => {
-                  iconRefs[i].current?.playFromBeginning();
-                }}
                 startContent={item.icon}
                 classNames={{
                   base: "bg-[#fff] dark:bg-transparent dark:border-1 dark:border-slate-800 rounded-xl shadow-sm px-1",
@@ -221,7 +208,7 @@ export const NavBar: FC = ({}) => {
                     "dark:text-white",
                     "text-black",
                     "font-normal",
-                    "text-sm",
+                    "text-xs",
                     `${GeistSans.className}`,
                   ],
                   content: [
