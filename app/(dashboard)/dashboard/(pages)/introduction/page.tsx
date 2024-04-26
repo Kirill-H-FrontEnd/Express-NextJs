@@ -1,21 +1,8 @@
-"use client";
-import { FC } from "react";
-import s from "./styles/page.module.scss";
-import { ScrollShadow } from "@nextui-org/react";
-type TDashboardHomePage = {};
-// > ScrollLink
-import { Link as ScrollLink } from "react-scroll";
-import Link from "next/link";
+// > Components
 import { HeaderPage } from "../../components/ui/header-page";
 import ScrollShadowProvider from "@/app/providers/scrollShadowProvider";
 import { Aside } from "../../components/aside/Aside";
-
 const Introduction = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
   const DATA_ASIDE_LINKS = [
     { value: "Automatic Installation", href: "test1" },
     { value: "Manual Installation", href: "test2" },

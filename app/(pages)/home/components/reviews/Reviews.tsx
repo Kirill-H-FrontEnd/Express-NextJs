@@ -29,7 +29,7 @@ export const Reviews: FC = ({}) => {
       <Image
         src={"/home/gradientBg.svg"}
         alt="gradientBg"
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover z-0 pointer-events-none select-none "
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover xl:object-fill z-0 pointer-events-none select-none "
         width={1000}
         height={1000}
       />

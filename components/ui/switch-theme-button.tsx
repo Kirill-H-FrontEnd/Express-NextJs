@@ -1,20 +1,14 @@
 "use client";
 // > React
 import { FC, useContext } from "react";
-// > Styles
-import s from "./styles/switch-theme-button.module.scss";
 // > Icons
-import { RiMoonFill } from "react-icons/ri";
-import { IoIosSunny } from "react-icons/io";
 import { Moon } from "lucide-react";
 import { Sun } from "lucide-react";
 // > Providers
 import { useThemeProvider } from "@/app/providers/ThemeProvider";
 import { Tooltip } from "@nextui-org/react";
-type TSwitchThemeButton = {};
 
 export const SwitchThemeButton: FC = ({}) => {
-  // Switch Theme
   const { isSwitch, handleSwitchClick } = useContext(useThemeProvider);
   return (
     <Tooltip

@@ -9,8 +9,8 @@
     place-items: center;
 }
 .dot-spinner {
-    --uib-size: 2.8rem;
-    --uib-speed: 0.9s;
+    --uib-size: 2.4rem;
+    --uib-speed: 0.6s;
     --uib-color: #3b0764;
     position: relative;
     display: flex;
@@ -33,8 +33,8 @@
 
 .dot-spinner__dot::before {
     content: "";
-    height: 20%;
-    width: 20%;
+    height: 15%;
+    width: 15%;
     border-radius: 50%;
     background-color: var(--uib-color);
     transform: scale(0);

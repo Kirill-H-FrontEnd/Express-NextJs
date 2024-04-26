@@ -10,36 +10,10 @@ import s from "./styles/Hero.module.scss";
 import { Button, Snippet } from "@nextui-org/react";
 // > Font
 import { GeistSans } from "geist/font/sans";
-import { Link as ScrollLink } from "react-scroll";
+// > Framer Motion
 import { Variants, motion } from "framer-motion";
 export const Hero: FC = ({}) => {
   // Animations
-  const opacityVariant: Variants = {
-    offscreen: {
-      opacity: 0,
-    },
-    onscreen: {
-      opacity: 1,
-      transition: {
-        delay: 0.1,
-        duration: 0.4,
-      },
-    },
-  };
-  const transformVariant: Variants = {
-    offscreen: {
-      opacity: 0,
-      y: 20,
-    },
-    onscreen: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.1,
-        duration: 0.4,
-      },
-    },
-  };
   const Variants: Variants = {
     offscreen: {
       y: 30,
@@ -114,14 +88,11 @@ export const Hero: FC = ({}) => {
               >
                 get started
               </Button>
-
               <Button
-                className="shadow-lg rounded-full capitalize bg-white text-black hover:bg-slate-300 font-semibold px-0"
+                className="shadow-lg px-10 text-black rounded-full capitalize bg-white font-semibold"
                 size={"md"}
               >
-                <Link className="px-10" href={""}>
-                  Learn More
-                </Link>
+                Learn more
               </Button>
             </motion.div>
             <Snippet

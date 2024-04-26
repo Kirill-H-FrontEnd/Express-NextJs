@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(250, 251, 252); display: block; z-index: 1; position: relative; shape-rendering: auto;" width="1536" height="1024" preserveAspectRatio="xMidYMid" viewBox="0 0 1536 1024">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: rgb(13, 15, 20); display: block; z-index: 1; position: relative; shape-rendering: auto;" width="1536" height="1024" preserveAspectRatio="xMidYMid" viewBox="0 0 1536 1024">
 <g transform="translate(768,512) scale(1,1) translate(-768,-512)"><style type="text/css">
   @keyframes ld-speed-dash {
     0% { transform: translate(0,-1856.7942530375624px); }

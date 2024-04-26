@@ -1,22 +1,15 @@
-"use client";
-import { FC } from "react";
-import s from "./styles/page.module.scss";
-import { ScrollShadow } from "@nextui-org/react";
 type TDashboardHomePage = {};
-// > ScrollLink
-import { Link as ScrollLink } from "react-scroll";
-import Link from "next/link";
-
+// > Next
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+  title: "Protocol | Project Structure",
+  description: "Protocol is a web Framework",
+};
 import { Aside } from "../../components/aside/Aside";
 import { HeaderPage } from "../../components/ui/header-page";
 import ScrollShadowProvider from "@/app/providers/scrollShadowProvider";
 
 const ProjectStructure = () => {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-    });
-  };
   const DATA_ASIDE_LINKS = [
     { value: "Top-level folders", href: "test1" },
     { value: "Top-level files", href: "test2" },

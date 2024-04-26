@@ -1,58 +1,108 @@
 "use client";
-import { FC, useContext, useEffect, useRef } from "react";
+// > React
+import { FC } from "react";
+// > Styles
 import s from "./styles/Dashboard.module.scss";
 import "./styles/globalDash.scss";
+import Atropos from "atropos/react";
 // > Font
 import { GeistSans } from "geist/font/sans";
-import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
-import Link from "next/link";
-import { VscGithub } from "react-icons/vsc";
-import { IoLogoElectron, IoSearchOutline } from "react-icons/io5";
-import { Input } from "@/components/ui/input";
-import { Accordion, AccordionItem } from "@nextui-org/react";
-import { useThemeProvider } from "@/app/providers/ThemeProvider";
+// > Components
 import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
+// > Next
 import Image from "next/image";
+import { Aside } from "./components/aside/Aside";
+// > Framer Motion
+import { motion, Variants } from "framer-motion";
 export const Dashboard: FC = ({}) => {
-  const { isSwitch } = useContext(useThemeProvider);
-
+  const DATA_ASIDE_LINKS = [
+    { value: "Automatic Installation", href: "" },
+    { value: "Manual Installation", href: "" },
+    { value: "Creating directories", href: "" },
+    { value: "The app directory", href: "" },
+    { value: "The pages directory (optional)", href: "" },
+    { value: "The public folder (optional)", href: "" },
+    { value: "Run the Development Server", href: "" },
+    { value: "Next Steps", href: "" },
+  ];
+  // Animation
+  const Variants: Variants = {
+    offscreen: {
+      y: 30,
+      opacity: 0,
+    },
+    onscreen: (custom: number) => ({
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: custom * 0.1,
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    }),
+  };
   return (
     <section className={`${s.dashboard} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
-          <article className="grid gap-3 justify-center items-center text-center">
-            <h2
+          <motion.article
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true }}
+            className="grid gap-3 justify-center items-center text-center"
+          >
+            <motion.h2
+              variants={Variants}
+              custom={1}
               style={GeistSans.style}
               className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-t from-white via-purple-200 to-[#2D1445]"
             >
               Convenient documentation!
-            </h2>
-            <p className="text-slate-300 text-lg lg:text-xl  font-normal">
-              A modern documentation page will allow you to learn comfortably.
-            </p>
-          </article>
-          <section
-            id="dashboardWrapperDash"
-            className={`${s.dashboardPanel} overflow-hidden bg-white dark:bg-[url('/dashboard/animBgDark.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
-          >
-            <Header />
-            <NavBar />
-            <main
-              id="mainDash"
-              className="border-r-1 border-b-1 border-slate-700"
+            </motion.h2>
+            <motion.p
+              variants={Variants}
+              custom={2}
+              className="text-slate-300 text-lg lg:text-xl  font-normal"
             >
-              <div id="PageWrapperDash"></div>
-            </main>
-            {/* Background */}
-            <Image
-              src={"/home/gradientBg.svg"}
-              alt="gradientBg"
-              className="absolute top-0 right-0 w-full h-full object-cover z-0 pointer-events-none select-none hidden dark:block"
-              width={1000}
-              height={1000}
-            />
-          </section>
+              A modern documentation page will allow you to learn comfortably.
+            </motion.p>
+          </motion.article>
+          <Atropos
+            rotateTouch={false}
+            highlight={false}
+            shadow={true}
+            activeOffset={0}
+            rotateXMax={5}
+            rotateYMax={5}
+            className="bg-transparent"
+          >
+            <section
+              id="dashboardWrapperDash"
+              className={`${s.dashboardPanel}overflow-hidden bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
+            >
+              <Header />
+              <NavBar />
+              <main
+                id="mainDash"
+                className="border-r-1 border-b-1 border-slate-700 pl-5"
+              >
+                <div id="PageWrapperDash">
+                  <section></section>
+                  <Aside data={DATA_ASIDE_LINKS} />
+                </div>
+              </main>
+              {/* Background */}
+              <Image
+                src={"/home/gradientBg.svg"}
+                alt="gradientBg"
+                className="absolute top-0 right-0 w-full h-full object-cover z-0 pointer-events-none select-none block"
+                width={1000}
+                height={1000}
+              />
+            </section>
+          </Atropos>
         </section>
       </div>
     </section>

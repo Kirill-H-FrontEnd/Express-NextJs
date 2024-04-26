@@ -1,0 +1,41 @@
+.InfoModal {
+    z-index: 1000;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0px, 200px);
+    animation: InfoModal 0.5s ease forwards 2s;
+    section {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+// ! Media
+@media screen and (width <= 768px) {
+    .InfoModal {
+        section {
+            grid-template-columns: 1fr;
+        }
+        div {
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+// ! KeyFrames
+@keyframes InfoModal {
+    from {
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(0px, 100px);
+    }
+    to {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}

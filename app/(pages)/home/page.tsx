@@ -10,6 +10,7 @@ const HomePage = ({}) => {
       <Hero />
       <Dashboard />
       <LearnCards />
+      <Reviews />
       <Banner
         title="Do you want to be aware of all the updates?"
         supTitle="Our News"
@@ -17,7 +18,6 @@ const HomePage = ({}) => {
         btnValue="Subscribe"
         isActions
       />
-      <Reviews />
     </>
   );
 };

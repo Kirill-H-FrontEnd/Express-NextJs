@@ -1,0 +1,16 @@
+.notFound {
+	.wrapper {
+		.cards {
+			display: grid;
+			grid-template-columns: 500px;
+			justify-content: center;
+			margin-top: 20px;
+			a {
+				display: grid;
+				grid-template-columns: repeat(2, auto);
+				justify-content: start;
+				gap: 20px;
+			}
+		}
+	}
+}

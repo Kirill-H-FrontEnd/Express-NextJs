@@ -227,11 +227,15 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                       closeDelay={200}
                       offset={10}
                       size="sm"
-                      content="GitHub"
-                      placement="right-start"
+                      content="Dev.GitHub"
+                      placement="bottom"
                       classNames={{ content: "font-semibold" }}
                     >
-                      <Link href={"/"} className="ml-[16px]">
+                      <Link
+                        href={"https://github.com/Kirill-H-FrontEnd"}
+                        target="_blank"
+                        className="ml-[16px]"
+                      >
                         <VscGithub
                           className="text-slate-400 hover:text-slate-200 transition-colors"
                           size={22}
