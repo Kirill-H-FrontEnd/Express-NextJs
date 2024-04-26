@@ -22,11 +22,7 @@ export const InfoModal: FC = ({}) => {
     <>
       {isClose && (
         <section
-          className={`${
-            s.InfoModal
-          } w-full left-0 bottom-0 bg-white backdrop:blur-md fixed p-3 rounded-t-md shadow-md ${
-            pathName !== "/" ? "hidden" : ""
-          }`}
+          className={`${s.InfoModal} w-full left-0 bottom-0 bg-white backdrop:blur-md fixed p-3 rounded-t-md shadow-md `}
         >
           <section className="">
             <h5

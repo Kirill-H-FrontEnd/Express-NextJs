@@ -187,7 +187,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
               className={`${s.wrapper} grid grid-cols-2-auto justify-between`}
             >
               <Link
-                href={"/"}
+                href={"/home"}
                 className="grid grid-cols-2-auto items-center gap-1 justify-start hover:opacity-80 transition-opacity select-none"
               >
                 <IoLogoElectron

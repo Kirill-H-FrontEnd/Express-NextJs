@@ -80,7 +80,7 @@ export const Dashboard: FC = ({}) => {
           >
             <section
               id="dashboardWrapperDash"
-              className={`${s.dashboardPanel}overflow-hidden bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
+              className={`${s.dashboardPanel} overflow-hidden bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
             >
               <Header />
               <NavBar />

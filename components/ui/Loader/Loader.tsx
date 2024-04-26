@@ -22,11 +22,7 @@ export const Loader: FC = ({}) => {
   return (
     <>
       {isLoading ? (
-        <section
-          className={`loader  ${
-            pathName === "/" ? "bg-black" : "bg-white"
-          }  dark:bg-black`}
-        >
+        <section className={`loader  dark:bg-black`}>
           <div className="dot-spinner">
             <div className="dot-spinner__dot"></div>
             <div className="dot-spinner__dot"></div>

@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { PiDiamondsFourFill } from "react-icons/pi";
 // > Font
 import { GeistSans } from "geist/font/sans";
-import Link from "next/link";
 
 type TAside = {
   data: TAsideArray[];
