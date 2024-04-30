@@ -64,9 +64,7 @@ export const LearnCards: FC = ({}) => {
       opacity: 1,
       transition: {
         delay: custom * 0.1,
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8,
+        duration: 0.3,
       },
     }),
   };
