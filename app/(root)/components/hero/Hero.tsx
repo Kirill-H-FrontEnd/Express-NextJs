@@ -34,13 +34,13 @@ export const Hero: FC = ({}) => {
       className={`${s.home} relative w-full h-screen bg-[url('/home/hero/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
     >
       {/* Background */}
-      <Image
+      {/* <Image
         src={"/home/gradientBg.svg"}
         alt="gradientBg"
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover z-0 pointer-events-none select-none"
         width={1000}
         height={1000}
-      />
+      /> */}
       <div className="container">
         <motion.section
           initial="offscreen"
