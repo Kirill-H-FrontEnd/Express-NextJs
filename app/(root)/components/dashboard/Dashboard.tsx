@@ -38,6 +38,7 @@ export const Dashboard: FC = ({}) => {
       transition: {
         delay: custom * 0.1,
         duration: 0.3,
+        ease: "easeOut",
       },
     }),
   };
