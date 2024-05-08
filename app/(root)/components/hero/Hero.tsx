@@ -101,7 +101,7 @@ export const Hero: FC = ({}) => {
           </motion.section>
         </div>
       </div>
-      <div className="pointer-events-none ">
+      <div className="pointer-events-none hidden md:block">
         <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
           <svg
             aria-hidden="true"
