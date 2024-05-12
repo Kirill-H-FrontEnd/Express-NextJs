@@ -10,7 +10,10 @@ import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 // > Font
 import { GeistSans } from "geist/font/sans";
-
+// > Libs
+import { cn } from "@/lib/utils";
+import DotPattern from "@/components/magicui/bg/dot-pattern";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
 type TCardWrapper = {
   icon: string | any;
   title: string;
@@ -23,7 +26,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
       <Link
         ref={ref}
         href={href}
-        className={`${s.card} relative border-1 border-slate-700 rounded-2xl p-5 bg-black bg-[url('/home/learnCards/animBg.svg')] bg-no-repeat bg-center bg-cover hover:border-white  overflow-hidden `}
+        className={`${s.card} relative border-1 border-slate-700 bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
       >
         <div className="absolute z-[100] bottom-[20px] left-[20px] right-[20px] ">
           <h5 style={GeistSans.style} className=" font-semibold text-white">
@@ -35,33 +38,16 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
           className={`${s.iconLink} absolute top-2 right-2 text-slate-300/10 z-20`}
         />
         {/* /* BG */}
-        <div className="pointer-events-none w-full">
-          <div className="absolute inset-0 rounded-2xl transition duration-300 bg-gradient-to-r from-[#1C1733] to-transparent [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50 z-10">
-            <svg
-              aria-hidden="true"
-              className="absolute inset-x-[2px] inset-y-[-80%] h-[160%] w-full skew-y-[-18deg] fill-transparent stroke-[#1C1733]  text-purple-950/5 dark:fill-white/1 dark:stroke-white/2.5"
-            >
-              <defs>
-                <pattern
-                  id=":bg2"
-                  width="52"
-                  height="52"
-                  patternUnits="userSpaceOnUse"
-                  x="50%"
-                  y="16"
-                >
-                  <path d="M.5 56V.5H72" fill="none"></path>
-                </pattern>
-              </defs>
-              <rect
-                width="100%"
-                height="100%"
-                strokeWidth="0"
-                fill="url(#:bg2)"
-              ></rect>
-            </svg>
-          </div>
-        </div>
+        <GridPattern
+          width={40}
+          height={40}
+          x={-1}
+          y={-1}
+          strokeDasharray={"8 4"}
+          className={cn(
+            "[mask-image:radial-gradient(250px_circle_at_center,white,transparent)]"
+          )}
+        />
       </Link>
     );
   }

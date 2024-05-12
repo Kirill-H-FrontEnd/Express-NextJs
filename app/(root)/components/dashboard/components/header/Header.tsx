@@ -14,7 +14,7 @@ export const Header: FC = ({}) => {
   return (
     <header
       id="headerDash"
-      className="relative border-y-1 border-r-1 border-slate-700 bg-gradient-to-br from-black/30 to-[#36266C]/30 py-3 px-5 z-[200] w-full"
+      className="relative border-y-1 border-r-1 border-slate-700 bg-gradient-to-br from-black/30 to-[#36266C]/30 py-3 px-5 z-[10] w-full"
     >
       <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
         <div className="relative">

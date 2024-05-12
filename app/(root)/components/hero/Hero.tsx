@@ -11,6 +11,8 @@ import { Button, Snippet } from "@nextui-org/react";
 import { GeistSans } from "geist/font/sans";
 // > Framer Motion
 import { Variants, motion } from "framer-motion";
+import { cn } from "@/lib/utils";
+import DotPattern from "@/components/magicui/bg/dot-pattern";
 export const Hero: FC = ({}) => {
   // Animations
   const Variants: Variants = {
@@ -30,9 +32,9 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-screen bg-[url('/home/hero/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
+      className={`${s.home} relative w-full h-screen bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
     >
-      <div className="w-full h-screen bg-[url('/home/gradientBg.svg')] bg-no-repeat bg-center bg-cover">
+      <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover">
         <div className="container ">
           <motion.section
             initial="offscreen"
@@ -74,7 +76,7 @@ export const Hero: FC = ({}) => {
                 <Button
                   as={Link}
                   href="/dashboard"
-                  className="shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium"
+                  className="shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium "
                   size={"md"}
                 >
                   get started
@@ -101,43 +103,13 @@ export const Hero: FC = ({}) => {
           </motion.section>
         </div>
       </div>
-      <div className="pointer-events-none hidden md:block">
-        <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
-          <svg
-            aria-hidden="true"
-            className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-[#392870] stroke-[#392870] dark:fill-white/1 dark:stroke-white/2.5"
-          >
-            <defs>
-              <pattern
-                id=":bg1"
-                width="72"
-                height="56"
-                patternUnits="userSpaceOnUse"
-                x="50%"
-                y="16"
-              >
-                <path d="M.5 56V.5H72" fill="none"></path>
-              </pattern>
-            </defs>
-            <rect
-              width="100%"
-              height="100%"
-              strokeWidth="0"
-              fill="url(#:bg1)"
-            ></rect>
-            <svg x="50%" y="16" className="overflow-visible">
-              <rect strokeWidth="0" width="73" height="57" x="0" y="56"></rect>
-              <rect
-                strokeWidth="0"
-                width="73"
-                height="57"
-                x="72"
-                y="168"
-              ></rect>
-            </svg>
-          </svg>
-        </div>
-      </div>
+      <DotPattern
+        width={25}
+        height={25}
+        className={cn(
+          "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+        )}
+      />
     </section>
   );
 };

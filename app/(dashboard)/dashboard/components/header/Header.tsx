@@ -10,7 +10,6 @@ import {
   Avatar,
   Tooltip,
 } from "@nextui-org/react";
-
 // > Next
 import Link from "next/link";
 // > Font
@@ -19,11 +18,8 @@ import { GeistSans } from "geist/font/sans";
 import { Input } from "@/components/ui/input";
 // > Icons
 import { IoSearchOutline } from "react-icons/io5";
-import { IoLogoElectron } from "react-icons/io5";
-
 import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
 import { VscGithub } from "react-icons/vsc";
-
 export const Header: FC = async ({}) => {
   const session = await auth();
   const DATA_ACCOUNT_lINKS = [
@@ -38,7 +34,7 @@ export const Header: FC = async ({}) => {
       className="relative border-b-1 border-slate-300 dark:border-slate-700 bg-gradient-to-br from-[#F6F7F9] to-[#F6F7F9]  dark:from-black/30 dark:to-[#36266C]/30 py-3 px-5 z-[1000] w-full"
     >
       <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
-        <div className="relative">
+        <div className="relative rounded-full">
           <Input
             style={{ fontSize: "16px" }}
             size={50}

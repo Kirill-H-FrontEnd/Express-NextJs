@@ -10,6 +10,7 @@ import { GeistSans } from "geist/font/sans";
 // > Components
 import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
+import { BorderBeam } from "@/components/magicui/border-beam";
 // > Next
 import Image from "next/image";
 import { Aside } from "./components/aside/Aside";
@@ -79,7 +80,7 @@ export const Dashboard: FC = ({}) => {
           >
             <section
               id="dashboardWrapperDash"
-              className={`${s.dashboardPanel} overflow-hidden bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
+              className={`${s.dashboardPanel} overflow-hidden bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
             >
               <Header />
               <NavBar />
@@ -94,12 +95,13 @@ export const Dashboard: FC = ({}) => {
               </main>
               {/* Background */}
               <Image
-                src={"/home/gradientBg.svg"}
+                src={"/gradientBg.svg"}
                 alt="gradientBg"
                 className="absolute top-0 right-0 w-full h-full object-cover z-0 pointer-events-none select-none block"
                 width={1000}
                 height={1000}
               />
+              <BorderBeam size={200} duration={12} />
             </section>
           </Atropos>
         </section>

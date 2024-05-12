@@ -1,5 +1,5 @@
 "use client";
-import { FC, useRef, useEffect, useContext, useState } from "react";
+import { FC, useRef, useEffect, useContext } from "react";
 import s from "./styles/NavBar.module.scss";
 // > Next
 import { usePathname } from "next/navigation";
@@ -8,13 +8,12 @@ import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
 // > NextUi
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { Player } from "@lordicon/react";
 // > Data icons
+import { Player } from "@lordicon/react";
 import { ICON1, ICON2, ICON3, ICON4, ICON5 } from "./dataIcons";
 import { IoLogoElectron } from "react-icons/io5";
 // > Providers
 import { useThemeProvider } from "@/app/providers/ThemeProvider";
-
 export const NavBar: FC = ({}) => {
   const pathName = usePathname();
   const iconRefs = Array.from({ length: 5 }, () => useRef<Player>(null));
@@ -200,7 +199,7 @@ export const NavBar: FC = ({}) => {
   return (
     <nav
       id="navbar"
-      className={`${s.navbar} bg-gradient-to-bl from-[#F6F7F9] dark:from-black/30 dark:to-[#36266C]/30 to-[#F6F7F9] border-r-1 border-slate-300 dark:border-slate-700 z-[1000] w-[280px] transition-[width] overflow-hidden`}
+      className={`${s.navbar} bg-gradient-to-bl from-[#F6F7F9] dark:from-black/30 dark:to-[#36266C]/30 to-[#F6F7F9] border-r-1 border-slate-300 dark:border-slate-700 z-[1000] w-[280px] transition-[width] overflow-hidden `}
     >
       <section className="relative z-10 h-full overflow-y-scroll pt-5 pb-10 px-[13px]">
         <Link

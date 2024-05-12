@@ -126,7 +126,7 @@ export const NavBar: FC = ({}) => {
     <>
       <nav
         id="navbarDash"
-        className={`${s.navbar} bg-gradient-to-bl  from-black/30 to-[#36266C]/30  border-x-1 border-y-1 border-slate-700 z-[100] w-[280px] transition-[width] overflow-hidden`}
+        className={`${s.navbar} bg-gradient-to-bl  from-black/30 to-[#36266C]/30  border-x-1 border-y-1 border-slate-700 z-[10] w-[280px] transition-[width] overflow-hidden`}
       >
         <section className="relative z-10 h-full pt-5 pb-6 px-[13px] md:overflow-y-scroll">
           <Link

@@ -42,14 +42,14 @@ export const CardWrapper: FC = ({}) => {
           whileInView="visible"
           variants={animation}
           viewport={{ once: true }}
-          className={`${s.card} relative w-full h-full bg-[url('/home/reviews/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none p-5 `}
+          className={`${s.card} relative w-full h-full bg-[url('/home/reviews/AnimationCardBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none p-5 `}
           key={i}
         >
           <section className="relative z-20">
-            <p className="text-white">{card.value}</p>
+            <p className="text-white select-text">{card.value}</p>
             <div className="mt-5 ">
               <Image src={card.logo} width={150} height={150} alt="" />
-              <p className="text-slate-300 mt-2">{card.info}</p>
+              <p className="text-slate-300 mt-2 select-text">{card.info}</p>
             </div>
           </section>
           {/* BG */}

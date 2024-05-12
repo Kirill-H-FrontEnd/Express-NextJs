@@ -6,8 +6,8 @@ import { NavBar } from "./components/navBar/NavBar";
 // > Next
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Protocol | Introduction",
-  description: "Protocol is a web Framework",
+  title: "Dashboard | Introduction",
+  description: "This is the Introduction page.",
 };
 import Image from "next/image";
 import ThemeProvider from "@/app/providers/ThemeProvider";
@@ -17,7 +17,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <ThemeProvider>
         <div
           id="dashboardWrapper"
-          className="overflow-hidden bg-white dark:bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover relative"
+          className="overflow-hidden bg-white dark:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover relative"
         >
           <Header />
           <NavBar />
@@ -26,7 +26,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           </main>
           {/* Background */}
           <Image
-            src={"/home/gradientBg.svg"}
+            src={"/gradientBg.svg"}
             alt="gradientBg"
             className="absolute top-0 right-0 w-full h-full object-cover z-0 pointer-events-none select-none hidden dark:block"
             width={1000}

@@ -170,7 +170,7 @@ export const SubscribeModal: FC = ({}) => {
                   className="text-white w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black hover:shadow-lg transition-shadow
             "
                 >
-                  Login
+                  Subscribe
                 </Button>
               </form>
             </Form>

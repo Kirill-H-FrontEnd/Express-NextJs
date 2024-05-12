@@ -9,7 +9,6 @@ export default function Home() {
       <Hero />
       <Dashboard />
       <LearnCards />
-      <Reviews />
       <Banner
         title="Do you want to be aware of all the updates?"
         supTitle="Our News"
@@ -17,6 +16,7 @@ export default function Home() {
         btnValue="Subscribe"
         isActions
       />
+      <Reviews />
     </>
   );
 }
