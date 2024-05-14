@@ -51,7 +51,7 @@ export const Hero: FC = ({}) => {
             `}
               >
                 The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-purple-200 via-purple-600 to-[#2D1445] ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-t from-purple-200 via-purple-700 to-[#221B42] ">
                   Progressive
                 </span>{" "}
                 JavaScript Framework
