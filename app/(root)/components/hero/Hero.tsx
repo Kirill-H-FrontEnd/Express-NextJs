@@ -13,6 +13,7 @@ import { GeistSans } from "geist/font/sans";
 import { Variants, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 export const Hero: FC = ({}) => {
   // Animations
   const Variants: Variants = {
@@ -73,20 +74,21 @@ export const Hero: FC = ({}) => {
                 variants={Variants}
                 className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3"
               >
-                <Button
-                  as={Link}
-                  href="/dashboard"
-                  className="shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium "
-                  size={"md"}
-                >
-                  get started
-                </Button>
-                <Button
-                  className="shadow-lg px-10 text-black rounded-full capitalize bg-white font-semibold"
-                  size={"md"}
+                <Link href={"/dashboard"} className="h-[43px]">
+                  <ShimmerButton
+                    background="#241A3E"
+                    className="w-full shadow-2xl text-sm font-semibold h-[43px]"
+                  >
+                    Get Started
+                  </ShimmerButton>
+                </Link>
+
+                <ShimmerButton
+                  background="#fff"
+                  className="sm:w-[142px] h-[42px] text-sm text-black rounded-full capitalize font-semibold"
                 >
                   Learn more
-                </Button>
+                </ShimmerButton>
               </motion.div>
               <Snippet
                 disableTooltip

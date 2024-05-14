@@ -11,6 +11,8 @@ import { Variants, motion } from "framer-motion";
 import Image from "next/image";
 // > Providers
 import { useModalContext } from "@/app/providers/modalProvider";
+import ShimmerButton from "@/components/magicui/shimmer-button";
+import Link from "next/link";
 type TBanner = {
   title: string;
   supTitle: string;
@@ -87,15 +89,16 @@ export const Banner: FC<TBanner> = ({
               <motion.div
                 custom={4}
                 variants={Variants}
-                className="mt-4 animate-bounce"
+                className="mt-4 animate-bounce "
               >
-                <Button
-                  onClick={onOpen}
-                  radius="full"
-                  className=" sm:w-auto shadow-lg px-10 text-white rounded-full capitalize bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-normal"
-                >
-                  {btnValue}
-                </Button>
+                <span onClick={onOpen} className="h-[43px] inline-block">
+                  <ShimmerButton
+                    background="#241A3E"
+                    className=" shadow-2xl text-sm font-semibold h-[43px]"
+                  >
+                    Subscribe
+                  </ShimmerButton>
+                </span>
               </motion.div>
             )}
           </motion.article>
