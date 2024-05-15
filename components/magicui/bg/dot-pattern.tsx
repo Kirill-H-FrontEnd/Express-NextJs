@@ -49,7 +49,7 @@ export function DotPattern({
             cx={cy}
             cy={cy}
             r={cr}
-            className="md:animate-pulse"
+            className="animate-pulse"
           />
         </pattern>
       </defs>

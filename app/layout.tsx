@@ -35,8 +35,8 @@ export default function RootLayout({
             <Footer />
             <ButtonTop />
             <SubscribeModal />
+            <InfoModal />
           </ModalProvider>
-          <InfoModal />
         </NextUiProvider>
       </body>
     </html>

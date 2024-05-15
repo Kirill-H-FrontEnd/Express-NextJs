@@ -3,8 +3,11 @@ import { FC, useEffect, useState } from "react";
 import s from "./InfoModal.module.scss";
 // > NextUI
 import { Button } from "@nextui-org/react";
+// > Font
+import { GeistSans } from "geist/font/sans";
 // > Next
 import { usePathname } from "next/navigation";
+import { BorderBeam } from "@/components/magicui/border-beam";
 export const InfoModal: FC = ({}) => {
   const pathName = usePathname();
   const [isClose, setClose] = useState(true);
@@ -22,26 +25,32 @@ export const InfoModal: FC = ({}) => {
     <>
       {isClose && (
         <section
-          className={`${s.InfoModal} w-full left-0 bottom-0 bg-white backdrop:blur-md fixed p-3 rounded-t-md shadow-md `}
+          className={`${s.InfoModal} w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md border-1 border-slate-700`}
         >
-          <section className="">
+          <section className="relative z-[200]">
             <h5
-              className={`text-sm md:text-base font-normal text-black   leading-6`}
+              className={`text-[15px]  font-normal text-white leading-6 sm:text-balance`}
             >
-              <span className="text-violet font-bold">Attention!</span> This
-              website is a template for a web framework and is not used for
-              commercial purposes.
+              <span
+                style={GeistSans.style}
+                className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white text-lg font-medium"
+              >
+                Welcome!
+              </span>{" "}
+              This website is a template for a web framework and is not used for
+              commercial purposes.Thank you and enjoy watching!
             </h5>
             <div className="">
               <Button
                 onClick={() => handleClose(true)}
                 radius="full"
-                className="text-xs md:text-sm bg-black text-white font-medium mr-3 dark:bg-black_secondary "
+                className="text-xs md:text-sm bg-white text-black font-bold mr-3 dark:bg-black_secondary cursor-pointer w-full"
               >
                 Close
               </Button>
             </div>
           </section>
+          <BorderBeam size={70} duration={12} className="hidden sm:block" />
         </section>
       )}
     </>

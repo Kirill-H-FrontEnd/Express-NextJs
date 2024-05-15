@@ -178,7 +178,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           className={`${
             s.navBar
           } z-[2000] fixed shadow-md  bg-transparent py-1 ${
-            isMenuOpen ? "shadow-black/40 bg-black" : ""
+            isMenuOpen ? "shadow-black/40 bg-[#131126]" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
           isMenuOpen={isMenuOpen}
@@ -249,7 +249,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
             </section>
           </div>
           {/* ToggleMenu */}
-          <NavbarMenu className="bg-black/70 backdrop:blur-md pt-6 z-[1000]">
+          <NavbarMenu className="bg-black/60 backdrop:blur-md pt-6 z-[1000]">
             <Accordion showDivider={false} className="px-0 border-none">
               {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
                 <AccordionItem

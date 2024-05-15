@@ -13,6 +13,7 @@ import { GeistSans } from "geist/font/sans";
 import { Variants, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 export const Hero: FC = ({}) => {
   // Animations
@@ -77,7 +78,7 @@ export const Hero: FC = ({}) => {
                 <Link href={"/dashboard"} className="h-[43px]">
                   <ShimmerButton
                     background="#241A3E"
-                    className="w-full shadow-2xl text-sm font-semibold h-[43px]"
+                    className="w-full shadow-2xl text-sm font-medium h-[44px]"
                   >
                     Get Started
                   </ShimmerButton>
@@ -85,7 +86,7 @@ export const Hero: FC = ({}) => {
 
                 <ShimmerButton
                   background="#fff"
-                  className="sm:w-[142px] h-[42px] text-sm text-black rounded-full capitalize font-semibold"
+                  className="sm:w-[142px] h-[43px] text-sm text-black rounded-full capitalize font-semibold"
                 >
                   Learn more
                 </ShimmerButton>

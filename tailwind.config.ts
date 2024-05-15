@@ -83,14 +83,6 @@ const config = {
             "offset-distance": "100%",
           },
         },
-        ripple: {
-          "0%, 100%": {
-            transform: "translate(-50%, -50%) scale(1)",
-          },
-          "50%": {
-            transform: "translate(-50%, -50%) scale(0.9)",
-          },
-        },
         marquee: {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(calc(-100% - var(--gap)))" },
@@ -122,7 +114,6 @@ const config = {
         "accordion-up": "accordion-up 0.2s ease-out",
         "spin-slow": "spin 8s linear infinite",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-        ripple: "ripple 3400ms ease infinite",
         marquee: "marquee var(--duration) linear infinite",
       },
     },

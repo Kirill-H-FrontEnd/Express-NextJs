@@ -69,7 +69,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative w-64 cursor-pointer overflow-hidden rounded-xl p-4 bg-black/40"
+        "relative w-64 overflow-hidden rounded-xl p-4 bg-black/40 pointer-events-none select-none"
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -145,12 +145,12 @@ export const Reviews: FC = ({}) => {
         </section>
       </div>
       <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20 bg-transparent">
-        <Marquee pauseOnHover className="[--duration:30s]">
+        <Marquee pauseOnHover={false} className="[--duration:30s]">
           {firstRow.map((review) => (
             <ReviewCard key={review.username} {...review} />
           ))}
         </Marquee>
-        <Marquee reverse pauseOnHover className="[--duration:30s]">
+        <Marquee pauseOnHover={false} reverse className="[--duration:30s]">
           {secondRow.map((review) => (
             <ReviewCard key={review.username} {...review} />
           ))}
