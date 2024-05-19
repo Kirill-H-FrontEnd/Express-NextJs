@@ -36,6 +36,7 @@ export const Hero: FC = ({}) => {
     <section
       className={`${s.home} relative w-full h-screen bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
     >
+      <RadialGradient size={300} from="#362770" to="#0D0F14" />
       {/* <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover"> */}
       <div className="container ">
         <motion.section
