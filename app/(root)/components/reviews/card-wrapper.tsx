@@ -42,7 +42,7 @@ export const CardWrapper: FC = ({}) => {
           whileInView="visible"
           variants={animation}
           viewport={{ once: true }}
-          className={`${s.card} relative w-full h-full bg-[url('/home/reviews/AnimationCardBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none p-5 `}
+          className={`${s.card} relative w-full h-full bg-black/30 backdrop-blur-lg select-none p-5 `}
           key={i}
         >
           <section className="relative z-20">

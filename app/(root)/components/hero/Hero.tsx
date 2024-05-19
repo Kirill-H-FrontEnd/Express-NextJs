@@ -36,76 +36,76 @@ export const Hero: FC = ({}) => {
     <section
       className={`${s.home} relative w-full h-screen bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
     >
-      <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover">
-        <div className="container ">
-          <motion.section
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true }}
-            className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
-          >
-            <article className={`${s.article} text-center select-text`}>
-              <motion.h1
-                variants={Variants}
-                custom={1}
-                className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
+      {/* <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover"> */}
+      <div className="container ">
+        <motion.section
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true }}
+          className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
+        >
+          <article className={`${s.article} text-center select-text`}>
+            <motion.h1
+              variants={Variants}
+              custom={1}
+              className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
             `}
-              >
-                The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-purple-200 via-purple-700 to-[#221B42] ">
-                  Progressive
-                </span>{" "}
-                JavaScript Framework
-              </motion.h1>
+            >
+              The{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-t from-purple-200 via-purple-700 to-[#221B42] ">
+                Progressive
+              </span>{" "}
+              JavaScript Framework
+            </motion.h1>
 
-              <motion.p
-                custom={2}
-                variants={Variants}
-                className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal"
-              >
-                Used by some of the world's largest companies, Protocol enables
-                you to create{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
-                  high-quality web applications
-                </span>{" "}
-                with the power of JavaScript.
-              </motion.p>
-              <motion.div
-                custom={3}
-                variants={Variants}
-                className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3"
-              >
-                <Link href={"/dashboard"} className="h-[43px]">
-                  <ShimmerButton
-                    background="#241A3E"
-                    className="w-full shadow-2xl text-sm font-medium h-[44px]"
-                  >
-                    Get Started
-                  </ShimmerButton>
-                </Link>
-
+            <motion.p
+              custom={2}
+              variants={Variants}
+              className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal"
+            >
+              Used by some of the world's largest companies, Protocol enables
+              you to create{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
+                high-quality web applications
+              </span>{" "}
+              with the power of JavaScript.
+            </motion.p>
+            <motion.div
+              custom={3}
+              variants={Variants}
+              className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3"
+            >
+              <Link href={"/dashboard"} className="h-[43px]">
                 <ShimmerButton
-                  background="#fff"
-                  className="sm:w-[142px] h-[43px] text-sm text-black rounded-full capitalize font-semibold"
+                  background="#241A3E"
+                  className="w-full shadow-2xl text-sm font-medium h-[44px]"
                 >
-                  Learn more
+                  Get Started
                 </ShimmerButton>
-              </motion.div>
-              <Snippet
-                disableTooltip
-                symbol={`# ~`}
-                classNames={{
-                  base: "bg-transparent text-gray",
-                  pre: "font-medium text-sm",
-                }}
-                size="sm"
+              </Link>
+
+              <ShimmerButton
+                background="#fff"
+                className="sm:w-[142px] h-[43px] text-sm text-black rounded-full capitalize font-semibold"
               >
-                npx create-protocol-app@lates
-              </Snippet>
-            </article>
-          </motion.section>
-        </div>
+                Learn more
+              </ShimmerButton>
+            </motion.div>
+            <Snippet
+              disableTooltip
+              symbol={`# ~`}
+              classNames={{
+                base: "bg-transparent text-gray",
+                pre: "font-medium text-sm",
+              }}
+              size="sm"
+            >
+              npx create-protocol-app@lates
+            </Snippet>
+          </article>
+        </motion.section>
       </div>
+      {/* </div> */}
       <DotPattern
         width={25}
         height={25}
