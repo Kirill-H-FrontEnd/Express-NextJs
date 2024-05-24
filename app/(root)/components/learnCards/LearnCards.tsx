@@ -16,44 +16,10 @@ import { Button } from "@nextui-org/react";
 import { GeistSans } from "geist/font/sans";
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
+// > Data
+import { DATA_LEARN_CARDS } from "@/data/dataItems";
 export const LearnCards: FC = ({}) => {
-  const DATA_CARDS = {
-    section1: [
-      {
-        icon: <RiErrorWarningLine size={20} />,
-        href: "/dashboard",
-        title: "Introduction",
-        text: "Learn how to build a full-stack web application with the free, Protocol.js App Router Course.",
-      },
-    ],
-    section2: [
-      {
-        icon: "1",
-        href: "/dashboard/project-structure",
-        title: "Project Structure",
-        text: "This page provides an overview of the project structure of a Protocol.js application. It covers top-level files and folders, configuration files, and routing conventions within the app and pages directories.",
-      },
-      {
-        icon: "2",
-        href: "",
-        title: "Routing",
-        text: "The skeleton of every application is routing. This page will introduce you to the fundamental concepts of routing for the web and how to handle ",
-      },
-      {
-        icon: "1",
-        href: "/dashboard/data-fetching",
-        title: "Data Fetching",
-        text: "Make your React component async and await your data. Protocol.js supports both server and client data fetching.",
-      },
-      {
-        icon: "2",
-        href: "/dashboard/css-support",
-        title: "CSS Support",
-        text: "Style your application with your favorite tools, including support for CSS Modules, Tailwind CSS, and popular community libraries.",
-      },
-    ],
-  };
-  // Animation
+  // Variants animation
   const Variants: Variants = {
     offscreen: {
       y: 30,
@@ -70,13 +36,12 @@ export const LearnCards: FC = ({}) => {
     }),
   };
   return (
-    <section id="learnCards" className={`${s.learnCards} bg-black py-24`}>
+    <section className={`${s.learnCards} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <motion.article
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true }}
             className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center"
           >
             <motion.h2
@@ -95,31 +60,33 @@ export const LearnCards: FC = ({}) => {
               Here’s everything that’s covered in the course.
             </motion.p>
           </motion.article>
-          <section className={`${s.cards} relative`}>
+          <motion.section
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={Variants}
+            className={`${s.cards} relative`}
+          >
             <div className="grid">
-              {DATA_CARDS.section1.map((card, i) => (
+              {DATA_LEARN_CARDS.section1.map((card, i) => (
                 <CardWrapper
                   key={i}
                   href={card.href}
-                  icon={card.icon}
                   text={card.text}
                   title={card.title}
                 />
               ))}
             </div>
             <div className="grid grid-cols-2-auto gap-[15px]">
-              {DATA_CARDS.section2.map((card, i) => (
+              {DATA_LEARN_CARDS.section2.map((card, i) => (
                 <CardWrapper
                   key={i}
                   href={card.href}
-                  icon={card.icon}
                   text={card.text}
                   title={card.title}
                 />
               ))}
             </div>
-          </section>
-
+          </motion.section>
           <div className={`${s.actions} text-center`}>
             <Button
               as={Link}

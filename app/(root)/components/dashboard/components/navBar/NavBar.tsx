@@ -7,121 +7,11 @@ import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
 // > NextUi
 import { Accordion, AccordionItem } from "@nextui-org/react";
-
+// > Icons
 import { IoLogoElectron } from "react-icons/io5";
-
+// > Data
+import { DATA_DASHBOARD_LINKS_NAVBAR } from "@/data/dataItems";
 export const NavBar: FC = ({}) => {
-  const DATA_LINKS_NAVBAR = [
-    {
-      title: " Getting Started",
-
-      links: [
-        {
-          value: "Installation",
-        },
-        {
-          value: "  Project Structure",
-        },
-      ],
-    },
-    {
-      title: " Building Your Application",
-
-      links: [
-        {
-          value: "Routing",
-        },
-        {
-          value: "Data Fetching",
-        },
-        {
-          value: "Rendering",
-        },
-        {
-          value: "Caching",
-        },
-        {
-          value: "Styling",
-        },
-        {
-          value: "Optimizing",
-        },
-        {
-          value: "Configuring",
-        },
-        {
-          value: "Testing",
-        },
-        {
-          value: "Authentication",
-        },
-        {
-          value: "Deploying",
-        },
-        {
-          value: "Upgrading",
-        },
-      ],
-    },
-    {
-      title: "API Reference",
-
-      links: [
-        {
-          value: "Components",
-        },
-        {
-          value: "File Conventions",
-        },
-        {
-          value: "Functions",
-        },
-        {
-          value: "protocol.config.js Options",
-        },
-        {
-          value: "create-protocol-app",
-        },
-        {
-          value: "Edge Runtime",
-        },
-        {
-          value: "Protocol.js CLI",
-        },
-      ],
-    },
-    {
-      title: "Architecture",
-
-      links: [
-        {
-          value: "Accessibility",
-        },
-        {
-          value: "Fast Refresh",
-        },
-        {
-          value: "Protocol.js Compiler",
-        },
-        {
-          value: "Supported Browsers",
-        },
-        {
-          value: "Turbopack",
-        },
-      ],
-    },
-    {
-      title: "Community",
-
-      links: [
-        {
-          value: "Contribution Guide",
-        },
-      ],
-    },
-  ];
-
   return (
     <>
       <nav
@@ -141,12 +31,12 @@ export const NavBar: FC = ({}) => {
               Protocol
             </p>
           </Link>
-          <ul className={``}>
+          <ul>
             <Accordion
               defaultExpandedKeys={["0", "1"]}
               className="grid gap-2 px-0"
             >
-              {DATA_LINKS_NAVBAR.map((item, i) => (
+              {DATA_DASHBOARD_LINKS_NAVBAR.map((item, i) => (
                 <AccordionItem
                   classNames={{
                     base: " px-1",

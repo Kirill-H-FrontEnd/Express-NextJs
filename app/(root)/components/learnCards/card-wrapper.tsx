@@ -10,12 +10,11 @@ import { FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 // > Font
 import { GeistSans } from "geist/font/sans";
-// > Libs
+// > Utils
 import { cn } from "@/lib/utils";
-import DotPattern from "@/components/magicui/bg/dot-pattern";
+// > Components
 import GridPattern from "@/components/magicui/bg/grid-pattern";
 type TCardWrapper = {
-  icon: string | any;
   title: string;
   text: string;
   href: string;
@@ -26,7 +25,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
       <Link
         ref={ref}
         href={href}
-        className={`${s.card} relative border-1 border-slate-700 bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
+        className={`${s.card} relative border-1 border-slate-700  rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
       >
         <div className="absolute z-[100] bottom-[20px] left-[20px] right-[20px] ">
           <h5 style={GeistSans.style} className=" font-semibold text-white">

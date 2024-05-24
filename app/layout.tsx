@@ -8,12 +8,10 @@ import { GeistMono } from "geist/font/mono";
 // > Components
 import { NavBar } from "./components/navBar/NavBar";
 import { Footer } from "./components/footer/Footer";
-import { SubscribeModal } from "@/components/ui/modal";
 import { InfoModal } from "@/components/ui/Modals/Info/InfoModal";
 import { ButtonTop } from "@/components/ui/buttonTop/ButtonTop";
 // > NextUi
 import NextUiProvider from "./providers/nextUiProvider";
-import ModalProvider from "./providers/modalProvider";
 
 export const metadata: Metadata = {
   title: "Protocol | Home",
@@ -27,16 +25,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="">
-      <body className={`${GeistMono.className} bg-black`}>
+      <body className={`${GeistMono.className}  bg-black`}>
         <NextUiProvider>
-          <ModalProvider>
-            <NavBar />
-            <main>{children}</main>
-            <Footer />
-            <ButtonTop />
-            <SubscribeModal />
-            <InfoModal />
-          </ModalProvider>
+          <NavBar />
+          <main>{children}</main>
+          <Footer />
+          <ButtonTop />
+          <InfoModal />
         </NextUiProvider>
       </body>
     </html>

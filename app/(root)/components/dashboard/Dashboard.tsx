@@ -4,18 +4,18 @@ import { FC } from "react";
 // > Styles
 import s from "./styles/Dashboard.module.scss";
 import "./styles/globalDash.scss";
-import Atropos from "atropos/react";
 // > Font
 import { GeistSans } from "geist/font/sans";
 // > Components
 import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { Aside } from "./components/aside/Aside";
 // > Next
 import Image from "next/image";
-import { Aside } from "./components/aside/Aside";
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
+import Atropos from "atropos/react";
 export const Dashboard: FC = ({}) => {
   const DATA_ASIDE_LINKS = [
     { value: "Automatic Installation", href: "" },
@@ -27,7 +27,7 @@ export const Dashboard: FC = ({}) => {
     { value: "Run the Development Server", href: "" },
     { value: "Next Steps", href: "" },
   ];
-  // Animation
+  // Variants animations
   const Variants: Variants = {
     offscreen: {
       y: 30,
@@ -44,13 +44,12 @@ export const Dashboard: FC = ({}) => {
     }),
   };
   return (
-    <section className={`${s.dashboard} bg-black py-24`}>
+    <section id="dashboard" className={`${s.dashboard}  py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <motion.article
             initial="offscreen"
             whileInView="onscreen"
-            viewport={{ once: true }}
             className="grid gap-3 justify-center items-center text-center"
           >
             <motion.h2
@@ -78,7 +77,10 @@ export const Dashboard: FC = ({}) => {
             rotateYMax={5}
             className="bg-transparent"
           >
-            <section
+            <motion.section
+              initial="offscreen"
+              whileInView="onscreen"
+              variants={Variants}
               id="dashboardWrapperDash"
               className={`${s.dashboardPanel} overflow-hidden bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
             >
@@ -102,7 +104,7 @@ export const Dashboard: FC = ({}) => {
                 height={1000}
               />
               <BorderBeam size={200} duration={12} />
-            </section>
+            </motion.section>
           </Atropos>
         </section>
       </div>

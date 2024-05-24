@@ -1,109 +1,24 @@
 "use client";
+// > React
 import { FC } from "react";
+// > Styles
 import s from "./styles/Footer.module.scss";
+// > Next
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
 // > Font
 import { GeistSans } from "geist/font/sans";
-import { Input } from "@/components/ui/input";
-import { Button } from "@nextui-org/react";
+// > Data
+import { DATA_FOOTER_LINKS } from "@/data/dataItems";
+// > Components
+import ShimmerButton from "@/components/magicui/shimmer-button";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
   const pathName = usePathname();
   let hideFooter = pathName === "/";
-  const DATA_LINKS = [
-    {
-      title: "Resources",
-      links: [
-        {
-          value: "Docs",
-          href: "",
-        },
-        {
-          value: "Learn",
-          href: "",
-        },
-        {
-          value: "Showcase",
-          href: "",
-        },
-        {
-          value: "Blog",
-          href: "",
-        },
-        {
-          value: "Analytics",
-          href: "",
-        },
-        {
-          value: "Previews",
-          href: "",
-        },
-      ],
-    },
-    {
-      title: "More",
-      links: [
-        {
-          value: "Commerce",
-          href: "",
-        },
-        {
-          value: "Contact Sales",
-          href: "",
-        },
-        {
-          value: "GitHub",
-          href: "",
-        },
-        {
-          value: "Releases",
-          href: "",
-        },
-        {
-          value: "Telemetry",
-          href: "",
-        },
-      ],
-    },
-    {
-      title: "About ",
-      links: [
-        {
-          value: "DevWorkshop + studio",
-          href: "",
-        },
-        {
-          value: "Open Source Software",
-          href: "",
-        },
-        {
-          value: "GitHub",
-          href: "",
-        },
-        {
-          value: "Twitter",
-          href: "",
-        },
-      ],
-    },
-    {
-      title: "Legal ",
-      links: [
-        {
-          value: "Privacy Policy",
-          href: "",
-        },
-        {
-          value: "Cookie Preferences",
-          href: "",
-        },
-      ],
-    },
-  ];
   return (
     <>
       {hideFooter && (
@@ -124,7 +39,7 @@ export const Footer: FC = ({}) => {
                 </p>
               </Link>
               <nav className={`${s.nav} `}>
-                {DATA_LINKS.map((item, i) => (
+                {DATA_FOOTER_LINKS.map((item, i) => (
                   <li key={i}>
                     <h5 style={GeistSans.style} className="text-white mb-4">
                       {item.title}
@@ -156,16 +71,12 @@ export const Footer: FC = ({}) => {
                   studies.
                 </p>
                 <div className={`${s.actions} relative`}>
-                  <Input
-                    placeholder="example@gmail.com "
-                    className="bg-white focus-visible:ring-0  text-base"
-                  />
-                  <Button
-                    size="sm"
-                    className={`absolute text-white top-0 h-full right-[-1px] text-xs bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black font-medium`}
+                  <ShimmerButton
+                    background="#241A3E"
+                    className="w-full shadow-2xl text-sm font-medium h-[44px]"
                   >
-                    Subscribe!
-                  </Button>
+                    Subscription
+                  </ShimmerButton>
                 </div>
               </div>
             </section>

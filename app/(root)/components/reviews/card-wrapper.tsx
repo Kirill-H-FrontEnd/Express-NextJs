@@ -1,9 +1,11 @@
+// > React
 import { FC } from "react";
+// > Styles
 import s from "./styles/card-wrapper.module.scss";
+// > Next
 import Image from "next/image";
-// > FramerMotion
-import { motion } from "framer-motion";
 export const CardWrapper: FC = ({}) => {
+  // Dada cards
   const DATA_CARDS = [
     {
       value:
@@ -24,24 +26,10 @@ export const CardWrapper: FC = ({}) => {
       info: "Joe Doe, Frontend Developer",
     },
   ];
-  // Animation
-  const animation = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: (custom: number) => ({
-      opacity: 1,
-      transition: { delay: custom * 0.1, duration: 0.3, ease: "easeOut" },
-    }),
-  };
   return (
     <>
       {DATA_CARDS.map((card, i) => (
-        <motion.article
-          initial="hidden"
-          whileInView="visible"
-          variants={animation}
-          viewport={{ once: true }}
+        <article
           className={`${s.card} relative w-full h-full bg-black/30 backdrop-blur-lg select-none p-5 `}
           key={i}
         >
@@ -53,7 +41,7 @@ export const CardWrapper: FC = ({}) => {
             </div>
           </section>
           {/* BG */}
-        </motion.article>
+        </article>
       ))}
     </>
   );

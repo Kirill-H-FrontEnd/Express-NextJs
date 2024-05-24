@@ -25,9 +25,13 @@ export const InfoModal: FC = ({}) => {
     <>
       {isClose && (
         <section
-          className={`${s.InfoModal} w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md border-1 border-slate-700`}
+          className={`${
+            s.InfoModal
+          } w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md border-1 border-slate-700  ${
+            pathName === "/" ? "" : "hidden"
+          }`}
         >
-          <section className="relative z-[200]">
+          <section className="relative z-[150]">
             <h5
               className={`text-[15px]  font-normal text-white leading-6 sm:text-balance`}
             >
