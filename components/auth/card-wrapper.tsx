@@ -1,13 +1,6 @@
 // > React
 import { FC } from "react";
-// > Next
-import Link from "next/link";
-// > Icons
-import { IoLogoElectron } from "react-icons/io5";
-// > Utils
-import { cn } from "@/lib/utils";
 // > Components
-import GridPattern from "@/components/magicui/bg/grid-pattern";
 import {
   Card,
   CardContent,
@@ -16,9 +9,7 @@ import {
 } from "@/components/ui/card";
 import { Header } from "./header";
 import { Social } from "./social";
-import { BackButton } from "./back-button";
-// > Font
-import { GeistSans } from "geist/font/sans";
+import Link from "next/link";
 type TCardWrapper = {
   children: React.ReactNode;
   headerLabel: string;
@@ -37,21 +28,16 @@ export const CardWrapper: FC<TCardWrapper> = ({
   showSocial,
 }) => {
   return (
-    <section className="sm:w-[500px] relative z-10 bg-black  h-full grid place-items-center overflow-hidden ">
-      <Link
-        className="absolute top-4 left-6 grid grid-cols-2-auto items-center"
-        href={"/"}
-      >
-        <IoLogoElectron
-          color="#392975"
-          size={40}
-          className="animate-spin-slow"
-        />
-      </Link>
-      <Card className="w-full bg-transparent z-[20]">
+    <section className="z-[10] w-[340px] sm:w-[450px]">
+      <Card className=" bg-transparent z-[20]">
         <div className="">
           <CardHeader>
-            <Header title={headerTitle} label={headerLabel} />
+            <Header
+              title={headerTitle}
+              label={headerLabel}
+              backButtonLabel={backButtonLabel}
+              backButtonHref={backButtonHref}
+            />
           </CardHeader>
           <CardContent>{children}</CardContent>
           {showSocial && (
@@ -60,20 +46,19 @@ export const CardWrapper: FC<TCardWrapper> = ({
             </CardFooter>
           )}
           <CardFooter>
-            <BackButton label={backButtonLabel} href={backButtonHref} />
+            <p className="text-xs text-gray text-center leading-5">
+              By signing in, you agree to our{" "}
+              <Link className="text-purple-600" href={""}>
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link className="text-purple-600" href={""}>
+                Privacy.
+              </Link>
+            </p>
           </CardFooter>
         </div>
       </Card>
-      <GridPattern
-        width={40}
-        height={40}
-        x={-1}
-        y={-1}
-        strokeDasharray={"8 4"}
-        className={cn(
-          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
-        )}
-      />
     </section>
   );
 };

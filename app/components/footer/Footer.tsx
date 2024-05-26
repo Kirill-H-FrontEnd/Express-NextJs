@@ -39,6 +39,7 @@ import {
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SubscribeForm } from "./subscribe-form";
+import { Button } from "@nextui-org/react";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
@@ -110,20 +111,16 @@ export const Footer: FC = ({}) => {
                   {isDesktop ? (
                     <Dialog open={open} onOpenChange={setOpen}>
                       <DialogTrigger asChild>
-                        <ShimmerButton
-                          shimmerSize="0.08em"
-                          background="#241A3E"
-                          className="w-full shadow-2xl text-sm font-medium h-[42px]"
-                        >
+                        <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
                           Subscription
-                        </ShimmerButton>
+                        </Button>
                       </DialogTrigger>
                       <DialogContent className="w-[450px] bg-black bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none border-1 border-slate-800">
                         <DialogHeader>
                           <DialogTitle className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text">
                             Subscribe to our newsletter
                           </DialogTitle>
-                          <p className="text-gray text-center">
+                          <p className="text-gray text-center select-text">
                             Stay updated on new releases and features, guides,
                             and case studies.
                           </p>
@@ -137,12 +134,9 @@ export const Footer: FC = ({}) => {
                   ) : (
                     <Drawer open={open} onOpenChange={setOpen}>
                       <DrawerTrigger asChild>
-                        <ShimmerButton
-                          background="#241A3E"
-                          className="w-full shadow-2xl text-sm font-medium h-[44px] text-white"
-                        >
+                        <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white h-[42px] select-none">
                           Subscription
-                        </ShimmerButton>
+                        </Button>
                       </DrawerTrigger>
                       <DrawerContent className="bg-black px-6 pb-6 border-none shadow shadow-slate-300">
                         <DrawerHeader className="text-left">

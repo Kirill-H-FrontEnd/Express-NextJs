@@ -14,7 +14,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import ShimmerButton from "@/components/magicui/shimmer-button";
@@ -25,6 +25,7 @@ import { useState, useTransition } from "react";
 import { SubscribeSchema } from "@/schemas";
 // > Font
 import { GeistSans } from "geist/font/sans";
+import { Button } from "@nextui-org/react";
 export function SubscribeForm({ className }: React.ComponentProps<"form">) {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
@@ -91,15 +92,12 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
         </div>
         <FormError message={error} />
         <FormSuccess message={success} />
-        <ShimmerButton
-          shimmerSize="0.08em"
+        <Button
           type="submit"
-          disabled={isPending}
-          background="#241A3E"
-          className="w-full shadow-2xl text-sm font-medium h-[42px]"
+          className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white shadow-md shadow-zinc-950 h-[42px]"
         >
-          Get Started
-        </ShimmerButton>
+          Subscribe
+        </Button>
       </form>
       {/* /* BG */}
       <GridPattern

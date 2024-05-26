@@ -11,9 +11,9 @@ type TBackButton = {
 export const BackButton: FC<TBackButton> = ({ href, label }) => {
   return (
     <>
-      <div className="w-full text-center ">
+      <div className="w-full ">
         <Link
-          className="text-slate-500 hover:text-slate-700 hover:underline transition-colors text-sm"
+          className="text-white hover:text-white/60  transition-colors text-sm"
           href={href}
         >
           {label}

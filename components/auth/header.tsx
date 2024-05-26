@@ -1,24 +1,34 @@
 // > React
 import { FC } from "react";
+// > Components
+import { BackButton } from "./back-button";
 // > Font
 import { GeistSans } from "geist/font/sans";
 type THeader = {
   label: string;
   title: string;
+  backButtonLabel: string;
+  backButtonHref: string;
 };
 
-export const Header: FC<THeader> = ({ label, title }) => {
+export const Header: FC<THeader> = ({
+  label,
+  title,
+  backButtonLabel,
+  backButtonHref,
+}) => {
   return (
-    <div className="">
-      <h1 style={GeistSans.style} className="text-3xl font-bold text-white">
+    <div className="text-center">
+      <h1 style={GeistSans.style} className="text-2xl font-semibold text-white">
         {title}
       </h1>
-      <p
-        className="text-slate-500 mt-1 font-normal text-sm
+      <div
+        className="text-slate-500 mt-1 font-normal text-sm grid grid-cols-2-auto justify-center gap-2
       "
       >
-        {label}
-      </p>
+        <p> {label}</p>
+        <BackButton label={backButtonLabel} href={backButtonHref} />
+      </div>
     </div>
   );
 };

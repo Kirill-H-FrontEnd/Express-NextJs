@@ -11,6 +11,7 @@ import { GeistSans } from "geist/font/sans";
 // > Schemas
 import { LoginSchema } from "@/schemas/";
 // > Components
+import ShimmerButton from "@/components/magicui/shimmer-button";
 import {
   Form,
   FormControl,
@@ -21,11 +22,11 @@ import {
 } from "@/components/ui/form";
 import { CardWrapper } from "./card-wrapper";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { login } from "@/actions/login";
+import { Button } from "@nextui-org/react";
 
 export const LoginForm: FC = ({}) => {
   const [error, setError] = useState<string | undefined>("");
@@ -50,9 +51,9 @@ export const LoginForm: FC = ({}) => {
   };
   return (
     <CardWrapper
-      headerTitle="Welcome back!"
-      headerLabel="Please enter tour details to sign in."
-      backButtonLabel="Don`t have an account?"
+      headerTitle="Log in to Protocol"
+      headerLabel="Don't have an account?"
+      backButtonLabel="Sign Up."
       backButtonHref="/auth/register"
       showSocial
     >
@@ -69,7 +70,7 @@ export const LoginForm: FC = ({}) => {
                   </label>
                   <FormControl>
                     <Input
-                      className="py-5"
+                      className="py-5 bg-white focus:shadow-black"
                       disabled={isPending}
                       {...field}
                       placeholder="john.doe@example.com"
@@ -90,7 +91,7 @@ export const LoginForm: FC = ({}) => {
                   </label>
                   <FormControl>
                     <Input
-                      className="py-5"
+                      className="py-5 bg-white focus:shadow-black"
                       disabled={isPending}
                       {...field}
                       placeholder="Enter your password"
@@ -104,15 +105,14 @@ export const LoginForm: FC = ({}) => {
           </div>
           <FormError message={error} />
           <FormSuccess message={success} />
-          <Button
+          <ShimmerButton
             disabled={isPending}
-            size={"lg"}
             type="submit"
-            className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black hover:shadow-lg transition-shadow text-white
-            "
+            background="#241A3E"
+            className="w-full shadow-2xl text-sm font-medium h-[42px]"
           >
             Login
-          </Button>
+          </ShimmerButton>
         </form>
       </Form>
     </CardWrapper>

@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
+// > Font
+import { GeistSans } from "geist/font/sans";
 // > Schemas
 import { RegisterSchema } from "@/schemas/";
 // > Components
@@ -19,7 +21,7 @@ import {
 } from "@/components/ui/form";
 import { CardWrapper } from "./card-wrapper";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
@@ -51,9 +53,9 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
   };
   return (
     <CardWrapper
-      headerTitle="Create an account."
-      headerLabel="Please enter tour details to sign up."
-      backButtonLabel="Already have an account?"
+      headerTitle="Create a Protocol account"
+      headerLabel="Already have an account?"
+      backButtonLabel="Log In."
       backButtonHref="/auth/login"
       showSocial
     >
@@ -65,10 +67,12 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <label style={GeistSans.style} className="text-sm text-white">
+                    Name
+                  </label>
                   <FormControl>
                     <Input
-                      className="py-5"
+                      className="py-5 bg-white focus:shadow-black "
                       disabled={isPending}
                       {...field}
                       placeholder="Enter your name"
@@ -84,10 +88,12 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <label style={GeistSans.style} className="text-sm text-white">
+                    Email
+                  </label>
                   <FormControl>
                     <Input
-                      className="py-5"
+                      className="py-5 bg-white focus:shadow-black"
                       disabled={isPending}
                       {...field}
                       placeholder="john.doe@example.com"
@@ -103,10 +109,12 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <label style={GeistSans.style} className="text-sm text-white">
+                    Password
+                  </label>
                   <FormControl>
                     <Input
-                      className="py-5"
+                      className="py-5 bg-white focus:shadow-black"
                       disabled={isPending}
                       {...field}
                       placeholder="Create password"
@@ -120,14 +128,14 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
           </div>
           <FormError message={error} />
           <FormSuccess message={success} />
-          <Button
+          <ShimmerButton
             disabled={isPending}
-            size={"lg"}
             type="submit"
-            className="w-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-violet to-black hover:shadow-lg transition-shadow text-white"
+            background="#241A3E"
+            className="w-full shadow-2xl text-sm font-medium h-[42px]"
           >
             Create an account
-          </Button>
+          </ShimmerButton>
         </form>
       </Form>
     </CardWrapper>

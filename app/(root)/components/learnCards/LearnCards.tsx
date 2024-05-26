@@ -48,7 +48,7 @@ export const LearnCards: FC = ({}) => {
               custom={1}
               variants={Variants}
               style={GeistSans.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-t from-white via-purple-200 to-[#2D1445]"
+              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
             >
               What's in Protocol.js?
             </motion.h2>

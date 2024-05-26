@@ -56,9 +56,12 @@ export const Dashboard: FC = ({}) => {
               variants={Variants}
               custom={1}
               style={GeistSans.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-t from-white via-purple-200 to-[#2D1445]"
+              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
             >
-              Convenient documentation!
+              Convenient{" "}
+              <span className=" text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white">
+                documentation!
+              </span>
             </motion.h2>
             <motion.p
               variants={Variants}
