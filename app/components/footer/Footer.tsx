@@ -1,28 +1,64 @@
 "use client";
 // > React
-import { FC } from "react";
+import { FC, useState } from "react";
 // > Styles
+
 import s from "./styles/Footer.module.scss";
 // > Next
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
+import { MdKeyboardDoubleArrowUp } from "react-icons/md";
+import { IoClose } from "react-icons/io5";
 // > Font
 import { GeistSans } from "geist/font/sans";
 // > Data
 import { DATA_FOOTER_LINKS } from "@/data/dataItems";
 // > Components
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogClose,
+} from "@/components/ui/dialog";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
+// > Hooks
+import useMediaQuery from "@/hooks/useMediaQuery";
+import { SubscribeForm } from "./subscribe-form";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
   const pathName = usePathname();
   let hideFooter = pathName === "/";
+  // Subscribe form
+  const [open, setOpen] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <>
       {hideFooter && (
-        <footer className={`${s.footer} bg-black border-t-1 border-gray/20`}>
+        <footer
+          className={`${s.footer} relative bg-black border-t-1 border-gray/20`}
+        >
           <div className="container">
             <section className={`${s.wrapper} py-14 border-b-1 border-gray/20`}>
               <Link
@@ -71,22 +107,76 @@ export const Footer: FC = ({}) => {
                   studies.
                 </p>
                 <div className={`${s.actions} relative`}>
-                  <ShimmerButton
-                    background="#241A3E"
-                    className="w-full shadow-2xl text-sm font-medium h-[44px]"
-                  >
-                    Subscription
-                  </ShimmerButton>
+                  {isDesktop ? (
+                    <Dialog open={open} onOpenChange={setOpen}>
+                      <DialogTrigger asChild>
+                        <ShimmerButton
+                          shimmerSize="0.08em"
+                          background="#241A3E"
+                          className="w-full shadow-2xl text-sm font-medium h-[42px]"
+                        >
+                          Subscription
+                        </ShimmerButton>
+                      </DialogTrigger>
+                      <DialogContent className="w-[450px] bg-black bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none border-1 border-slate-800">
+                        <DialogHeader>
+                          <DialogTitle className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text">
+                            Subscribe to our newsletter
+                          </DialogTitle>
+                          <p className="text-gray text-center">
+                            Stay updated on new releases and features, guides,
+                            and case studies.
+                          </p>
+                        </DialogHeader>
+                        <SubscribeForm />
+                        <DialogClose className="absolute top-4 right-4 text-white z-[10]">
+                          <IoClose size={16} />
+                        </DialogClose>
+                      </DialogContent>
+                    </Dialog>
+                  ) : (
+                    <Drawer open={open} onOpenChange={setOpen}>
+                      <DrawerTrigger asChild>
+                        <ShimmerButton
+                          background="#241A3E"
+                          className="w-full shadow-2xl text-sm font-medium h-[44px] text-white"
+                        >
+                          Subscription
+                        </ShimmerButton>
+                      </DrawerTrigger>
+                      <DrawerContent className="bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none px-6 pb-6">
+                        <DrawerHeader className="text-left">
+                          <DrawerTitle className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-xl sm:text-2xl select-text">
+                            Subscribe to our{" "}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white">
+                              newsletter
+                            </span>
+                          </DrawerTitle>
+                          <p className="text-gray text-center text-sm sm:text-base">
+                            Stay updated on new releases and features, guides,
+                            and case studies.
+                          </p>
+                        </DrawerHeader>
+                        <SubscribeForm className="px-4" />
+                      </DrawerContent>
+                    </Drawer>
+                  )}
                 </div>
               </div>
             </section>
+            <section className={`${s.copyright} relative`}>
+              <div className="text-gray text-sm py-4 text-center">
+                Copyright © {getFullYear} Protocol.This is just a documentation
+                template for the framework.
+              </div>
+              <button
+                onClick={scrollToTop}
+                className="absolute top-1/2 right-0 -translate-y-1/2  border-2 border-gray p-1 rounded-full hidden lg:block"
+              >
+                <MdKeyboardDoubleArrowUp size={20} color="#4B5563" />
+              </button>
+            </section>
           </div>
-          <section className="">
-            <div className="text-gray text-sm py-3 text-center">
-              Copyright © {getFullYear} Protocol.This is just a documentation
-              template for the framework.
-            </div>
-          </section>
         </footer>
       )}
     </>

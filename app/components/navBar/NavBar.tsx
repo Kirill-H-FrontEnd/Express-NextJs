@@ -175,9 +175,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           disableAnimation
           ref={ref}
           maxWidth="full"
-          className={`${
-            s.navBar
-          } z-[100] fixed shadow-md  bg-transparent py-1 ${
+          className={`${s.navBar} z-[50] fixed shadow-md  bg-transparent py-1 ${
             isMenuOpen ? "shadow-black/40 bg-[#131126]" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}

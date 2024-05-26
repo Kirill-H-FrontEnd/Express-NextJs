@@ -4,7 +4,10 @@ import { FC } from "react";
 import Link from "next/link";
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
+// > Utils
+import { cn } from "@/lib/utils";
 // > Components
+import GridPattern from "@/components/magicui/bg/grid-pattern";
 import {
   Card,
   CardContent,
@@ -34,7 +37,7 @@ export const CardWrapper: FC<TCardWrapper> = ({
   showSocial,
 }) => {
   return (
-    <section className="sm:w-[500px] relative z-10 bg-white  h-full grid place-items-center overflow-hidden ">
+    <section className="sm:w-[500px] relative z-10 bg-black  h-full grid place-items-center overflow-hidden ">
       <Link
         className="absolute top-4 left-6 grid grid-cols-2-auto items-center"
         href={"/"}
@@ -45,7 +48,7 @@ export const CardWrapper: FC<TCardWrapper> = ({
           className="animate-spin-slow"
         />
       </Link>
-      <Card className="w-full bg-white">
+      <Card className="w-full bg-transparent z-[20]">
         <div className="">
           <CardHeader>
             <Header title={headerTitle} label={headerLabel} />
@@ -61,6 +64,16 @@ export const CardWrapper: FC<TCardWrapper> = ({
           </CardFooter>
         </div>
       </Card>
+      <GridPattern
+        width={40}
+        height={40}
+        x={-1}
+        y={-1}
+        strokeDasharray={"8 4"}
+        className={cn(
+          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]"
+        )}
+      />
     </section>
   );
 };

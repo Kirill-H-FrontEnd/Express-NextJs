@@ -27,7 +27,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
         href={href}
         className={`${s.card} relative border-1 border-slate-700  rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
       >
-        <div className="absolute z-[100] bottom-[20px] left-[20px] right-[20px] ">
+        <div className="absolute z-[45] bottom-[20px] left-[20px] right-[20px] ">
           <h5 style={GeistSans.style} className=" font-semibold text-white">
             {title}
           </h5>

@@ -6,7 +6,7 @@
 		.nav {
 			display: grid;
 			grid-template-columns: repeat(4, auto);
-			grid-gap: 80px;
+			grid-gap: 60px;
 			li {
 				div {
 					display: grid;
@@ -42,6 +42,18 @@
 							}
 						}
 					}
+				}
+			}
+		}
+	}
+	.copyright {
+		button {
+			transition: all 0.1s ease;
+			&:hover {
+				border-color: #fff;
+				svg {
+					fill: white;
+					transition: all 0.1s ease;
 				}
 			}
 		}

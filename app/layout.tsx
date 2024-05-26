@@ -9,7 +9,6 @@ import { GeistMono } from "geist/font/mono";
 import { NavBar } from "./components/navBar/NavBar";
 import { Footer } from "./components/footer/Footer";
 import { InfoModal } from "@/components/ui/Modals/Info/InfoModal";
-import { ButtonTop } from "@/components/ui/buttonTop/ButtonTop";
 // > NextUi
 import NextUiProvider from "./providers/nextUiProvider";
 
@@ -30,7 +29,6 @@ export default function RootLayout({
           <NavBar />
           <main>{children}</main>
           <Footer />
-          <ButtonTop />
           <InfoModal />
         </NextUiProvider>
       </body>

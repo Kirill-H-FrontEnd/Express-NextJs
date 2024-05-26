@@ -10,7 +10,7 @@ type THeader = {
 export const Header: FC<THeader> = ({ label, title }) => {
   return (
     <div className="">
-      <h1 style={GeistSans.style} className="text-3xl font-bold text-slate-900">
+      <h1 style={GeistSans.style} className="text-3xl font-bold text-white">
         {title}
       </h1>
       <p

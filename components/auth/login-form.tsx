@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
+// > Font
+import { GeistSans } from "geist/font/sans";
 // > Schemas
 import { LoginSchema } from "@/schemas/";
 // > Components
@@ -62,7 +64,9 @@ export const LoginForm: FC = ({}) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <label style={GeistSans.style} className="text-sm text-white">
+                    Email
+                  </label>
                   <FormControl>
                     <Input
                       className="py-5"
@@ -81,7 +85,9 @@ export const LoginForm: FC = ({}) => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <label style={GeistSans.style} className="text-sm text-white">
+                    Password
+                  </label>
                   <FormControl>
                     <Input
                       className="py-5"
