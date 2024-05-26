@@ -42,8 +42,11 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
   };
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full h-full ">
-        <div className="my-4 grid gap-3">
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="w-full h-full z-[10]"
+      >
+        <div className=" my-4 grid gap-3  ">
           <FormField
             name="name"
             render={({ field }) => (
