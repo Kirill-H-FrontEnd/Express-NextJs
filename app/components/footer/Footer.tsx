@@ -144,7 +144,7 @@ export const Footer: FC = ({}) => {
                           Subscription
                         </ShimmerButton>
                       </DrawerTrigger>
-                      <DrawerContent className="bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none px-6 pb-6">
+                      <DrawerContent className="bg-black px-6 pb-6 bg">
                         <DrawerHeader className="text-left">
                           <DrawerTitle className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-xl sm:text-2xl select-text">
                             Subscribe to our{" "}
