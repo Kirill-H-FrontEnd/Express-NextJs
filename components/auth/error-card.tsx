@@ -11,7 +11,7 @@ export const ErrorCard: FC = ({}) => {
         <Header
           label="Email already in use with different provider!"
           title="Oops!"
-        />
+        ></Header>
       </CardHeader>
       <CardFooter>
         <BackButton href="/auth/login" label="Back to login" />

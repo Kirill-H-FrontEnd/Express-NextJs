@@ -7,8 +7,8 @@ import { GeistSans } from "geist/font/sans";
 type THeader = {
   label: string;
   title: string;
-  backButtonLabel: string;
-  backButtonHref: string;
+  backButtonLabel?: string;
+  backButtonHref?: string;
 };
 
 export const Header: FC<THeader> = ({
