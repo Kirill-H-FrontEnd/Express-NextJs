@@ -45,9 +45,9 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="w-full h-full z-[10]"
+        className="w-full h-full relative z-[10]"
       >
-        <div className=" my-4 grid gap-3  ">
+        <div className=" my-4 grid gap-3  pb-3">
           <FormField
             name="name"
             render={({ field }) => (
@@ -57,7 +57,7 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
                 </label>
                 <FormControl>
                   <Input
-                    className="py-5 rounded-full text-white "
+                    className="py-5 rounded-full text-black bg-white"
                     disabled={isPending}
                     {...field}
                     placeholder="Enter your name:"
@@ -78,7 +78,7 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
                 </label>
                 <FormControl>
                   <Input
-                    className="py-5 rounded-full text-white "
+                    className="py-5 rounded-full text-black bg-white"
                     disabled={isPending}
                     {...field}
                     placeholder="Enter your email:"

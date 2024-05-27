@@ -117,7 +117,10 @@ export const Footer: FC = ({}) => {
                       </DialogTrigger>
                       <DialogContent className="w-[450px] bg-black bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none border-1 border-slate-800">
                         <DialogHeader>
-                          <DialogTitle className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text">
+                          <DialogTitle
+                            style={GeistSans.style}
+                            className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text"
+                          >
                             Subscribe to our newsletter
                           </DialogTitle>
                           <p className="text-gray text-center select-text">
@@ -134,24 +137,31 @@ export const Footer: FC = ({}) => {
                   ) : (
                     <Drawer open={open} onOpenChange={setOpen}>
                       <DrawerTrigger asChild>
-                        <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white h-[42px] select-none">
+                        <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white h-[42px] ">
                           Subscription
                         </Button>
                       </DrawerTrigger>
-                      <DrawerContent className="bg-black px-6 pb-6 border-none shadow shadow-slate-300">
-                        <DrawerHeader className="text-left">
-                          <DrawerTitle className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-xl sm:text-2xl select-text">
-                            Subscribe to our{" "}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white">
-                              newsletter
-                            </span>
-                          </DrawerTitle>
-                          <p className="text-gray text-center text-sm sm:text-base">
-                            Stay updated on new releases and features, guides,
-                            and case studies.
-                          </p>
-                        </DrawerHeader>
-                        <SubscribeForm className="px-4" />
+                      <DrawerContent className="bg-black px-6 pb-6 border-none shadow shadow-slate-300  ">
+                        <section className="h-screen grid place-items-center ">
+                          <div>
+                            <DrawerHeader className="text-left">
+                              <DrawerTitle
+                                style={GeistSans.style}
+                                className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text"
+                              >
+                                Subscribe to our{" "}
+                                <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white">
+                                  newsletter
+                                </span>
+                              </DrawerTitle>
+                              <p className="text-gray text-center ">
+                                Stay updated on new releases and features,
+                                guides, and case studies.
+                              </p>
+                            </DrawerHeader>
+                            <SubscribeForm className="px-4" />
+                          </div>
+                        </section>
                       </DrawerContent>
                     </Drawer>
                   )}
