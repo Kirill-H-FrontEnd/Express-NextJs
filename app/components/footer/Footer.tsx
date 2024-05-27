@@ -108,7 +108,34 @@ export const Footer: FC = ({}) => {
                   studies.
                 </p>
                 <div className={`${s.actions} relative`}>
-                  {isDesktop ? (
+                  <Dialog open={open} onOpenChange={setOpen}>
+                    <DialogTrigger asChild>
+                      <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
+                        Subscription
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 border-slate-800 grid place-items-center">
+                      <div>
+                        <DialogHeader>
+                          <DialogTitle
+                            style={GeistSans.style}
+                            className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text"
+                          >
+                            Subscribe to our newsletter
+                          </DialogTitle>
+                          <p className="text-gray text-center select-text">
+                            Stay updated on new releases and features, guides,
+                            and case studies.
+                          </p>
+                        </DialogHeader>
+                        <SubscribeForm />
+                        <DialogClose className="absolute top-4 right-4 text-white z-[10]">
+                          <IoClose size={16} />
+                        </DialogClose>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                  {/* {isDesktop ? (
                     <Dialog open={open} onOpenChange={setOpen}>
                       <DialogTrigger asChild>
                         <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
@@ -164,7 +191,7 @@ export const Footer: FC = ({}) => {
                         </section>
                       </DrawerContent>
                     </Drawer>
-                  )}
+                  )} */}
                 </div>
               </div>
             </section>
