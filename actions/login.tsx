@@ -1,7 +1,7 @@
 "use server";
 import * as z from "zod";
 import { signIn } from "@/auth";
-import { LoginSchema } from "@/schemas";
+import { LoginSchema, RegisterSchema } from "@/schemas";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
 import { AuthError } from "next-auth";
 import { generateVerificationToken } from "@/lib/tokens";
@@ -10,6 +10,7 @@ import { getUserByEmail } from "@/data/user";
 
 export const login = async (values: z.infer<typeof LoginSchema>) => {
   const validateFields = LoginSchema.safeParse(values);
+
   if (!validateFields.success) {
     return { error: "Invalid fields!" };
   }

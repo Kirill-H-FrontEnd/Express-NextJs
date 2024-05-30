@@ -6,6 +6,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
+// > Next
+import { useSearchParams } from "next/navigation";
 // > Font
 import { GeistSans } from "geist/font/sans";
 // > Schemas
@@ -17,7 +19,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { CardWrapper } from "./card-wrapper";
@@ -26,9 +27,13 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { login } from "@/actions/login";
-import { Button } from "@nextui-org/react";
 
 export const LoginForm: FC = ({}) => {
+  const searchParams = useSearchParams();
+  const urlError =
+    searchParams.get("error") === "OAuthAccountNotLinked"
+      ? "Email already in use with different provider!"
+      : "";
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
@@ -103,15 +108,17 @@ export const LoginForm: FC = ({}) => {
               )}
             />
           </div>
-          <FormError message={error} />
+          <FormError message={error || urlError} />
           <FormSuccess message={success} />
           <ShimmerButton
             disabled={isPending}
             type="submit"
             background="#241A3E"
-            className="w-full shadow-2xl text-sm font-medium h-[42px]"
+            className={`w-full shadow-2xl text-white text-sm font-medium h-[42px] ${
+              isPending ? "opacity-50 cursor-no-drop" : ""
+            }`}
           >
-            Login
+            {isPending ? "Sending..." : "Log in"}
           </ShimmerButton>
         </form>
       </Form>

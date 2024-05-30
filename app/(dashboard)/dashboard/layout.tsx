@@ -1,3 +1,4 @@
+import Image from "next/image";
 // > Globals styles
 import "./global.scss";
 // > Components
@@ -9,11 +10,14 @@ export const metadata: Metadata = {
   title: "Dashboard | Introduction",
   description: "This is the Introduction page.",
 };
-import Image from "next/image";
 import ThemeProvider from "@/app/providers/ThemeProvider";
-const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <>
+    <section>
       <ThemeProvider>
         <div
           id="dashboardWrapper"
@@ -34,7 +38,6 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           />
         </div>
       </ThemeProvider>
-    </>
+    </section>
   );
-};
-export default DashboardLayout;
+}

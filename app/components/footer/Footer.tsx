@@ -16,26 +16,14 @@ import { GeistSans } from "geist/font/sans";
 // > Data
 import { DATA_FOOTER_LINKS } from "@/data/dataItems";
 // > Components
-import ShimmerButton from "@/components/magicui/shimmer-button";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
 import { SubscribeForm } from "./subscribe-form";

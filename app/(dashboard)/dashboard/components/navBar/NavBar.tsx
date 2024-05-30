@@ -18,184 +18,178 @@ export const NavBar: FC = ({}) => {
   const pathName = usePathname();
   const iconRefs = Array.from({ length: 5 }, () => useRef<Player>(null));
   const { isSwitch } = useContext(useThemeProvider);
-  const DATA_LINKS_NAVBAR = [
-    {
-      title: " Getting Started",
-      icon: (
-        <Player
-          ref={iconRefs[0]}
-          icon={ICON1}
-          colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
-          size={22}
-        />
-      ),
-      links: [
-        {
-          value: "Installation",
-          href: "/dashboard",
-        },
-        {
-          value: "  Project Structure",
-          href: "/dashboard/project-structure",
-        },
-      ],
-    },
-    {
-      title: " Building Your Application",
-      icon: (
-        <Player
-          ref={iconRefs[1]}
-          icon={ICON2}
-          colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
-          size={22}
-        />
-      ),
-      links: [
-        {
-          value: "Routing",
-          href: "/dashboard/routing",
-        },
-        {
-          value: "Data Fetching",
-          href: "/",
-        },
-        {
-          value: "Rendering",
-          href: "/",
-        },
-        {
-          value: "Caching",
-          href: "/",
-        },
-        {
-          value: "Styling",
-          href: "/",
-        },
-        {
-          value: "Optimizing",
-          href: "/",
-        },
-        {
-          value: "Configuring",
-          href: "/",
-        },
-        {
-          value: "Testing",
-          href: "/",
-        },
-        {
-          value: "Authentication",
-          href: "/",
-        },
-        {
-          value: "Deploying",
-          href: "/",
-        },
-        {
-          value: "Upgrading",
-          href: "/",
-        },
-      ],
-    },
-    {
-      title: "API Reference",
-      icon: (
-        <Player
-          ref={iconRefs[2]}
-          icon={ICON3}
-          colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
-          size={22}
-        />
-      ),
-      links: [
-        {
-          value: "Components",
-          href: "/",
-        },
-        {
-          value: "File Conventions",
-          href: "/",
-        },
-        {
-          value: "Functions",
-          href: "/",
-        },
-        {
-          value: "protocol.config.js Options",
-          href: "/",
-        },
-        {
-          value: "create-protocol-app",
-          href: "/",
-        },
-        {
-          value: "Edge Runtime",
-          href: "/",
-        },
-        {
-          value: "Protocol.js CLI",
-          href: "/",
-        },
-      ],
-    },
-    {
-      title: "Architecture",
-      icon: (
-        <Player
-          ref={iconRefs[3]}
-          icon={ICON4}
-          colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
-          size={22}
-        />
-      ),
-      links: [
-        {
-          value: "Accessibility",
-          href: "/",
-        },
-        {
-          value: "Fast Refresh",
-          href: "/",
-        },
-        {
-          value: "Protocol.js Compiler",
-          href: "/",
-        },
-        {
-          value: "Supported Browsers",
-          href: "/",
-        },
-        {
-          value: "Turbopack",
-          href: "/",
-        },
-      ],
-    },
-    {
-      title: "Community",
-      icon: (
-        <Player
-          ref={iconRefs[4]}
-          icon={ICON5}
-          colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
-          size={22}
-        />
-      ),
-      links: [
-        {
-          value: "Contribution Guide",
-          href: "/",
-        },
-      ],
-    },
-  ];
-  useEffect(() => {
-    iconRefs[0].current?.playFromBeginning();
-    iconRefs[1].current?.playFromBeginning();
-    iconRefs[2].current?.playFromBeginning();
-    iconRefs[3].current?.playFromBeginning();
-    iconRefs[4].current?.playFromBeginning();
-  }, []);
+  // const DATA_LINKS_NAVBAR = [
+  //   {
+  //     title: " Getting Started",
+  //     icon: (
+  //       <Player
+  //         ref={iconRefs[0]}
+  //         icon={ICON1}
+  //         colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
+  //         size={22}
+  //       />
+  //     ),
+  //     links: [
+  //       {
+  //         value: "Installation",
+  //         href: "/dashboard",
+  //       },
+  //       {
+  //         value: "  Project Structure",
+  //         href: "/dashboard/project-structure",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: " Building Your Application",
+  //     icon: (
+  //       <Player
+  //         ref={iconRefs[1]}
+  //         icon={ICON2}
+  //         colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
+  //         size={22}
+  //       />
+  //     ),
+  //     links: [
+  //       {
+  //         value: "Routing",
+  //         href: "/dashboard/routing",
+  //       },
+  //       {
+  //         value: "Data Fetching",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Rendering",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Caching",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Styling",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Optimizing",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Configuring",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Testing",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Authentication",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Deploying",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Upgrading",
+  //         href: "/",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "API Reference",
+  //     icon: (
+  //       <Player
+  //         ref={iconRefs[2]}
+  //         icon={ICON3}
+  //         colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
+  //         size={22}
+  //       />
+  //     ),
+  //     links: [
+  //       {
+  //         value: "Components",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "File Conventions",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Functions",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "protocol.config.js Options",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "create-protocol-app",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Edge Runtime",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Protocol.js CLI",
+  //         href: "/",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Architecture",
+  //     icon: (
+  //       <Player
+  //         ref={iconRefs[3]}
+  //         icon={ICON4}
+  //         colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
+  //         size={22}
+  //       />
+  //     ),
+  //     links: [
+  //       {
+  //         value: "Accessibility",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Fast Refresh",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Protocol.js Compiler",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Supported Browsers",
+  //         href: "/",
+  //       },
+  //       {
+  //         value: "Turbopack",
+  //         href: "/",
+  //       },
+  //     ],
+  //   },
+  //   {
+  //     title: "Community",
+  //     icon: (
+  //       <Player
+  //         ref={iconRefs[4]}
+  //         icon={ICON5}
+  //         colorize={`${isSwitch ? "#fff" : "#0D0F14"}`}
+  //         size={22}
+  //       />
+  //     ),
+  //     links: [
+  //       {
+  //         value: "Contribution Guide",
+  //         href: "/",
+  //       },
+  //     ],
+  //   },
+  // ];
+
   return (
     <nav
       id="navbar"
@@ -217,16 +211,16 @@ export const NavBar: FC = ({}) => {
           </p>
         </Link>
         <ul className={``}>
-          <Accordion
+          {/* <Accordion
             className="grid gap-2 px-0"
             selectionMode="multiple"
             defaultExpandedKeys={["0", "1"]}
           >
             {DATA_LINKS_NAVBAR.map((item, i) => (
               <AccordionItem
-                onClick={() => {
-                  iconRefs[i].current?.playFromBeginning();
-                }}
+                // onClick={() => {
+                //   iconRefs[i].current?.playFromBeginning();
+                // }}
                 startContent={item.icon}
                 classNames={{
                   base: " px-1",
@@ -266,7 +260,7 @@ export const NavBar: FC = ({}) => {
                 ))}
               </AccordionItem>
             ))}
-          </Accordion>
+          </Accordion> */}
         </ul>
       </section>
     </nav>

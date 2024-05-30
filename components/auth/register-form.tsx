@@ -132,9 +132,11 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
             disabled={isPending}
             type="submit"
             background="#241A3E"
-            className="w-full shadow-2xl text-sm font-medium h-[42px]"
+            className={`w-full shadow-2xl text-white text-sm font-medium h-[42px] ${
+              isPending ? "opacity-50 cursor-no-drop" : ""
+            }`}
           >
-            Create an account
+            {isPending ? "Sending..." : "Register"}
           </ShimmerButton>
         </form>
       </Form>

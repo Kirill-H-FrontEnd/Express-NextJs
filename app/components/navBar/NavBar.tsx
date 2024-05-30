@@ -1,9 +1,9 @@
 "use client";
 // > React
 import { FC, useEffect, useState, forwardRef } from "react";
-
 // > Next
 import { usePathname } from "next/navigation";
+// > Auth
 import Link from "next/link";
 // > Styles
 import s from "./styles/NavBar.module.scss";
@@ -24,6 +24,7 @@ import { VscGithub } from "react-icons/vsc";
 export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
   const pathName = usePathname();
+
   let hideNavigation = pathName === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // SetScroll

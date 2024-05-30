@@ -1,5 +1,5 @@
 "use client";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { TAsideArray } from "@/types";
 // > Next
 import { usePathname } from "next/navigation";
