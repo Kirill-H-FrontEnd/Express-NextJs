@@ -11,7 +11,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className="relative w-full h-screen overflow-hidden ">
-        <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover grid place-items-center">
+        <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover grid place-items-center grid-rows-[100vh]">
           {children}
         </div>
         <DotPattern

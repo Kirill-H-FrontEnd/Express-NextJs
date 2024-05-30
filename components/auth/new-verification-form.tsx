@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { FC, useCallback, useEffect, useState } from "react";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
+import { CardWrapper } from "./card-wrapper";
 type TNewVerificationForm = {};
 
 export const NewVerificationForm: FC = ({}) => {
@@ -13,6 +14,8 @@ export const NewVerificationForm: FC = ({}) => {
   const token = searchParams.get("token");
 
   const onSubmit = useCallback(() => {
+    if (success || error) return;
+
     if (!token) {
       setError("Missing token!");
       return;
@@ -23,23 +26,33 @@ export const NewVerificationForm: FC = ({}) => {
         setSuccess(data.success);
         setError(data.error);
       })
-      .catch((e) => {
+      .catch(() => {
         setError("Something went wrong!");
       });
-  }, [token]);
+  }, [token, success, error]);
+
   useEffect(() => {
     onSubmit();
   }, [onSubmit]);
 
   return (
-    <section className={""}>
-      <div className="container">
-        <section>
-          {!success && !error && <h1>loading</h1>}
-          <FormError message={error} />
-          <FormSuccess message={success} />
+    <>
+      <CardWrapper
+        headerTitle="Verification "
+        headerLabel="Confirm your verification"
+        backButtonLabel="Back to login."
+        backButtonHref="/auth/login"
+      >
+        <section className={""}>
+          <div className="container">
+            <section>
+              {!success && !error && <h1>loading</h1>}
+              {!success && <FormError message={error} />}
+              <FormSuccess message={success} />
+            </section>
+          </div>
         </section>
-      </div>
-    </section>
+      </CardWrapper>
+    </>
   );
 };
