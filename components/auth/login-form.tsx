@@ -21,6 +21,13 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
+import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp";
 import { CardWrapper } from "./card-wrapper";
 import { Input } from "@/components/ui/input";
 import { FormError } from "@/components/form-error";
@@ -65,40 +72,67 @@ export const LoginForm: FC = ({}) => {
             setShowTwoFactor(true);
           }
         })
-        .catch(() => setError("Something went wrong"));
+        .catch(() => "");
     });
   };
   return (
     <CardWrapper
-      headerTitle="Log in to Protocol"
-      headerLabel="Don't have an account?"
+      headerTitle={`${
+        showTwoFactor ? "Enter your OTP code" : "Log in to Protocol"
+      }`}
+      headerLabel={`${
+        showTwoFactor
+          ? "We sent OTP code to your email."
+          : "Don`t have an account?"
+      }`}
       backButtonLabel="Sign Up."
       backButtonHref="/auth/register"
       showSocial
+      showPrivacy
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="my-4 grid gap-3">
+          <div
+            className={`my-4 grid gap-3 ${
+              showTwoFactor ? "justify-center" : ""
+            }`}
+          >
             {showTwoFactor && (
               <>
                 <FormField
                   control={form.control}
                   name="code"
                   render={({ field }) => (
-                    <FormItem>
-                      <label
-                        style={GeistSans.style}
-                        className="text-sm text-white"
-                      >
-                        Two Factor Code
-                      </label>
+                    <FormItem className="justify-center text-center">
                       <FormControl>
-                        <Input
+                        <InputOTP
+                          {...field}
+                          maxLength={6}
+                          pattern={REGEXP_ONLY_DIGITS_AND_CHARS}
+                        >
+                          <InputOTPGroup>
+                            <InputOTPSlot index={0} />
+                            <InputOTPSlot index={1} />
+                          </InputOTPGroup>
+                          <InputOTPSeparator />
+                          <InputOTPGroup>
+                            <InputOTPSlot index={2} />
+                            <InputOTPSlot index={3} />
+                          </InputOTPGroup>
+                          <InputOTPSeparator />
+                          <InputOTPGroup>
+                            <InputOTPSlot index={4} />
+                            <InputOTPSlot index={5} />
+                          </InputOTPGroup>
+                        </InputOTP>
+
+                        {/* <Input
                           className="py-5 bg-white focus:shadow-black"
                           disabled={isPending}
                           {...field}
                           placeholder="Enter your code"
-                        />
+                          type="text"
+                        /> */}
                       </FormControl>
                       <FormMessage />
                     </FormItem>

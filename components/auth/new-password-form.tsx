@@ -3,7 +3,7 @@
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 // > React
-import { FC, use, useState } from "react";
+import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 // > Font
@@ -52,7 +52,7 @@ export const NewPasswordForm: FC = ({}) => {
   return (
     <CardWrapper
       headerTitle="Change password"
-      headerLabel="Don't have an account?"
+      headerLabel="Your are ready?"
       backButtonLabel="Log in."
       backButtonHref="/auth/login"
     >
@@ -65,7 +65,7 @@ export const NewPasswordForm: FC = ({}) => {
               render={({ field }) => (
                 <FormItem>
                   <label style={GeistSans.style} className="text-sm text-white">
-                    Password
+                    Create new password
                   </label>
                   <FormControl>
                     <Input

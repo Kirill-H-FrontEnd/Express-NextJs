@@ -2,8 +2,6 @@
 import { FC } from "react";
 // > Styles
 import s from "./styles/Reviews.module.scss";
-// > Utils
-import { cn } from "@/lib/utils";
 // > NextUi
 import { Button } from "@nextui-org/react";
 // > Next
@@ -12,11 +10,6 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 // > Components
 import { CardWrapper } from "./card-wrapper";
-import Marquee from "@/components/magicui/marquee";
-// > Data
-import { DATA_REVIEWS_CARDS } from "@/data/dataItems";
-const firstRow = DATA_REVIEWS_CARDS.slice(0, DATA_REVIEWS_CARDS.length / 2);
-const secondRow = DATA_REVIEWS_CARDS.slice(DATA_REVIEWS_CARDS.length / 2);
 
 export const Reviews: FC = ({}) => {
   // Variants animation
@@ -86,48 +79,6 @@ export const Reviews: FC = ({}) => {
           </motion.section>
         </section>
       </div>
-      <div className="relative flex h-full w-full flex-col items-center justify-center overflow-hidden py-20 bg-transparent">
-        <Marquee pauseOnHover={false} className="[--duration:30s]">
-          {firstRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-        <Marquee pauseOnHover={false} reverse className="[--duration:30s]">
-          {secondRow.map((review) => (
-            <ReviewCard key={review.username} {...review} />
-          ))}
-        </Marquee>
-      </div>
     </section>
-  );
-};
-const ReviewCard = ({
-  img,
-  name,
-  username,
-  body,
-}: {
-  img: string;
-  name: string;
-  username: string;
-  body: string;
-}) => {
-  return (
-    <figure
-      className={cn(
-        "relative w-64 overflow-hidden rounded-xl p-4 bg-black/10  pointer-events-none select-none"
-      )}
-    >
-      <div className="flex flex-row items-center gap-2">
-        <img className="rounded-full" width="32" height="32" alt="" src={img} />
-        <div className="flex flex-col">
-          <figcaption className="text-sm font-medium text-white">
-            {name}
-          </figcaption>
-          <p className="text-xs font-medium text-slate-300">{username}</p>
-        </div>
-      </div>
-      <blockquote className="mt-2 text-sm text-slate-300">{body}</blockquote>
-    </figure>
   );
 };

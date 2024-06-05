@@ -173,6 +173,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
     <>
       {hideNavigation && (
         <Navbar
+          shouldHideOnScroll
           disableAnimation
           ref={ref}
           maxWidth="full"

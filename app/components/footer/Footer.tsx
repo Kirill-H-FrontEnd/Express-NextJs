@@ -118,7 +118,7 @@ export const Footer: FC = ({}) => {
                         </DialogHeader>
                         <SubscribeForm />
                         <DialogClose className="absolute top-4 right-4 text-white z-[10]">
-                          <IoClose size={16} />
+                          <IoClose size={18} />
                         </DialogClose>
                       </div>
                     </DialogContent>

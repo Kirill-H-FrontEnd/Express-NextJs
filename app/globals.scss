@@ -75,6 +75,9 @@
   }
 }
 html {
+  input:focus {
+    outline: none;
+  }
   * {
     li {
       list-style: none;

@@ -5,6 +5,7 @@ import { FC, useCallback, useEffect, useState } from "react";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { CardWrapper } from "./card-wrapper";
+import { Spinner } from "@nextui-org/spinner";
 type TNewVerificationForm = {};
 
 export const NewVerificationForm: FC = ({}) => {
@@ -39,16 +40,22 @@ export const NewVerificationForm: FC = ({}) => {
     <>
       <CardWrapper
         headerTitle="Verification "
-        headerLabel="Confirm your verification"
-        backButtonLabel="Back to login."
+        headerLabel="Confirm your verification."
+        backButtonLabel="Log in."
         backButtonHref="/auth/login"
       >
         <section className={""}>
           <div className="container">
             <section>
-              {!success && !error && <h1>loading</h1>}
-              {!success && <FormError message={error} />}
-              <FormSuccess message={success} />
+              {!success && !error && (
+                <div className="w-full text-center py-4">
+                  <Spinner color="white" />
+                </div>
+              )}
+              <div className="mt-4">
+                {!success && <FormError message={error} />}
+                <FormSuccess message={success} />
+              </div>
             </section>
           </div>
         </section>

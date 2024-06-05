@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 const NewPasswordPage = ({}) => {
   return (
     <>
-      <Suspense>
+      <Suspense fallback={"Loading..."}>
         <NewPasswordForm />
       </Suspense>
     </>

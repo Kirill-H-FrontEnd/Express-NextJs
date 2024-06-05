@@ -14,7 +14,7 @@ import { cn } from "@/lib/utils";
 // > Components
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-
+import Particles from "@/components/magicui/bg/particles";
 export const Hero: FC = ({}) => {
   // Scroll to
   const handleClick = () => {
@@ -28,7 +28,7 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-screen bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none text-purple-800`}
+      className={`${s.home} relative w-full h-screen  overflow-hidden select-none text-purple-800`}
     >
       <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover">
         <div className="container ">
@@ -56,7 +56,7 @@ export const Hero: FC = ({}) => {
                 with the power of JavaScript.
               </p>
               <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3">
-                <Link href={"/dashboard"} className="h-[43px]">
+                <Link href={"/dashboard"} className="">
                   <ShimmerButton
                     background="#241A3E"
                     className="w-full shadow-2xl text-sm font-medium h-[44px]"
@@ -64,11 +64,10 @@ export const Hero: FC = ({}) => {
                     Get Started
                   </ShimmerButton>
                 </Link>
-
                 <ShimmerButton
                   onClick={handleClick}
                   background="#fff"
-                  className="sm:w-[142px] h-[43px] text-sm text-black rounded-full capitalize font-semibold"
+                  className="sm:w-[142px] h-[42px] text-sm text-black rounded-full capitalize font-semibold"
                 >
                   Learn more
                 </ShimmerButton>
@@ -88,12 +87,21 @@ export const Hero: FC = ({}) => {
           </section>
         </div>
       </div>
+      {/* Bg */}
       <DotPattern
         width={25}
         height={25}
         className={cn(
           "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
+      />
+      <Particles
+        className="absolute inset-0"
+        quantity={300}
+        size={0.4}
+        ease={80}
+        color={"#974BD9"}
+        refresh
       />
     </section>
   );
