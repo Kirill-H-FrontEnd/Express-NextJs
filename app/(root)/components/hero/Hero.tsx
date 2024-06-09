@@ -15,7 +15,10 @@ import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Particles from "@/components/magicui/bg/particles";
+// > Hooks
+import useMediaQuery from "@/hooks/useMediaQuery";
 export const Hero: FC = ({}) => {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
   // Scroll to
   const handleClick = () => {
     const targetSection = document.getElementById("dashboard");
@@ -95,14 +98,16 @@ export const Hero: FC = ({}) => {
           "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
       />
-      <Particles
-        className="absolute inset-0"
-        quantity={300}
-        size={0.4}
-        ease={80}
-        color={"#974BD9"}
-        refresh
-      />
+      {isDesktop && (
+        <Particles
+          className="absolute inset-0"
+          quantity={300}
+          size={0.4}
+          ease={80}
+          color={"#974BD9"}
+          refresh
+        />
+      )}
     </section>
   );
 };
