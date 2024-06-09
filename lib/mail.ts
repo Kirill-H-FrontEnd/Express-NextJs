@@ -2,6 +2,15 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+export const sendSubscribeEmail = async (email: string, name: string) => {
+  await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: "horushevskiykirill@gmail.com",
+    subject: "Subscribe",
+    html: ` ${name} ${email}`,
+  });
+};
+
 export const sendTwoFactorTokenEmail = async (email: string, token: string) => {
   await resend.emails.send({
     from: "onboarding@resend.dev",

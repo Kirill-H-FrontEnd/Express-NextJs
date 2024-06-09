@@ -29,9 +29,8 @@ export const LearnCards: FC = ({}) => {
       y: 0,
       opacity: 1,
       transition: {
-        delay: custom * 0.1,
-        duration: 0.3,
-        ease: "easeOut",
+        delay: custom * 0.2,
+        duration: 0.4,
       },
     }),
   };
@@ -42,6 +41,7 @@ export const LearnCards: FC = ({}) => {
           <motion.article
             initial="offscreen"
             whileInView="onscreen"
+            viewport={{ once: true }}
             className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center"
           >
             <motion.h2

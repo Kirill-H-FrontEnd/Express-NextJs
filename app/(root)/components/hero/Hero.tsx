@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Particles from "@/components/magicui/bg/particles";
+
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
 export const Hero: FC = ({}) => {
@@ -61,8 +62,9 @@ export const Hero: FC = ({}) => {
               <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3">
                 <Link href={"/dashboard"} className="">
                   <ShimmerButton
+                    shimmerSize="0.06em"
                     background="#241A3E"
-                    className="w-full shadow-2xl text-sm font-medium h-[44px]"
+                    className="shadow-2xl text-sm font-medium h-[42px] w-full sm:w-[150px]"
                   >
                     Get Started
                   </ShimmerButton>
@@ -70,7 +72,7 @@ export const Hero: FC = ({}) => {
                 <ShimmerButton
                   onClick={handleClick}
                   background="#fff"
-                  className="sm:w-[142px] h-[42px] text-sm text-black rounded-full capitalize font-semibold"
+                  className=" h-[42px] w-full sm:w-[150px] text-sm text-black rounded-full capitalize font-semibold"
                 >
                   Learn more
                 </ShimmerButton>

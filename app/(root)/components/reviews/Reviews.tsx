@@ -22,9 +22,8 @@ export const Reviews: FC = ({}) => {
       y: 0,
       opacity: 1,
       transition: {
-        delay: custom * 0.1,
-        duration: 0.3,
-        ease: "easeOut",
+        delay: custom * 0.2,
+        duration: 0.4,
       },
     }),
   };
@@ -37,6 +36,7 @@ export const Reviews: FC = ({}) => {
           <motion.article
             initial="offscreen"
             whileInView="onscreen"
+            viewport={{ once: true }}
             variants={Variants}
             className="text-center"
           >

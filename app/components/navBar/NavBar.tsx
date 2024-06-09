@@ -20,6 +20,8 @@ import {
 // > Icons
 import { IoLogoElectron } from "react-icons/io5";
 import { VscGithub } from "react-icons/vsc";
+// > Components
+import GradualSpacing from "@/components/magicui/text/gradual-spacing";
 
 export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
@@ -179,7 +181,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           maxWidth="full"
           className={`${
             s.navBar
-          } z-[55] fixed shadow-md  bg-transparent py-1  ${
+          } z-[50] fixed shadow-md  bg-transparent py-1  ${
             isMenuOpen ? "shadow-black/30 bg-black/40" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
@@ -198,11 +200,10 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   size={38}
                   className="animate-spin-slow "
                 />
-                <p
-                  className={` font-bold text-xl sm:text-2xl text-inherit text-white `}
-                >
-                  Protocol
-                </p>
+                <GradualSpacing
+                  className="font-display text-center text-2xl font-bold tracking-[-0.1em]  text-white  "
+                  text="Protocol"
+                />
               </Link>
               <nav className={`${s.nav}`}>
                 <div className="grid grid-cols-3-auto gap-4 items-center">
@@ -251,7 +252,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
             </section>
           </div>
           {/* ToggleMenu */}
-          <NavbarMenu className="bg-black/40 backdrop:blur-md pt-6 z-[50]">
+          <NavbarMenu className="bg-black/40 backdrop:blur-md pt-6 z-[48]">
             <Accordion showDivider={false} className="px-0 border-none">
               {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
                 <AccordionItem

@@ -5,6 +5,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 // > Components
 import GridPattern from "@/components/magicui/bg/grid-pattern";
+import { useToast } from "@/components/ui/use-toast";
 import {
   Form,
   FormControl,
@@ -14,21 +15,21 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 // > React
 import { useForm } from "react-hook-form";
-import { useState, useTransition } from "react";
+import { FC, useState, useTransition } from "react";
 // > Schemas
 import { SubscribeSchema } from "@/schemas";
 // > Font
 import { GeistSans } from "geist/font/sans";
-import { Button } from "@nextui-org/react";
-export function SubscribeForm({ className }: React.ComponentProps<"form">) {
-  const [error, setError] = useState<string | undefined>("");
+import { subscribe } from "@/actions/subscribe";
+import { Spinner } from "@nextui-org/spinner";
+export const SubscribeForm: FC = ({}) => {
+  const { toast } = useToast();
   const [success, setSuccess] = useState<string | undefined>("");
-  const [isPending] = useTransition();
+  const [isPending, startTransition] = useTransition();
   const form = useForm<z.infer<typeof SubscribeSchema>>({
     resolver: zodResolver(SubscribeSchema),
     defaultValues: {
@@ -37,8 +38,13 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
     },
   });
   const onSubmit = (values: z.infer<typeof SubscribeSchema>) => {
-    setError("");
     setSuccess("");
+    startTransition(() => {
+      subscribe(values).then((data) => {
+        setSuccess(data.success);
+        form.reset();
+      });
+    });
   };
   return (
     <Form {...form}>
@@ -89,14 +95,20 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
             )}
           />
         </div>
-        <FormError message={error} />
         <FormSuccess message={success} />
-        <Button
+        <ShimmerButton
+          shimmerSize="0.06em"
+          background="#241A3E"
+          className={`w-full shadow-2xl text-sm font-medium  py-[11px]`}
+        >
+          {isPending ? <Spinner color="white" size="sm" /> : " Subscribe"}
+        </ShimmerButton>
+        {/* <Button
           type="submit"
           className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white shadow-md shadow-zinc-950 h-[42px]"
         >
           Subscribe
-        </Button>
+        </Button> */}
       </form>
       {/* /* BG */}
       <GridPattern
@@ -111,4 +123,4 @@ export function SubscribeForm({ className }: React.ComponentProps<"form">) {
       />
     </Form>
   );
-}
+};

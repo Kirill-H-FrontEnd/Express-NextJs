@@ -2,7 +2,6 @@
 // > React
 import { FC, useState } from "react";
 // > Styles
-
 import s from "./styles/Footer.module.scss";
 // > Next
 import { usePathname } from "next/navigation";
@@ -24,10 +23,8 @@ import {
   DialogTrigger,
   DialogClose,
 } from "@/components/ui/dialog";
-// > Hooks
-import useMediaQuery from "@/hooks/useMediaQuery";
 import { SubscribeForm } from "./subscribe-form";
-import { Button } from "@nextui-org/react";
+import ShimmerButton from "@/components/magicui/shimmer-button";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
@@ -35,7 +32,7 @@ export const Footer: FC = ({}) => {
   let hideFooter = pathName === "/";
   // Subscribe form
   const [open, setOpen] = useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -98,9 +95,16 @@ export const Footer: FC = ({}) => {
                 <div className={`${s.actions} relative`}>
                   <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger asChild>
-                      <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
+                      {/* <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
                         Subscription
-                      </Button>
+                      </Button> */}
+                      <ShimmerButton
+                        shimmerSize="0.06em"
+                        background="#241A3E"
+                        className={`w-full shadow-2xl text-sm font-medium  py-[11px]`}
+                      >
+                        Subscribe
+                      </ShimmerButton>
                     </DialogTrigger>
                     <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 border-slate-800 grid place-items-center">
                       <div>
@@ -123,63 +127,6 @@ export const Footer: FC = ({}) => {
                       </div>
                     </DialogContent>
                   </Dialog>
-                  {/* {isDesktop ? (
-                    <Dialog open={open} onOpenChange={setOpen}>
-                      <DialogTrigger asChild>
-                        <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
-                          Subscription
-                        </Button>
-                      </DialogTrigger>
-                      <DialogContent className="w-[450px] bg-black bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden select-none border-1 border-slate-800">
-                        <DialogHeader>
-                          <DialogTitle
-                            style={GeistSans.style}
-                            className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text"
-                          >
-                            Subscribe to our newsletter
-                          </DialogTitle>
-                          <p className="text-gray text-center select-text">
-                            Stay updated on new releases and features, guides,
-                            and case studies.
-                          </p>
-                        </DialogHeader>
-                        <SubscribeForm />
-                        <DialogClose className="absolute top-4 right-4 text-white z-[10]">
-                          <IoClose size={16} />
-                        </DialogClose>
-                      </DialogContent>
-                    </Dialog>
-                  ) : (
-                    <Drawer open={open} onOpenChange={setOpen}>
-                      <DrawerTrigger asChild>
-                        <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white h-[42px] ">
-                          Subscription
-                        </Button>
-                      </DrawerTrigger>
-                      <DrawerContent className="bg-black px-6 pb-6 border-none shadow shadow-slate-300  ">
-                        <section className="h-screen grid place-items-center ">
-                          <div>
-                            <DrawerHeader className="text-left">
-                              <DrawerTitle
-                                style={GeistSans.style}
-                                className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text"
-                              >
-                                Subscribe to our{" "}
-                                <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white">
-                                  newsletter
-                                </span>
-                              </DrawerTitle>
-                              <p className="text-gray text-center ">
-                                Stay updated on new releases and features,
-                                guides, and case studies.
-                              </p>
-                            </DrawerHeader>
-                            <SubscribeForm className="px-4" />
-                          </div>
-                        </section>
-                      </DrawerContent>
-                    </Drawer>
-                  )} */}
                 </div>
               </div>
             </section>
@@ -189,6 +136,7 @@ export const Footer: FC = ({}) => {
                 template for the framework.
               </div>
               <button
+                type="submit"
                 onClick={scrollToTop}
                 className="absolute top-1/2 right-0 -translate-y-1/2  border-2 border-gray p-1 rounded-full hidden lg:block"
               >
