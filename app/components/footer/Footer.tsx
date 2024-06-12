@@ -95,9 +95,6 @@ export const Footer: FC = ({}) => {
                 <div className={`${s.actions} relative`}>
                   <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger asChild>
-                      {/* <Button className="w-full rounded-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#241A3E] to-zinc-950 text-white ">
-                        Subscription
-                      </Button> */}
                       <ShimmerButton
                         shimmerSize="0.06em"
                         background="#241A3E"
@@ -106,7 +103,7 @@ export const Footer: FC = ({}) => {
                         Subscribe
                       </ShimmerButton>
                     </DialogTrigger>
-                    <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 border-slate-800 grid place-items-center">
+                    <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center">
                       <div>
                         <DialogHeader>
                           <DialogTitle

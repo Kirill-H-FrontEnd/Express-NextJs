@@ -27,7 +27,7 @@ export const InfoModal: FC = ({}) => {
         <section
           className={`${
             s.InfoModal
-          } w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md border-1 border-slate-700  ${
+          } w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md sm:border-1 border-slate-700  ${
             pathName === "/" ? "" : "hidden"
           }`}
         >

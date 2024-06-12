@@ -9,7 +9,7 @@ const ScrollShadowProvider = ({ children }: IScroll) => {
     <ScrollShadow
       hideScrollBar
       size={30}
-      className="w-full h-full  text-slate-300 pb-[100px] pt-7 px-5"
+      className="w-full h-full relative text-slate-300  pb-[100px]"
     >
       {children}
     </ScrollShadow>

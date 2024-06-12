@@ -6,7 +6,7 @@ import Link from "next/link";
 // > Styles
 import s from "./styles/Hero.module.scss";
 // > NextUI
-import { Snippet } from "@nextui-org/react";
+import { Button, Snippet } from "@nextui-org/react";
 // > Font
 import { GeistSans } from "geist/font/sans";
 // > Utils
@@ -69,13 +69,12 @@ export const Hero: FC = ({}) => {
                     Get Started
                   </ShimmerButton>
                 </Link>
-                <ShimmerButton
+                <Button
                   onClick={handleClick}
-                  background="#fff"
-                  className=" h-[42px] w-full sm:w-[150px] text-sm text-black rounded-full capitalize font-semibold"
+                  className=" h-[42px] w-full sm:w-[150px] bg-white text-sm text-black rounded-full capitalize font-semibold"
                 >
                   Learn more
-                </ShimmerButton>
+                </Button>
               </div>
               <Snippet
                 disableTooltip

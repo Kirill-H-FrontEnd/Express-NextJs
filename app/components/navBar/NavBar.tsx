@@ -22,8 +22,10 @@ import { IoLogoElectron } from "react-icons/io5";
 import { VscGithub } from "react-icons/vsc";
 // > Components
 import GradualSpacing from "@/components/magicui/text/gradual-spacing";
+import { useSession } from "next-auth/react";
 
 export const NavBar: FC = forwardRef(({}, ref: any) => {
+  const session = useSession();
   const [isScroll, setScroll] = useState(false);
   const pathName = usePathname();
 
@@ -192,7 +194,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
               className={`${s.wrapper} grid grid-cols-2-auto justify-between`}
             >
               <Link
-                href={"/home"}
+                href={"/"}
                 className="grid grid-cols-2-auto items-center gap-1 justify-start hover:opacity-80 transition-opacity select-none"
               >
                 <IoLogoElectron
@@ -201,25 +203,28 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   className="animate-spin-slow "
                 />
                 <GradualSpacing
-                  className="font-display text-center text-2xl font-bold tracking-[-0.1em]  text-white  "
+                  className="font-display text-center text-2xl font-bold tracking-[-0.1em]  text-white  hidden sm:block"
                   text="Protocol"
                 />
               </Link>
               <nav className={`${s.nav}`}>
                 <div className="grid grid-cols-3-auto gap-4 items-center">
-                  <Link
-                    className="hidden md:block hover:text-slate-300 text-white"
-                    href="/auth/login"
-                  >
-                    Login
-                  </Link>
+                  {!session.data && (
+                    <Link
+                      className="hidden md:block hover:text-slate-300 text-white"
+                      href="/auth/login"
+                    >
+                      Login
+                    </Link>
+                  )}
+
                   <Button
                     as={Link}
                     radius="full"
                     className="text-black bg-white font-semibold px-6 hover:bg-slate-300"
-                    href="/auth/register"
+                    href={`${session.data ? "/dashboard" : "/auth/register"}`}
                   >
-                    Sign Up
+                    {session.data ? "Dashboard" : "Sign Up"}
                   </Button>
                   <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}

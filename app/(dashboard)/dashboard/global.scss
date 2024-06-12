@@ -1,12 +1,13 @@
-#header {
-	grid-area: header;
+#headerNav {
+	grid-area: headerNav;
 }
+
 #navbar {
-	grid-area: nav;
+	grid-area: navbar;
 	section {
 		// Scroll-bar
 		&::-webkit-scrollbar {
-			background-color: #0d0f14;
+			background-color: #fff;
 			width: 0px;
 		}
 	}
@@ -14,27 +15,22 @@
 
 #main {
 	grid-area: main;
+
 	// Scroll-bar
 	&::-webkit-scrollbar {
 		background-color: #0d0f14;
 		width: 0px;
 	}
 }
-#PageWrapper {
-	display: grid;
-	grid-template-columns: 1fr 270px;
-	z-index: 20;
-	position: relative;
-	width: 100%;
-	height: 100vh;
-}
+
 #dashboardWrapper {
 	height: 100vh;
 	display: grid;
+	overflow: hidden;
 	grid-template-columns: auto 1fr auto;
 	grid-template-rows: auto 1fr auto;
 	grid-template-areas:
-		"nav header header"
-		"nav main main"
-		"nav main main";
+		"headerNav headerNav headerNav"
+		"navbar main main"
+		"navbar main main";
 }

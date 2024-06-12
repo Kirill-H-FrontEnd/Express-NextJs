@@ -11,6 +11,7 @@ import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { Aside } from "./components/aside/Aside";
+import Particles from "@/components/magicui/bg/particles";
 // > Next
 import Image from "next/image";
 // > Framer Motion
@@ -86,13 +87,13 @@ export const Dashboard: FC = ({}) => {
               whileInView="onscreen"
               variants={Variants}
               id="dashboardWrapperDash"
-              className={`${s.dashboardPanel} overflow-hidden bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover relative rounded-[10px]`}
+              className={`${s.dashboardPanel} bg-black overflow-hidden  relative rounded-[10px]`}
             >
               <Header />
               <NavBar />
               <main
                 id="mainDash"
-                className="border-r-1 border-b-1 border-slate-700 pl-5"
+                className="border-r-1 border-b-1 border-slate-700 pl-5 bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover"
               >
                 <div id="PageWrapperDash">
                   <section></section>
@@ -100,14 +101,16 @@ export const Dashboard: FC = ({}) => {
                 </div>
               </main>
               {/* Background */}
-              <Image
-                src={"/gradientBg.svg"}
-                alt="gradientBg"
-                className="absolute top-0 right-0 w-full h-full object-cover z-0 pointer-events-none select-none block"
-                width={1000}
-                height={1000}
-              />
+
               <BorderBeam size={200} duration={12} />
+              <Particles
+                className="absolute inset-0 hidden sm:block"
+                quantity={300}
+                size={0.4}
+                ease={80}
+                color={"#974BD9"}
+                refresh
+              />
             </motion.section>
           </Atropos>
         </section>
