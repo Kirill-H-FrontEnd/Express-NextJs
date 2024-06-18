@@ -3,7 +3,12 @@ import { FC } from "react";
 // > Components
 import { BackButton } from "./back-button";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["600"],
+});
 type THeader = {
   label: string;
   title: string;
@@ -19,7 +24,7 @@ export const Header: FC<THeader> = ({
 }) => {
   return (
     <div className="text-center">
-      <h1 style={GeistSans.style} className="text-2xl font-semibold text-white">
+      <h1 style={inter.style} className="text-2xl font-semibold text-white">
         {title}
       </h1>
       <div

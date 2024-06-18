@@ -9,7 +9,12 @@ import { useForm } from "react-hook-form";
 // > Next
 import { useSearchParams } from "next/navigation";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600"],
+});
 // > Schemas
 import { LoginSchema } from "@/schemas/";
 // > Components
@@ -78,7 +83,7 @@ export const LoginForm: FC = ({}) => {
   return (
     <CardWrapper
       headerTitle={`${
-        showTwoFactor ? "Enter your OTP code" : "Log in to Protocol"
+        showTwoFactor ? "Enter your OTP code" : "Welcome to Express, login with"
       }`}
       headerLabel={`${
         showTwoFactor
@@ -148,8 +153,8 @@ export const LoginForm: FC = ({}) => {
                   render={({ field }) => (
                     <FormItem>
                       <label
-                        style={GeistSans.style}
-                        className="text-sm text-white"
+                        style={inter.style}
+                        className="text-sm text-white font-normal"
                       >
                         Email
                       </label>
@@ -172,8 +177,8 @@ export const LoginForm: FC = ({}) => {
                   render={({ field }) => (
                     <FormItem>
                       <label
-                        style={GeistSans.style}
-                        className="text-sm text-white"
+                        style={inter.style}
+                        className="text-sm text-white font-normal"
                       >
                         Password
                       </label>

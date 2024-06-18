@@ -13,7 +13,12 @@ import { FaArrowRight } from "react-icons/fa6";
 // > NextUi
 import { Button } from "@nextui-org/react";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700"],
+});
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
 // > Data
@@ -47,10 +52,10 @@ export const LearnCards: FC = ({}) => {
             <motion.h2
               custom={1}
               variants={Variants}
-              style={GeistSans.style}
+              style={inter.style}
               className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
             >
-              What's in Protocol.js?
+              What's in Express.ts?
             </motion.h2>
             <motion.p
               custom={2}
@@ -63,6 +68,7 @@ export const LearnCards: FC = ({}) => {
           <motion.section
             initial="offscreen"
             whileInView="onscreen"
+            viewport={{ once: true }}
             variants={Variants}
             className={`${s.cards} relative`}
           >

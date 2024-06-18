@@ -50,13 +50,6 @@
 	.copyright {
 		button {
 			transition: all 0.1s ease;
-			&:hover {
-				border-color: #fff;
-				svg {
-					fill: white;
-					transition: all 0.1s ease;
-				}
-			}
 		}
 	}
 }

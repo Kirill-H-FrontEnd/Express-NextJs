@@ -8,7 +8,12 @@ import s from "./styles/Hero.module.scss";
 // > NextUI
 import { Button, Snippet } from "@nextui-org/react";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["800"],
+});
 // > Utils
 import { cn } from "@/lib/utils";
 // > Components
@@ -41,7 +46,7 @@ export const Hero: FC = ({}) => {
           >
             <article className={`${s.article} text-center select-text`}>
               <h1
-                className={`${GeistSans.className} font-bold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
+                className={`${inter.className} font-extrabold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
             `}
               >
                 The{" "}
@@ -52,19 +57,19 @@ export const Hero: FC = ({}) => {
               </h1>
 
               <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
-                Used by some of the world's largest companies, Protocol enables
+                Used by some of the world's largest companies, Express enables
                 you to create{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
                   high-quality web applications
                 </span>{" "}
-                with the power of JavaScript.
+                with the power of TypeScript.
               </p>
               <div className="grid sm:grid-cols-2-auto sm:justify-center sm:m-auto gap-3 pb-3">
-                <Link href={"/dashboard"} className="">
+                <Link href={"/docs"} className="">
                   <ShimmerButton
                     shimmerSize="0.06em"
                     background="#241A3E"
-                    className="shadow-2xl text-sm font-medium h-[42px] w-full sm:w-[150px]"
+                    className={`shadow-2xl text-sm font-medium h-[42px] w-full sm:w-[150px] `}
                   >
                     Get Started
                   </ShimmerButton>
@@ -85,7 +90,7 @@ export const Hero: FC = ({}) => {
                 }}
                 size="sm"
               >
-                npx create-protocol-app@lates
+                npx create-express-app@lates
               </Snippet>
             </article>
           </section>

@@ -9,7 +9,12 @@ import { FiExternalLink } from "react-icons/fi";
 // > FramerMotion
 import { motion } from "framer-motion";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700"],
+});
 // > Utils
 import { cn } from "@/lib/utils";
 // > Components
@@ -28,7 +33,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
         className={`${s.card} relative border-1 border-slate-700  rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
       >
         <div className="absolute z-[45] bottom-[20px] left-[20px] right-[20px] ">
-          <h5 style={GeistSans.style} className=" font-semibold text-white">
+          <h5 style={inter.style} className=" font-semibold text-white">
             {title}
           </h5>
           <p className="line-clamp-3 text-sm text-slate-300">{text}</p>

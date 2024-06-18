@@ -9,19 +9,19 @@ export const CardWrapper: FC = ({}) => {
   const DATA_CARDS = [
     {
       value:
-        "“With Protocol.js at the helm of our headless tech stack, our developers can create features with velocity and speed, ultimately enabling users to create whatever, whenever they want to.”",
+        "“With Express.ts at the helm of our headless tech stack, our developers can create features with velocity and speed, ultimately enabling users to create whatever, whenever they want to.”",
       logo: "/home/reviews/google.svg",
       info: "Michel Mac, Senior Software Engineer",
     },
     {
       value:
-        "“My favorite UX feedback from customers is: `How is the app so fast?` Because we’ve built on Protocol.js and Vercel since day one, our pages load in an instant, which is important when it comes to mission-critical software.”",
+        "“My favorite UX feedback from customers is: `How is the app so fast?` Because we’ve built on Express.ts and Vercel since day one, our pages load in an instant, which is important when it comes to mission-critical software.”",
       logo: "/home/reviews/google.svg",
       info: "Edward Matin, CEO",
     },
     {
       value:
-        "“Protocol.js has been a game-changer for our agency work and team collaboration. Its powerful features have allowed us to build high-performance websites quickly and efficiently like never before.”",
+        "“Express.ts has been a game-changer for our agency work and team collaboration. Its powerful features have allowed us to build high-performance websites quickly and efficiently like never before.”",
       logo: "/home/reviews/google.svg",
       info: "Joe Doe, Frontend Developer",
     },

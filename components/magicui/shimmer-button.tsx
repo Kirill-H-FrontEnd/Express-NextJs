@@ -1,6 +1,12 @@
 import { cn } from "@/lib/utils";
 import React, { CSSProperties } from "react";
-
+// > Font
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["800"],
+});
 export interface ShimmerButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   shimmerColor?: string;

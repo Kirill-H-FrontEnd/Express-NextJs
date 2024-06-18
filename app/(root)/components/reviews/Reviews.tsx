@@ -57,7 +57,7 @@ export const Reviews: FC = ({}) => {
                 .
               </p>
               <p>
-                Protocol.js is trusted by some of the biggest names on the web.
+                Express.ts is trusted by some of the biggest names on the web.
               </p>
             </h2>
             <Button
@@ -70,6 +70,7 @@ export const Reviews: FC = ({}) => {
             </Button>
           </motion.article>
           <motion.section
+            viewport={{ once: true }}
             initial="offscreen"
             whileInView="onscreen"
             variants={Variants}

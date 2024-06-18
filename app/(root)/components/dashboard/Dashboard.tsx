@@ -5,18 +5,22 @@ import { FC } from "react";
 import s from "./styles/Dashboard.module.scss";
 import "./styles/globalDash.scss";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700"],
+});
 // > Components
 import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import { Aside } from "./components/aside/Aside";
 import Particles from "@/components/magicui/bg/particles";
-// > Next
-import Image from "next/image";
+import Atropos from "atropos/react";
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
-import Atropos from "atropos/react";
+
 export const Dashboard: FC = ({}) => {
   const DATA_ASIDE_LINKS = [
     { value: "Automatic Installation", href: "" },
@@ -56,7 +60,7 @@ export const Dashboard: FC = ({}) => {
             <motion.h2
               variants={Variants}
               custom={1}
-              style={GeistSans.style}
+              style={inter.style}
               className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
             >
               Convenient{" "}

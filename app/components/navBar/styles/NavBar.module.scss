@@ -3,38 +3,11 @@
 		padding-left: 0;
 		padding-right: 0;
 	}
-	.wrapper {
-		.nav {
-			ul {
-				a {
-					transition: transform 0.3s ease;
-					position: relative;
-					&.active {
-						&::after {
-							left: -10px;
-							opacity: 1;
-						}
-					}
-					&::after {
-						content: "";
-						width: 4px;
-						height: 4px;
-						border-radius: 50%;
-						position: absolute;
-						top: 50%;
-						left: -20px;
-						transform: translate(0%, -50%);
-						background-color: #10b981;
-						opacity: 0;
-						transition: all 0.2s ease;
-					}
-					&:hover {
-						&::after {
-							left: -10px;
-							opacity: 1;
-						}
-					}
-				}
+	.navBarMenuToggle {
+		span {
+			&::before,
+			&::after {
+				width: 27px;
 			}
 		}
 	}

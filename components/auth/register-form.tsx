@@ -7,7 +7,12 @@ import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 // > Font
-import { GeistSans } from "geist/font/sans";
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "600"],
+});
 // > Schemas
 import { RegisterSchema } from "@/schemas/";
 // > Components
@@ -53,7 +58,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
   };
   return (
     <CardWrapper
-      headerTitle="Create a Protocol account"
+      headerTitle="Welcome to Express, register with"
       headerLabel="Already have an account?"
       backButtonLabel="Log In."
       backButtonHref="/auth/login"
@@ -67,7 +72,10 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <label style={GeistSans.style} className="text-sm text-white">
+                  <label
+                    style={inter.style}
+                    className="text-sm text-white font-normal"
+                  >
                     Name
                   </label>
                   <FormControl>
@@ -88,7 +96,10 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <label style={GeistSans.style} className="text-sm text-white">
+                  <label
+                    style={inter.style}
+                    className="text-sm text-white font-normal"
+                  >
                     Email
                   </label>
                   <FormControl>
@@ -109,7 +120,10 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <label style={GeistSans.style} className="text-sm text-white">
+                  <label
+                    style={inter.style}
+                    className="text-sm text-white font-normal"
+                  >
                     Password
                   </label>
                   <FormControl>

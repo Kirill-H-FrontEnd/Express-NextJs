@@ -2,7 +2,7 @@
 import { FC, useRef } from "react";
 import { TAsideArray } from "@/types";
 // > Next
-import { usePathname } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import { PiDiamondsFourFill } from "react-icons/pi";
 // > Font
 import { GeistSans } from "geist/font/sans";
@@ -15,20 +15,23 @@ type TAside = {
 
 export const Aside: FC = ({}) => {
   const pathName = usePathname();
-  const { scrollToSection } = useSection();
+  const test = useParams();
+
   return (
-    <aside className="bg-transparent relative z-[100]" id="aside">
+    <aside
+      className="bg-transparent sticky top-[110px] h-[calc(100vh-121px)] z-[40] order-last hidden w-56 shrink-0 lg:block"
+      id="aside"
+    >
       <h5
         style={GeistSans.style}
-        className="text-white font-normal text-sm mb-2 grid grid-cols-2-auto justify-start gap-2 items-center"
+        className="text-black dark:text-white font-medium text-sm mb-2 grid grid-cols-2-auto justify-start gap-2 items-center"
       >
-        <PiDiamondsFourFill size={20} className="text-black dark:text-white" />
-        <p className="text-black dark:text-white">On this page</p>
+        On this page
       </h5>
-      <nav className="grid gap-3 text-slate-300  ml-2 border-l-1 border-slate-300 dark:border-slate-800">
+      <nav className="grid gap-3 text-slate-300  ml-2 ">
         {/* {data?.map((link, i) => (
           <Link
-            onClick={() => scrollToSection(link.href)}
+            // onClick={() => scrollToSection(link.href)}
             key={i}
             className={`relative text-xs pl-3 hover:pl-4 hover:text-slate-400 transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background w-max ${
               pathName === link.href
@@ -41,9 +44,9 @@ export const Aside: FC = ({}) => {
           </Link>
         ))} */}
         <Link
-          onClick={(e) => {
-            e.preventDefault(), scrollToSection("#test2");
-          }}
+          // onClick={(e) => {
+          //   e.preventDefault(), scrollToSection("#test2");
+          // }}
           className="text-white text-xl"
           href="#test2"
         >

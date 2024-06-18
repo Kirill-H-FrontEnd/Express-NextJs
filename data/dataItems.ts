@@ -91,16 +91,16 @@ export const DATA_FOOTER_LINKS = [
 export const DATA_LEARN_CARDS = {
   section1: [
     {
-      href: "/dashboard",
+      href: "/docs",
       title: "Introduction",
-      text: "Learn how to build a full-stack web application with the free, Protocol.js App Router Course.",
+      text: "Learn how to build a full-stack web application with the free, Express.ts App Router Course.",
     },
   ],
   section2: [
     {
       href: "/dashboard/project-structure",
       title: "Project Structure",
-      text: "This page provides an overview of the project structure of a Protocol.js application. It covers top-level files and folders, configuration files, and routing conventions within the app and pages directories.",
+      text: "This page provides an overview of the project structure of a Express.ts application. It covers top-level files and folders, configuration files, and routing conventions within the app and pages directories.",
     },
     {
       href: "",
@@ -110,7 +110,7 @@ export const DATA_LEARN_CARDS = {
     {
       href: "/dashboard/data-fetching",
       title: "Data Fetching",
-      text: "Make your React component async and await your data. Protocol.js supports both server and client data fetching.",
+      text: "Make your React component async and await your data. Express.ts supports both server and client data fetching.",
     },
     {
       href: "/dashboard/css-support",
