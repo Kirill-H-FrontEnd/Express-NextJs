@@ -91,6 +91,9 @@ html {
   }
 
   body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
     .container {
       width: min(100% - 40px, 1320px);
       margin-inline: auto;

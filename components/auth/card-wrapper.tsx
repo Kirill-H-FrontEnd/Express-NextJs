@@ -17,7 +17,7 @@ type TCardWrapper = {
   backButtonLabel?: string;
   backButtonHref?: string;
   showSocial?: boolean;
-  showPrivacy?: boolean;
+  contentPrivacy?: React.ReactNode;
 };
 
 export const CardWrapper: FC<TCardWrapper> = ({
@@ -27,7 +27,7 @@ export const CardWrapper: FC<TCardWrapper> = ({
   children,
   headerLabel,
   showSocial,
-  showPrivacy,
+  contentPrivacy,
 }) => {
   return (
     <section className="z-[10] w-[340px] sm:w-[450px]">
@@ -47,22 +47,7 @@ export const CardWrapper: FC<TCardWrapper> = ({
               <Social />
             </CardFooter>
           )}
-          {showPrivacy && (
-            <>
-              <CardFooter>
-                <p className="text-xs text-gray text-center leading-5">
-                  By signing in, you agree to our{" "}
-                  <Link className="text-purple-600" href={""}>
-                    Terms of Service
-                  </Link>{" "}
-                  and{" "}
-                  <Link className="text-purple-600" href={""}>
-                    Privacy.
-                  </Link>
-                </p>
-              </CardFooter>
-            </>
-          )}
+          <CardFooter>{contentPrivacy}</CardFooter>
         </div>
       </Card>
     </section>

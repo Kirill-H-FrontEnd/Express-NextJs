@@ -32,6 +32,7 @@ import { SubscribeForm } from "./subscribe-form";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import { Squirrel } from "lucide-react";
 import { Cross2Icon } from "@radix-ui/react-icons";
+import { ButtonTop } from "@/components/ui/button-top";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
@@ -49,11 +50,11 @@ export const Footer: FC = ({}) => {
   return (
     <>
       <footer
-        className={`${s.footer} relative bg-white dark:bg-black border-t-1 border-slate-300 dark:border-slate-800 z-[20]`}
+        className={`${s.footer} relative bg-white dark:bg-black border-t-1 border-gray-200 dark:border-gray-900 z-[20]`}
       >
         <div className="container">
           <section
-            className={`${s.wrapper} py-14 border-b-1 border-slate-300 dark:border-slate-800`}
+            className={`${s.wrapper} py-14 border-b-1 border-gray/200 dark:border-gray-900`}
           >
             <div>
               <Link
@@ -62,7 +63,7 @@ export const Footer: FC = ({}) => {
               >
                 <Squirrel
                   className={`${s.logoIcon} hidden absolute top-0 left-0 `}
-                  color="#64748B"
+                  color="#4B5563"
                   size={40}
                   strokeWidth={1}
                 />
@@ -92,7 +93,7 @@ export const Footer: FC = ({}) => {
                     {item.links.map((link, i) => (
                       <Link
                         key={i}
-                        className={`text-slate-500 text-sm hover:text-purple-500 ${
+                        className={`text-gray-600 text-sm hover:text-purple-500 ${
                           pathName === link.href
                             ? `${s.active} text-purple-500`
                             : ""
@@ -113,7 +114,7 @@ export const Footer: FC = ({}) => {
               >
                 Subscribe to our newsletter
               </h5>
-              <p className="text-slate-500 mb-4 text-sm">
+              <p className="text-gray-600 mb-4 text-sm">
                 Stay updated on new releases and features, guides, and case
                 studies.
               </p>
@@ -123,21 +124,21 @@ export const Footer: FC = ({}) => {
                     <ShimmerButton
                       shimmerSize="0.06em"
                       background="#241A3E"
-                      className={`w-full shadow-2xl text-sm font-medium  py-[11px]`}
+                      className={`w-full shadow-2xl text-sm font-medium py-[11px]`}
                     >
                       Subscription
                     </ShimmerButton>
                   </DialogTrigger>
-                  <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center">
+                  <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20 grid place-items-center border-gray-800">
                     <div>
                       <DialogHeader>
                         <DialogTitle
                           style={inter.style}
-                          className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text font-bold"
+                          className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text font-bold mb-2"
                         >
                           Subscribe to our newsletter
                         </DialogTitle>
-                        <p className="text-slate-500 text-center select-text">
+                        <p className="text-gray-600 text-center select-text">
                           Stay updated on new releases and features, guides, and
                           case studies.
                         </p>
@@ -157,13 +158,7 @@ export const Footer: FC = ({}) => {
               Copyright © {getFullYear} Protocol.This is just a documentation
               template for the framework.
             </div>
-            <button
-              type="submit"
-              onClick={scrollToTop}
-              className="absolute top-1/2 right-0 -translate-y-1/2  border-2 border-slate-300 dark:border-slate-300 hover:opacity-50 active:shadow-md  p-1 rounded-full hidden lg:block"
-            >
-              <MdKeyboardDoubleArrowUp size={20} color="#CBD5E1" />
-            </button>
+            <ButtonTop />
           </section>
         </div>
       </footer>

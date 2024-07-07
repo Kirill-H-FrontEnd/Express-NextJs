@@ -93,7 +93,20 @@ export const LoginForm: FC = ({}) => {
       backButtonLabel="Sign Up."
       backButtonHref="/auth/register"
       showSocial
-      showPrivacy
+      contentPrivacy={
+        <>
+          <p className="text-xs text-gray-600 text-center leading-5">
+            By sign in, you agree to our{" "}
+            <Link className="text-purple-600" href={""}>
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link className="text-purple-600" href={""}>
+              Privacy.
+            </Link>
+          </p>
+        </>
+      }
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -130,14 +143,6 @@ export const LoginForm: FC = ({}) => {
                             <InputOTPSlot index={5} />
                           </InputOTPGroup>
                         </InputOTP>
-
-                        {/* <Input
-                          className="py-5 bg-white focus:shadow-black"
-                          disabled={isPending}
-                          {...field}
-                          placeholder="Enter your code"
-                          type="text"
-                        /> */}
                       </FormControl>
                       <FormMessage />
                     </FormItem>

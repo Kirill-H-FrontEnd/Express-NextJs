@@ -48,7 +48,7 @@ export const Dashboard: FC = ({}) => {
     }),
   };
   return (
-    <section id="dashboard" className={`${s.dashboard}  py-24`}>
+    <section id="dashboard" className={`${s.dashboard} bg-black py-24`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <motion.article

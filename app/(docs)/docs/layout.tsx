@@ -15,49 +15,53 @@ import type { Metadata } from "next";
 import Particles from "@/components/magicui/bg/particles";
 import GridPattern from "@/components/magicui/bg/grid-pattern";
 import { cn } from "@/lib/utils";
-import { DotPattern } from "@/components/magicui/bg/dot-pattern";
 import { Footer } from "./components/footer/Footer";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
+import { DotPattern } from "@/components/magicui/bg/dot-pattern";
 export const metadata: Metadata = {
   title: "Docs | Protocol.js",
   description: "This is the Introduction documentation page.",
 };
 
-export default async function DashboardLayout({
+export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const session = await auth();
-
   return (
-    <SessionProvider session={session}>
-      <ThemeProvider>
-        <section id="docsWrapper" className="bg-white dark:bg-black relative">
-          <Header />
-          <article className=" relative py-10 md:flex md:flex-row container ">
-            <NavBar />
-            <div className="px-4">{children}</div>
-            <Aside />
-          </article>
-          <Footer />
-          {/* Background */}
-          <Particles
-            className="absolute inset-0  hidden dark:hidden dark:sm:block"
-            quantity={300}
-            size={0.4}
-            ease={80}
-            color={"#974BD9"}
-            refresh
-          />
-          <DotPattern
-            width={25}
-            height={25}
-            className={cn(
-              "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
-            )}
-          />
-        </section>
-      </ThemeProvider>
-    </SessionProvider>
+    <ThemeProvider>
+      <Header />
+      <article id="main" className=" relative pt-10 mb-[20px] container z-[11]">
+        <NavBar />
+        <div className="px-4 relative z-[11]">{children}</div>
+        <Aside />
+      </article>
+      <Footer />
+      <RadialGradient
+        size={700}
+        from="rgba(60, 41, 119, .5)"
+        to="#0D0F14"
+        origin="top"
+        className="hidden dark:sm:block"
+      />
+      {/* Background */}
+      <DotPattern
+        width={25}
+        height={25}
+        className={cn(
+          "lg:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)] fill-slate-300 dark:hidden"
+        )}
+      />
+    </ThemeProvider>
   );
+}
+{
+  /* <Particles
+                className="absolute inset-0 hidden dark:block dark:sm:block z-10"
+                quantity={200}
+                size={0.4}
+                ease={80}
+                color={"#974BD9"}
+                refresh
+              /> */
 }

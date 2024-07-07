@@ -20,7 +20,6 @@ import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Particles from "@/components/magicui/bg/particles";
-
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
 export const Hero: FC = ({}) => {
@@ -37,7 +36,7 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-screen  overflow-hidden select-none text-purple-800`}
+      className={`${s.home} relative w-full h-screen  overflow-hidden select-none text-purple-800 bg-black`}
     >
       <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover">
         <div className="container ">
@@ -85,7 +84,7 @@ export const Hero: FC = ({}) => {
                 disableTooltip
                 symbol={`# ~`}
                 classNames={{
-                  base: "bg-transparent text-gray",
+                  base: "bg-transparent text-gray-600",
                   pre: "font-medium text-sm",
                 }}
                 size="sm"

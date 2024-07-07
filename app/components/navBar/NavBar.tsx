@@ -27,7 +27,6 @@ import {
 import { VscGithub } from "react-icons/vsc";
 import { Squirrel } from "lucide-react";
 // > Components
-import { useSession } from "next-auth/react";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import {
   Dialog,
@@ -40,7 +39,6 @@ import {
 import { SubscribeForm } from "../footer/subscribe-form";
 import { IoClose } from "react-icons/io5";
 export const NavBar: FC = forwardRef(({}, ref: any) => {
-  const session = useSession();
   const [isScroll, setScroll] = useState(false);
   const pathName = usePathname();
 
@@ -100,13 +98,12 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
     <>
       {hideNavigation && (
         <Navbar
-          shouldHideOnScroll
           disableAnimation
           ref={ref}
           maxWidth="full"
           className={`${
             s.navBar
-          } z-[50] fixed shadow-md  bg-transparent py-1  ${
+          } z-[50] fixed shadow-md  bg-transparent sm:py-1  ${
             isMenuOpen ? " bg-black/70" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
@@ -137,30 +134,27 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                 </p>
               </Link>
               <nav
-                className={`hidden sm:grid ${
-                  !session.data ? "grid-cols-3-auto" : "grid-cols-2-auto"
-                } gap-4 items-center`}
+                className={`hidden sm:grid grid-cols-3-auto gap-4 items-center`}
               >
-                {!session.data && (
-                  <Link
-                    className="hidden md:block hover:text-slate-300 text-white"
-                    href="/auth/login"
-                  >
-                    Login
-                  </Link>
-                )}
+                <Link
+                  className="hidden md:block hover:text-slate-300 text-white"
+                  href="/auth/login"
+                >
+                  Login
+                </Link>
 
                 <Button
                   as={Link}
                   radius="full"
                   className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
-                  href={`${session.data ? "/docs" : "/auth/register"}`}
+                  href={`/auth/register`}
                 >
-                  {session.data ? "Documentation" : "Sign Up"}
+                  Sign Up
                 </Button>
                 <div className="relative hidden sm:grid grid-cols-2-auto items-center gap-2 ">
                   <span className="absolute top-1/2 left-0 translate-x-1/2 -translate-y-1/2 w-[1px] h-[80%] bg-slate-500 rounded-full pointer-events-none"></span>
                   <Tooltip
+                    style={inter.style}
                     closeDelay={200}
                     offset={10}
                     size="sm"
@@ -188,7 +182,6 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
             </section>
           </div>
           {/* ToggleMenu */}
-
           <NavbarMenu className="bg-black/60 backdrop:blur-md pt-6 z-[48] ">
             <div className="grid gap-5 pb-2">
               {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
@@ -212,9 +205,9 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                 as={Link}
                 radius="full"
                 className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
-                href={`${session.data ? "/docs" : "/auth/register"}`}
+                href={`/auth/register`}
               >
-                {session.data ? "Documentation" : "Sign Up"}
+                Sign Up
               </Button>
               <Dialog open={open} onOpenChange={setOpen}>
                 <DialogTrigger asChild>

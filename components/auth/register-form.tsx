@@ -31,6 +31,7 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { register } from "@/actions/register";
+import Link from "next/link";
 
 type TLoginForm = {};
 
@@ -63,6 +64,20 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
       backButtonLabel="Log In."
       backButtonHref="/auth/login"
       showSocial
+      contentPrivacy={
+        <>
+          <p className="text-xs text-gray-600 text-center leading-5">
+            By sign up, you agree to our{" "}
+            <Link className="text-purple-600" href={""}>
+              Terms of Service
+            </Link>{" "}
+            and{" "}
+            <Link className="text-purple-600" href={""}>
+              Privacy.
+            </Link>
+          </p>
+        </>
+      }
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

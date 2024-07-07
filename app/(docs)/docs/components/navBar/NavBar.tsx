@@ -296,20 +296,20 @@ export const NavBar: FC = ({}) => {
   return (
     <nav
       id="navbar"
-      className={`${s.navbar} sticky top-[110px] hidden h-[calc(100vh-121px)] w-[270px] md:flex md:shrink-0 md:flex-col md:justify-between overflow-y-scroll z-[45] `}
+      className={`${s.navbar} sticky top-[110px] hidden h-[calc(100vh-121px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
     >
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-white dark:bg-slate-500/10 border-1 border-slate-300 dark:border-slate-800 min-h-[38px]  rounded-md mb-4 ">
+          <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-100 dark:bg-gray-900/50 border-1 border-gray-200 dark:border-gray-900 min-h-[38px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md">
             <Search
               width={18}
               height={18}
-              className="absolute top-1/2 left-[5px] -translate-y-1/2 text-slate-400"
+              className="absolute top-1/2 left-[5px] -translate-y-1/2 text-gray-400"
             />
-            <p className="pl-4 text-slate-400 font-medium">Quick search...</p>
+            <p className="pl-4 text-gray-400 font-medium">Quick search...</p>
             <span
               style={inter.style}
-              className="text-[12px] bg-slate-200 dark:bg-slate-700 px-2 py-[2px] rounded-sm text-slate-400 font-medium"
+              className="text-[12px] bg-gray-200 dark:bg-gray-800/60 px-2 py-[2px] rounded-sm text-gray-400 font-medium"
             >
               Ctrl X
             </span>
@@ -356,12 +356,12 @@ export const NavBar: FC = ({}) => {
         size={40}
       >
         <section className="relative z-10 h-full ">
-          <ul className={`grid gap-3`}>
+          <ul className={`grid gap-5`}>
             <div className="grid gap-2 text-gray text-sm">
               <Link
                 href={"/docs"}
                 style={inter.style}
-                className={`tracking-wide font-medium ${
+                className={`tracking-wide font-medium dark:font-normal ${
                   pathName !== "/docs"
                     ? "text-black dark:text-white"
                     : "text-purple-500"
@@ -374,7 +374,7 @@ export const NavBar: FC = ({}) => {
                   className={` relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background hover:pl-1 w-max ${
                     pathName === link.href
                       ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                      : "before:bg-transparent text-slate-500  hover:dark:text-slate-300 hover:text-slate-400 hover:before:bg-purple-500"
+                      : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500"
                   }`}
                   key={i}
                   href={link.href}
@@ -387,7 +387,7 @@ export const NavBar: FC = ({}) => {
               <Accordion key={i} type="single" collapsible>
                 <Link
                   style={inter.style}
-                  className={`tracking-wide text-sm font-medium`}
+                  className={`tracking-wide text-sm font-medium dark:font-normal`}
                   href={data.href}
                 >
                   {data.title}
@@ -399,12 +399,12 @@ export const NavBar: FC = ({}) => {
                         className={`text-sm text-slate-600 relative ${
                           pathName === item.href
                             ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                            : "before:bg-transparent text-slate-500  hover:dark:text-slate-300 hover:text-slate-800 hover:before:bg-purple-500 hover:pl-1"
+                            : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-1"
                         }`}
                       >
                         {item.title}
                         {item.links && (
-                          <ChevronRightIcon className="h-4 w-4 shrink-0 text-muted-foreground text-slate-400 transition-transform duration-200 absolute top-[10px] right-0 " />
+                          <ChevronRightIcon className="h-4 w-4 shrink-0 text-muted-foreground text-gray-300 dark:text-gray-800 transition-transform duration-200 absolute top-[10px] right-0 " />
                         )}
                       </AccordionTrigger>
                     </Link>
@@ -414,7 +414,7 @@ export const NavBar: FC = ({}) => {
                           className={`pl-4  relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background   cursor-pointer first-of-type:mt-2 last-of-type:mb-2 ${
                             pathName === link.href
                               ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-3 font-medium`
-                              : "before:bg-transparent text-slate-500  hover:dark:text-slate-300 hover:text-slate-800 hover:before:bg-purple-500 hover:pl-5"
+                              : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-5"
                           }`}
                           key={i}
                           href={link.href}

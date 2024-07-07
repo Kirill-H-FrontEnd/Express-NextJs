@@ -1,19 +1,9 @@
 "use client";
 // > React
 import { FC } from "react";
-import { useSession, signOut } from "next-auth/react";
-// > NextUi
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  Avatar,
-} from "@nextui-org/react";
-
 // > Next
 import Link from "next/link";
 // > Font
-import { GeistSans } from "geist/font/sans";
 import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
@@ -28,35 +18,19 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
 import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
 // > Icons
-import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 import { IoLogoGithub } from "react-icons/io";
-import { ArrowUpRight, SquareArrowOutUpRight, Squirrel } from "lucide-react";
+import { SquareArrowOutUpRight, Squirrel } from "lucide-react";
+// > Hooks
+import { UserButton } from "@/components/auth/user-button";
+import { useSession, signOut } from "next-auth/react";
+import { useCurrentUser } from "@/hooks/use-current-user";
+import { logout } from "@/actions/logout";
+import { LogoutButton } from "@/components/auth/logout-button";
 
 export const Header: FC = ({}) => {
-  const session = useSession();
-
-  const onClick = () => {
-    signOut();
-  };
-  const DATA_lINKS_USER = [
-    { value: "Showcase", href: "" },
-    { value: "Blog", href: "" },
-    {
-      value: "Templates",
-      href: "",
-    },
-    {
-      value: "Enterprise",
-      href: "",
-    },
-    {
-      value: "Logout",
-      href: "",
-    },
-  ];
+  // const session = useSession();
   const DATA_lINKS = [
     { value: "Showcase", href: "", icon: "" },
     { value: "Blog", href: "", icon: "" },
@@ -71,10 +45,13 @@ export const Header: FC = ({}) => {
       icon: <SquareArrowOutUpRight size={8} />,
     },
   ];
+  const onClick = () => {
+    logout();
+  };
   return (
     <header
       id="headerNav"
-      className="sticky top-0 left-0 border-b-1 border-slate-300 dark:border-slate-800 bg-white/50 dark:bg-black/50 py-[14px] px-5 z-[50] w-full backdrop-blur-sm"
+      className="sticky top-0 left-0 border-b-1 border-gray-200 dark:border-gray-900 bg-white/50 dark:bg-black/50 py-[14px] px-5 z-[50] w-full backdrop-blur-md shadow-sm shadow-gray-100 dark:shadow-md"
     >
       <div className="container">
         <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
@@ -103,7 +80,7 @@ export const Header: FC = ({}) => {
             </Link>
             <Select defaultValue="v1">
               <SelectTrigger
-                className="font-semibold dark:font-medium text-slate-500 dark:text-slate-400 hover:text-purple-800 hover:dark:text-purple-600 transition-colors"
+                className="font-semibold dark:font-medium text-gray-400  hover:text-purple-800 hover:dark:text-purple-600 transition-colors"
                 defaultValue={"1"}
               >
                 <SelectValue />
@@ -120,7 +97,7 @@ export const Header: FC = ({}) => {
               {DATA_lINKS.map((link, i) => (
                 <Link
                   style={inter.style}
-                  className="text-black dark:text-white hover:dark:text-purple-500 hover:text-purple-500 transition-colors relative text-sm font-medium"
+                  className="text-gray-700 dark:text-gray-400 hover:dark:text-purple-700 hover:text-purple-700 transition-colors relative text-sm font-medium dark:font-normal"
                   key={i}
                   href={link.href}
                 >
@@ -141,55 +118,7 @@ export const Header: FC = ({}) => {
               <SwitchThemeButton />
               <span className="absolute top-1/2 right-[-9px] translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-slate-300 dark:bg-slate-700 rounded-full pointer-events-none "></span>
             </div>
-            <Popover size="lg" backdrop="blur" placement="bottom">
-              <PopoverTrigger>
-                <Avatar
-                  radius="full"
-                  showFallback
-                  classNames={{
-                    icon: [
-                      "dark:text-white",
-                      "text-black",
-                      "p-[3px]",
-                      "dark:bg-white/10 bg-black/10",
-                    ],
-                  }}
-                  className=" cursor-pointer bg-transparent h-[30px] w-[30px] "
-                  src={session.data.user.image}
-                />
-              </PopoverTrigger>
-              <PopoverContent className=" bg-white dark:bg-slate-700 dark:bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden shadow-sm shadow-slate-300/20 p-4">
-                <div className="">
-                  <div className="grid grid-cols-2-auto justify-start gap-2 items-center mb-3 border-b-1 border-slate-800 pb-3">
-                    <div>
-                      <h5
-                        style={inter.style}
-                        className="text-md font-semibold text-black dark:text-white"
-                      >{`${session.data.user.name} `}</h5>
-                      <h4 className="text-black dark:text-slate-300 text-sm">
-                        {""}
-                      </h4>
-                    </div>
-                  </div>
-                  <nav className="grid gap-2 text-slate-300">
-                    {DATA_lINKS_USER.map((link, i) => (
-                      <Link
-                        onClick={() => {
-                          if (i === 4) {
-                            onClick();
-                          }
-                        }}
-                        className="hover:text-purple-500 hover:pl-1 transition-all w-max"
-                        key={i}
-                        href={link.href}
-                      >
-                        {link.value}
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
-              </PopoverContent>
-            </Popover>
+            <UserButton />
           </nav>
         </section>
       </div>

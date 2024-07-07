@@ -32,7 +32,7 @@ const SelectTrigger = React.forwardRef<
   >
     {children}
     <SelectPrimitive.Icon asChild>
-      <TriangleDownIcon className="h-4 w-4 relative left-[3px] text-slate-400 " />
+      <TriangleDownIcon className="h-4 w-4 relative left-[3px] text-gray-400 " />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ));

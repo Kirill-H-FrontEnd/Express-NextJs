@@ -19,7 +19,7 @@ export const Aside: FC = ({}) => {
 
   return (
     <aside
-      className="bg-transparent sticky top-[110px] h-[calc(100vh-121px)] z-[40] order-last hidden w-56 shrink-0 lg:block"
+      className="bg-transparent sticky top-[110px] h-[calc(100vh-121px)] z-[40] order-last hidden  shrink-0 lg:block"
       id="aside"
     >
       <h5

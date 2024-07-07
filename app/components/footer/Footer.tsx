@@ -7,9 +7,9 @@ import s from "./styles/Footer.module.scss";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 // > Icons
-import { IoLogoElectron } from "react-icons/io5";
+import { Squirrel } from "lucide-react";
+import { Cross2Icon } from "@radix-ui/react-icons";
 import { MdKeyboardDoubleArrowUp } from "react-icons/md";
-import { IoClose } from "react-icons/io5";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -30,9 +30,9 @@ import {
 } from "@/components/ui/dialog";
 import { SubscribeForm } from "./subscribe-form";
 import ShimmerButton from "@/components/magicui/shimmer-button";
-import { Squirrel } from "lucide-react";
-import { Cross2Icon } from "@radix-ui/react-icons";
-
+// > NextUI
+import { Tooltip } from "@nextui-org/react";
+import { ButtonTop } from "@/components/ui/button-top";
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
   const pathName = usePathname();
@@ -50,10 +50,12 @@ export const Footer: FC = ({}) => {
     <>
       {hideFooter && (
         <footer
-          className={`${s.footer} relative bg-black border-t-1 border-gray/20`}
+          className={`${s.footer} relative bg-black border-t-1 border-gray-900`}
         >
           <div className="container">
-            <section className={`${s.wrapper} py-14 border-b-1 border-gray/20`}>
+            <section
+              className={`${s.wrapper} py-14 border-b-1 border-gray-900`}
+            >
               <div>
                 <Link
                   href={"/"}
@@ -61,7 +63,7 @@ export const Footer: FC = ({}) => {
                 >
                   <Squirrel
                     className={`${s.logoIcon} hidden absolute top-0 left-0 `}
-                    color="#64748B"
+                    color="#4B5563"
                     size={40}
                     strokeWidth={1}
                   />
@@ -89,7 +91,7 @@ export const Footer: FC = ({}) => {
                       {item.links.map((link, i) => (
                         <Link
                           key={i}
-                          className={`text-slate-500 text-sm hover:text-purple-500 ${
+                          className={`text-gray-600 text-sm hover:text-purple-500 ${
                             pathName === link.href
                               ? `${s.active} text-purple-500`
                               : ""
@@ -122,7 +124,7 @@ export const Footer: FC = ({}) => {
                         Subscription
                       </ShimmerButton>
                     </DialogTrigger>
-                    <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center">
+                    <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center border-gray-800">
                       <div>
                         <DialogHeader>
                           <DialogTitle
@@ -147,17 +149,11 @@ export const Footer: FC = ({}) => {
               </div>
             </section>
             <section className={`${s.copyright} relative`}>
-              <div className="text-slate-500 text-sm py-4 text-center">
+              <div className="text-gray-600 text-sm py-4 text-center">
                 Copyright © {getFullYear} Protocol.This is just a documentation
                 template for the framework.
               </div>
-              <button
-                type="submit"
-                onClick={scrollToTop}
-                className="absolute top-1/2 right-0 -translate-y-1/2  border-2 border-gray p-1 rounded-full hidden lg:block"
-              >
-                <MdKeyboardDoubleArrowUp size={20} color="#4B5563" />
-              </button>
+              <ButtonTop />
             </section>
           </div>
         </footer>
