@@ -103,8 +103,8 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           maxWidth="full"
           className={`${
             s.navBar
-          } z-[50] fixed shadow-md  bg-transparent rounded-b-2xl  ${
-            isMenuOpen ? " bg-black/70" : ""
+          } z-[50] fixed border-1 border-gray-900 bg-black/40   ${
+            isMenuOpen ? " bg-black/70 rounded-none" : "rounded-b-2xl"
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
           isMenuOpen={isMenuOpen}

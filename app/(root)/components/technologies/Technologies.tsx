@@ -21,21 +21,24 @@ export const Technologies: FC = ({}) => {
   // Variants animation
   const Variants: Variants = {
     offscreen: {
-      y: 30,
+      y: 20,
       opacity: 0,
     },
     onscreen: (custom: number) => ({
       y: 0,
       opacity: 1,
       transition: {
-        delay: custom * 0.2,
+        delay: 0.1,
         duration: 0.4,
       },
     }),
   };
 
   return (
-    <section className={`${s.Technologies} bg-black py-24 relative`}>
+    <section
+      id="technologies"
+      className={`${s.Technologies} bg-black py-24 relative`}
+    >
       <div className="container">
         <section className={`${s.Wrapper} grid gap-14`}>
           <motion.article
@@ -45,7 +48,6 @@ export const Technologies: FC = ({}) => {
             className=" justify-center items-center text-center"
           >
             <motion.h2
-              custom={1}
               variants={Variants}
               style={inter.style}
               className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
@@ -53,9 +55,9 @@ export const Technologies: FC = ({}) => {
               Built on a foundation of fast, production-grade tooling
             </motion.h2>
           </motion.article>
-          <section className={`${s.Cards} `}>
+          <motion.section className={`${s.Cards} `}>
             <Card />
-          </section>
+          </motion.section>
         </section>
       </div>
     </section>

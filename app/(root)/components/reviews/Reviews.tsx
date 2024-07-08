@@ -10,7 +10,6 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 // > Components
 import { CardWrapper } from "./card-wrapper";
-import RadialGradient from "@/components/magicui/bg/radial-gradient";
 
 export const Reviews: FC = ({}) => {
   // Variants animation
@@ -23,14 +22,13 @@ export const Reviews: FC = ({}) => {
       y: 0,
       opacity: 1,
       transition: {
-        delay: custom * 0.2,
+        delay: custom * 0.1,
         duration: 0.4,
       },
     }),
   };
   return (
     <section className={`${s.reviews} relative bg-black py-24 w-full h-full  `}>
-      <RadialGradient origin="center" size={300} />
       <div className="container">
         <section className={`${s.wrapper} grid gap-14 `}>
           <motion.article
@@ -69,15 +67,9 @@ export const Reviews: FC = ({}) => {
               View the Protocol.js Showcase
             </Button>
           </motion.article>
-          <motion.section
-            viewport={{ once: true }}
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={Variants}
-            className={`${s.cards}  `}
-          >
+          <section className={`${s.cards}  `}>
             <CardWrapper />
-          </motion.section>
+          </section>
         </section>
       </div>
     </section>

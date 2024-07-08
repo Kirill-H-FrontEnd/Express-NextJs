@@ -8,7 +8,6 @@ import s from "./styles/LearnCards.module.scss";
 // > Components
 import { CardWrapper } from "./card-wrapper";
 // > Icons
-import { RiErrorWarningLine } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa6";
 // > NextUi
 import { Button } from "@nextui-org/react";
@@ -23,24 +22,36 @@ const inter = Inter({
 import { motion, Variants } from "framer-motion";
 // > Data
 import { DATA_LEARN_CARDS } from "@/data/dataItems";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
+import { cn } from "@/lib/utils";
 export const LearnCards: FC = ({}) => {
   // Variants animation
   const Variants: Variants = {
     offscreen: {
-      y: 30,
+      y: 20,
       opacity: 0,
     },
     onscreen: (custom: number) => ({
       y: 0,
       opacity: 1,
       transition: {
-        delay: custom * 0.2,
+        delay: custom * 0.1,
         duration: 0.4,
       },
     }),
   };
   return (
-    <section className={`${s.learnCards} bg-black py-24`}>
+    <section className={`${s.learnCards} bg-black py-24 relative`}>
+      <GridPattern
+        width={60}
+        height={60}
+        x={-1}
+        y={-1}
+        strokeDasharray={"8 4"}
+        className={cn(
+          "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-gray-900"
+        )}
+      />
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <motion.article

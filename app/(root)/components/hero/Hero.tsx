@@ -22,11 +22,14 @@ import ShimmerButton from "@/components/magicui/shimmer-button";
 import Particles from "@/components/magicui/bg/particles";
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
+import WordRotate from "@/components/magicui/word-rotate";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
+import LinearGradient from "@/components/magicui/bg/linear-gradient";
 export const Hero: FC = ({}) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   // Scroll to
   const handleClick = () => {
-    const targetSection = document.getElementById("dashboard");
+    const targetSection = document.getElementById("technologies");
     if (targetSection) {
       window.scrollTo({
         behavior: "smooth",
@@ -38,7 +41,8 @@ export const Hero: FC = ({}) => {
     <section
       className={`${s.home} relative w-full h-screen  overflow-hidden select-none text-purple-800 bg-black`}
     >
-      <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover">
+      <LinearGradient from="#1D1836" to="#0D0F14" />
+      <div className="w-full h-screen ">
         <div className="container ">
           <section
             className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
@@ -49,10 +53,10 @@ export const Hero: FC = ({}) => {
             `}
               >
                 The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-purple-200 via-purple-700 to-[#221B42] ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-200 via-purple-800 to-[#241A3E] ">
                   Progressive
                 </span>{" "}
-                JavaScript Framework
+                TypeScript Framework
               </h1>
 
               <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
@@ -97,10 +101,10 @@ export const Hero: FC = ({}) => {
       </div>
       {/* Bg */}
       <DotPattern
-        width={25}
-        height={25}
+        width={30}
+        height={30}
         className={cn(
-          "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+          "lg:md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
       />
       {isDesktop && (

@@ -24,14 +24,14 @@ export const Dashboard: FC = ({}) => {
   // Variants animations
   const Variants: Variants = {
     offscreen: {
-      y: 30,
+      y: 20,
       opacity: 0,
     },
     onscreen: (custom: number) => ({
       y: 0,
       opacity: 1,
       transition: {
-        delay: custom * 0.2,
+        delay: custom * 0.1,
         duration: 0.4,
       },
     }),

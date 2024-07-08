@@ -41,6 +41,7 @@ export const Card: FC = ({}) => {
       colorBeam: "#FDAB7E",
     },
   ];
+
   return (
     <>
       {DATA.map((card, i) => (
