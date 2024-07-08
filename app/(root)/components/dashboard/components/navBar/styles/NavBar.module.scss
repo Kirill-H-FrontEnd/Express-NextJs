@@ -1,4 +1,7 @@
 .navbar {
+	&::-webkit-scrollbar {
+		width: 0px;
+	}
 	hr {
 		display: none;
 	}

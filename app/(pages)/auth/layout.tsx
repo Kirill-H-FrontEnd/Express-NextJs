@@ -7,6 +7,7 @@ import { GeistSans } from "geist/font/sans";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 // > Utils
 import { cn } from "@/lib/utils";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
@@ -14,6 +15,7 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="w-full h-screen bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover grid place-items-center grid-rows-[100vh]">
           {children}
         </div>
+
         <DotPattern
           width={25}
           height={25}

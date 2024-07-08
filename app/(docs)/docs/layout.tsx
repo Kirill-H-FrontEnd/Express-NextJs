@@ -55,13 +55,3 @@ export default function DashboardLayout({
     </ThemeProvider>
   );
 }
-{
-  /* <Particles
-                className="absolute inset-0 hidden dark:block dark:sm:block z-10"
-                quantity={200}
-                size={0.4}
-                ease={80}
-                color={"#974BD9"}
-                refresh
-              /> */
-}

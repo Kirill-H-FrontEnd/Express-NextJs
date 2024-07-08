@@ -2,8 +2,6 @@
 // > React
 import { FC, useContext } from "react";
 // > Icons
-import { Moon } from "lucide-react";
-import { Sun } from "lucide-react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 // > Providers
 import { useThemeProvider } from "@/app/providers/ThemeProvider";

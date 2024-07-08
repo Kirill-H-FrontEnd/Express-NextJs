@@ -51,7 +51,7 @@ export const Header: FC = ({}) => {
   return (
     <header
       id="headerNav"
-      className="sticky top-0 left-0 border-b-1 border-gray-200 dark:border-gray-900 bg-white/50 dark:bg-black/50 py-[14px] px-5 z-[50] w-full backdrop-blur-md shadow-sm shadow-gray-100 dark:shadow-md"
+      className="sticky top-0 left-0 border-b-1 border-gray-200 dark:border-gray-900 bg-white/50 dark:bg-black/50 py-[14px] px-5 z-[50] w-full backdrop-blur-md shadow-sm shadow-gray-100 dark:shadow-md rounded-b-2xl"
     >
       <div className="container">
         <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">

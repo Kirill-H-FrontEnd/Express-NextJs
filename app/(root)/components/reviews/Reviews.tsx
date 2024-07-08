@@ -10,6 +10,7 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 // > Components
 import { CardWrapper } from "./card-wrapper";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
 
 export const Reviews: FC = ({}) => {
   // Variants animation
@@ -28,9 +29,8 @@ export const Reviews: FC = ({}) => {
     }),
   };
   return (
-    <section
-      className={`${s.reviews} relative bg-black py-24 w-full h-full bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden `}
-    >
+    <section className={`${s.reviews} relative bg-black py-24 w-full h-full  `}>
+      <RadialGradient origin="center" size={300} />
       <div className="container">
         <section className={`${s.wrapper} grid gap-14 `}>
           <motion.article

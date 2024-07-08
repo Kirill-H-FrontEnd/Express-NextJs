@@ -30,7 +30,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
       <Link
         ref={ref}
         href={href}
-        className={`${s.card} relative border-1 border-slate-700  rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
+        className={`${s.card} relative border-1 border-gray-900  rounded-2xl p-5 bg-black  hover:border-white  overflow-hidden `}
       >
         <div className="absolute z-[45] bottom-[20px] left-[20px] right-[20px] ">
           <h5 style={inter.style} className=" font-medium text-white">

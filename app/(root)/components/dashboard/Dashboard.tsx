@@ -1,37 +1,26 @@
 "use client";
-// > React
 import { FC } from "react";
-// > Styles
-import s from "./styles/Dashboard.module.scss";
-import "./styles/globalDash.scss";
+// > Globals styles
+import "./global.scss";
+import "atropos/css";
+// > Components
+import { Header } from "./components/header/Header";
+import { NavBar } from "./components/navBar/NavBar";
+import { Aside } from "./components/aside/Aside";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
+import { BorderBeam } from "@/components/magicui/border-beam";
+import Atropos from "atropos/react";
+// > Framer motion
+import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["700"],
+  weight: ["300", "400", "500", "600"],
 });
-// > Components
-import { Header } from "./components/header/Header";
-import { NavBar } from "./components/navBar/NavBar";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { Aside } from "./components/aside/Aside";
-import Particles from "@/components/magicui/bg/particles";
-import Atropos from "atropos/react";
-// > Framer Motion
-import { motion, Variants } from "framer-motion";
 
 export const Dashboard: FC = ({}) => {
-  const DATA_ASIDE_LINKS = [
-    { value: "Automatic Installation", href: "" },
-    { value: "Manual Installation", href: "" },
-    { value: "Creating directories", href: "" },
-    { value: "The app directory", href: "" },
-    { value: "The pages directory (optional)", href: "" },
-    { value: "The public folder (optional)", href: "" },
-    { value: "Run the Development Server", href: "" },
-    { value: "Next Steps", href: "" },
-  ];
   // Variants animations
   const Variants: Variants = {
     offscreen: {
@@ -48,77 +37,64 @@ export const Dashboard: FC = ({}) => {
     }),
   };
   return (
-    <section id="dashboard" className={`${s.dashboard} bg-black py-24`}>
-      <div className="container">
-        <section className={`${s.wrapper} grid gap-14`}>
-          <motion.article
-            initial="offscreen"
-            whileInView="onscreen"
-            className="grid gap-3 justify-center items-center text-center"
-            viewport={{ once: true }}
-          >
-            <motion.h2
-              variants={Variants}
-              custom={1}
-              style={inter.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
-            >
-              Convenient{" "}
-              <span className=" text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white">
-                documentation!
-              </span>
-            </motion.h2>
-            <motion.p
-              variants={Variants}
-              custom={2}
-              className="text-slate-300 text-lg lg:text-xl  font-normal"
-            >
-              A modern documentation page will allow you to learn comfortably.
-            </motion.p>
-          </motion.article>
-          <Atropos
-            rotateTouch={false}
-            highlight={false}
-            shadow={true}
-            activeOffset={0}
-            rotateXMax={5}
-            rotateYMax={5}
-            className="bg-transparent"
-          >
-            <motion.section
-              viewport={{ amount: 0.2, once: true }}
+    <>
+      <section className="py-24 bg-black">
+        <div className="container">
+          <section className="grid gap-14">
+            <motion.article
               initial="offscreen"
               whileInView="onscreen"
-              variants={Variants}
-              id="dashboardWrapperDash"
-              className={`${s.dashboardPanel} bg-black overflow-hidden  relative rounded-[10px]`}
+              viewport={{ once: true }}
+              className="grid gap-3  justify-center items-center text-center"
             >
-              <Header />
-              <NavBar />
-              <main
-                id="mainDash"
-                className="border-r-1 border-b-1 border-slate-700 pl-5 bg-[url('/gradientBg.svg')] bg-no-repeat bg-center bg-cover"
+              <motion.h2
+                custom={1}
+                variants={Variants}
+                style={inter.style}
+                className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
               >
-                <div id="PageWrapperDash">
-                  <section></section>
-                  <Aside data={DATA_ASIDE_LINKS} />
-                </div>
-              </main>
-              {/* Background */}
-
-              <BorderBeam size={200} duration={12} />
-              <Particles
-                className="absolute inset-0 hidden sm:block"
-                quantity={300}
-                size={0.4}
-                ease={80}
-                color={"#974BD9"}
-                refresh
-              />
-            </motion.section>
-          </Atropos>
-        </section>
-      </div>
-    </section>
+                Convenient documentation!
+              </motion.h2>
+              <motion.p
+                custom={2}
+                variants={Variants}
+                className="text-slate-300 text-lg lg:text-xl  font-normal"
+              >
+                A modern documentation page will allow you to learn comfortably.
+              </motion.p>
+            </motion.article>
+            <Atropos
+              rotateTouch={false}
+              highlight={false}
+              shadow={false}
+              className="bg-transparent"
+              rotateXMax={5}
+              rotateYMax={5}
+              activeOffset={15}
+            >
+              <div className="relative border-1 border-gray-900 rounded-2xl overflow-hidden">
+                <Header />
+                <article
+                  id="main"
+                  className=" relative pt-10 mb-[20px] container z-[11]"
+                >
+                  <NavBar />
+                  <div className="px-4 relative z-[11]"></div>
+                  <Aside />
+                </article>
+                <RadialGradient
+                  size={700}
+                  from="rgba(60, 41, 119, .5)"
+                  to="#0D0F14"
+                  origin="top"
+                  className="hidden dark:sm:block "
+                />
+                <BorderBeam size={200} />
+              </div>
+            </Atropos>
+          </section>
+        </div>
+      </section>
+    </>
   );
 };

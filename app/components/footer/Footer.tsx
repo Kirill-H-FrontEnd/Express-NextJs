@@ -9,7 +9,6 @@ import Link from "next/link";
 // > Icons
 import { Squirrel } from "lucide-react";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import { MdKeyboardDoubleArrowUp } from "react-icons/md";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -31,7 +30,6 @@ import {
 import { SubscribeForm } from "./subscribe-form";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 // > NextUI
-import { Tooltip } from "@nextui-org/react";
 import { ButtonTop } from "@/components/ui/button-top";
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
@@ -39,13 +37,6 @@ export const Footer: FC = ({}) => {
   let hideFooter = pathName === "/";
   // Subscribe form
   const [open, setOpen] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <>
       {hideFooter && (

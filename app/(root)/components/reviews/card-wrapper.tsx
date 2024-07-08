@@ -40,7 +40,6 @@ export const CardWrapper: FC = ({}) => {
               <p className="text-slate-300 mt-2 select-text">{card.info}</p>
             </div>
           </section>
-          {/* BG */}
         </article>
       ))}
     </>

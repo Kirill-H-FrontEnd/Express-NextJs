@@ -103,7 +103,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           maxWidth="full"
           className={`${
             s.navBar
-          } z-[50] fixed shadow-md  bg-transparent sm:py-1  ${
+          } z-[50] fixed shadow-md  bg-transparent rounded-b-2xl  ${
             isMenuOpen ? " bg-black/70" : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
@@ -160,7 +160,9 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                     size="sm"
                     content="Dev.GitHub"
                     placement="bottom"
-                    classNames={{ content: "font-semibold" }}
+                    classNames={{
+                      content: "font-semibold bg-white text-black",
+                    }}
                   >
                     <Link
                       href={"https://github.com/Kirill-H-FrontEnd"}
