@@ -40,9 +40,11 @@ import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { login } from "@/actions/login";
 import Link from "next/link";
+import toast from "react-hot-toast";
 
 export const LoginForm: FC = ({}) => {
   const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl");
   const urlError =
     searchParams.get("error") === "OAuthAccountNotLinked"
       ? "Email already in use with different provider!"
@@ -62,7 +64,7 @@ export const LoginForm: FC = ({}) => {
     setError("");
     setSuccess("");
     startTransition(() => {
-      login(values)
+      login(values, callbackUrl)
         .then((data: any) => {
           if (data.error) {
             form.reset();
@@ -72,7 +74,6 @@ export const LoginForm: FC = ({}) => {
             form.reset();
             setSuccess(data.success);
           }
-
           if (data.twoFactor) {
             setShowTwoFactor(true);
           }

@@ -12,6 +12,7 @@ import { GeistMono } from "geist/font/mono";
 import { NavBar } from "./components/navBar/NavBar";
 import { Footer } from "./components/footer/Footer";
 import { InfoModal } from "@/components/ui/Modals/Info/InfoModal";
+
 // > NextUi
 import NextUiProvider from "./providers/nextUiProvider";
 export const metadata: Metadata = {

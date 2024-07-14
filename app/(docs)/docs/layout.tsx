@@ -33,7 +33,7 @@ export default function DashboardLayout({
       <Header />
       <article id="main" className=" relative pt-10 mb-[20px] container z-[11]">
         <NavBar />
-        <div className="px-4 relative z-[11]">{children}</div>
+        <div className="md:px-4 relative z-[11]">{children}</div>
         <Aside />
       </article>
       <Footer />
@@ -42,7 +42,7 @@ export default function DashboardLayout({
         from="rgba(60, 41, 119, .5)"
         to="#0D0F14"
         origin="top"
-        className="hidden dark:sm:block"
+        className="hidden dark:block"
       />
       {/* Background */}
       <DotPattern

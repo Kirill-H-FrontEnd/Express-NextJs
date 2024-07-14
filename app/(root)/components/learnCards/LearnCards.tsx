@@ -43,8 +43,8 @@ export const LearnCards: FC = ({}) => {
   return (
     <section className={`${s.learnCards} bg-black py-24 relative`}>
       <GridPattern
-        width={60}
-        height={60}
+        width={50}
+        height={50}
         x={-1}
         y={-1}
         strokeDasharray={"8 4"}
@@ -58,13 +58,13 @@ export const LearnCards: FC = ({}) => {
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true }}
-            className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center"
+            className="grid gap-3 lg:grid-cols-2-auto justify-center items-center text-center z-[20]"
           >
             <motion.h2
               custom={1}
               variants={Variants}
               style={inter.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
+              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
             >
               What's in Express.ts?
             </motion.h2>

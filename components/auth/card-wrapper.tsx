@@ -47,7 +47,9 @@ export const CardWrapper: FC<TCardWrapper> = ({
               <Social />
             </CardFooter>
           )}
-          <CardFooter>{contentPrivacy}</CardFooter>
+          <CardFooter className="grid justify-center">
+            {contentPrivacy}
+          </CardFooter>
         </div>
       </Card>
     </section>

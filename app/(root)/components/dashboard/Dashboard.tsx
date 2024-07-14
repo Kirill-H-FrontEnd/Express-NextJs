@@ -38,9 +38,9 @@ export const Dashboard: FC = ({}) => {
   };
   return (
     <>
-      <section className="py-24 bg-black">
+      <section className="py-24 bg-black ">
         <div className="container">
-          <section className="grid gap-14">
+          <section className="grid gap-14 ">
             <motion.article
               initial="offscreen"
               whileInView="onscreen"
@@ -51,7 +51,7 @@ export const Dashboard: FC = ({}) => {
                 custom={1}
                 variants={Variants}
                 style={inter.style}
-                className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
+                className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
               >
                 Convenient documentation!
               </motion.h2>

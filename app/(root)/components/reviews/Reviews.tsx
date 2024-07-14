@@ -41,15 +41,15 @@ export const Reviews: FC = ({}) => {
             <h2 className="text-slate-300 text-lg ">
               <p>
                 For{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white">
                   performance
                 </span>
                 ,
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white">
                   efficiency
                 </span>{" "}
                 and{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white">
                   developer experience
                 </span>
                 .

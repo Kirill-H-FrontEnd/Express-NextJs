@@ -124,6 +124,7 @@ export const RegisterForm: FC<TLoginForm> = ({}) => {
                       {...field}
                       placeholder="john.doe@example.com"
                       type="email"
+                      autoComplete="off"
                     />
                   </FormControl>
                   <FormMessage />

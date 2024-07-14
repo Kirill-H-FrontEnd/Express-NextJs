@@ -47,7 +47,7 @@ export const UserButton = () => {
             ],
           }}
           className=" cursor-pointer bg-transparent h-[30px] w-[30px] "
-          src={user.image}
+          src={user?.image || ""}
         />
       </PopoverTrigger>
       <PopoverContent className=" bg-white dark:bg-slate-700 dark:bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden shadow-sm shadow-slate-300/20 p-4">
@@ -57,7 +57,7 @@ export const UserButton = () => {
               <h5
                 style={inter.style}
                 className="text-md font-semibold text-black dark:text-white"
-              >{`${user.name} `}</h5>
+              >{`${user?.name} `}</h5>
               <h4 className="text-black dark:text-slate-300 text-sm">{""}</h4>
             </div>
           </div>

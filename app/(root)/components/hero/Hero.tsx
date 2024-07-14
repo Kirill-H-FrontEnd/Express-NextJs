@@ -20,11 +20,10 @@ import { cn } from "@/lib/utils";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Particles from "@/components/magicui/bg/particles";
+import LinearGradient from "@/components/magicui/bg/linear-gradient";
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
-import WordRotate from "@/components/magicui/word-rotate";
-import RadialGradient from "@/components/magicui/bg/radial-gradient";
-import LinearGradient from "@/components/magicui/bg/linear-gradient";
+
 export const Hero: FC = ({}) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
   // Scroll to
@@ -39,7 +38,7 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-screen  overflow-hidden select-none text-purple-800 bg-black`}
+      className={`${s.home} relative w-full h-lvh  overflow-hidden select-none text-purple-800 bg-black`}
     >
       <LinearGradient from="#1D1836" to="#0D0F14" />
       <div className="w-full h-screen ">
@@ -53,7 +52,7 @@ export const Hero: FC = ({}) => {
             `}
               >
                 The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-br from-purple-200 via-purple-800 to-[#241A3E] ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-purple-200 via-purple-800 to-[#241A3E] ">
                   Progressive
                 </span>{" "}
                 TypeScript Framework
@@ -62,7 +61,7 @@ export const Hero: FC = ({}) => {
               <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
                 Used by some of the world's largest companies, Express enables
                 you to create{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white ">
                   high-quality web applications
                 </span>{" "}
                 with the power of TypeScript.

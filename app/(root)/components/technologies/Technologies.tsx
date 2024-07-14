@@ -50,7 +50,7 @@ export const Technologies: FC = ({}) => {
             <motion.h2
               variants={Variants}
               style={inter.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white"
+              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
             >
               Built on a foundation of fast, production-grade tooling
             </motion.h2>

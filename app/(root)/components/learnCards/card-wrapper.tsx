@@ -60,7 +60,6 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
           size={0.2}
           ease={80}
           color={"#974BD9"}
-          refresh
         />
       </Link>
     );
