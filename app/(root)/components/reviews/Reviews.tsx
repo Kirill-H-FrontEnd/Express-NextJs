@@ -10,6 +10,7 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 // > Components
 import { CardWrapper } from "./card-wrapper";
+import { BorderBeam } from "@/components/magicui/border-beam";
 
 export const Reviews: FC = ({}) => {
   // Variants animation
@@ -67,8 +68,9 @@ export const Reviews: FC = ({}) => {
               View the Protocol.js Showcase
             </Button>
           </motion.article>
-          <section className={`${s.cards}  `}>
+          <section className={`${s.cards}  relative rounded-md`}>
             <CardWrapper />
+            <BorderBeam className="sm:hidden xl:block" size={200} />
           </section>
         </section>
       </div>

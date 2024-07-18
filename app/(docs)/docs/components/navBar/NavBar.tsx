@@ -36,6 +36,7 @@ import { Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { GridPattern } from "@/components/magicui/bg/grid-pattern";
 import { cn } from "@/lib/utils";
+import { DATA_PAGES } from "@/data/dataItems";
 
 export const NavBar: FC = ({}) => {
   const pathName = usePathname();
@@ -47,7 +48,7 @@ export const NavBar: FC = ({}) => {
     },
     {
       value: "Project Structure",
-      href: "",
+      href: "/docs/getting-started/project-structure",
     },
   ];
   const DATA_LINKS = [

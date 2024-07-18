@@ -72,7 +72,7 @@ export const Dashboard: FC = ({}) => {
               rotateYMax={5}
               activeOffset={15}
             >
-              <div className="relative border-1 border-gray-900 rounded-2xl overflow-hidden">
+              <div className="relative border-1 border-gray-900 rounded-2xl overflow-hidden h-[530px] md:h-full">
                 <Header />
                 <article
                   id="main"
@@ -87,7 +87,7 @@ export const Dashboard: FC = ({}) => {
                   from="rgba(60, 41, 119, .5)"
                   to="#0D0F14"
                   origin="top"
-                  className="hidden dark:sm:block "
+                  className="hidden dark:block "
                 />
                 <BorderBeam size={200} />
               </div>

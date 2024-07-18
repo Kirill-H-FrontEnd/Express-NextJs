@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils";
 import { Footer } from "./components/footer/Footer";
 import RadialGradient from "@/components/magicui/bg/radial-gradient";
 import { DotPattern } from "@/components/magicui/bg/dot-pattern";
+import LinearGradient from "@/components/magicui/bg/linear-gradient";
 export const metadata: Metadata = {
   title: "Docs | Protocol.js",
   description: "This is the Introduction documentation page.",
@@ -37,12 +38,17 @@ export default function DashboardLayout({
         <Aside />
       </article>
       <Footer />
-      <RadialGradient
+      {/* <RadialGradient
         size={700}
         from="rgba(60, 41, 119, .5)"
         to="#0D0F14"
         origin="top"
         className="hidden dark:block"
+      /> */}
+      <LinearGradient
+        className="hidden dark:block"
+        from="#1D1836"
+        to="#0D0F14"
       />
       {/* Background */}
       <DotPattern

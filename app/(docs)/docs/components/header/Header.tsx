@@ -131,7 +131,6 @@ export const Header: FC = ({}) => {
             </div>
           </section>
         </div>
-
         {/* ToggleMenu */}
         <NavbarMenu className="bg-black/60 backdrop:blur-md pt-6 z-[48] ">
           <div className="grid gap-5 pb-2">links</div>
