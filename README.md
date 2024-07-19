@@ -24,7 +24,7 @@ To get this project up and running on your local machine, follow these steps:
 
 - Clone the repository
 - Install dependencies with `npm install`
-- ```bash
+ ```bash
   npm install
   ```
 - Run the development server with `npm run dev`
