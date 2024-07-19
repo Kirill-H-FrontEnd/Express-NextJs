@@ -3,9 +3,11 @@
 ## 🤖 About Express
 `📋 This is a beautiful and very simple template for web-framework. This is just template and it consists only of a main page and a beautiful documentation page. Also this website has Two-Factor authentication when using NextAuth and Prisma for db.`
 
-## 🛠 Skills
+## 🛠 Technologies Used
 
-This project is used by the following skills:
+We've assembled quite the tech stack to bring Express to life:
+
+- react
 
 **Technologies:** `React`, `NextJs`, `TypeScript`, `SCSS`
 
