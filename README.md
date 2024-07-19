@@ -22,12 +22,13 @@ We've assembled quite the tech stack to bring Express to life:
 
 To get this project up and running on your local machine, follow these steps:
 
-- Clone the repository.
-- Install dependencies with ```bash
-- npm install
-- ```.
-- Run the development server with ```npm run dev```.
-- Open your browser and navigate to `http://localhost:3000`.
+- Clone the repository
+- Install dependencies with `npm install`
+- ```bash
+  npm install
+  ```
+- Run the development server with `npm run dev`
+- Open your browser and navigate to `http://localhost:3000`
 
 
 
