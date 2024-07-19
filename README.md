@@ -14,4 +14,7 @@ We've assembled quite the tech stack to bring Express to life:
 
 **Libraries:** `Tailwind CSS`, `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
 
+## 🎯 Project Purpose
+`This project serves as a demonstration of modern web development techniques and best practices. It showcases how these powerful technologies can be combined to create a sleek, performant, and engaging landing page for a tech-focused company.`
+
 ![Banner](./public/Express-NextJs-banner.png)
