@@ -18,7 +18,14 @@ We've assembled quite the tech stack to bring Express to life:
 
 **Libraries:** `Tailwind CSS`, `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
 
-## 🎯 Project Purpose
-`This project serves as a demonstration of modern web development techniques and best practices. It showcases how these powerful technologies can be combined to create a sleek, performant, and engaging landing page for a tech-focused company.`
+## 🚀 Getting Started
+
+To get this project up and running on your local machine, follow these steps:
+
+- Clone the repository
+- Install dependencies with ```npm install```
+- Run the development server with ```npm run dev```
+- Open your browser and navigate to `http://localhost:3000`
+
 
 
