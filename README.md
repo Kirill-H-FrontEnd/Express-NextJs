@@ -33,5 +33,8 @@ To get this project up and running on your local machine, follow these steps:
   ```
 - Open your browser and navigate to `http://localhost:3000`
 
+## 📜 Disclaimer
+Express.ts is a fictional company created for demonstration purposes only. Any resemblance to real companies, living or dead, is purely coincidental.
 
-
+## 🤝 Contributing
+While Express isn't a real company, your contributions to this project are real and valued! Feel free to open issues or submit pull requests if you have ideas for improvements. Thank you!
