@@ -28,6 +28,9 @@ To get this project up and running on your local machine, follow these steps:
   npm install
   ```
 - Run the development server with `npm run dev`
+ ```bash
+  npm run dev
+  ```
 - Open your browser and navigate to `http://localhost:3000`
 
 
