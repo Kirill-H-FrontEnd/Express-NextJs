@@ -1,6 +1,6 @@
 # [Express | NextJs](https://express-next-js.vercel.app)
 
-Welcome to the Armify project repository! We're here to show you how we're arming the future of industry with cutting-edge robotic solutions.
+Welcome to the Express.ts project repository! We are here to show you an incredible website template for web framework!
 
 ![Banner](./public/Express-NextJs-banner.png)
 
