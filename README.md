@@ -11,7 +11,6 @@ We've assembled quite the tech stack to bring Express to life:
 - `NextJs`
 - `TypeScript`
 - `SCSS`
-**Technologies:** `React`, `NextJs`, `TypeScript`, `SCSS`
 
 **Libraries:** `Tailwind CSS`, `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
 
