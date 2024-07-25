@@ -49,7 +49,6 @@ export const Header: FC = ({}) => {
   return (
     <>
       <Navbar
-        disableAnimation
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}

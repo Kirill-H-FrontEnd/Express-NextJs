@@ -43,15 +43,6 @@ export const Aside: FC = ({}) => {
             {link.value}
           </Link>
         ))} */}
-        <Link
-          // onClick={(e) => {
-          //   e.preventDefault(), scrollToSection("#test2");
-          // }}
-          className="text-white text-xl"
-          href="#test2"
-        >
-          test
-        </Link>
       </nav>
     </aside>
   );

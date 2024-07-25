@@ -16,7 +16,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["700"],
+  weight: ["600"],
 });
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
@@ -47,7 +47,6 @@ export const LearnCards: FC = ({}) => {
         height={50}
         x={-1}
         y={-1}
-        strokeDasharray={"8 4"}
         className={cn(
           "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-gray-900"
         )}

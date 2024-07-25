@@ -16,8 +16,8 @@ import { InfoModal } from "@/components/ui/Modals/Info/InfoModal";
 // > NextUi
 import NextUiProvider from "./providers/nextUiProvider";
 export const metadata: Metadata = {
-  title: "Protocol | Home",
-  description: "Protocol is a web Framework",
+  title: "Express.ts | The TypeScript Framework",
+  description: "Express | The TypeScript Framework ",
 };
 
 export default async function RootLayout({

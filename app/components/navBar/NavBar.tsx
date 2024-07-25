@@ -98,12 +98,11 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
     <>
       {hideNavigation && (
         <Navbar
-          disableAnimation
           ref={ref}
           maxWidth="full"
           className={`${
             s.navBar
-          } z-[50] fixed border-1 border-gray-900 bg-black/40   ${
+          } z-[50] fixed border-b-1 border-gray-900 bg-black/40   ${
             isMenuOpen ? " bg-black/70 " : ""
           } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}

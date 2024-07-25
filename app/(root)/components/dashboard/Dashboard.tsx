@@ -14,6 +14,7 @@ import Atropos from "atropos/react";
 import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
+import LinearGradient from "@/components/magicui/bg/linear-gradient";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -82,14 +83,12 @@ export const Dashboard: FC = ({}) => {
                   <div className="px-4 relative z-[11]"></div>
                   <Aside />
                 </article>
-                <RadialGradient
-                  size={700}
-                  from="rgba(60, 41, 119, .5)"
+                <LinearGradient
+                  className="hidden dark:block"
+                  from="#1D1836"
                   to="#0D0F14"
-                  origin="top"
-                  className="hidden dark:block "
                 />
-                <BorderBeam size={200} />
+                <BorderBeam colorFrom="#131322" colorTo="#F1F4F8" size={200} />
               </div>
             </Atropos>
           </section>

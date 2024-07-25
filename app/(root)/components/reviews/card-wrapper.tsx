@@ -6,6 +6,7 @@ import s from "./styles/card-wrapper.module.scss";
 import Image from "next/image";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import { cn } from "@/lib/utils";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
 export const CardWrapper: FC = ({}) => {
   // Dada cards
   const DATA_CARDS = [
@@ -32,7 +33,7 @@ export const CardWrapper: FC = ({}) => {
     <>
       {DATA_CARDS.map((card, i) => (
         <article
-          className={`${s.card} relative w-full h-full bg-gradient-to-b from-black to-[#3B2977]/15 backdrop-blur-lg select-none p-5 `}
+          className={`${s.card} relative w-full h-full select-none p-5 overflow-hidden`}
           key={i}
         >
           <section className="relative z-20">
@@ -41,16 +42,23 @@ export const CardWrapper: FC = ({}) => {
               <Image src={card.logo} width={150} height={150} alt="" />
               <p className="text-slate-300 mt-2 select-text">{card.info}</p>
             </div>
+            <DotPattern
+              cr={0.6}
+              cx={0.6}
+              cy={0.6}
+              width={35}
+              height={35}
+              className={cn(
+                "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)] rounded-[10px] "
+              )}
+            />
           </section>
-          <DotPattern
-            cr={0.6}
-            cx={0.6}
-            cy={0.6}
-            width={32}
-            height={32}
-            className={cn(
-              "lg:md:[mask-image:radial-gradient(800px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)] rounded-[10px]"
-            )}
+          <RadialGradient
+            className=""
+            from="#1D1836"
+            to="#0D0F14"
+            origin="bottom"
+            size={200}
           />
         </article>
       ))}

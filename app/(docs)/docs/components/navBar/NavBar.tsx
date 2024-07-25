@@ -25,15 +25,12 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
   DialogClose,
-  DialogFooter,
 } from "@/components/ui/dialog";
 // > Icons
-import { ChevronRightIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { ChevronRightIcon } from "@radix-ui/react-icons";
 import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { GridPattern } from "@/components/magicui/bg/grid-pattern";
 import { cn } from "@/lib/utils";
 
@@ -396,7 +393,7 @@ export const NavBar: FC = ({}) => {
                   <AccordionItem key={i} value={`item-${i}`}>
                     <Link href={item.href} className={`text-left`}>
                       <AccordionTrigger
-                        className={`text-sm text-slate-600 relative ${
+                        className={`text-sm text-slate-600 relative data-[state=open]:text-purple-500 data-[state=open]:pl-1 ${
                           pathName === item.href
                             ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
                             : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-1"

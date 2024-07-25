@@ -50,21 +50,21 @@ export const UserButton = () => {
           src={user?.image || ""}
         />
       </PopoverTrigger>
-      <PopoverContent className=" bg-white dark:bg-slate-700 dark:bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden shadow-sm shadow-slate-300/20 p-4">
+      <PopoverContent className=" bg-white dark:bg-black dark:bg-[url('/dashboard/animBg.svg')] bg-no-repeat bg-center bg-cover overflow-hidden shadow-sm shadow-slate-300/20 p-4">
         <div className="">
-          <div className="grid grid-cols-2-auto justify-start gap-2 items-center mb-3 border-b-1 border-slate-800 pb-3">
+          <div className="grid grid-cols-2-auto justify-start gap-2 items-center mb-3 border-b-1 text-white dark:text-black border-gray-200 dark:border-gray-900 pb-3">
             <div>
               <h5
                 style={inter.style}
-                className="text-md font-semibold text-black dark:text-white"
+                className="text-md font-semibold text-black dark:text-white capitalize"
               >{`${user?.name} `}</h5>
-              <h4 className="text-black dark:text-slate-300 text-sm">{""}</h4>
+              <h4 className="text-gray-600  text-sm">{user.email}</h4>
             </div>
           </div>
-          <nav className="grid gap-2 text-slate-300">
+          <nav className="grid gap-2 ">
             {DATA_lINKS_USER.map((link, i) => (
               <Link
-                className="hover:text-purple-500 hover:pl-1 transition-all w-max"
+                className="hover:text-purple-500 hover:dark:text-purple-500 hover:pl-1 transition-all w-max text-gray-600 "
                 key={i}
                 href={link.href}
               >

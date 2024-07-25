@@ -1,26 +1,19 @@
-import Image from "next/image";
 // > Globals styles
 import "./global.scss";
+import { cn } from "@/lib/utils";
 // > Components
 import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
-import { SessionProvider } from "next-auth/react";
 import { Aside } from "./components/aside/Aside";
-// > Auth
-import { auth } from "@/auth";
+import { Footer } from "./components/footer/Footer";
+import { DotPattern } from "@/components/magicui/bg/dot-pattern";
+import LinearGradient from "@/components/magicui/bg/linear-gradient";
 // > Providers
 import ThemeProvider from "@/app/providers/ThemeProvider";
 // > Next
 import type { Metadata } from "next";
-import Particles from "@/components/magicui/bg/particles";
-import GridPattern from "@/components/magicui/bg/grid-pattern";
-import { cn } from "@/lib/utils";
-import { Footer } from "./components/footer/Footer";
-import RadialGradient from "@/components/magicui/bg/radial-gradient";
-import { DotPattern } from "@/components/magicui/bg/dot-pattern";
-import LinearGradient from "@/components/magicui/bg/linear-gradient";
 export const metadata: Metadata = {
-  title: "Docs | Protocol.js",
+  title: "Express.ts | Documentation",
   description: "This is the Introduction documentation page.",
 };
 
@@ -38,13 +31,6 @@ export default function DashboardLayout({
         <Aside />
       </article>
       <Footer />
-      {/* <RadialGradient
-        size={700}
-        from="rgba(60, 41, 119, .5)"
-        to="#0D0F14"
-        origin="top"
-        className="hidden dark:block"
-      /> */}
       <LinearGradient
         className="hidden dark:block"
         from="#1D1836"

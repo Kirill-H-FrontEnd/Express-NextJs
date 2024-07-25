@@ -25,6 +25,7 @@ import { SubscribeSchema } from "@/schemas";
 import { GeistSans } from "geist/font/sans";
 import { subscribe } from "@/actions/subscribe";
 import { Spinner } from "@nextui-org/spinner";
+import DotPattern from "@/components/magicui/bg/dot-pattern";
 export const SubscribeForm: FC = ({}) => {
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();
@@ -50,12 +51,15 @@ export const SubscribeForm: FC = ({}) => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full h-full relative z-[10]"
       >
-        <div className=" my-4 grid gap-3  pb-3">
+        <div className=" my-4 grid gap-3 pb-3">
           <FormField
             name="name"
             render={({ field }) => (
               <FormItem>
-                <label style={GeistSans.style} className="text-white text-sm">
+                <label
+                  style={GeistSans.style}
+                  className="text- black dark:text-white text-sm font-semibold dark:font-normal "
+                >
                   Name
                 </label>
                 <FormControl>
@@ -76,7 +80,10 @@ export const SubscribeForm: FC = ({}) => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <label style={GeistSans.style} className="text-white text-sm">
+                <label
+                  style={GeistSans.style}
+                  className="text-black font-semibold dark:font-normal dark:text-white text-sm"
+                >
                   Email
                 </label>
                 <FormControl>
@@ -110,7 +117,14 @@ export const SubscribeForm: FC = ({}) => {
         y={-1}
         strokeDasharray={"8 4"}
         className={cn(
-          "[mask-image:radial-gradient(280px_circle_at_center,white,transparent)]"
+          "[mask-image:radial-gradient(280px_circle_at_center,white,transparent)] hidden dark:block"
+        )}
+      />
+      <DotPattern
+        width={25}
+        height={25}
+        className={cn(
+          "lg:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)] fill-slate-300 dark:hidden"
         )}
       />
     </Form>

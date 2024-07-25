@@ -21,6 +21,7 @@ import { cn } from "@/lib/utils";
 import GridPattern from "@/components/magicui/bg/grid-pattern";
 import DotPattern from "@/components/magicui/bg/dot-pattern";
 import Particles from "@/components/magicui/bg/particles";
+
 type TCardWrapper = {
   title: string;
   text: string;
@@ -32,7 +33,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
       <Link
         ref={ref}
         href={href}
-        className={`${s.card}  border-1 border-gray-900   p-5 bg-gradient-to-b from-black to-[#3B2977]/15 rounded-[12px]  h-full relative hover:to-[#3B2977]/10 hover:border-gray-700  overflow-hidden `}
+        className={`${s.card} border-1 border-gray-900 p-5 bg-gradient-to-b from-black to-[#3B2977]/15 rounded-[12px]  h-full relative  hover:border-gray-700  overflow-hidden backdrop-blur-sm`}
       >
         <div className="absolute z-[45] bottom-[20px] left-[20px] right-[20px] ">
           <h5 style={inter.style} className=" font-medium text-white">
@@ -55,7 +56,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
           )}
         />
         <Particles
-          className="absolute inset-0"
+          className="absolute inset-0 hidden md:block"
           quantity={50}
           size={0.2}
           ease={80}

@@ -29,7 +29,7 @@ export const Reviews: FC = ({}) => {
     }),
   };
   return (
-    <section className={`${s.reviews} relative bg-black py-24 w-full h-full  `}>
+    <section className={`${s.reviews} relative bg-black py-24 w-full h-full`}>
       <div className="container">
         <section className={`${s.wrapper} grid gap-14 `}>
           <motion.article
@@ -70,7 +70,12 @@ export const Reviews: FC = ({}) => {
           </motion.article>
           <section className={`${s.cards}  relative rounded-md`}>
             <CardWrapper />
-            <BorderBeam className="sm:hidden xl:block" size={200} />
+            <BorderBeam
+              colorFrom="#131322"
+              colorTo="#F1F4F8"
+              className="sm:hidden xl:block"
+              size={100}
+            />
           </section>
         </section>
       </div>

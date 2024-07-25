@@ -129,12 +129,12 @@ export const Footer: FC = ({}) => {
                       Subscription
                     </ShimmerButton>
                   </DialogTrigger>
-                  <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20 grid place-items-center border-gray-800">
+                  <DialogContent className=" bg-white dark:bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm: border-gray-200 sm:dark:border-gray-900 grid place-items-center ">
                     <div>
                       <DialogHeader>
                         <DialogTitle
                           style={inter.style}
-                          className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text font-bold mb-2"
+                          className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-[#241A3E] dark:to-white text-center text-2xl select-text font-bold mb-2"
                         >
                           Subscribe to our newsletter
                         </DialogTitle>
@@ -144,7 +144,7 @@ export const Footer: FC = ({}) => {
                         </p>
                       </DialogHeader>
                       <SubscribeForm />
-                      <DialogClose className="absolute top-4 right-4 text-white dark:text-white z-[10]">
+                      <DialogClose className="absolute top-4 right-4 text-black dark:text-white z-[10]">
                         <Cross2Icon width={20} height={20} />
                       </DialogClose>
                     </div>
