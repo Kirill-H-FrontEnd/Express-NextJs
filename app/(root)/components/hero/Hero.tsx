@@ -103,7 +103,7 @@ export const Hero: FC = ({}) => {
         width={30}
         height={30}
         className={cn(
-          "lg:md:[mask-image:radial-gradient(700px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+          "lg:md:[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
         )}
       />
       {isDesktop && (

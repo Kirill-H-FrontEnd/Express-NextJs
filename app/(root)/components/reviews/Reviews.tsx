@@ -11,6 +11,8 @@ import { motion, Variants } from "framer-motion";
 // > Components
 import { CardWrapper } from "./card-wrapper";
 import { BorderBeam } from "@/components/magicui/border-beam";
+import { cn } from "@/lib/utils";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
 
 export const Reviews: FC = ({}) => {
   // Variants animation
@@ -31,7 +33,7 @@ export const Reviews: FC = ({}) => {
   return (
     <section className={`${s.reviews} relative bg-black py-24 w-full h-full`}>
       <div className="container">
-        <section className={`${s.wrapper} grid gap-14 `}>
+        <section className={`${s.wrapper} grid gap-14 relative z-[5]`}>
           <motion.article
             initial="offscreen"
             whileInView="onscreen"
@@ -79,6 +81,15 @@ export const Reviews: FC = ({}) => {
           </section>
         </section>
       </div>
+      <GridPattern
+        width={50}
+        height={50}
+        x={-1}
+        y={-1}
+        className={cn(
+          "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(350px_circle_at_center,white,transparent)] stroke-gray-900"
+        )}
+      />
     </section>
   );
 };

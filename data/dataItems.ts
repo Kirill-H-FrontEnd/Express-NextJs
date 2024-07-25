@@ -88,37 +88,38 @@ export const DATA_FOOTER_LINKS = [
     ],
   },
 ];
-export const DATA_LEARN_CARDS = {
-  section1: [
-    {
-      href: "/docs",
-      title: "Introduction",
-      text: "Learn how to build a full-stack web application with the free, Express.ts App Router Course.",
-    },
-  ],
-  section2: [
-    {
-      href: "/dashboard/project-structure",
-      title: "Project Structure",
-      text: "This page provides an overview of the project structure of a Express.ts application. It covers top-level files and folders, configuration files, and routing conventions within the app and pages directories.",
-    },
-    {
-      href: "",
-      title: "Routing",
-      text: "The skeleton of every application is routing. This page will introduce you to the fundamental concepts of routing for the web and how to handle ",
-    },
-    {
-      href: "/dashboard/data-fetching",
-      title: "Data Fetching",
-      text: "Make your React component async and await your data. Express.ts supports both server and client data fetching.",
-    },
-    {
-      href: "/dashboard/css-support",
-      title: "CSS Support",
-      text: "Style your application with your favorite tools, including support for CSS Modules, Tailwind CSS, and popular community libraries.",
-    },
-  ],
-};
+export const DATA_LEARN_CARDS = [
+  {
+    href: "/docs",
+    title: "Introduction",
+    text: "Learn how to build a full-stack web application with the free, Express.ts App Router Course.",
+  },
+  {
+    href: "/dashboard/project-structure",
+    title: "Project Structure",
+    text: "This page provides an overview of the project structure of a Express.ts application. It covers top-level files and folders, configuration files, and routing conventions within the app and pages directories.",
+  },
+  {
+    href: "",
+    title: "Routing",
+    text: "The skeleton of every application is routing. This page will introduce you to the fundamental concepts of routing for the web and how to handle ",
+  },
+  {
+    href: "/dashboard/data-fetching",
+    title: "Data Fetching",
+    text: "Make your React component async and await your data. Express.ts supports both server and client data fetching.",
+  },
+  {
+    href: "/dashboard/css-support",
+    title: "CSS Support",
+    text: "Style your application with your favorite tools, including support for CSS Modules, Tailwind CSS, and popular community libraries.",
+  },
+  {
+    href: "/docs",
+    title: "Client and server rendering",
+    text: "Flexible rendering and caching options, including Incremental Static Regeneration (ISR), on a per-page level.",
+  },
+];
 
 export const DATA_DASHBOARD_LINKS_NAVBAR = [
   {

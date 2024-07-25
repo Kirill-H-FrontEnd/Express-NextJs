@@ -16,14 +16,12 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["600"],
+  weight: ["700"],
 });
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
 // > Data
 import { DATA_LEARN_CARDS } from "@/data/dataItems";
-import GridPattern from "@/components/magicui/bg/grid-pattern";
-import { cn } from "@/lib/utils";
 export const LearnCards: FC = ({}) => {
   // Variants animation
   const Variants: Variants = {
@@ -42,15 +40,6 @@ export const LearnCards: FC = ({}) => {
   };
   return (
     <section className={`${s.learnCards} bg-black py-24 relative`}>
-      <GridPattern
-        width={50}
-        height={50}
-        x={-1}
-        y={-1}
-        className={cn(
-          "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-gray-900"
-        )}
-      />
       <div className="container">
         <section className={`${s.wrapper} grid gap-14`}>
           <motion.article
@@ -63,7 +52,7 @@ export const LearnCards: FC = ({}) => {
               custom={1}
               variants={Variants}
               style={inter.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
+              className="text-3xl lg:text-[32px] tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
             >
               What's in Express.ts?
             </motion.h2>
@@ -82,26 +71,14 @@ export const LearnCards: FC = ({}) => {
             variants={Variants}
             className={`${s.cards} relative`}
           >
-            <div className="grid">
-              {DATA_LEARN_CARDS.section1.map((card, i) => (
-                <CardWrapper
-                  key={i}
-                  href={card.href}
-                  text={card.text}
-                  title={card.title}
-                />
-              ))}
-            </div>
-            <div className="grid grid-cols-2-auto gap-[15px]">
-              {DATA_LEARN_CARDS.section2.map((card, i) => (
-                <CardWrapper
-                  key={i}
-                  href={card.href}
-                  text={card.text}
-                  title={card.title}
-                />
-              ))}
-            </div>
+            {DATA_LEARN_CARDS.map((card, i) => (
+              <CardWrapper
+                key={i}
+                href={card.href}
+                text={card.text}
+                title={card.title}
+              />
+            ))}
           </motion.section>
           <div className={`${s.actions} text-center`}>
             <Button

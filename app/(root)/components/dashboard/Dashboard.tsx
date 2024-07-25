@@ -15,10 +15,12 @@ import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
 import LinearGradient from "@/components/magicui/bg/linear-gradient";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
+import { cn } from "@/lib/utils";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const Dashboard: FC = ({}) => {
@@ -39,9 +41,9 @@ export const Dashboard: FC = ({}) => {
   };
   return (
     <>
-      <section className="py-24 bg-black ">
+      <section className="py-24 bg-black relative">
         <div className="container">
-          <section className="grid gap-14 ">
+          <section className="grid gap-14 relative z-[10]">
             <motion.article
               initial="offscreen"
               whileInView="onscreen"
@@ -52,7 +54,7 @@ export const Dashboard: FC = ({}) => {
                 custom={1}
                 variants={Variants}
                 style={inter.style}
-                className="text-3xl lg:text-[32px] tracking-tight font-semibold sm:font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
+                className="text-3xl lg:text-[32px] tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
               >
                 Convenient documentation!
               </motion.h2>
@@ -93,6 +95,15 @@ export const Dashboard: FC = ({}) => {
             </Atropos>
           </section>
         </div>
+        <GridPattern
+          width={50}
+          height={50}
+          x={-1}
+          y={-1}
+          className={cn(
+            "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-gray-900"
+          )}
+        />
       </section>
     </>
   );
