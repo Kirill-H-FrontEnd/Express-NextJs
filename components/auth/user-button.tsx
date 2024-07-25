@@ -58,7 +58,7 @@ export const UserButton = () => {
                 style={inter.style}
                 className="text-md font-semibold text-black dark:text-white capitalize"
               >{`${user?.name} `}</h5>
-              <h4 className="text-gray-600  text-sm">{user.email}</h4>
+              <h4 className="text-gray-600  text-sm">{user?.email}</h4>
             </div>
           </div>
           <nav className="grid gap-2 ">
