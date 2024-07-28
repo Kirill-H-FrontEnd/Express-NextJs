@@ -37,16 +37,8 @@ import { ButtonTop } from "@/components/ui/button-top";
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
   const pathName = usePathname();
-
   // Subscribe form
   const [open, setOpen] = useState(false);
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
   return (
     <>
       <footer

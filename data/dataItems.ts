@@ -1,3 +1,112 @@
+export const pagesData = [
+  {
+    id: 1,
+    title: "Introduction",
+    path: "",
+    content: [
+      {
+        title: "What is Express.ts?",
+        text: "Express.ts is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Express.ts for additional features and optimizations.",
+        path: "",
+      },
+      {
+        title: "Main Features",
+        text: "Some of the main Express.ts features include",
+        path: "",
+      },
+      {
+        title: "How to Use These Docs",
+        text: "On the left side of the screen, you'll find the docs navbar. The pages of the docs are organized sequentially, from basic to advanced, so you can follow them step-by-step when building your application",
+        path: "",
+      },
+      {
+        title: "App Router vs Pages Router",
+        text: "Express.ts has two different routers: the App Router and the Pages Router. The App Router is a newer router that allows you to use React's latest features, such as Server Components and Streaming.",
+        path: "",
+      },
+      {
+        title: "Pre-Requisite Knowledge",
+        text: "Although our docs are designed to be beginner-friendly, we need to establish a baseline so that the docs can stay focused on Next.js functionality. ",
+        path: "",
+      },
+      {
+        title: "Accessibility",
+        text: "For optimal accessibility when using a screen reader while reading the docs, we recommend using Firefox and NVDA, or Safari and VoiceOver.",
+        path: "",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Installation",
+    path: "",
+    content: [
+      {
+        title: "Automatic Installation",
+        text: "We recommend starting a new Express.ts app using create-express-app, which sets up everything automatically for you. To create a project, run",
+        path: "",
+      },
+      {
+        title: "Manual Installation",
+        text: "To manually create a new Express.ts app, install the required packages.",
+        path: "",
+      },
+
+      {
+        title: "Creating directories",
+        text: "Express.ts uses file-system routing, which means the routes in your application are determined by how you structure your files.",
+        path: "",
+      },
+      {
+        title: "The App directory",
+        text: "For new applications, we recommend using the App Router. This router allows you to use React's latest features and is an evolution of the Pages Router based on community feedback.",
+        path: "",
+      },
+      {
+        title: "Run the Development Server",
+        text: "To manually create a new Express.ts app, install the required packages",
+        path: "Run npm run dev to start the development server...",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Project Structure",
+    path: "",
+    content: [
+      {
+        title: "Express.ts Project Structure",
+        text: "This page provides an overview of the project structure of a Express.ts application.",
+        path: "",
+      },
+      {
+        title: "Top-level folders",
+        text: "Top-level folders are used to organize your application's code and static assets.",
+        path: "",
+      },
+      {
+        title: "Top-level files",
+        text: "Top-level files are used to configure your application, manage dependencies, run middleware, integrate monitoring tools, and define environment variables.",
+        path: "",
+      },
+      {
+        title: "Routing Conventions",
+        text: "The following file conventions are used to define routes and handle metadata in the app router.",
+        path: "",
+      },
+      {
+        title: "Nested Routes",
+        text: "",
+        path: "",
+      },
+      {
+        title: "Dynamic Routes",
+        text: "",
+        path: "",
+      },
+    ],
+  },
+];
 export const DATA_FOOTER_LINKS = [
   {
     title: "Resources",

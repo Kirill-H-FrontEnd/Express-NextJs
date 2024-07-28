@@ -98,6 +98,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
     <>
       {hideNavigation && (
         <Navbar
+          disableAnimation
           ref={ref}
           maxWidth="full"
           className={`${

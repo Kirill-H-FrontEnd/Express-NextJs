@@ -32,7 +32,7 @@ export default function DashboardLayout({
       </article>
       <Footer />
       <LinearGradient
-        className="hidden dark:block"
+        className="hidden dark:md:block"
         from="#1D1836"
         to="#0D0F14"
       />

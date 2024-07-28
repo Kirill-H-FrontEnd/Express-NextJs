@@ -1,5 +1,5 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import s from "./styles/NavBar.module.scss";
 // > Next
 import { usePathname } from "next/navigation";
@@ -12,7 +12,6 @@ const inter = Inter({
   weight: ["400", "500", "600"],
 });
 // > NextUI
-import { Button } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
 // > Components
 import {
@@ -21,22 +20,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog";
 // > Icons
 import { ChevronRightIcon } from "@radix-ui/react-icons";
-import { Search } from "lucide-react";
-import { GridPattern } from "@/components/magicui/bg/grid-pattern";
-import { cn } from "@/lib/utils";
+import { SearchBar } from "../ui/searchBar/search-bar";
 
 export const NavBar: FC = ({}) => {
   const pathName = usePathname();
-  const [open, setOpen] = useState(false);
+
   const DATA_INTRODUCTION_LINKS = [
     {
       value: "Installation",
@@ -278,75 +268,13 @@ export const NavBar: FC = ({}) => {
       ],
     },
   ];
-  // Open dialog with keyboard
-  const handleKeyDown = (event) => {
-    if (event.ctrlKey && event.key === "x") {
-      setOpen(true);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+
   return (
     <nav
       id="navbar"
       className={`${s.navbar} sticky top-[110px] hidden h-[calc(100vh-121px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
     >
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-100 dark:bg-gray-900/50 border-1 border-gray-200 dark:border-gray-900 min-h-[38px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md">
-            <Search
-              width={18}
-              height={18}
-              className="absolute top-1/2 left-[5px] -translate-y-1/2 text-gray-400"
-            />
-            <p className="pl-4 text-gray-400 font-medium">Quick search...</p>
-            <span
-              style={inter.style}
-              className="text-[12px] bg-gray-200 dark:bg-gray-800/60 px-2 py-[2px] rounded-sm text-gray-400 font-medium"
-            >
-              Ctrl X
-            </span>
-          </Button>
-        </DialogTrigger>
-        <DialogContent className=" bg-white sm:dark:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 border-slate-300 sm:dark:border-slate-900 grid place-items-center p-0 ">
-          <DialogHeader className="relative w-full border-b-1 bg-white/10 dark:bg-black z-[10]">
-            <Search
-              width={22}
-              height={22}
-              className="absolute top-1/2 left-[10px] -translate-y-1/2 text-slate-400"
-            />
-            <input
-              placeholder="Search documentation..."
-              type="text"
-              className="bg-transparent pl-10 pr-14 py-3 mt-0"
-            />
-            <DialogClose
-              style={inter.style}
-              className="absolute top-1/2 right-[10px] -translate-y-1/2  text-[12px] border-1 border-slate-300 dark:border-slate-800 p-[5px] rounded-md font-medium hover:bg-slate-100 text-slate-500 dark:text-slate-500 hover:dark:bg-slate-800/20 m-0"
-            >
-              Esc
-            </DialogClose>
-          </DialogHeader>
-          <div className="h-[250px] relative w-full grid justify-center items-center">
-            <span className="text-slate-700">No recent searches</span>
-          </div>
-          {/* Bg */}
-          <GridPattern
-            width={40}
-            height={40}
-            x={-1}
-            y={-1}
-            strokeDasharray={"8 4"}
-            className={cn(
-              "[mask-image:radial-gradient(220px_circle_at_center,white,transparent)] hidden dark:block"
-            )}
-          />
-        </DialogContent>
-      </Dialog>
+      <SearchBar />
       <ScrollShadow
         hideScrollBar
         style={{ scrollbarWidth: "initial" }}
