@@ -12,6 +12,7 @@ import LinearGradient from "@/components/magicui/bg/linear-gradient";
 import ThemeProvider from "@/app/providers/ThemeProvider";
 // > Next
 import type { Metadata } from "next";
+import { BreadCrumbs } from "./components/ui/breadcrumbs";
 export const metadata: Metadata = {
   title: "Express.ts | Documentation",
   description: "This is the Introduction documentation page.",
@@ -25,9 +26,15 @@ export default function DashboardLayout({
   return (
     <ThemeProvider>
       <Header />
-      <article id="main" className=" relative pt-10 mb-[20px] container z-[11]">
+      <article
+        id="main"
+        className=" relative pt-10 mb-[20px] container sm:mx-[40px] sm:max-w-[1240px] m-auto z-[11]"
+      >
         <NavBar />
-        <div className="md:px-4 relative z-[11]">{children}</div>
+        <div className="md:px-6 relative z-[11]">
+          <BreadCrumbs />
+          {children}
+        </div>
         <Aside />
       </article>
       <Footer />

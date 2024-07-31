@@ -85,11 +85,7 @@ export const Dashboard: FC = ({}) => {
                   <div className="px-4 relative z-[11]"></div>
                   <Aside />
                 </article>
-                <LinearGradient
-                  className="hidden dark:block"
-                  from="#1D1836"
-                  to="#0D0F14"
-                />
+                <LinearGradient from="#1D1836" to="#0D0F14" />
                 <BorderBeam colorFrom="#131322" colorTo="#F1F4F8" size={200} />
               </div>
             </Atropos>
@@ -101,7 +97,7 @@ export const Dashboard: FC = ({}) => {
           x={-1}
           y={-1}
           className={cn(
-            "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-gray-900"
+            "[mask-image:radial-gradient(350px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(550px_circle_at_center,white,transparent)] stroke-gray-900"
           )}
         />
       </section>

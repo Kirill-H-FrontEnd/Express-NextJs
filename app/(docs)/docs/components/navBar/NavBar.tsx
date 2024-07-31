@@ -312,7 +312,7 @@ export const NavBar: FC = ({}) => {
               <Accordion key={i} type="single" collapsible>
                 <Link
                   style={inter.style}
-                  className={`tracking-wide text-sm font-medium dark:font-normal`}
+                  className={`tracking-wide text-sm font-medium dark:font-normal text-black dark:text-white`}
                   href={data.href}
                 >
                   {data.title}

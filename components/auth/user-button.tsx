@@ -11,7 +11,6 @@ import { useCurrentUser } from "@/hooks/use-current-user";
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { LogoutButton } from "./logout-button";
-import { useSession } from "next-auth/react";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -71,7 +70,7 @@ export const UserButton = () => {
                 {link.value}
               </Link>
             ))}
-            <LogoutButton children="Logout" />
+            <LogoutButton children="SignOut" />
           </nav>
         </div>
       </PopoverContent>

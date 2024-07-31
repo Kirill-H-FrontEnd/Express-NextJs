@@ -36,7 +36,7 @@ export const SearchBar: FC = ({}) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-200 dark:bg-gray-500/20 border-1 border-gray-200 dark:border-gray-900 min-h-[38px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md">
+        <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-200 dark:bg-gray-500/20 border-1 border-gray-200 dark:border-gray-900 min-h-[40px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md ">
           <MagnifyingGlassIcon
             width={20}
             height={20}

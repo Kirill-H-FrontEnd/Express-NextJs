@@ -147,7 +147,7 @@ export const Footer: FC = ({}) => {
           </section>
           <section className={`${s.copyright} relative`}>
             <div className="text-slate-500 text-sm py-4 text-center">
-              Copyright © {getFullYear} Protocol.This is just a documentation
+              Copyright © {getFullYear} Express.This is just a documentation
               template for the framework.
             </div>
             <ButtonTop />

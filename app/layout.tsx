@@ -28,7 +28,7 @@ export default async function RootLayout({
   const session = await auth();
   return (
     <SessionProvider session={session}>
-      <html lang="en" className="dark bg-black">
+      <html lang="en" className="bg-black">
         <body className={`${GeistMono.className}  `}>
           <NextUiProvider>
             <NavBar />

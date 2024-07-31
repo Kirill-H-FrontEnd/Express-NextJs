@@ -46,7 +46,7 @@ export const Card: FC = ({}) => {
     <>
       {DATA.map((card, i) => (
         <ShineBorder
-          className="relative flex overflow-hidden border-1 border-gray-900 bg-background md:shadow-xl p-0 "
+          className="relative flex overflow-hidden border-1 border-gray-900 bg-background md:shadow-xl p-0 bg-black"
           color={card.colorBeam}
           borderRadius={16}
           borderWidth={1}

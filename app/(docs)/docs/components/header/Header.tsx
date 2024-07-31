@@ -11,7 +11,7 @@ const inter = Inter({
   weight: ["300", "400", "500", "600"],
 });
 // > Components
-import { NavbarMenuItem, ScrollShadow } from "@nextui-org/react";
+import { NavbarMenuItem } from "@nextui-org/react";
 import {
   Select,
   SelectContent,
@@ -20,16 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
 // > Icons
 import { IoLogoGithub } from "react-icons/io";
@@ -43,7 +34,6 @@ import {
 import { UserButton } from "@/components/auth/user-button";
 import { Navbar, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react";
 import s from "./styles/Header.module.scss";
-
 import { CardSearch } from "../ui/searchBar/card-search";
 import { usePathname } from "next/navigation";
 import {
@@ -52,14 +42,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
-import ShineBorder from "@/components/magicui/shine-border";
+import { LogoutButton } from "@/components/auth/logout-button";
+import ShinyButton from "@/components/magicui/shiny-button";
 
 export const Header: FC = ({}) => {
   const [openSearch, setOpenSearch] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathName = usePathname();
-  // const session = useSession();
   const DATA_lINKS = [
     { value: "Showcase", href: "", icon: "" },
     { value: "Blog", href: "", icon: "" },
@@ -368,21 +357,21 @@ export const Header: FC = ({}) => {
               <Link
                 style={inter.style}
                 href={"/"}
-                className="grid grid-cols-2-auto  gap-1 justify-start hover:opacity-80 transition-opacity select-none font-semibold "
+                className="grid grid-cols-2-auto  gap-1 justify-start hover:opacity-80 transition-opacity select-none  "
               >
                 <Squirrel
                   className="absolute top-0 left-0 text-black dark:text-white"
                   size={26}
-                  strokeWidth={2}
+                  strokeWidth={1.7}
                 />
                 <p
                   style={inter.style}
-                  className="relative text-xl sm:text-2xl text-inherit ml-[30px]"
+                  className="relative text-2xl text-inherit ml-[30px]"
                 >
-                  <span className=" font-medium text-2xl text-black dark:text-white">
+                  <span className=" font-medium text-black dark:text-white">
                     Express
                   </span>
-                  <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] dark:text-transparent bg-clip-text bg-gradient-to-b   from-white to-slate-400">
+                  <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] dark:text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
                     .ts
                   </span>
                 </p>
@@ -395,9 +384,9 @@ export const Header: FC = ({}) => {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="v1">v12.3.0</SelectItem>
-                  <SelectItem value="v2">v16.6.3</SelectItem>
-                  <SelectItem value="v3">v18.0.0</SelectItem>
+                  <SelectItem value="v1">v12.1.0</SelectItem>
+                  <SelectItem value="v2">v12.2.0</SelectItem>
+                  <SelectItem value="v3">v12.3.0</SelectItem>
                 </SelectContent>
               </Select>
             </div>
@@ -449,19 +438,19 @@ export const Header: FC = ({}) => {
         </div>
         {/* ToggleMenu */}
         <NavbarMenu
-          className={` bg-white dark:bg-black/60 backdrop:blur-md pt-6 z-[35] border-t-1 border-gray-200 dark:border-gray-900`}
+          className={` bg-white dark:bg-black/60 backdrop:blur-md py-6 z-[35] border-t-1 border-gray-200 dark:border-gray-900 `}
         >
           <div className="grid gap-5 pb-2">
             {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
               <NavbarMenuItem
-                className=""
+                className="border-b-1 pb-2 border-gray-200 dark:border-gray-900"
                 key={`${item}-${index}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Link
                   className={`relative  text-lg ${
                     pathName === item.href
-                      ? `text-purple-800 `
+                      ? `text-purple-800`
                       : " text-gray-700 dark:text-gray-700"
                   }`}
                   key={index}
@@ -472,18 +461,18 @@ export const Header: FC = ({}) => {
               </NavbarMenuItem>
             ))}
           </div>
+          <LogoutButton children={"SignOut"} />
         </NavbarMenu>
       </Navbar>
       <Sheet>
         <div className="w-full border-gray-200 dark:border-gray-900 border-b-1 sticky top-[65px] left-0 z-[35] bg-white/40 dark:bg-black/40 backdrop-blur-md md:hidden">
-          <SheetTrigger className=" py-2 text-left pl-5  grid grid-cols-2-auto justify-start items-center gap-1">
+          <SheetTrigger className=" py-3 text-left pl-5  grid grid-cols-2-auto justify-start items-center gap-1">
             <TextAlignLeftIcon width={20} hanging={20} />
             Menu
           </SheetTrigger>
         </div>
-
         <SheetContent
-          className="w-[300px] bg-white dark:bg-black border-gray-200 dark:border-gray-900"
+          className="w-[320px] bg-white dark:bg-black border-gray-200 dark:border-gray-900"
           side="left"
         >
           <div className="grid gap-2 text-gray text-sm mb-3">
@@ -500,10 +489,10 @@ export const Header: FC = ({}) => {
             </Link>
             {DATA_INTRODUCTION_LINKS.map((link, i) => (
               <Link
-                className={` relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background hover:pl-1 w-max ${
+                className={` relative text-sm transition-all hover:pl-1 w-max ${
                   pathName === link.href
-                    ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                    : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500"
+                    ? `text-purple-500  hover:text-purple-500 hover:pl-0 font-medium`
+                    : " text-gray-600  hover:text-gray-300  "
                 }`}
                 key={i}
                 href={link.href}
@@ -556,16 +545,10 @@ export const Header: FC = ({}) => {
               ))}
             </Accordion>
           ))}
-          <ShineBorder
-            className="relative flex overflow-hidden bg-background md:shadow-xl p-0 "
-            color={"#3B0764"}
-            borderRadius={8}
-            borderWidth={2}
-          >
-            <Button className="text-[10px] tracking-tighter bg-transparent text-black dark:text-white font-semibold  border-1">
-              Get Security Updates for Express.ts 10.1.0
-            </Button>
-          </ShineBorder>
+          <ShinyButton
+            text="Get Security Updates for Express.ts 10.1.0"
+            className=""
+          />
         </SheetContent>
       </Sheet>
     </>

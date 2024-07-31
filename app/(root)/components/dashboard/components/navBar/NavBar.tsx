@@ -25,15 +25,12 @@ import {
   Dialog,
   DialogContent,
   DialogHeader,
-  DialogTitle,
   DialogTrigger,
   DialogClose,
-  DialogFooter,
 } from "@/components/ui/dialog";
 // > Icons
 import { ChevronRightIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { GridPattern } from "@/components/magicui/bg/grid-pattern";
 import { cn } from "@/lib/utils";
 
@@ -281,75 +278,26 @@ export const NavBar: FC = ({}) => {
       ],
     },
   ];
-  // Open dialog with keyboard
-  const handleKeyDown = (event) => {
-    if (event.ctrlKey && event.key === "x") {
-      setOpen(true);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+
   return (
     <nav
       id="navbar"
       className={`${s.navbar} sticky top-[110px] hidden h-[calc(100vh-121px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
     >
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-100 dark:bg-gray-900/50 border-1 border-gray-200 dark:border-gray-900 min-h-[38px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md">
-            <Search
-              width={18}
-              height={18}
-              className="absolute top-1/2 left-[5px] -translate-y-1/2 text-gray-400"
-            />
-            <p className="pl-4 text-gray-400 font-medium">Quick search...</p>
-            <span
-              style={inter.style}
-              className="text-[12px] bg-gray-200 dark:bg-gray-800/60 px-2 py-[2px] rounded-sm text-gray-400 font-medium"
-            >
-              Ctrl X
-            </span>
-          </Button>
-        </DialogTrigger>
-        <DialogContent className=" bg-white sm:dark:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 border-slate-300 sm:dark:border-slate-900 grid place-items-center p-0 ">
-          <DialogHeader className="relative w-full border-b-1 bg-white/10 dark:bg-black z-[10]">
-            <Search
-              width={22}
-              height={22}
-              className="absolute top-1/2 left-[10px] -translate-y-1/2 text-slate-400"
-            />
-            <input
-              placeholder="Search documentation..."
-              type="text"
-              className="bg-transparent pl-10 pr-14 py-3 mt-0"
-            />
-            <DialogClose
-              style={inter.style}
-              className="absolute top-1/2 right-[10px] -translate-y-1/2  text-[12px] border-1 border-slate-300 dark:border-slate-800 p-[5px] rounded-md font-medium hover:bg-slate-100 text-slate-500 dark:text-slate-500 hover:dark:bg-slate-800/20 m-0"
-            >
-              Esc
-            </DialogClose>
-          </DialogHeader>
-          <div className="h-[250px] relative w-full grid justify-center items-center">
-            <span className="text-slate-700">No recent searches</span>
-          </div>
-          {/* Bg */}
-          <GridPattern
-            width={40}
-            height={40}
-            x={-1}
-            y={-1}
-            strokeDasharray={"8 4"}
-            className={cn(
-              "[mask-image:radial-gradient(220px_circle_at_center,white,transparent)] hidden dark:block"
-            )}
-          />
-        </DialogContent>
-      </Dialog>
+      <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-500/20 border-1 border-gray-900 min-h-[40px] rounded-md mb-5 shadow-md  ">
+        <MagnifyingGlassIcon
+          width={20}
+          height={20}
+          className="absolute top-1/2 left-[5px] -translate-y-1/2 text-gray-400"
+        />
+        <p className="pl-4 text-gray-400 font-medium">Quick search...</p>
+        <span
+          style={inter.style}
+          className="text-[12px] bg-gray-800/90 px-2 py-[2px] rounded-sm text-gray-500 "
+        >
+          Ctrl X
+        </span>
+      </Button>
       <ScrollShadow
         hideScrollBar
         style={{ scrollbarWidth: "initial" }}
@@ -361,17 +309,15 @@ export const NavBar: FC = ({}) => {
               <Link
                 href={"/docs"}
                 style={inter.style}
-                className={`tracking-wide font-medium dark:font-normal ${
-                  pathName !== "/docs"
-                    ? "text-black dark:text-white"
-                    : "text-purple-500"
+                className={`tracking-wide font-normal ${
+                  pathName !== "/docs" ? "text-white" : "text-purple-500"
                 }`}
               >
                 Getting Started
               </Link>
               {DATA_INTRODUCTION_LINKS.map((link, i) => (
                 <Link
-                  className={` relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background hover:pl-1 w-max ${
+                  className={`relative text-sm transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background hover:pl-1 w-max ${
                     pathName === link.href
                       ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
                       : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500"
@@ -387,7 +333,7 @@ export const NavBar: FC = ({}) => {
               <Accordion key={i} type="single" collapsible>
                 <Link
                   style={inter.style}
-                  className={`tracking-wide text-sm font-medium dark:font-normal`}
+                  className={`tracking-wide text-sm font-normal text-white`}
                   href={data.href}
                 >
                   {data.title}
@@ -404,7 +350,7 @@ export const NavBar: FC = ({}) => {
                       >
                         {item.title}
                         {item.links && (
-                          <ChevronRightIcon className="h-4 w-4 shrink-0 text-muted-foreground text-gray-300 dark:text-gray-800 transition-transform duration-200 absolute top-[10px] right-0 " />
+                          <ChevronRightIcon className="h-4 w-4 shrink-0 text-muted-foreground text-gray-800  duration-200 absolute top-[10px] right-0 " />
                         )}
                       </AccordionTrigger>
                     </Link>

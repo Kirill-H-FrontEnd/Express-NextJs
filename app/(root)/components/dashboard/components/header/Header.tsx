@@ -21,12 +21,19 @@ import {
 import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
 // > Icons
 import { IoLogoGithub } from "react-icons/io";
-import { SquareArrowOutUpRight, Squirrel } from "lucide-react";
+import {
+  SquareArrowOutUpRight,
+  Squirrel,
+  UserCircle,
+  UserCircle2Icon,
+  UserIcon,
+} from "lucide-react";
 // > Hooks
 import { UserButton } from "@/components/auth/user-button";
 
 import { Navbar, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react";
 import s from "./styles/Header.module.scss";
+import { MagnifyingGlassIcon, MoonIcon } from "@radix-ui/react-icons";
 
 export const Header: FC = ({}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,7 +59,7 @@ export const Header: FC = ({}) => {
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
-        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-white/60 dark:bg-black/40 border-b-1   backdrop-blur-sm border-gray-200 dark:border-gray-900  `}
+        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-black/40 border-b-1 backdrop-blur-sm border-gray-900  `}
       >
         <div className="container">
           <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
@@ -60,21 +67,19 @@ export const Header: FC = ({}) => {
               <Link
                 style={inter.style}
                 href={"/"}
-                className="grid grid-cols-2-auto  gap-1 justify-start hover:opacity-80 transition-opacity select-none font-semibold "
+                className="grid grid-cols-2-auto  gap-1 justify-start "
               >
                 <Squirrel
-                  className="absolute top-0 left-0 text-black dark:text-white"
+                  className="absolute top-0 left-0 text-white"
                   size={26}
-                  strokeWidth={2}
+                  strokeWidth={1.7}
                 />
                 <p
                   style={inter.style}
-                  className="relative text-xl sm:text-2xl text-inherit ml-[30px]"
+                  className="relative text-2xl text-inherit ml-[30px]"
                 >
-                  <span className=" font-semibold text-2xl text-black dark:text-white">
-                    Express
-                  </span>
-                  <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] dark:text-transparent bg-clip-text bg-gradient-to-b   from-white to-slate-400">
+                  <span className=" font-medium  text-white">Express</span>
+                  <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] text-transparent bg-clip-text bg-gradient-to-b   from-white to-slate-400">
                     .ts
                   </span>
                 </p>
@@ -98,7 +103,7 @@ export const Header: FC = ({}) => {
                 {DATA_lINKS.map((link, i) => (
                   <Link
                     style={inter.style}
-                    className="text-gray-700 dark:text-gray-400 hover:dark:text-purple-700 hover:text-purple-700 transition-colors relative text-sm font-medium dark:font-normal"
+                    className="text-gray-400 relative text-sm font-normal"
                     key={i}
                     href={link.href}
                   >
@@ -111,29 +116,31 @@ export const Header: FC = ({}) => {
               </ul>
               <div className="grid grid-cols-2-auto gap-3 place-items-center relative">
                 <Link href={"/"}>
-                  <IoLogoGithub
-                    className="text-black dark:text-white"
-                    size={22}
-                  />
+                  <IoLogoGithub className="text-white" size={22} />
                 </Link>
-                <SwitchThemeButton />
+                <MoonIcon
+                  width={20}
+                  height={20}
+                  strokeWidth={1.5}
+                  className="text-white "
+                />
                 <span className="absolute top-1/2 right-[-9px] translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-slate-300 dark:bg-slate-700 rounded-full pointer-events-none "></span>
               </div>
-              <UserButton />
+              <UserCircle2Icon strokeWidth={1.5} className="text-white" />
             </nav>
             <div className="grid grid-cols-2-auto justify-end gap-5 lg:hidden">
-              <SwitchThemeButton />
+              <MagnifyingGlassIcon
+                width={20}
+                height={20}
+                className=" text-white "
+              />
               <NavbarMenuToggle
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                className={` ${s.navBarMenuToggle}  text-black dark:text-white [&[data-pressed]]:-scale-[.9] `}
+                className={` ${s.navBarMenuToggle} text-white  `}
               />
             </div>
           </section>
         </div>
-        {/* ToggleMenu */}
-        <NavbarMenu className="bg-black/60 backdrop:blur-md pt-6 z-[48] ">
-          <div className="grid gap-5 pb-2">links</div>
-        </NavbarMenu>
       </Navbar>
     </>
   );

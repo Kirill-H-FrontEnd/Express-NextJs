@@ -43,6 +43,8 @@ export const Aside: FC = ({}) => {
             {link.value}
           </Link>
         ))} */}
+
+        <Link href={"#test1"}>Link</Link>
       </nav>
     </aside>
   );

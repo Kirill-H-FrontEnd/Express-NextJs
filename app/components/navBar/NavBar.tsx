@@ -10,7 +10,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["600"],
+  weight: ["500", "600"],
 });
 // > Styles
 import s from "./styles/NavBar.module.scss";
@@ -121,13 +121,13 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   className="absolute top-0 left-0 "
                   color="#fff"
                   size={26}
-                  strokeWidth={2}
+                  strokeWidth={1.7}
                 />
                 <p
                   style={inter.style}
-                  className="relative text-2xl text-inherit text-white ml-[30px]"
+                  className="relative font-medium text-2xl text-white ml-[30px]"
                 >
-                  <span className=" font-semibold text-white">Express</span>
+                  <span className=" text-white">Express</span>
                   <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] text-transparent bg-clip-text bg-gradient-to-b   from-white to-slate-400">
                     .ts
                   </span>

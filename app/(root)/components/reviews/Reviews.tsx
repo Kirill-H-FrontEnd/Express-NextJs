@@ -72,12 +72,6 @@ export const Reviews: FC = ({}) => {
           </motion.article>
           <section className={`${s.cards}  relative rounded-md`}>
             <CardWrapper />
-            <BorderBeam
-              colorFrom="#131322"
-              colorTo="#F1F4F8"
-              className="sm:hidden xl:block"
-              size={100}
-            />
           </section>
         </section>
       </div>
