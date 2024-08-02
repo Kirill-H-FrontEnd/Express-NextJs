@@ -40,11 +40,12 @@ import { SubscribeForm } from "../footer/subscribe-form";
 import { IoClose } from "react-icons/io5";
 export const NavBar: FC = forwardRef(({}, ref: any) => {
   const [isScroll, setScroll] = useState(false);
+  const [openSubForm, setOpenSubForm] = useState(false);
   const pathName = usePathname();
 
   let hideNavigation = pathName === "/";
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // SetScroll
+  // Add new styles when scrolling the page
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY != 0) {
@@ -92,8 +93,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
       href: "",
     },
   ];
-  // Subscribe form
-  const [open, setOpen] = useState(false);
+
   return (
     <>
       {hideNavigation && (
@@ -211,7 +211,7 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
               >
                 Sign Up
               </Button>
-              <Dialog open={open} onOpenChange={setOpen}>
+              <Dialog open={openSubForm} onOpenChange={setOpenSubForm}>
                 <DialogTrigger asChild>
                   <ShimmerButton
                     shimmerSize="0.06em"

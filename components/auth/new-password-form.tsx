@@ -26,7 +26,10 @@ import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { useSearchParams } from "next/navigation";
 import { newPassword } from "@/actions/new-password";
+// > Next
+import { useRouter } from "next/navigation";
 export const NewPasswordForm: FC = ({}) => {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
   const [error, setError] = useState<string | undefined>("");
@@ -41,7 +44,6 @@ export const NewPasswordForm: FC = ({}) => {
   const onSubmit = (values: z.infer<typeof NewPasswordSchema>) => {
     setError("");
     setSuccess("");
-
     startTransition(() => {
       newPassword(values, token).then((data: any) => {
         setError(data.error);
@@ -49,12 +51,15 @@ export const NewPasswordForm: FC = ({}) => {
       });
     });
   };
+  if (success) {
+    setTimeout(() => {
+      router.push("/auth/login");
+    }, 1000);
+  }
   return (
     <CardWrapper
-      headerTitle="Change password"
-      headerLabel="Your are ready?"
-      backButtonLabel="Log in."
-      backButtonHref="/auth/login"
+      headerTitle="Create new password"
+      headerLabel="Create a new password for your account."
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

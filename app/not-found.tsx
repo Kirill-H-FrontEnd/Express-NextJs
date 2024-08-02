@@ -1,4 +1,5 @@
 "use client";
+// > Styles
 import s from "./styles/not-found.module.scss";
 // > Next UI
 import { Button } from "@nextui-org/react";
@@ -11,7 +12,6 @@ import { BsBookmarkCheckFill } from "react-icons/bs";
 import { GiDatabase } from "react-icons/gi";
 import { MdHomeFilled } from "react-icons/md";
 import { PiContactlessPaymentFill } from "react-icons/pi";
-import { FiExternalLink } from "react-icons/fi";
 // > Font
 import { GeistSans } from "geist/font/sans";
 export default function NotFoundPage() {

@@ -1,7 +1,5 @@
 @tailwind base;
 @tailwind utilities;
-
-/* Styles for shadcn components */
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -66,14 +64,6 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
 html {
   scroll-behavior: smooth;
   input:focus {

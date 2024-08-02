@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Header } from "./header";
 import { Social } from "./social";
-import Link from "next/link";
 type TCardWrapper = {
   children: React.ReactNode;
   headerLabel: string;

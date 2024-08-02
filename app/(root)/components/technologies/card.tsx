@@ -1,16 +1,15 @@
-// > React
-import { FC, useRef } from "react";
+import { FC } from "react";
+import { cn } from "@/lib/utils";
+// > Next
+import Image from "next/image";
+import Link from "next/link";
+// > Components
+import DotPattern from "@/components/magicui/bg/dot-pattern";
+import ShineBorder from "@/components/magicui/shine-border";
 // > Icons
 import { FiArrowUpRight } from "react-icons/fi";
 // > Font
 import { Inter } from "next/font/google";
-import Image from "next/image";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import DotPattern from "@/components/magicui/bg/dot-pattern";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import ShineBorder from "@/components/magicui/shine-border";
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",

@@ -6,26 +6,15 @@ import { useRouter } from "next/navigation";
 
 type TLoginButton = {
   children: React.ReactNode;
-  mode?: "modal" | "redirect";
   asChild?: boolean;
 };
 
-export const LoginButton: FC<TLoginButton> = ({
-  children,
-  asChild,
-  mode = "redirect",
-}) => {
+export const LoginButton: FC<TLoginButton> = ({ children, asChild }) => {
   const router = useRouter();
   const onClick = () => {
     router.push("/auth/login");
   };
-  if (mode === "modal") {
-    return (
-      <>
-        <span>Modal</span>
-      </>
-    );
-  }
+
   return (
     <span className="cursor-pointer" onClick={onClick}>
       {children}

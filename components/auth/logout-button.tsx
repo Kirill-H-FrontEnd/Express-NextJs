@@ -1,6 +1,8 @@
+// > Actions
 import { logout } from "@/actions/logout";
+// > Icons
 import { LogOut } from "lucide-react";
-import { useRouter } from "next/navigation";
+
 type LogoutButtonType = {
   children: React.ReactNode;
 };

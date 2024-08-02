@@ -38,7 +38,7 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-lvh  overflow-hidden select-none text-purple-800 bg-black`}
+      className={`${s.home} relative w-full h-screen overflow-hidden select-none text-purple-800 bg-black`}
     >
       <LinearGradient from="#1D1836" to="#0D0F14" />
       <div className="w-full h-screen ">

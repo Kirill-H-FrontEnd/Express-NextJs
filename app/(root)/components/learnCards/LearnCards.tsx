@@ -7,10 +7,9 @@ import Link from "next/link";
 import s from "./styles/LearnCards.module.scss";
 // > Components
 import { CardWrapper } from "./card-wrapper";
-// > Icons
-import { FaArrowRight } from "react-icons/fa6";
-// > NextUi
 import { Button } from "@nextui-org/react";
+// > Framer Motion
+import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -18,8 +17,8 @@ const inter = Inter({
   display: "swap",
   weight: ["700"],
 });
-// > Framer Motion
-import { motion, Variants } from "framer-motion";
+// > Icons
+import { FaArrowRight } from "react-icons/fa6";
 // > Data
 import { DATA_LEARN_CARDS } from "@/data/dataItems";
 export const LearnCards: FC = ({}) => {

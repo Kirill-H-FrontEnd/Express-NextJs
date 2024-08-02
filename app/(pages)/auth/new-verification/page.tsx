@@ -1,5 +1,6 @@
-import { NewVerificationForm } from "@/components/auth/new-verification-form";
 import { Suspense } from "react";
+// > Components
+import { NewVerificationForm } from "@/components/auth/new-verification-form";
 
 const NewVerificationPage = () => {
   return (

@@ -1,5 +1,4 @@
 import { FC } from "react";
-import s from "./styles/title-banner.module.scss";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -22,7 +21,7 @@ export const TitleBanner: FC<TTitleBanner> = ({
   return (
     <article
       {...props}
-      className={`${className} border-b-1 border-gray-200 dark:border-gray-800 pb-10 `}
+      className={`${className} border-b-1 border-gray-200 dark:border-gray-800 pb-7`}
     >
       <h2
         style={inter.style}

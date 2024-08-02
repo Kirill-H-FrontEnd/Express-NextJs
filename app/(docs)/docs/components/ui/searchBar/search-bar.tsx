@@ -17,11 +17,9 @@ const inter = Inter({
 // > Icons
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
-type TSearchTar = {};
-
 export const SearchBar: FC = ({}) => {
   const [open, setOpen] = useState(false);
-  // Open dialog with keyboard
+  // Open dialog with use keyboard
   const handleKeyDown = (event) => {
     if (event.ctrlKey && event.key === "x") {
       setOpen(true);
@@ -36,18 +34,20 @@ export const SearchBar: FC = ({}) => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-200 dark:bg-gray-500/20 border-1 border-gray-200 dark:border-gray-900 min-h-[40px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md ">
+        <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-200/30 dark:bg-gray-900/20 border-1 border-gray-200 dark:border-gray-900 min-h-[40px] rounded-md mb-5 shadow-sm shadow-gray-100 dark:shadow-md transition-none ">
           <MagnifyingGlassIcon
             width={20}
             height={20}
             className="absolute top-1/2 left-[5px] -translate-y-1/2 text-gray-400"
           />
-          <p className="pl-4 text-gray-400 font-medium">Quick search...</p>
+          <p className="pl-4 text-[13px] text-gray-400 font-normal ">
+            Quick search...
+          </p>
           <span
             style={inter.style}
-            className="text-[12px] bg-gray-300 dark:bg-gray-800/90 px-2 py-[2px] rounded-sm text-gray-500 "
+            className="text-[12px] shadow-sm bg-gray-200/30 dark:bg-gray-900/20 border-1 border-gray-200 dark:border-gray-900 px-2 py-[2px] rounded-sm text-gray-500 dark:text-gray-500 font-semibold"
           >
-            Ctrl X
+            CtrlX
           </span>
         </Button>
       </DialogTrigger>

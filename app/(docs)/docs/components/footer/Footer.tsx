@@ -6,10 +6,6 @@ import s from "./styles/Footer.module.scss";
 // > Next
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-// > Icons
-import { IoLogoElectron } from "react-icons/io5";
-import { MdKeyboardDoubleArrowUp } from "react-icons/md";
-import { IoClose } from "react-icons/io5";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -30,9 +26,10 @@ import {
 } from "@/components/ui/dialog";
 import { SubscribeForm } from "./subscribe-form";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import { ButtonTop } from "@/components/ui/button-top";
+// > Icons
 import { Squirrel } from "lucide-react";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import { ButtonTop } from "@/components/ui/button-top";
 
 export const Footer: FC = ({}) => {
   const getFullYear = new Date().getFullYear();
@@ -42,7 +39,8 @@ export const Footer: FC = ({}) => {
   return (
     <>
       <footer
-        className={`${s.footer} relative bg-white dark:bg-black border-t-1 border-gray-200 dark:border-gray-900 z-[20]`}
+        id="footer"
+        className={`${s.footer} relative bg-white dark:bg-black border-t-1 border-gray-200 dark:border-gray-900 z-[30]`}
       >
         <div className="container">
           <section
@@ -121,7 +119,10 @@ export const Footer: FC = ({}) => {
                       Subscription
                     </ShimmerButton>
                   </DialogTrigger>
-                  <DialogContent className=" bg-white dark:bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm: border-gray-200 sm:dark:border-gray-900 grid place-items-center ">
+                  <DialogContent
+                    aria-describedby="Email modal."
+                    className=" bg-white dark:bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm: border-gray-200 sm:dark:border-gray-900 grid place-items-center "
+                  >
                     <div>
                       <DialogHeader>
                         <DialogTitle

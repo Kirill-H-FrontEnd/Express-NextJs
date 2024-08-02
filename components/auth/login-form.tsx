@@ -8,6 +8,7 @@ import { useTransition } from "react";
 import { useForm } from "react-hook-form";
 // > Next
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -39,8 +40,6 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { login } from "@/actions/login";
-import Link from "next/link";
-import toast from "react-hot-toast";
 
 export const LoginForm: FC = ({}) => {
   const searchParams = useSearchParams();
@@ -166,7 +165,7 @@ export const LoginForm: FC = ({}) => {
                       </label>
                       <FormControl>
                         <Input
-                          className="py-5 bg-white focus:shadow-black"
+                          className="py-5 bg-white focus:shadow-black "
                           disabled={isPending}
                           {...field}
                           placeholder="john.doe@example.com"

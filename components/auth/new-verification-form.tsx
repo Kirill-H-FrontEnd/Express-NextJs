@@ -1,12 +1,14 @@
 "use client";
-import { newVerification } from "@/actions/new-verification";
-import { useSearchParams } from "next/navigation";
 import { FC, useCallback, useEffect, useState } from "react";
+// > Actions
+import { newVerification } from "@/actions/new-verification";
+// > Next
+import { useSearchParams } from "next/navigation";
+// > Components
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 import { CardWrapper } from "./card-wrapper";
 import { Spinner } from "@nextui-org/spinner";
-type TNewVerificationForm = {};
 
 export const NewVerificationForm: FC = ({}) => {
   const [error, setError] = useState<string | undefined>();

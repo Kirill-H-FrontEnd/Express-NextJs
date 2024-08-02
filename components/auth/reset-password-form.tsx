@@ -1,11 +1,11 @@
 "use client";
-// > Zod
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-// > React
 import { FC, useState } from "react";
 import { useTransition } from "react";
 import { useForm } from "react-hook-form";
+// > Zod
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 // > Font
 import { GeistSans } from "geist/font/sans";
 // > Schemas
@@ -25,6 +25,7 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { resetPass } from "@/actions/reset-pass";
+
 export const ResetPasswordForm: FC = ({}) => {
   const [error, setError] = useState<string | undefined>("");
   const [success, setSuccess] = useState<string | undefined>("");
@@ -38,7 +39,6 @@ export const ResetPasswordForm: FC = ({}) => {
   const onSubmit = (values: z.infer<typeof ResetSchema>) => {
     setError("");
     setSuccess("");
-
     startTransition(() => {
       resetPass(values).then((data: any) => {
         setError(data.error);
@@ -46,12 +46,11 @@ export const ResetPasswordForm: FC = ({}) => {
       });
     });
   };
+
   return (
     <CardWrapper
       headerTitle="Forgot your password?"
-      headerLabel="Don't have an account?"
-      backButtonLabel="Log in."
-      backButtonHref="/auth/login"
+      headerLabel="We will send you an email with a link to change your password."
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>

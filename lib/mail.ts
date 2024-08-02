@@ -7,7 +7,7 @@ const domain = process.env.NEXT_PUBLIC_APP_URL;
 export const sendSubscribeEmail = async (email: string, name: string) => {
   await resend.emails.send({
     from: "onboarding@resend.dev",
-    to: "horushevskiykirill@gmail.com",
+    to: email,
     subject: "Subscribe",
     html: ` ${name} ${email}`,
   });
@@ -43,7 +43,7 @@ export const sendVerificationEmail = async (
   await resend.emails.send({
     from: "onboarding@resend.dev",
     to: email,
-    subject: "Verification ",
+    subject: "Verification",
     html: `<p><a href="${confirmLink}">click</a></p> Name:${name}`,
   });
 };

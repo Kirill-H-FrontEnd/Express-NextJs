@@ -1,5 +1,6 @@
 "use client";
 import { FC } from "react";
+import { cn } from "@/lib/utils";
 // > Styles
 import s from "./styles/Reviews.module.scss";
 // > NextUi
@@ -10,8 +11,6 @@ import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 // > Components
 import { CardWrapper } from "./card-wrapper";
-import { BorderBeam } from "@/components/magicui/border-beam";
-import { cn } from "@/lib/utils";
 import GridPattern from "@/components/magicui/bg/grid-pattern";
 
 export const Reviews: FC = ({}) => {

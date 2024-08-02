@@ -1,8 +1,15 @@
 "use client";
-// > React
 import { FC, useState } from "react";
+// > Styles
+import s from "./styles/Header.module.scss";
 // > Next
 import Link from "next/link";
+// > Icons
+import { IoLogoGithub } from "react-icons/io";
+import { SquareArrowOutUpRight, Squirrel, UserCircle2Icon } from "lucide-react";
+import { MagnifyingGlassIcon, MoonIcon } from "@radix-ui/react-icons";
+// > Components
+import { Navbar, NavbarMenuToggle } from "@nextui-org/react";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -10,30 +17,6 @@ const inter = Inter({
   display: "swap",
   weight: ["300", "400", "500", "600"],
 });
-// > Components
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
-// > Icons
-import { IoLogoGithub } from "react-icons/io";
-import {
-  SquareArrowOutUpRight,
-  Squirrel,
-  UserCircle,
-  UserCircle2Icon,
-  UserIcon,
-} from "lucide-react";
-// > Hooks
-import { UserButton } from "@/components/auth/user-button";
-
-import { Navbar, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react";
-import s from "./styles/Header.module.scss";
-import { MagnifyingGlassIcon, MoonIcon } from "@radix-ui/react-icons";
 
 export const Header: FC = ({}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -63,11 +46,11 @@ export const Header: FC = ({}) => {
       >
         <div className="container">
           <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
-            <div className="grid grid-cols-2-auto ">
+            <div className="grid gap-6 grid-cols-2-auto items-end">
               <Link
                 style={inter.style}
                 href={"/"}
-                className="grid grid-cols-2-auto  gap-1 justify-start "
+                className="grid grid-cols-2-auto gap-1 justify-start "
               >
                 <Squirrel
                   className="absolute top-0 left-0 text-white"
@@ -84,19 +67,9 @@ export const Header: FC = ({}) => {
                   </span>
                 </p>
               </Link>
-              <Select defaultValue="v1">
-                <SelectTrigger
-                  className="font-semibold dark:font-medium text-gray-400  hover:text-purple-800 hover:dark:text-purple-600 transition-colors"
-                  defaultValue={"1"}
-                >
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="v1">v12.3.0</SelectItem>
-                  <SelectItem value="v2">v16.6.3</SelectItem>
-                  <SelectItem value="v3">v18.0.0</SelectItem>
-                </SelectContent>
-              </Select>
+              <div className="font-medium text-gray-400 text-xs mb-[4px]">
+                v12.3.0
+              </div>
             </div>
             <nav className="hidden lg:grid grid-cols-3-auto gap-5 items-center">
               <ul className="grid grid-cols-4-auto gap-7 text-sm mr-4">
@@ -124,7 +97,7 @@ export const Header: FC = ({}) => {
                   strokeWidth={1.5}
                   className="text-white "
                 />
-                <span className="absolute top-1/2 right-[-9px] translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-slate-300 dark:bg-slate-700 rounded-full pointer-events-none "></span>
+                <span className="absolute top-1/2 right-[-9px] translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-slate-700 rounded-full"></span>
               </div>
               <UserCircle2Icon strokeWidth={1.5} className="text-white" />
             </nav>
@@ -135,7 +108,6 @@ export const Header: FC = ({}) => {
                 className=" text-white "
               />
               <NavbarMenuToggle
-                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 className={` ${s.navBarMenuToggle} text-white  `}
               />
             </div>

@@ -4,8 +4,6 @@ import { FC, forwardRef, Ref } from "react";
 import s from "./styles/LearnCards.module.scss";
 // > Next
 import Link from "next/link";
-// > Icons
-import { FiExternalLink } from "react-icons/fi";
 // > FramerMotion
 import { motion } from "framer-motion";
 // > Components
@@ -14,6 +12,8 @@ import {
   GlowingStarsDescription,
   GlowingStarsTitle,
 } from "@/components/magicui/glowing-stars";
+// > Icons
+import { FiExternalLink } from "react-icons/fi";
 type TCardWrapper = {
   title: string;
   text: string;

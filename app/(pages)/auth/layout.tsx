@@ -30,8 +30,8 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
           className="absolute top-4 left-6 grid grid-cols-2-auto items-center text-gray hover:text-white transition-all sm:hover:pl-1"
           href={"/"}
         >
-          <MdKeyboardArrowLeft size={18} />
-          <p style={GeistSans.style} className=" text-sm">
+          <MdKeyboardArrowLeft size={18} color="#fff" />
+          <p style={GeistSans.style} className="text-white text-sm">
             Back to home
           </p>
         </Link>

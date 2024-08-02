@@ -1,11 +1,12 @@
-// > React
+"use client";
 import { FC } from "react";
-// > Styles
-import s from "./styles/card-wrapper.module.scss";
+import { cn } from "@/lib/utils";
 // > Next
 import Image from "next/image";
+// > Styles
+import s from "./styles/card-wrapper.module.scss";
+// > Components
 import DotPattern from "@/components/magicui/bg/dot-pattern";
-import { cn } from "@/lib/utils";
 import RadialGradient from "@/components/magicui/bg/radial-gradient";
 export const CardWrapper: FC = ({}) => {
   // Dada cards

@@ -1,11 +1,11 @@
 "use client";
+import { FC, useState, useTransition } from "react";
+import { useForm } from "react-hook-form";
 // > Zod
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-// > React
-import { FC, useState } from "react";
-import { useTransition } from "react";
-import { useForm } from "react-hook-form";
+// > Next
+import Link from "next/link";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -31,7 +31,6 @@ import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
 // > Actions
 import { register } from "@/actions/register";
-import Link from "next/link";
 
 type TLoginForm = {};
 

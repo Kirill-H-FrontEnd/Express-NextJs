@@ -1,8 +1,8 @@
 import { ResetPasswordForm } from "@/components/auth/reset-password-form";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Protocol | Reset password",
-  description: "Protocol is a web Framework",
+  title: "Express | Reset password",
+  description: "This is a reset password page of Express.ts.",
 };
 const ResetPasswordPage = ({}) => {
   return <ResetPasswordForm />;

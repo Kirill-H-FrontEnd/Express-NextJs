@@ -1,8 +1,8 @@
 "use client";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
+// > Styles
 import s from "./styles/NavBar.module.scss";
 // > Next
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 // > Font
 import { Inter } from "next/font/google";
@@ -11,32 +11,19 @@ const inter = Inter({
   display: "swap",
   weight: ["400", "500", "600"],
 });
-// > NextUI
+// > Components
 import { Button } from "@nextui-org/react";
 import { ScrollShadow } from "@nextui-org/scroll-shadow";
-// > Components
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTrigger,
-  DialogClose,
-} from "@/components/ui/dialog";
 // > Icons
 import { ChevronRightIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import { Search } from "lucide-react";
-import { GridPattern } from "@/components/magicui/bg/grid-pattern";
-import { cn } from "@/lib/utils";
 
 export const NavBar: FC = ({}) => {
-  const pathName = usePathname();
-  const [open, setOpen] = useState(false);
   const DATA_INTRODUCTION_LINKS = [
     {
       value: "Installation",
@@ -309,19 +296,13 @@ export const NavBar: FC = ({}) => {
               <Link
                 href={"/docs"}
                 style={inter.style}
-                className={`tracking-wide font-normal ${
-                  pathName !== "/docs" ? "text-white" : "text-purple-500"
-                }`}
+                className={`tracking-wide font-normal text-white`}
               >
                 Getting Started
               </Link>
               {DATA_INTRODUCTION_LINKS.map((link, i) => (
                 <Link
-                  className={`relative text-sm transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background hover:pl-1 w-max ${
-                    pathName === link.href
-                      ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                      : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500"
-                  }`}
+                  className={`relative text-sm w-max text-slate-600`}
                   key={i}
                   href={link.href}
                 >
@@ -342,11 +323,7 @@ export const NavBar: FC = ({}) => {
                   <AccordionItem key={i} value={`item-${i}`}>
                     <Link href={item.href} className={`text-left`}>
                       <AccordionTrigger
-                        className={`text-sm text-slate-600 relative ${
-                          pathName === item.href
-                            ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                            : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-1"
-                        }`}
+                        className={`text-sm text-slate-600 relative `}
                       >
                         {item.title}
                         {item.links && (
@@ -354,14 +331,10 @@ export const NavBar: FC = ({}) => {
                         )}
                       </AccordionTrigger>
                     </Link>
-                    <AccordionContent className="grid gap-3 border-l border-slate-200 dark:border-slate-800 ml-2  mr-2">
+                    <AccordionContent className="grid gap-3 border-l border-slate-800 ml-2  mr-2">
                       {item.links?.map((link, i) => (
                         <Link
-                          className={`pl-4  relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background   cursor-pointer first-of-type:mt-2 last-of-type:mb-2 ${
-                            pathName === link.href
-                              ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-3 font-medium`
-                              : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-5"
-                          }`}
+                          className={`pl-4 relative text-sm first-of-type:mt-2 last-of-type:mb-2 `}
                           key={i}
                           href={link.href}
                         >

@@ -1,44 +1,20 @@
-import { pagesData } from "@/data/dataItems";
+// > Components
 import { TitleBanner } from "../../components/ui/titleBanner/title-banner";
+// > Next
 import Link from "next/link";
-import { Card } from "./_components/card";
+import { Cards } from "./_components/cards/cards";
 
 export default function Introduction() {
-  const DATA_CARDS = [
-    {
-      title: "Getting Started",
-      content:
-        "Learn how to create full-stack web applications with Express.ts.",
-    },
-    {
-      title: "App Router",
-      content:
-        "Use the new App Router with Express.ts' and React's latest features, including Layouts, Server Components, Suspense, and more.",
-    },
-    {
-      title: "Pages Router",
-      content:
-        "Before Express.ts 13, the Pages Router was the main way to create routes in Express.ts with an intuitive file-system router.",
-    },
-    {
-      title: "Architecture",
-      content: "How Express.ts Works",
-    },
-    {
-      title: "Community",
-      content: "Get involved in the Express.ts community.",
-    },
-  ];
   return (
     <>
       <TitleBanner
         title="Introduction"
-        className=" text-2xl sm:text-4xl"
+        className="text-4xl"
         content={<p className="">Welcome to the Express.ts documentation!</p>}
       />
       <TitleBanner
         title="What is Express.ts?"
-        className=" text-xl sm:text-2xl mt-10"
+        className="text-[22px] mt-10"
         content={
           <>
             <div className="grid gap-6 ">
@@ -64,7 +40,7 @@ export default function Introduction() {
       />
       <TitleBanner
         title="How to Use These Docs"
-        className=" text-xl sm:text-2xl mt-10"
+        className="text-[22px] mt-10"
         content={
           <>
             <div className="grid gap-6 ">
@@ -103,7 +79,7 @@ export default function Introduction() {
       />
       <TitleBanner
         title="App Router vs Pages Router"
-        className=" text-xl sm:text-2xl mt-10"
+        className="text-[22px] mt-10"
         content={
           <>
             <div className="grid gap-6 ">
@@ -132,7 +108,7 @@ export default function Introduction() {
       />
       <TitleBanner
         title="Pre-Requisite Knowledge"
-        className=" text-xl sm:text-2xl mt-10"
+        className="text-[22px] mt-10"
         content={
           <>
             <div className="grid gap-6 ">
@@ -162,7 +138,7 @@ export default function Introduction() {
       />
       <TitleBanner
         title="Accessibility"
-        className=" text-xl sm:text-2xl mt-10"
+        className="text-[22px] mt-10"
         content={
           <>
             <p>
@@ -175,7 +151,7 @@ export default function Introduction() {
       />
       <TitleBanner
         title="Join our Community"
-        className=" text-xl sm:text-2xl mt-10"
+        className="text-[22px] mt-10"
         content={
           <>
             <p>
@@ -201,11 +177,7 @@ export default function Introduction() {
           </>
         }
       />
-      <div className="mt-10 grid grid-cols-2-auto gap-6">
-        {DATA_CARDS.map((card, i) => (
-          <Card key={i} title={card.title} content={card.content} />
-        ))}
-      </div>
+      <Cards />
     </>
   );
 }

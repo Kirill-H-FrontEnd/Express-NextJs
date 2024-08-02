@@ -5,6 +5,8 @@ import { FC } from "react";
 import s from "./styles/Technologies.module.scss";
 // > Framer Motion
 import { motion, Variants } from "framer-motion";
+// > Components
+import { Card } from "./card";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -12,10 +14,6 @@ const inter = Inter({
   display: "swap",
   weight: ["700"],
 });
-// > Components
-import { Card } from "./card";
-
-type TTechnologies = {};
 
 export const Technologies: FC = ({}) => {
   // Variants animation

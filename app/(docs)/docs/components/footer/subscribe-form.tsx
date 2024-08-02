@@ -1,5 +1,7 @@
 // > Utils
 import { cn } from "@/lib/utils";
+// > Actions
+import { subscribe } from "@/actions/subscribe";
 // > Zod
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -16,6 +18,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { FormSuccess } from "@/components/form-success";
 import ShimmerButton from "@/components/magicui/shimmer-button";
+import { Spinner } from "@nextui-org/spinner";
+import DotPattern from "@/components/magicui/bg/dot-pattern";
 // > React
 import { useForm } from "react-hook-form";
 import { FC, useState, useTransition } from "react";
@@ -23,9 +27,7 @@ import { FC, useState, useTransition } from "react";
 import { SubscribeSchema } from "@/schemas";
 // > Font
 import { GeistSans } from "geist/font/sans";
-import { subscribe } from "@/actions/subscribe";
-import { Spinner } from "@nextui-org/spinner";
-import DotPattern from "@/components/magicui/bg/dot-pattern";
+
 export const SubscribeForm: FC = ({}) => {
   const [success, setSuccess] = useState<string | undefined>("");
   const [isPending, startTransition] = useTransition();

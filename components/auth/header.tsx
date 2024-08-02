@@ -31,8 +31,10 @@ export const Header: FC<THeader> = ({
         className="text-slate-500 mt-1 font-normal text-sm grid grid-cols-2-auto justify-center gap-2
       "
       >
-        <p> {label}</p>
-        <BackButton label={backButtonLabel} href={backButtonHref} />
+        <p className="max-w-[380px]">{label}</p>
+        {backButtonLabel && (
+          <BackButton label={backButtonLabel} href={backButtonHref} />
+        )}
       </div>
     </div>
   );

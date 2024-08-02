@@ -1,16 +1,16 @@
-// > NextUi
+import Link from "next/link";
+// > Components
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
   Avatar,
 } from "@nextui-org/react";
+import { LogoutButton } from "./logout-button";
 // > Hooks
 import { useCurrentUser } from "@/hooks/use-current-user";
 // > Font
 import { Inter } from "next/font/google";
-import Link from "next/link";
-import { LogoutButton } from "./logout-button";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",

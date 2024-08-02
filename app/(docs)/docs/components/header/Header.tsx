@@ -1,16 +1,20 @@
 "use client";
 // > React
 import { FC, useState } from "react";
+// > Styles
+import s from "./styles/Header.module.scss";
 // > Next
 import Link from "next/link";
-// > Font
-import { Inter } from "next/font/google";
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-});
+import { usePathname } from "next/navigation";
 // > Components
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { LogoutButton } from "@/components/auth/logout-button";
+import ShinyButton from "@/components/magicui/shiny-button";
 import { NavbarMenuItem } from "@nextui-org/react";
 import {
   Select,
@@ -20,8 +24,16 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { SwitchThemeButton } from "@/components/ui/switch-theme-button";
+import { CardSearch } from "../ui/searchBar/card-search";
+import { UserButton } from "@/components/auth/user-button";
+import { Navbar, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react";
 // > Icons
 import { IoLogoGithub } from "react-icons/io";
 import { SquareArrowOutUpRight, Squirrel } from "lucide-react";
@@ -30,25 +42,20 @@ import {
   MagnifyingGlassIcon,
   TextAlignLeftIcon,
 } from "@radix-ui/react-icons";
-// > Hooks
-import { UserButton } from "@/components/auth/user-button";
-import { Navbar, NavbarMenu, NavbarMenuToggle } from "@nextui-org/react";
-import s from "./styles/Header.module.scss";
-import { CardSearch } from "../ui/searchBar/card-search";
-import { usePathname } from "next/navigation";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { LogoutButton } from "@/components/auth/logout-button";
-import ShinyButton from "@/components/magicui/shiny-button";
+// > Font
+import { Inter } from "next/font/google";
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+});
 
 export const Header: FC = ({}) => {
   const [openSearch, setOpenSearch] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathName = usePathname();
+
   const DATA_lINKS = [
     { value: "Showcase", href: "", icon: "" },
     { value: "Blog", href: "", icon: "" },
@@ -345,7 +352,8 @@ export const Header: FC = ({}) => {
   return (
     <>
       <Navbar
-        disableAnimation
+        id="navbar"
+        disableAnimation={true}
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
@@ -357,7 +365,7 @@ export const Header: FC = ({}) => {
               <Link
                 style={inter.style}
                 href={"/"}
-                className="grid grid-cols-2-auto  gap-1 justify-start hover:opacity-80 transition-opacity select-none  "
+                className="grid grid-cols-2-auto gap-1 justify-start hover:opacity-80 select-none  "
               >
                 <Squirrel
                   className="absolute top-0 left-0 text-black dark:text-white"
@@ -378,7 +386,7 @@ export const Header: FC = ({}) => {
               </Link>
               <Select defaultValue="v1">
                 <SelectTrigger
-                  className="font-semibold dark:font-medium text-gray-400  hover:text-purple-800 hover:dark:text-purple-600 transition-colors"
+                  className="font-semibold dark:font-medium text-gray-600 dark:text-gray-500 hover:text-purple-800 hover:dark:text-purple-600"
                   defaultValue={"1"}
                 >
                   <SelectValue />
@@ -395,7 +403,7 @@ export const Header: FC = ({}) => {
                 {DATA_lINKS.map((link, i) => (
                   <Link
                     style={inter.style}
-                    className="text-gray-700 dark:text-gray-400 hover:dark:text-purple-700 hover:text-purple-700 transition-colors relative text-sm font-medium dark:font-normal"
+                    className="text-gray-700 dark:text-gray-400 hover:dark:text-purple-700 hover:text-purple-700 relative text-sm font-normal "
                     key={i}
                     href={link.href}
                   >
@@ -418,17 +426,21 @@ export const Header: FC = ({}) => {
               </div>
               <UserButton />
             </nav>
-            <div className="grid grid-cols-2-auto justify-end gap-5 md:hidden">
-              <Dialog open={openSearch} onOpenChange={setOpenSearch}>
-                <DialogTrigger asChild>
-                  <MagnifyingGlassIcon
-                    width={20}
-                    height={20}
-                    className=" text-black dark:text-white active:scale-[.8] transition-transform"
-                  />
-                </DialogTrigger>
-                <CardSearch />
-              </Dialog>
+            <div className="grid grid-cols-2-auto justify-end gap-5 md:hidden ">
+              <div className="grid grid-cols-2 gap-3 relative">
+                <Dialog open={openSearch} onOpenChange={setOpenSearch}>
+                  <DialogTrigger asChild>
+                    <MagnifyingGlassIcon
+                      width={20}
+                      height={20}
+                      className=" text-black dark:text-white active:scale-[.8] transition-transform"
+                    />
+                  </DialogTrigger>
+                  <CardSearch />
+                </Dialog>
+                <SwitchThemeButton />
+                <span className="absolute top-1/2 right-[-9px] translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-slate-300 dark:bg-slate-700 rounded-full pointer-events-none "></span>
+              </div>
               <NavbarMenuToggle
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 className={` ${s.navBarMenuToggle}  text-black dark:text-white [&[data-pressed]]:-scale-[.9] `}
@@ -464,19 +476,23 @@ export const Header: FC = ({}) => {
           <LogoutButton children={"SignOut"} />
         </NavbarMenu>
       </Navbar>
-      <Sheet>
-        <div className="w-full border-gray-200 dark:border-gray-900 border-b-1 sticky top-[65px] left-0 z-[35] bg-white/40 dark:bg-black/40 backdrop-blur-md md:hidden">
-          <SheetTrigger className=" py-3 text-left pl-5  grid grid-cols-2-auto justify-start items-center gap-1">
+      <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+        <SheetTitle
+          className={`w-full border-gray-200 dark:border-gray-900 border-b-1 sticky top-[65px] left-0 z-[30] bg-white/40 dark:bg-black/40 backdrop-blur-md md:hidden`}
+        >
+          <SheetTrigger className=" py-3 text-left pl-5  grid grid-cols-2-auto justify-start font-medium items-center gap-1 text-[16px] ">
             <TextAlignLeftIcon width={20} hanging={20} />
             Menu
           </SheetTrigger>
-        </div>
+        </SheetTitle>
         <SheetContent
+          aria-describedby="Mobile menu."
           className="w-[320px] bg-white dark:bg-black border-gray-200 dark:border-gray-900"
           side="left"
         >
           <div className="grid gap-2 text-gray text-sm mb-3">
             <Link
+              onClick={() => setIsMobileMenuOpen(false)}
               href={"/docs"}
               style={inter.style}
               className={`tracking-wide font-medium dark:font-normal ${
@@ -489,10 +505,11 @@ export const Header: FC = ({}) => {
             </Link>
             {DATA_INTRODUCTION_LINKS.map((link, i) => (
               <Link
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={` relative text-sm transition-all hover:pl-1 w-max ${
                   pathName === link.href
-                    ? `text-purple-500  hover:text-purple-500 hover:pl-0 font-medium`
-                    : " text-gray-600  hover:text-gray-300  "
+                    ? `text-purple-500  md:hover:text-purple-500 hover:pl-0 font-medium`
+                    : " text-gray-600  md:hover:text-gray-300  "
                 }`}
                 key={i}
                 href={link.href}

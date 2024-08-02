@@ -11,8 +11,6 @@ const inter = Inter({
   display: "swap",
   weight: ["400", "500", "600"],
 });
-// > NextUI
-import { ScrollShadow } from "@nextui-org/scroll-shadow";
 // > Components
 import {
   Accordion,
@@ -20,6 +18,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { ScrollShadow } from "@nextui-org/scroll-shadow";
 // > Icons
 import { ChevronRightIcon } from "@radix-ui/react-icons";
 import { SearchBar } from "../ui/searchBar/search-bar";
@@ -272,13 +271,13 @@ export const NavBar: FC = ({}) => {
   return (
     <nav
       id="navbar"
-      className={`${s.navbar} sticky top-[110px] hidden h-[calc(100vh-121px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
+      className={`${s.navbar} sticky top-[105px] hidden h-[calc(100vh-110px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
     >
       <SearchBar />
       <ScrollShadow
         hideScrollBar
         style={{ scrollbarWidth: "initial" }}
-        size={40}
+        size={20}
       >
         <section className="relative z-10 h-full ">
           <ul className={`grid gap-5`}>

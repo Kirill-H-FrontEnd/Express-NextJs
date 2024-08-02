@@ -1,6 +1,7 @@
 "use client";
-// > React
 import { FC, useEffect, useState } from "react";
+// > Next
+import Link from "next/link";
 // > Styles
 import { cn } from "@/lib/utils";
 // > Components
@@ -11,6 +12,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import GridPattern from "@/components/magicui/bg/grid-pattern";
+import { ScrollShadow } from "@nextui-org/react";
+import DotPattern from "@/components/magicui/bg/dot-pattern";
+// > Animation
+import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
 const inter = Inter({
@@ -21,14 +26,8 @@ const inter = Inter({
 // > Icons
 import { NotepadText, Hash } from "lucide-react";
 import { MagnifyingGlassIcon, Cross1Icon } from "@radix-ui/react-icons";
-import Link from "next/link";
-import { motion, Variants } from "framer-motion";
-import DotPattern from "@/components/magicui/bg/dot-pattern";
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
-import { ScrollShadow } from "@nextui-org/react";
-
-type TCardSearch = {};
 
 export const CardSearch: FC = ({}) => {
   const [query, setQuery] = useState("");
@@ -46,7 +45,7 @@ export const CardSearch: FC = ({}) => {
 
     fetchData();
   }, []);
-  // Function to calculate relevance
+
   const calculateRelevance = (page, query) => {
     let score = 0;
     const queryLower = query.toLowerCase();
@@ -69,7 +68,7 @@ export const CardSearch: FC = ({}) => {
 
     return score;
   };
-  // Filter and sort results based on query
+
   useEffect(() => {
     if (query.length > 0) {
       setSearchStarted(true);
@@ -86,7 +85,6 @@ export const CardSearch: FC = ({}) => {
     }
   }, [query, pagesData]);
 
-  // Variants animation
   const Variants: Variants = {
     offscreen: {
       y: 10,
@@ -118,7 +116,7 @@ export const CardSearch: FC = ({}) => {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search documentation..."
             type="text"
-            className="bg-transparent pl-10 pr-14 py-3 mt-0 text-sm"
+            className="bg-transparent pl-10 pr-14 py-3 mt-0 text-sm placeholder:font-normal"
           />
           <DialogClose
             style={inter.style}

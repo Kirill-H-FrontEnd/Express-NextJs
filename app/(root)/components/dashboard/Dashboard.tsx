@@ -1,5 +1,6 @@
 "use client";
 import { FC } from "react";
+import { cn } from "@/lib/utils";
 // > Globals styles
 import "./global.scss";
 import "atropos/css";
@@ -7,16 +8,14 @@ import "atropos/css";
 import { Header } from "./components/header/Header";
 import { NavBar } from "./components/navBar/NavBar";
 import { Aside } from "./components/aside/Aside";
-import RadialGradient from "@/components/magicui/bg/radial-gradient";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Atropos from "atropos/react";
+import LinearGradient from "@/components/magicui/bg/linear-gradient";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
 // > Framer motion
 import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
-import LinearGradient from "@/components/magicui/bg/linear-gradient";
-import GridPattern from "@/components/magicui/bg/grid-pattern";
-import { cn } from "@/lib/utils";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",

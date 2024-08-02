@@ -1,9 +1,11 @@
-import { LoginForm } from "@/components/auth/login-form";
 import { Suspense } from "react";
+// > Components
+import { LoginForm } from "@/components/auth/login-form";
+// > Next
 import { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Express | Sign In",
-  description: "This is a login page Express.",
+  title: "Express.ts | Sign In",
+  description: "This is a login page of Express.ts.",
 };
 const LoginPage = ({}) => {
   return (
