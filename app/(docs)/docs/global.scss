@@ -1,10 +1,18 @@
 #main {
 	display: grid;
-	grid-template-columns: 280px 1fr 260px;
+	grid-template-columns: 280px 1fr;
+	#pageWrapper {
+		display: grid;
+		grid-template-columns: 1fr 260px;
+		gap: 20px;
+	}
 }
 @media screen and (width <= 1024px) {
 	#main {
 		grid-template-columns: 270px 1fr;
+		#pageWrapper {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 @media screen and (width <= 768px) {

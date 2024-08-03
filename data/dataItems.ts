@@ -2,7 +2,7 @@ export const pagesData = [
   {
     id: 1,
     title: "Introduction",
-    path: "11",
+    path: "/docs",
     content: [
       {
         title: "What is Express.ts?",
@@ -39,7 +39,7 @@ export const pagesData = [
   {
     id: 2,
     title: "Installation",
-    path: "",
+    path: "/docs/getting-started/installation",
     content: [
       {
         title: "Automatic Installation",
@@ -72,7 +72,44 @@ export const pagesData = [
   {
     id: 3,
     title: "Project Structure",
-    path: "",
+    path: "/docs/getting-started/project-structure",
+    content: [
+      {
+        title: "Express.ts Project Structure",
+        text: "This page provides an overview of the project structure of a Express.ts application.",
+        path: "",
+      },
+      {
+        title: "Top-level folders",
+        text: "Top-level folders are used to organize your application's code and static assets.",
+        path: "",
+      },
+      {
+        title: "Top-level files",
+        text: "Top-level files are used to configure your application, manage dependencies, run middleware, integrate monitoring tools, and define environment variables.",
+        path: "",
+      },
+      {
+        title: "Routing Conventions",
+        text: "The following file conventions are used to define routes and handle metadata in the app router.",
+        path: "",
+      },
+      {
+        title: "Nested Routes",
+        text: "",
+        path: "",
+      },
+      {
+        title: "Dynamic Routes",
+        text: "",
+        path: "",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Build Your Application",
+    path: "/docs/getting-started/project-structure",
     content: [
       {
         title: "Express.ts Project Structure",
@@ -233,7 +270,6 @@ export const DATA_LEARN_CARDS = [
 export const DATA_DASHBOARD_LINKS_NAVBAR = [
   {
     title: " Getting Started",
-
     links: [
       {
         value: "Installation",
@@ -245,7 +281,6 @@ export const DATA_DASHBOARD_LINKS_NAVBAR = [
   },
   {
     title: " Building Your Application",
-
     links: [
       {
         value: "Routing",

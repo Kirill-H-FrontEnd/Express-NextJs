@@ -9,6 +9,7 @@ const inter = Inter({
 type TTitleBanner = {
   title: string;
   content: React.ReactNode;
+  id?: string;
   className?: string;
 };
 
@@ -16,10 +17,12 @@ export const TitleBanner: FC<TTitleBanner> = ({
   title,
   content,
   className,
+  id,
   ...props
 }) => {
   return (
     <article
+      id={id}
       {...props}
       className={`${className} border-b-1 border-gray-200 dark:border-gray-800 pb-7`}
     >
@@ -29,7 +32,7 @@ export const TitleBanner: FC<TTitleBanner> = ({
       >
         {title}
       </h2>
-      <div className="text-base text-slate-700 dark:text-slate-500 leading-7">
+      <div className=" text-slate-700 dark:text-slate-500 leading-7 text-[15px]">
         {content}
       </div>
     </article>

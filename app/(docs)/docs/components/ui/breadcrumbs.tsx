@@ -35,7 +35,7 @@ export const BreadCrumbs: FC = ({}) => {
             </>
           ) : (
             <>
-              <BreadcrumbItem className=" text-gray-400" key={index}>
+              <BreadcrumbItem className=" text-gray-400 capitalize" key={index}>
                 <div>{name}</div>
               </BreadcrumbItem>
               <BreadcrumbSeparator key={name}>
