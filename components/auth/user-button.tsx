@@ -63,7 +63,7 @@ export const UserButton = () => {
           <nav className="grid gap-2 ">
             {DATA_lINKS_USER.map((link, i) => (
               <Link
-                className="hover:text-purple-500 hover:dark:text-purple-500 hover:pl-1 transition-all w-max text-gray-600 "
+                className="hover:text-bluePrimary hover:dark:text-bluePrimary hover:pl-1 transition-all w-max text-gray-600 "
                 key={i}
                 href={link.href}
               >

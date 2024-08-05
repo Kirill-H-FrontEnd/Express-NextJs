@@ -26,15 +26,14 @@ export default function DashboardLayout({
       <Header />
       <article
         id="main"
-        className=" relative pt-10 mb-[20px] container sm:mx-[40px] sm:max-w-[1240px] m-auto z-[11]"
+        className=" relative pt-14 mb-[20px] container sm:mx-[40px] sm:max-w-[1240px] m-auto z-[11]"
       >
         <NavBar />
-        <div className="md:px-6 relative z-[11] ">
+        <div className=" relative z-[11] w-fill">
           <BreadCrumbs />
           <div id="pageWrapper" className="grid grid-cols-2-auto">
             {children}
           </div>
-          <NavigationButtons />
         </div>
       </article>
       <Footer />

@@ -1,15 +1,18 @@
+// > Next
 import Link from "next/link";
-import { Aside } from "../../../components/aside/Aside";
-import { TitleBanner } from "../../../components/ui/titleBanner/title-banner";
+// > Components
+import { Aside } from "@/app/(docs)/docs/components/aside/Aside";
+import { TitleBanner } from "@/app/(docs)/docs/components/ui/titleBanner/title-banner";
+import NavigationButtons from "@/app/(docs)/docs/components/ui/navButtons/nav-buttons";
 
 export default function InstallPage() {
   const ASIDE_LINKS = [
-    { href: "whatIsExpress", label: "Automatic Installation" },
-    { href: "howToUseTheseDocs", label: "Manual Installation" },
-    { href: "appRouterVsPagesRouter", label: "Creating directories" },
-    { href: "preRequisiteKnowledge", label: "The app directory" },
-    { href: "accessibility", label: "Run the Development Server" },
-    { href: "joinOurCommunity", label: "Next Steps" },
+    { id: "", label: "Automatic Installation" },
+    { id: "", label: "Manual Installation" },
+    { id: "", label: "Creating directories" },
+    { id: "", label: "The app directory" },
+    { id: "", label: "Run the Development Server" },
+    { id: "", label: "Next Steps" },
   ];
   return (
     <>
@@ -24,7 +27,7 @@ export default function InstallPage() {
               <div>
                 <p>
                   -{" "}
-                  <Link className="text-purple-500" href={""}>
+                  <Link className="text-bluePrimary" href={""}>
                     Node.js 18.17
                   </Link>{" "}
                   or later.
@@ -36,6 +39,7 @@ export default function InstallPage() {
             </>
           }
         />
+        <NavigationButtons />
       </div>
     </>
   );

@@ -70,7 +70,6 @@ export const Hero: FC = ({}) => {
                 <Link href={"/docs"} className="">
                   <ShimmerButton
                     shimmerSize="0.06em"
-                    background="#241A3E"
                     className={`shadow-2xl text-sm font-medium h-[42px] w-full sm:w-[150px] `}
                   >
                     Get Started

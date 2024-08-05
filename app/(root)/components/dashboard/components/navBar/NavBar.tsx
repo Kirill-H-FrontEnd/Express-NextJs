@@ -268,23 +268,24 @@ export const NavBar: FC = ({}) => {
 
   return (
     <nav
-      id="navbar"
       className={`${s.navbar} sticky top-[110px] hidden h-[calc(100vh-121px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
     >
-      <Button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-500/20 border-1 border-gray-900 min-h-[40px] rounded-md mb-5 shadow-md  ">
+      <button className="pr-2 grid grid-cols-2-auto  justify-between items-center bg-gray-900/20 border-1 border-gray-900 min-h-[40px] rounded-md mb-5 shadow-md relative">
         <MagnifyingGlassIcon
           width={20}
           height={20}
           className="absolute top-1/2 left-[5px] -translate-y-1/2 text-gray-400"
         />
-        <p className="pl-4 text-gray-400 font-medium">Quick search...</p>
+        <p className="pl-8 text-gray-400 font-medium text-[14px]">
+          Quick search...
+        </p>
         <span
           style={inter.style}
-          className="text-[12px] bg-gray-800/90 px-2 py-[2px] rounded-sm text-gray-500 "
+          className="text-[12px] bg-gray-900/20 px-2 py-[2px] rounded-sm text-gray-500 border-gray-900 border-1 font-semibold"
         >
           Ctrl X
         </span>
-      </Button>
+      </button>
       <ScrollShadow
         hideScrollBar
         style={{ scrollbarWidth: "initial" }}
@@ -293,35 +294,32 @@ export const NavBar: FC = ({}) => {
         <section className="relative z-10 h-full ">
           <ul className={`grid gap-5`}>
             <div className="grid gap-2 text-gray text-sm">
-              <Link
-                href={"/docs"}
+              <span
                 style={inter.style}
                 className={`tracking-wide font-normal text-white`}
               >
                 Getting Started
-              </Link>
+              </span>
               {DATA_INTRODUCTION_LINKS.map((link, i) => (
-                <Link
-                  className={`relative text-sm w-max text-slate-600`}
+                <div
+                  className={`relative text-sm w-max text-slate-600 first-of-type:text-bluePrimary first-of-type:pl-1 first:hidden`}
                   key={i}
-                  href={link.href}
                 >
                   {link.value}
-                </Link>
+                </div>
               ))}
             </div>
             {DATA_LINKS.map((data, i) => (
               <Accordion key={i} type="single" collapsible>
-                <Link
+                <span
                   style={inter.style}
                   className={`tracking-wide text-sm font-normal text-white`}
-                  href={data.href}
                 >
                   {data.title}
-                </Link>
+                </span>
                 {data.accordionItem.map((item, i) => (
                   <AccordionItem key={i} value={`item-${i}`}>
-                    <Link href={item.href} className={`text-left`}>
+                    <span className={`text-left`}>
                       <AccordionTrigger
                         className={`text-sm text-slate-600 relative `}
                       >
@@ -330,18 +328,7 @@ export const NavBar: FC = ({}) => {
                           <ChevronRightIcon className="h-4 w-4 shrink-0 text-muted-foreground text-gray-800  duration-200 absolute top-[10px] right-0 " />
                         )}
                       </AccordionTrigger>
-                    </Link>
-                    <AccordionContent className="grid gap-3 border-l border-slate-800 ml-2  mr-2">
-                      {item.links?.map((link, i) => (
-                        <Link
-                          className={`pl-4 relative text-sm first-of-type:mt-2 last-of-type:mb-2 `}
-                          key={i}
-                          href={link.href}
-                        >
-                          {link.value}
-                        </Link>
-                      ))}
-                    </AccordionContent>
+                    </span>
                   </AccordionItem>
                 ))}
               </Accordion>

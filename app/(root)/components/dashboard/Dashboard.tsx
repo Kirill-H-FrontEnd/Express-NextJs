@@ -16,6 +16,7 @@ import GridPattern from "@/components/magicui/bg/grid-pattern";
 import { motion, Variants } from "framer-motion";
 // > Font
 import { Inter } from "next/font/google";
+import { TitleBanner } from "@/app/(docs)/docs/components/ui/titleBanner/title-banner";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -38,6 +39,7 @@ export const Dashboard: FC = ({}) => {
       },
     }),
   };
+
   return (
     <>
       <section className="py-24 bg-black relative">
@@ -74,17 +76,41 @@ export const Dashboard: FC = ({}) => {
               rotateYMax={5}
               activeOffset={15}
             >
-              <div className="relative border-1 border-gray-900 rounded-2xl overflow-hidden h-[530px] md:h-full">
+              <div className="relative border-1 border-borderDark rounded-2xl overflow-hidden h-[530px] md:h-[685px] bg-black">
                 <Header />
                 <article
-                  id="main"
-                  className=" relative pt-10 mb-[20px] container z-[11]"
+                  id="dashboardMain"
+                  className=" relative pt-10 mb-[20px] mt-10 md:mt-0 md:mx-[40px] z-[11]"
                 >
                   <NavBar />
-                  <div className="px-4 relative z-[11]"></div>
+                  <div className="px-4 relative z-[11]">
+                    <article className="border-b-1 border-borderDark pb-7">
+                      <h5
+                        style={inter.style}
+                        className="text-white text-[28px] mb-5 font-medium"
+                      >
+                        Installation
+                      </h5>
+                      <div className="grid gap-6 text-slate-500 text-[14px] leading-7">
+                        <p className="">System Requirements:</p>
+                        <div>
+                          <p>
+                            -{" "}
+                            <span className="text-bluePrimary">
+                              Node.js 18.17
+                            </span>{" "}
+                            or later.
+                          </p>
+                          <p>
+                            - macOS, Windows (including WSL), and Linux are
+                            supported.
+                          </p>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
                   <Aside />
                 </article>
-                <LinearGradient from="#1D1836" to="#0D0F14" />
                 <BorderBeam colorFrom="#131322" colorTo="#F1F4F8" size={200} />
               </div>
             </Atropos>

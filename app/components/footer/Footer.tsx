@@ -14,7 +14,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "700"],
+  weight: ["400", "500", "700"],
 });
 // > Data
 import { DATA_FOOTER_LINKS } from "@/data/dataItems";
@@ -41,11 +41,11 @@ export const Footer: FC = ({}) => {
     <>
       {hideFooter && (
         <footer
-          className={`${s.footer} relative bg-black border-t-1 border-gray-900`}
+          className={`${s.footer} relative bg-black border-t-1 border-borderDark`}
         >
           <div className="container">
             <section
-              className={`${s.wrapper} py-14 border-b-1 border-gray-900`}
+              className={`${s.wrapper} py-14 border-b-1 border-borderDark`}
             >
               <div>
                 <Link
@@ -63,7 +63,7 @@ export const Footer: FC = ({}) => {
                     className="relative text-2xl text-inherit text-white "
                   >
                     <span className=" font-medium text-white">Express</span>
-                    <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] text-transparent bg-clip-text bg-gradient-to-b   from-white to-slate-400">
+                    <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
                       .ts
                     </span>
                   </p>
@@ -74,7 +74,7 @@ export const Footer: FC = ({}) => {
                   <li key={i}>
                     <h5
                       style={inter.style}
-                      className="text-white mb-4 font-normal"
+                      className="text-white text-sm mb-4 "
                     >
                       {item.title}
                     </h5>
@@ -109,18 +109,17 @@ export const Footer: FC = ({}) => {
                     <DialogTrigger asChild>
                       <ShimmerButton
                         shimmerSize="0.06em"
-                        background="#241A3E"
                         className={`w-full shadow-2xl text-sm font-medium  py-[11px]`}
                       >
                         Subscription
                       </ShimmerButton>
                     </DialogTrigger>
-                    <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center border-gray-800">
+                    <DialogContent className=" bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center border-borderDark">
                       <div>
                         <DialogHeader>
                           <DialogTitle
                             style={inter.style}
-                            className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text font-bold"
+                            className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text font-bold mb-2"
                           >
                             Subscribe to our newsletter
                           </DialogTitle>

@@ -1,6 +1,7 @@
 #main {
 	display: grid;
 	grid-template-columns: 280px 1fr;
+	gap: 20px;
 	#pageWrapper {
 		display: grid;
 		grid-template-columns: 1fr 260px;

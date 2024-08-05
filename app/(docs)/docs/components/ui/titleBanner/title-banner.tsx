@@ -24,7 +24,7 @@ export const TitleBanner: FC<TTitleBanner> = ({
     <article
       id={id}
       {...props}
-      className={`${className} border-b-1 border-gray-200 dark:border-gray-800 pb-7`}
+      className={`${className} border-b-1 border-borderLight dark:border-borderDark pb-7`}
     >
       <h2
         style={inter.style}

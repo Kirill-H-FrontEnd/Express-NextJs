@@ -101,11 +101,13 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           disableAnimation
           ref={ref}
           maxWidth="full"
-          className={`${
-            s.navBar
-          } z-[50] fixed border-b-1 border-gray-900 bg-black/40   ${
+          className={`${s.navBar} z-[50] fixed  bg-black/40 sm:py-1   ${
             isMenuOpen ? " bg-black/70 " : ""
-          } ${isScroll ? "backdrop-blur-md" : "backdrop-blur-sm"}`}
+          } ${
+            isScroll
+              ? "backdrop-blur-md border-b-1 border-borderDark"
+              : "backdrop-blur-sm"
+          }`}
           onMenuOpenChange={setIsMenuOpen}
           isMenuOpen={isMenuOpen}
         >
@@ -221,16 +223,16 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                     Subscription
                   </ShimmerButton>
                 </DialogTrigger>
-                <DialogContent className=" bg-black sm:bg-[url('/StarsAnimationBg.svg')] bg-no-repeat bg-center bg-cover sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center">
+                <DialogContent className=" bg-black sm:rounded-md overflow-hidden select-none  grid place-items-center">
                   <div>
                     <DialogHeader>
                       <DialogTitle
                         style={inter.style}
-                        className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text"
+                        className="text-transparent bg-clip-text bg-gradient-to-b from-[#241A3E] to-white text-center text-2xl select-text mb-2"
                       >
                         Subscribe to our newsletter
                       </DialogTitle>
-                      <p className="text-gray text-center select-text">
+                      <p className="text-gray-600 text-center select-text">
                         Stay updated on new releases and features, guides, and
                         case studies.
                       </p>

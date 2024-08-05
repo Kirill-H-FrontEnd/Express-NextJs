@@ -62,7 +62,7 @@ export const Card: FC = ({}) => {
                 <h4 style={inter.style} className="text-white text-xl mb-2 ">
                   {card.title}
                 </h4>
-                <p className="text-gray-600 text-sm">{card.text}</p>
+                <p className="text-gray-600 text-sm leading-6">{card.text}</p>
                 <FiArrowUpRight className="text-gray-600 absolute top-2 right-2" />
               </div>
               {/* Bg */}

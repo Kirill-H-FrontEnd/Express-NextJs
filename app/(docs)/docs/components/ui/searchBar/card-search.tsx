@@ -102,7 +102,7 @@ export const CardSearch: FC = ({}) => {
   return (
     <DialogContent
       aria-describedby="This is card for searching documentation..."
-      className="bg-white dark:bg-black sm:rounded-md overflow-hidden select-none sm:border-1 border-slate-300 sm:dark:border-gray-900 block p-0 gap-0"
+      className="bg-white dark:bg-black sm:rounded-md overflow-hidden select-none sm:border-1 border-borderLight sm:dark:border-borderDark block p-0 gap-0"
     >
       <DialogHeader className="relative w-full py-1 bg-white dark:bg-black z-[10]">
         <DialogTitle className="grid justify-start">
@@ -120,7 +120,7 @@ export const CardSearch: FC = ({}) => {
           />
           <DialogClose
             style={inter.style}
-            className="absolute top-1/2 right-[10px] -translate-y-1/2  text-[12px] border-1 border-slate-200 dark:border-gray-900 p-[5px] rounded-md font-medium hover:bg-slate-100 text-gray-400 dark:text-gray-400 hover:dark:bg-gray-800/20 m-0 active:scale-[.9] transition-transform"
+            className="absolute top-1/2 right-[10px] -translate-y-1/2  text-[12px] border-1 border-borderLight dark:border-borderDark p-[7px] rounded-md font-medium hover:bg-slate-100 text-gray-400 dark:text-gray-400 hover:dark:bg-gray-800/20 m-0 active:scale-[.9] transition-transform"
           >
             {isDesktop ? (
               "Esc"
@@ -136,7 +136,7 @@ export const CardSearch: FC = ({}) => {
         style={{ scrollbarWidth: "initial" }}
         size={20}
       >
-        <div className="h-full sm:h-[300px] bg-white dark:bg-black relative w-full px-2 pt-2 pb-4 border-t-1 border-gray-200 dark:border-gray-900 ">
+        <div className="h-full sm:h-[300px] bg-white dark:bg-black relative w-full px-2 pt-2 pb-4 border-t-1 border-borderLight dark:border-borderDark">
           {(!searchStarted ||
             (query.length > 0 && results.length === 0) ||
             !query) && (

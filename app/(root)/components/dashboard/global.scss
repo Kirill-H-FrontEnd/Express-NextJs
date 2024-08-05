@@ -1,14 +1,14 @@
-#main {
+#dashboardMain {
 	display: grid;
 	grid-template-columns: 270px 1fr 230px;
 }
 @media screen and (width <= 1024px) {
-	#main {
+	#dashboardMain {
 		grid-template-columns: 270px 1fr;
 	}
 }
 @media screen and (width <= 768px) {
-	#main {
+	#dashboardMain {
 		grid-template-columns: 1fr;
 	}
 }

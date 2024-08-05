@@ -96,7 +96,6 @@ export const SubscribeForm: FC = ({}) => {
         <FormSuccess message={success} />
         <ShimmerButton
           shimmerSize="0.06em"
-          background="#241A3E"
           className={`w-full shadow-2xl text-sm font-medium  py-[11px]`}
         >
           {isPending ? <Spinner color="white" size="sm" /> : " Subscribe"}

@@ -271,7 +271,7 @@ export const NavBar: FC = ({}) => {
   return (
     <nav
       id="navbar"
-      className={`${s.navbar} sticky top-[105px] hidden h-[calc(100vh-110px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
+      className={`${s.navbar} sticky top-[121px] hidden h-[calc(100vh-110px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
     >
       <SearchBar />
       <ScrollShadow
@@ -288,7 +288,7 @@ export const NavBar: FC = ({}) => {
                 className={`tracking-wide font-medium dark:font-normal ${
                   pathName !== "/docs"
                     ? "text-black dark:text-white"
-                    : "text-purple-500"
+                    : "text-bluePrimary"
                 }`}
               >
                 Getting Started
@@ -297,8 +297,8 @@ export const NavBar: FC = ({}) => {
                 <Link
                   className={` relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background hover:pl-1 w-max ${
                     pathName === link.href
-                      ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                      : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500"
+                      ? `text-bluePrimary before:bg-bluePr  hover:text-bluePrimary hover:pl-0 font-medium`
+                      : "before:bg-transparent text-gray-600  hover:text-bluePrimary  hover:before:bg-bluePrimary "
                   }`}
                   key={i}
                   href={link.href}
@@ -320,10 +320,10 @@ export const NavBar: FC = ({}) => {
                   <AccordionItem key={i} value={`item-${i}`}>
                     <Link href={item.href} className={`text-left`}>
                       <AccordionTrigger
-                        className={`text-sm text-slate-600 relative data-[state=open]:text-purple-500 data-[state=open]:pl-1 ${
+                        className={`text-sm text-slate-600 relative data-[state=open]:text-bluePrimary data-[state=open]:pl-1 ${
                           pathName === item.href
-                            ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                            : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-1"
+                            ? `text-bluePrimary before:bg-bluePrimary md:hover:text-bluePrimary md:hover:pl-0 font-medium`
+                            : "before:bg-transparent text-gray-600  md:hover:text-bluePrimary  md:hover:before:bg-bluePr  md:hover:pl-1"
                         }`}
                       >
                         {item.title}
@@ -332,13 +332,13 @@ export const NavBar: FC = ({}) => {
                         )}
                       </AccordionTrigger>
                     </Link>
-                    <AccordionContent className="grid gap-3 border-l border-slate-200 dark:border-slate-800 ml-2  mr-2">
+                    <AccordionContent className="grid gap-3 border-l border-borderLight dark:border-borderDark ml-2  mr-2">
                       {item.links?.map((link, i) => (
                         <Link
-                          className={`pl-4  relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background   cursor-pointer first-of-type:mt-2 last-of-type:mb-2 ${
+                          className={`pl-4 relative text-sm transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background cursor-pointer first-of-type:mt-2 last-of-type:mb-2 ${
                             pathName === link.href
-                              ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-3 font-medium`
-                              : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-5"
+                              ? `text-bluePrimary before:bg-bluePrimary  md:hover:text-bluePrimary md:hover:pl-3 font-medium`
+                              : "before:bg-transparent text-gray-600  md:hover:text-bluePrimary  md:hover:before:bg-bluePrimary  hover:pl-5"
                           }`}
                           key={i}
                           href={link.href}

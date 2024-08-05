@@ -1,10 +1,13 @@
 "use client";
 import { FC } from "react";
+
 // > Font
 import { GeistSans } from "geist/font/sans";
 import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
+import { ArrowTopRightIcon } from "@radix-ui/react-icons";
 type TLink = {
-  href: string;
+  id: string;
   label: string;
 };
 
@@ -13,9 +16,12 @@ type TAside = {
 };
 
 export const Aside: FC<TAside> = ({ links }) => {
+  const handleSetActive = (to: string) => {
+    window.history.pushState(null, "", `#${to}`);
+  };
   return (
     <aside
-      className="bg-transparent sticky right-0 top-[105px] h-[calc(100vh-110px)] z-[40] order-last hidden shrink-0 lg:block"
+      className="bg-transparent sticky right-0 top-[121px] h-[calc(100vh-110px)] z-[40] order-last hidden shrink-0 lg:block"
       id="aside"
     >
       <h5
@@ -24,22 +30,41 @@ export const Aside: FC<TAside> = ({ links }) => {
       >
         On this page
       </h5>
-      <nav className="grid gap-3 text-slate-300  border-b-1 border-gray-200 dark:border-gray-900 pb-4">
+      <nav className="grid gap-3 text-slate-300  border-b-1 border-borderLight dark:border-borderDark pb-4">
         {links.map((link, i) => (
           <ScrollLink
-            activeClass="text-purple-500 pl-1"
-            className={`text-sm cursor-pointer md:hover:text-purple-500 text-gray-600 hover:pl-1 transition-[padding]`}
+            activeClass="text-bluePrimary pl-1"
+            className={`text-[13px] cursor-pointer md:hover:text-bluePrimary text-gray-600 md:hover:pl-1 transition-[padding]`}
             key={i}
-            to={link.href}
+            to={link.id}
             smooth={true}
             duration={0}
             spy={true}
             offset={-150}
+            onSetActive={handleSetActive}
           >
             {link.label}
           </ScrollLink>
         ))}
       </nav>
+      <div className="text-[13px] text-gray-600 mt-4 grid gap-3 ">
+        <Link className="relative md:hover:text-bluePrimary" href={""}>
+          Edit this page on GitHub{" "}
+          <ArrowTopRightIcon
+            width={13}
+            height={13}
+            className="absolute top-1/2 -translate-y-1/2 right-[30px]"
+          />
+        </Link>
+        <Link className="relative md:hover:text-bluePrimary" href={""}>
+          Managed Express.ts(Vercel){" "}
+          <ArrowTopRightIcon
+            width={13}
+            height={13}
+            className="absolute top-1/2 -translate-y-1/2 right-[30px]"
+          />
+        </Link>
+      </div>
     </aside>
   );
 };

@@ -30,7 +30,9 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
         <GlowingStarsBackgroundCard>
           <GlowingStarsTitle> {title}</GlowingStarsTitle>
           <div className="">
-            <GlowingStarsDescription>{text}</GlowingStarsDescription>
+            <GlowingStarsDescription className="text-slate-500 leading-6">
+              {text}
+            </GlowingStarsDescription>
           </div>
         </GlowingStarsBackgroundCard>
         <FiExternalLink

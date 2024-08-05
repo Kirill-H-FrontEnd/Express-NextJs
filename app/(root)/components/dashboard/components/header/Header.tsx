@@ -7,7 +7,11 @@ import Link from "next/link";
 // > Icons
 import { IoLogoGithub } from "react-icons/io";
 import { SquareArrowOutUpRight, Squirrel, UserCircle2Icon } from "lucide-react";
-import { MagnifyingGlassIcon, MoonIcon } from "@radix-ui/react-icons";
+import {
+  MagnifyingGlassIcon,
+  MoonIcon,
+  TextAlignLeftIcon,
+} from "@radix-ui/react-icons";
 // > Components
 import { Navbar, NavbarMenuToggle } from "@nextui-org/react";
 // > Font
@@ -42,7 +46,7 @@ export const Header: FC = ({}) => {
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
-        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-black/40 border-b-1 backdrop-blur-sm border-gray-900  `}
+        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-black/40 border-b-1 backdrop-blur-sm border-borderDark  `}
       >
         <div className="container">
           <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
@@ -71,7 +75,7 @@ export const Header: FC = ({}) => {
                 v12.3.0
               </div>
             </div>
-            <nav className="hidden lg:grid grid-cols-3-auto gap-5 items-center">
+            <nav className="hidden md:grid grid-cols-3-auto gap-5 items-center">
               <ul className="grid grid-cols-4-auto gap-7 text-sm mr-4">
                 {DATA_lINKS.map((link, i) => (
                   <Link
@@ -101,12 +105,21 @@ export const Header: FC = ({}) => {
               </div>
               <UserCircle2Icon strokeWidth={1.5} className="text-white" />
             </nav>
-            <div className="grid grid-cols-2-auto justify-end gap-5 lg:hidden">
-              <MagnifyingGlassIcon
-                width={20}
-                height={20}
-                className=" text-white "
-              />
+            <div className="grid grid-cols-2-auto justify-end gap-5 md:hidden">
+              <div className="grid grid-cols-2-auto gap-3 relative">
+                <MagnifyingGlassIcon
+                  width={20}
+                  height={20}
+                  className=" text-white "
+                />
+                <MoonIcon
+                  width={20}
+                  height={20}
+                  strokeWidth={1.5}
+                  className="text-white "
+                />
+                <span className="absolute top-1/2 right-[-9px] translate-x-1/2 -translate-y-1/2 w-[1px] h-[60%] bg-slate-300 dark:bg-slate-700 rounded-full pointer-events-none "></span>
+              </div>
               <NavbarMenuToggle
                 className={` ${s.navBarMenuToggle} text-white  `}
               />
@@ -114,6 +127,10 @@ export const Header: FC = ({}) => {
           </section>
         </div>
       </Navbar>
+      <div className="absolute top-[65px] left-0 py-3 border-b-1 border-borderDark w-full md:hidden text-white grid grid-cols-2-auto justify-start gap-2 items-center pl-5 text-sm">
+        <TextAlignLeftIcon width={20} hanging={20} />
+        Menu
+      </div>
     </>
   );
 };

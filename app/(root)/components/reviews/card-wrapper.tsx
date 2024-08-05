@@ -38,7 +38,7 @@ export const CardWrapper: FC = ({}) => {
           key={i}
         >
           <section className="relative z-20">
-            <p className="text-white select-text">{card.value}</p>
+            <p className="text-white select-text leading-6">{card.value}</p>
             <div className="mt-5 ">
               <Image src={card.logo} width={150} height={150} alt="" />
               <p className="text-slate-300 mt-2 select-text">{card.info}</p>

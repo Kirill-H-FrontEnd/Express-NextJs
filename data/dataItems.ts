@@ -7,7 +7,7 @@ export const pagesData = [
       {
         title: "What is Express.ts?",
         text: "Express.ts is a React framework for building full-stack web applications. You use React Components to build user interfaces, and Express.ts for additional features and optimizations.",
-        path: "",
+        path: "/docs#what-is-express",
       },
       {
         title: "Main Features",

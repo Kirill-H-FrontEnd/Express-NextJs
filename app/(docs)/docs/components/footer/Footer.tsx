@@ -11,7 +11,7 @@ import { Inter } from "next/font/google";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-  weight: ["500", "700"],
+  weight: ["400", "500", "700"],
 });
 // > Data
 import { DATA_FOOTER_LINKS } from "@/data/dataItems";
@@ -40,11 +40,11 @@ export const Footer: FC = ({}) => {
     <>
       <footer
         id="footer"
-        className={`${s.footer} relative bg-white dark:bg-black border-t-1 border-gray-200 dark:border-gray-900 z-[30]`}
+        className={`${s.footer} relative bg-white dark:bg-black border-t-1 border-borderLight dark:border-borderDark z-[30]`}
       >
         <div className="container">
           <section
-            className={`${s.wrapper} py-14 border-b-1 border-gray/200 dark:border-gray-900`}
+            className={`${s.wrapper} py-14 border-b-1 border-borderLight dark:border-borderDark`}
           >
             <div>
               <Link
@@ -64,7 +64,7 @@ export const Footer: FC = ({}) => {
                   <span className=" font-medium text-black dark:text-white">
                     Express
                   </span>
-                  <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] text-black dark:text-white">
+                  <span className="absolute top-[5px] -right-[14px] font-medium text-[12px] text-black dark:text-transparent bg-clip-text bg-gradient-to-b from-white to-slate-400">
                     .ts
                   </span>
                 </p>
@@ -75,7 +75,7 @@ export const Footer: FC = ({}) => {
                 <li key={i}>
                   <h5
                     style={inter.style}
-                    className="text-black dark:text-white mb-4 font-normal"
+                    className="text-black text-sm dark:text-white mb-4 "
                   >
                     {item.title}
                   </h5>
@@ -83,9 +83,9 @@ export const Footer: FC = ({}) => {
                     {item.links.map((link, i) => (
                       <Link
                         key={i}
-                        className={`text-gray-600 text-sm hover:text-purple-500 ${
+                        className={`text-gray-600 text-sm md:hover:text-bluePrimary ${
                           pathName === link.href
-                            ? `${s.active} text-purple-500`
+                            ? `${s.active} text-bluePrimary`
                             : ""
                         }`}
                         href={link.href}
@@ -113,7 +113,6 @@ export const Footer: FC = ({}) => {
                   <DialogTrigger asChild>
                     <ShimmerButton
                       shimmerSize="0.06em"
-                      background="#241A3E"
                       className={`w-full shadow-2xl text-sm font-medium py-[11px]`}
                     >
                       Subscription
@@ -121,7 +120,7 @@ export const Footer: FC = ({}) => {
                   </DialogTrigger>
                   <DialogContent
                     aria-describedby="Email modal."
-                    className=" bg-white dark:bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm: border-gray-200 sm:dark:border-gray-900 grid place-items-center "
+                    className=" bg-white dark:bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm: border-borderLight sm:dark:border-borderDark grid place-items-center "
                   >
                     <div>
                       <DialogHeader>
@@ -147,7 +146,7 @@ export const Footer: FC = ({}) => {
             </div>
           </section>
           <section className={`${s.copyright} relative`}>
-            <div className="text-slate-500 text-sm py-4 text-center">
+            <div className="text-gray-700 text-sm py-4 text-center">
               Copyright © {getFullYear} Express.This is just a documentation
               template for the framework.
             </div>

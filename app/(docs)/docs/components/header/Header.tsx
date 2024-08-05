@@ -357,7 +357,7 @@ export const Header: FC = ({}) => {
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
-        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-white/40 dark:bg-black/40 border-b-1 backdrop-blur-md border-gray-200 dark:border-gray-900  `}
+        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-transparent border-b-1 backdrop-blur-md border-borderLight dark:border-borderDark `}
       >
         <div className="container">
           <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
@@ -386,7 +386,7 @@ export const Header: FC = ({}) => {
               </Link>
               <Select defaultValue="v1">
                 <SelectTrigger
-                  className="font-semibold dark:font-medium text-gray-600 dark:text-gray-500 hover:text-purple-800 hover:dark:text-purple-600"
+                  className="font-semibold dark:font-medium text-gray-600 dark:text-gray-500 hover:text-bluePrimary hover:dark:text-bluePrimary"
                   defaultValue={"1"}
                 >
                   <SelectValue />
@@ -403,7 +403,7 @@ export const Header: FC = ({}) => {
                 {DATA_lINKS.map((link, i) => (
                   <Link
                     style={inter.style}
-                    className="text-gray-700 dark:text-gray-400 hover:dark:text-purple-700 hover:text-purple-700 relative text-sm font-normal "
+                    className="text-gray-700 dark:text-gray-400 hover:dark:text-bluePrimary hover:text-bluePrimary relative text-sm font-normal "
                     key={i}
                     href={link.href}
                   >
@@ -443,26 +443,28 @@ export const Header: FC = ({}) => {
               </div>
               <NavbarMenuToggle
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                className={` ${s.navBarMenuToggle}  text-black dark:text-white [&[data-pressed]]:-scale-[.9] `}
+                className={` ${s.navBarMenuToggle} ${
+                  isMenuOpen ? "text-bluePrimary" : "text-black dark:text-white"
+                }   [&[data-pressed]]:-scale-[.9] `}
               />
             </div>
           </section>
         </div>
         {/* ToggleMenu */}
         <NavbarMenu
-          className={` bg-white dark:bg-black/60 backdrop:blur-md py-6 z-[35] border-t-1 border-gray-200 dark:border-gray-900 `}
+          className={` bg-white dark:bg-black/60 backdrop:blur-md py-6 z-[35] border-t-1 border-borderLight dark:border-borderDark `}
         >
           <div className="grid gap-5 pb-2">
             {DATA_TOGGLE_MENU_LINKS.map((item, index) => (
               <NavbarMenuItem
-                className="border-b-1 pb-2 border-gray-200 dark:border-gray-900"
+                className="border-b-1 pb-2 border-borderLight dark:border-borderDark"
                 key={`${item}-${index}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 <Link
                   className={`relative  text-lg ${
                     pathName === item.href
-                      ? `text-purple-800`
+                      ? `text-bluePrimary`
                       : " text-gray-700 dark:text-gray-700"
                   }`}
                   key={index}
@@ -476,9 +478,10 @@ export const Header: FC = ({}) => {
           <LogoutButton children={"SignOut"} />
         </NavbarMenu>
       </Navbar>
+      {/* MobileMenu */}
       <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
         <SheetTitle
-          className={`w-full border-gray-200 dark:border-gray-900 border-b-1 sticky top-[65px] left-0 z-[30] bg-white/40 dark:bg-black/40 backdrop-blur-md md:hidden`}
+          className={`w-full border-borderLight dark:border-borderDark border-b-1 sticky top-[65px] left-0 z-[30] bg-white/40 dark:bg-black/40 backdrop-blur-md md:hidden`}
         >
           <SheetTrigger className=" py-3 text-left pl-5  grid grid-cols-2-auto justify-start font-medium items-center gap-1 text-[16px] ">
             <TextAlignLeftIcon width={20} hanging={20} />
@@ -487,7 +490,7 @@ export const Header: FC = ({}) => {
         </SheetTitle>
         <SheetContent
           aria-describedby="Mobile menu."
-          className="w-[320px] bg-white dark:bg-black border-gray-200 dark:border-gray-900"
+          className="w-[320px] bg-white dark:bg-black border-borderLight dark:border-borderDark"
           side="left"
         >
           <div className="grid gap-2 text-gray text-sm mb-3">
@@ -498,7 +501,7 @@ export const Header: FC = ({}) => {
               className={`tracking-wide font-medium dark:font-normal ${
                 pathName !== "/docs"
                   ? "text-black dark:text-white"
-                  : "text-purple-500"
+                  : "text-bluePrimary"
               }`}
             >
               Getting Started
@@ -508,7 +511,7 @@ export const Header: FC = ({}) => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={` relative text-sm transition-all hover:pl-1 w-max ${
                   pathName === link.href
-                    ? `text-purple-500  md:hover:text-purple-500 hover:pl-0 font-medium`
+                    ? `text-bluePrimary  md:hover:text-bluePrimary hover:pl-0 font-medium`
                     : " text-gray-600  md:hover:text-gray-300  "
                 }`}
                 key={i}
@@ -531,10 +534,10 @@ export const Header: FC = ({}) => {
                 <AccordionItem key={i} value={`item-${i}`}>
                   <Link href={item.href} className={`text-left`}>
                     <AccordionTrigger
-                      className={`text-sm text-slate-600 relative data-[state=open]:text-purple-500 data-[state=open]:pl-1 ${
+                      className={`text-sm text-slate-600 relative data-[state=open]:text-blue data-[state=open]:pl-1 ${
                         pathName === item.href
-                          ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-0 font-medium`
-                          : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-1"
+                          ? `text-blue before:bg-blue hover:text-blue hover:pl-0 font-medium`
+                          : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-blue hover:pl-1"
                       }`}
                     >
                       {item.title}
@@ -548,8 +551,8 @@ export const Header: FC = ({}) => {
                       <Link
                         className={`pl-4  relative text-sm  transition-all before:block before:absolute before:w-[1px] before:h-full before:top-1/2 before:left-[-1px] before:-translate-y-1/2 before:transition-background   cursor-pointer first-of-type:mt-2 last-of-type:mb-2 ${
                           pathName === link.href
-                            ? `text-purple-500 before:bg-purple-500 hover:text-purple-500 hover:pl-3 font-medium`
-                            : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-purple-500 hover:pl-5"
+                            ? `text-blue before:bg-blue hover:text-blue hover:pl-3 font-medium`
+                            : "before:bg-transparent text-gray-600  hover:text-gray-300  hover:before:bg-blue hover:pl-5"
                         }`}
                         key={i}
                         href={link.href}

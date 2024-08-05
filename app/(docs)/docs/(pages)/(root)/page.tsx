@@ -1,18 +1,19 @@
-// > Components
-import { TitleBanner } from "../../components/ui/titleBanner/title-banner";
 // > Next
 import Link from "next/link";
+// > Components
+import { TitleBanner } from "../../components/ui/titleBanner/title-banner";
 import { Cards } from "./_components/cards/cards";
-import { Aside } from "../../components/aside/Aside";
+import { Aside } from "@/app/(docs)/docs/components/aside/Aside";
+import NavigationButtons from "@/app/(docs)/docs/components/ui/navButtons/nav-buttons";
 
 export default function Introduction() {
   const ASIDE_LINKS = [
-    { href: "whatIsExpress", label: "What is Express.ts?" },
-    { href: "howToUseTheseDocs", label: "How to Use These Docs" },
-    { href: "appRouterVsPagesRouter", label: "App Router vs Pages Router" },
-    { href: "preRequisiteKnowledge", label: "Pre-Requisite Knowledge" },
-    { href: "accessibility", label: "Accessibility" },
-    { href: "joinOurCommunity", label: "Join our Community" },
+    { id: "what-is-express", label: "What is Express.ts?" },
+    { id: "how-to-use-these-docs", label: "How to Use These Docs" },
+    { id: "app-router-vs-pages-router", label: "App Router vs Pages Router" },
+    { id: "pre-requisite-knowledge", label: "Pre-Requisite Knowledge" },
+    { id: "accessibility", label: "Accessibility" },
+    { id: "join-our-community", label: "Join our Community" },
   ];
   return (
     <>
@@ -24,7 +25,7 @@ export default function Introduction() {
           content={<p className="">Welcome to the Express.ts documentation!</p>}
         />
         <TitleBanner
-          id="whatIsExpress"
+          id="what-is-express"
           title="What is Express.ts?"
           className="text-[22px] mt-10"
           content={
@@ -52,7 +53,7 @@ export default function Introduction() {
           }
         />
         <TitleBanner
-          id="howToUseTheseDocs"
+          id="how-to-use-these-docs"
           title="How to Use These Docs"
           className="text-[22px] mt-10"
           content={
@@ -82,7 +83,7 @@ export default function Introduction() {
                 </p>
                 <p>
                   To get started, checkout the{" "}
-                  <Link className="text-purple-500" href={""}>
+                  <Link className="text-blue" href={""}>
                     Installation{" "}
                   </Link>
                   guide.
@@ -92,7 +93,7 @@ export default function Introduction() {
           }
         />
         <TitleBanner
-          id="appRouterVsPagesRouter"
+          id="app-router-vs-pages-router"
           title="App Router vs Pages Router"
           className="text-[22px] mt-10"
           content={
@@ -122,7 +123,7 @@ export default function Introduction() {
           }
         />
         <TitleBanner
-          id="preRequisiteKnowledge"
+          id="pre-requisite-knowledge"
           title="Pre-Requisite Knowledge"
           className="text-[22px] mt-10"
           content={
@@ -138,12 +139,12 @@ export default function Introduction() {
                   To get the most out of our docs, it's recommended that you
                   have a basic understanding of HTML, CSS, and React. If you
                   need to brush up on your React skills, check out our{" "}
-                  <Link className="text-purple-500" href={""}>
+                  <Link className="text-blue" href={""}>
                     React Foundations Course
                   </Link>
                   , which will introduce you to the fundamentals. Then, learn
                   more about Next.js by{" "}
-                  <Link className="text-purple-500" href={""}>
+                  <Link className="text-blue" href={""}>
                     building a dashboard application
                   </Link>
                   .
@@ -167,7 +168,7 @@ export default function Introduction() {
           }
         />
         <TitleBanner
-          id="joinOurCommunity"
+          id="join-our-community"
           title="Join our Community"
           className="text-[22px] mt-10"
           content={
@@ -175,19 +176,19 @@ export default function Introduction() {
               <p>
                 If you have questions about anything related to Next.js, you're
                 always welcome to ask our community on{" "}
-                <Link className="text-purple-500" href={""}>
+                <Link className="text-blue" href={""}>
                   GitHub Discussions
                 </Link>
                 ,
-                <Link className="text-purple-500" href={""}>
+                <Link className="text-blue" href={""}>
                   Discord
                 </Link>
                 ,
-                <Link className="text-purple-500" href={""}>
+                <Link className="text-blue" href={""}>
                   Twitter
                 </Link>
                 , and {""}
-                <Link className="text-purple-500" href={""}>
+                <Link className="text-blue" href={""}>
                   Reddit
                 </Link>
                 .
@@ -196,6 +197,7 @@ export default function Introduction() {
           }
         />
         <Cards />
+        <NavigationButtons />
       </div>
     </>
   );

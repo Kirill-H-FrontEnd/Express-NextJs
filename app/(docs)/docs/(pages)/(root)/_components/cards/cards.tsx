@@ -48,7 +48,7 @@ export const Cards: FC = ({}) => {
         <Link
           key={i}
           href={""}
-          className={`${s.card} border-1 border-gray-200 dark:border-gray-900 rounded-md p-4 bg-gradient-to-b from-gray-400/5 to-gray-800/5 relative hover:to-gray-950/10 hover:dark:to-gray-950/5 `}
+          className={`${s.card} border-1 border-gray-200 dark:border-borderDark rounded-md p-4 bg-gradient-to-b from-gray-400/5 to-gray-800/5 relative hover:to-gray-950/10 hover:dark:to-gray-950/5 `}
         >
           <FiExternalLink
             className={` absolute top-2 right-2 text-gray-300 dark:text-gray-700 z-20`}

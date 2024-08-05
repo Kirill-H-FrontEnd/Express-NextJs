@@ -11,13 +11,6 @@ const config = {
   ],
   prefix: "",
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       gridTemplateColumns: {
         "2-auto": "repeat(2,auto)",
@@ -28,7 +21,10 @@ const config = {
 
       colors: {
         black: "#0D0F14",
+        bluePrimary: "#0072F5",
         violet: "#581C87",
+        borderDark: "#1B2430",
+        borderLight: "#E5E7EB",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
