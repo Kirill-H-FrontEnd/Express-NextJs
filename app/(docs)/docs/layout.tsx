@@ -10,7 +10,9 @@ import ThemeProvider from "@/app/providers/ThemeProvider";
 // > Next
 import type { Metadata } from "next";
 import { BreadCrumbs } from "./components/ui/breadcrumbs";
-import NavigationButtons from "./components/ui/navButtons/nav-buttons";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
+import { cn } from "@/lib/utils";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
 export const metadata: Metadata = {
   title: "Express.ts | Documentation",
   description: "This is the Introduction documentation page.",
@@ -31,7 +33,7 @@ export default function DashboardLayout({
         <NavBar />
         <div className=" relative z-[11] w-fill">
           <BreadCrumbs />
-          <div id="pageWrapper" className="grid grid-cols-2-auto">
+          <div id="pageWrapper" className="relative grid grid-cols-2-auto">
             {children}
           </div>
         </div>

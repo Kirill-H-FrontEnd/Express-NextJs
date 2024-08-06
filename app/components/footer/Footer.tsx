@@ -82,9 +82,9 @@ export const Footer: FC = ({}) => {
                       {item.links.map((link, i) => (
                         <Link
                           key={i}
-                          className={`text-gray-600 text-sm hover:text-purple-500 ${
+                          className={`text-gray-600 text-sm hover:text-bluePrimary ${
                             pathName === link.href
-                              ? `${s.active} text-purple-500`
+                              ? `${s.active} text-bluePrimary`
                               : ""
                           }`}
                           href={link.href}

@@ -23,6 +23,9 @@ import Particles from "@/components/magicui/bg/particles";
 import LinearGradient from "@/components/magicui/bg/linear-gradient";
 // > Hooks
 import useMediaQuery from "@/hooks/useMediaQuery";
+import { BackgroundBeams } from "@/components/magicui/background-beams";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
 
 export const Hero: FC = ({}) => {
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -40,7 +43,6 @@ export const Hero: FC = ({}) => {
     <section
       className={`${s.home} relative w-full h-screen overflow-hidden select-none text-purple-800 bg-black`}
     >
-      <LinearGradient from="#1D1836" to="#0D0F14" />
       <div className="w-full h-screen ">
         <div className="container ">
           <section
@@ -52,7 +54,7 @@ export const Hero: FC = ({}) => {
             `}
               >
                 The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-purple-200 via-purple-800 to-[#241A3E] ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-white from-10% via-blue-500 via-30%  to-green-600 ">
                   Progressive
                 </span>{" "}
                 TypeScript Framework
@@ -61,7 +63,7 @@ export const Hero: FC = ({}) => {
               <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
                 Used by some of the world's largest companies, Express enables
                 you to create{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white ">
                   high-quality web applications
                 </span>{" "}
                 with the power of TypeScript.
@@ -98,11 +100,15 @@ export const Hero: FC = ({}) => {
         </div>
       </div>
       {/* Bg */}
-      <DotPattern
-        width={30}
-        height={30}
+      <RadialGradient origin="top" size={isDesktop ? 700 : 600} />
+      <GridPattern
+        width={50}
+        height={50}
+        strokeDasharray={0}
+        x={-1}
+        y={-1}
         className={cn(
-          "lg:md:[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+          "[mask-image:radial-gradient(450px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-borderDark/25"
         )}
       />
       {isDesktop && (
@@ -111,7 +117,7 @@ export const Hero: FC = ({}) => {
           quantity={300}
           size={0.4}
           ease={80}
-          color={"#974BD9"}
+          color={"#2D8EB4"}
           refresh
         />
       )}

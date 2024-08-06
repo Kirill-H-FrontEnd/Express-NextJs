@@ -28,13 +28,9 @@ export const ButtonTop: FC = ({}) => {
       <button
         type="submit"
         onClick={scrollToTop}
-        className="absolute top-1/2 right-0 -translate-y-1/2  border-2 border-slate-400 hover:border-slate-600 dark:border-slate-600 hover:dark:border-slate-300 p-1 rounded-full hidden lg:block active:scale-[.9] transition-all *:dark:fill-slate-600 *:fill-slate-400 *:hover:fill-slate-600 *:hover:dark:fill-slate-300"
+        className="absolute top-1/2 right-0 -translate-y-1/2  border-2 border-borderLight hover:border-slate-600 dark:border-borderDark hover:dark:border-slate-300 p-1 rounded-full hidden lg:block active:scale-[.9] transition-all *:dark:fill-gray-600 *:fill-gray-200 *:hover:fill-slate-600 *:hover:dark:fill-slate-300"
       >
-        <MdKeyboardDoubleArrowUp
-          size={20}
-          color="#CBD5E1"
-          className="transition-all"
-        />
+        <MdKeyboardDoubleArrowUp size={20} className="transition-all" />
       </button>
     </Tooltip>
   );

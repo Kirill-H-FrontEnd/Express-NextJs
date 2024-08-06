@@ -43,15 +43,15 @@ export const Reviews: FC = ({}) => {
             <h2 className="text-slate-300 text-lg ">
               <p>
                 For{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white">
                   performance
                 </span>
                 ,
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white">
                   efficiency
                 </span>{" "}
                 and{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-violet to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white">
                   developer experience
                 </span>
                 .
@@ -74,13 +74,15 @@ export const Reviews: FC = ({}) => {
           </section>
         </section>
       </div>
+
       <GridPattern
         width={50}
         height={50}
+        strokeDasharray={0}
         x={-1}
         y={-1}
         className={cn(
-          "[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(350px_circle_at_center,white,transparent)] stroke-gray-900"
+          "[mask-image:radial-gradient(550px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] stroke-borderDark/25"
         )}
       />
     </section>

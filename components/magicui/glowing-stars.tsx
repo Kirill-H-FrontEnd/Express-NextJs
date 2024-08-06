@@ -158,7 +158,7 @@ const Glow = ({ delay }: { delay: number }) => {
       exit={{
         opacity: 0,
       }}
-      className="absolute  left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-purple-900 blur-[1px] shadow-2xl shadow-purple-900"
+      className="absolute  left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-blue-800 blur-[1px] shadow-2xl shadow-blue-800"
     />
   );
 };

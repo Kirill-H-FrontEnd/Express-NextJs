@@ -83,7 +83,7 @@ export default function Introduction() {
                 </p>
                 <p>
                   To get started, checkout the{" "}
-                  <Link className="text-blue" href={""}>
+                  <Link className="text-bluePrimary" href={""}>
                     Installation{" "}
                   </Link>
                   guide.
@@ -139,12 +139,12 @@ export default function Introduction() {
                   To get the most out of our docs, it's recommended that you
                   have a basic understanding of HTML, CSS, and React. If you
                   need to brush up on your React skills, check out our{" "}
-                  <Link className="text-blue" href={""}>
+                  <Link className="text-bluePrimary" href={""}>
                     React Foundations Course
                   </Link>
                   , which will introduce you to the fundamentals. Then, learn
                   more about Next.js by{" "}
-                  <Link className="text-blue" href={""}>
+                  <Link className="text-bluePrimary" href={""}>
                     building a dashboard application
                   </Link>
                   .
@@ -176,11 +176,11 @@ export default function Introduction() {
               <p>
                 If you have questions about anything related to Next.js, you're
                 always welcome to ask our community on{" "}
-                <Link className="text-blue" href={""}>
+                <Link className="text-bluePrimary" href={""}>
                   GitHub Discussions
                 </Link>
                 ,
-                <Link className="text-blue" href={""}>
+                <Link className="text-bluePrimary" href={""}>
                   Discord
                 </Link>
                 ,

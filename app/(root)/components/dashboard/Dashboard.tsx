@@ -119,10 +119,11 @@ export const Dashboard: FC = ({}) => {
         <GridPattern
           width={50}
           height={50}
+          strokeDasharray={0}
           x={-1}
           y={-1}
           className={cn(
-            "[mask-image:radial-gradient(350px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(550px_circle_at_center,white,transparent)] stroke-gray-900"
+            "[mask-image:radial-gradient(350px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-borderDark/25"
           )}
         />
       </section>

@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 const { nextui } = require("@nextui-org/theme");
+
 const config = {
   darkMode: ["class"],
   content: [

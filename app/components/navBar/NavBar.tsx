@@ -101,13 +101,11 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
           disableAnimation
           ref={ref}
           maxWidth="full"
-          className={`${s.navBar} z-[50] fixed  bg-black/40 sm:py-1   ${
+          className={`${
+            s.navBar
+          } z-[50] fixed  bg-black/40  border-b-1 border-borderDark  ${
             isMenuOpen ? " bg-black/70 " : ""
-          } ${
-            isScroll
-              ? "backdrop-blur-md border-b-1 border-borderDark"
-              : "backdrop-blur-sm"
-          }`}
+          } ${isScroll ? "backdrop-blur-md " : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
           isMenuOpen={isMenuOpen}
         >
@@ -217,7 +215,6 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                 <DialogTrigger asChild>
                   <ShimmerButton
                     shimmerSize="0.06em"
-                    background="#241A3E"
                     className={`w-full shadow-2xl text-sm font-medium  py-[11px]`}
                   >
                     Subscription

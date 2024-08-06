@@ -34,7 +34,7 @@ export const CardWrapper: FC = ({}) => {
     <>
       {DATA_CARDS.map((card, i) => (
         <article
-          className={`${s.card} relative w-full h-full select-none p-5 overflow-hidden`}
+          className={`${s.card} relative w-full h-full select-none p-5 overflow-hidden bg-black`}
           key={i}
         >
           <section className="relative z-20">
@@ -54,13 +54,7 @@ export const CardWrapper: FC = ({}) => {
               )}
             />
           </section>
-          <RadialGradient
-            className=""
-            from="#1D1836"
-            to="#0D0F14"
-            origin="bottom"
-            size={200}
-          />
+          <RadialGradient className="" origin="bottom" size={200} />
         </article>
       ))}
     </>

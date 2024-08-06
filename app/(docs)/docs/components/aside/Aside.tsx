@@ -30,11 +30,11 @@ export const Aside: FC<TAside> = ({ links }) => {
       >
         On this page
       </h5>
-      <nav className="grid gap-3 text-slate-300  border-b-1 border-borderLight dark:border-borderDark pb-4">
+      <nav className="grid gap-3 text-gray-600  border-b-1 border-borderLight dark:border-borderDark pb-4">
         {links.map((link, i) => (
           <ScrollLink
-            activeClass="text-bluePrimary pl-1"
-            className={`text-[13px] cursor-pointer md:hover:text-bluePrimary text-gray-600 md:hover:pl-1 transition-[padding]`}
+            activeClass="text-[#0070F0] pl-1"
+            className={`text-[13px] cursor-pointer md:hover:text-bluePrimary  md:hover:pl-1 transition-[padding]`}
             key={i}
             to={link.id}
             smooth={true}
