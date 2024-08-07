@@ -108,7 +108,7 @@ export const Hero: FC = ({}) => {
         x={-1}
         y={-1}
         className={cn(
-          "[mask-image:radial-gradient(450px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-borderDark/25"
+          "[mask-image:radial-gradient(450px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-borderDark/35"
         )}
       />
       {isDesktop && (
