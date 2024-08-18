@@ -100,7 +100,7 @@ export const Footer: FC = ({}) => {
                 <h5 style={inter.style} className="text-white mb-4 font-medium">
                   Subscribe to our newsletter
                 </h5>
-                <p className="text-slate-500 mb-4 text-sm">
+                <p className="text-gray-600 mb-4 text-sm">
                   Stay updated on new releases and features, guides, and case
                   studies.
                 </p>
@@ -139,7 +139,7 @@ export const Footer: FC = ({}) => {
               </div>
             </section>
             <section className={`${s.copyright} relative`}>
-              <div className="text-gray-600 text-sm py-4 text-center">
+              <div className="text-gray-700 text-sm py-4 text-center">
                 Copyright © {getFullYear} Protocol.This is just a documentation
                 template for the framework.
               </div>

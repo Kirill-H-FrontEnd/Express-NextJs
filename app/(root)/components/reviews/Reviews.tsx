@@ -43,15 +43,15 @@ export const Reviews: FC = ({}) => {
             <h2 className="text-slate-300 text-lg ">
               <p>
                 For{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-bluePrimary to-white">
                   performance
                 </span>
                 ,
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-bluePrimary to-white">
                   efficiency
                 </span>{" "}
                 and{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-bluePrimary to-white">
                   developer experience
                 </span>
                 .
@@ -69,12 +69,12 @@ export const Reviews: FC = ({}) => {
               View the Protocol.js Showcase
             </Button>
           </motion.article>
-          <section className={`${s.cards}  relative rounded-md`}>
+          <section className={`${s.cards} relative rounded-md`}>
             <CardWrapper />
           </section>
         </section>
       </div>
-
+      {/* Bg */}
       <GridPattern
         width={50}
         height={50}

@@ -55,7 +55,7 @@ export const Dashboard: FC = ({}) => {
                 custom={1}
                 variants={Variants}
                 style={inter.style}
-                className="text-3xl lg:text-[32px] tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
+                className="text-3xl lg:text-[32px] tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-white"
               >
                 Convenient documentation!
               </motion.h2>
@@ -111,7 +111,7 @@ export const Dashboard: FC = ({}) => {
                   </div>
                   <Aside />
                 </article>
-                <BorderBeam colorFrom="#131322" colorTo="#F1F4F8" size={200} />
+                <BorderBeam colorFrom="#0072F5" colorTo="#FFF" size={200} />
               </div>
             </Atropos>
           </section>

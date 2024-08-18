@@ -9,21 +9,24 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import { cn } from "@/lib/utils";
 // > Components
 import LinearGradient from "@/components/magicui/bg/linear-gradient";
-import { Toaster } from "react-hot-toast";
+import RadialGradient from "@/components/magicui/bg/radial-gradient";
+import GridPattern from "@/components/magicui/bg/grid-pattern";
 const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden ">
-        <Toaster position="bottom-right" />
-        <LinearGradient from="#1D1836" to="#0D0F14" />
+      <div className="relative w-full h-screen overflow-hidden bg-black">
+        <RadialGradient origin="top" size={600} />
         <div className="w-full h-screen  grid place-items-center grid-rows-[100vh]">
           {children}
         </div>
-        <DotPattern
-          width={30}
-          height={30}
+        <GridPattern
+          width={50}
+          height={50}
+          strokeDasharray={0}
+          x={-1}
+          y={-1}
           className={cn(
-            "lg:md:[mask-image:radial-gradient(600px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(400px_circle_at_center,white,transparent)] [mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            "[mask-image:radial-gradient(350px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(550px_circle_at_center,white,transparent)] stroke-borderDark/40"
           )}
         />
         <Link

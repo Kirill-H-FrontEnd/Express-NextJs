@@ -25,7 +25,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
       <Link
         ref={ref}
         href={href}
-        className={`${s.card}   rounded-[12px]  h-full relative  hover:border-gray-700 overflow-hidden bg-gradient-to-b from-gray-400/5 to-gray-800/5 backdrop-blur-sm  `}
+        className={`${s.card} group rounded-[12px]  h-full relative  hover:border-gray-700 overflow-hidden bg-gradient-to-b from-gray-400/5 to-gray-800/5 backdrop-blur-sm`}
       >
         <GlowingStarsBackgroundCard>
           <GlowingStarsTitle> {title}</GlowingStarsTitle>
@@ -36,7 +36,7 @@ export const CardWrapper: FC<TCardWrapper> = forwardRef(
           </div>
         </GlowingStarsBackgroundCard>
         <FiExternalLink
-          className={`${s.iconLink} absolute top-2 right-2 text-slate-300/10 z-20`}
+          className={`${s.iconLink} group-hover:text-white transition-colors absolute top-2 right-2 text-slate-300/10 z-20 `}
         />
       </Link>
     );

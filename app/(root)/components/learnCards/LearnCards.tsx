@@ -51,7 +51,7 @@ export const LearnCards: FC = ({}) => {
               custom={1}
               variants={Variants}
               style={inter.style}
-              className="text-3xl lg:text-[32px] tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-tr from-[#241A3E] to-white"
+              className="text-3xl lg:text-[32px] tracking-tight font-bold text-transparent bg-clip-text bg-gradient-to-b from-black to-white"
             >
               What's in Express.ts?
             </motion.h2>
@@ -63,13 +63,7 @@ export const LearnCards: FC = ({}) => {
               Here’s everything that’s covered in the course.
             </motion.p>
           </motion.article>
-          <motion.section
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true }}
-            variants={Variants}
-            className={`${s.cards} relative`}
-          >
+          <section className={`${s.cards} relative`}>
             {DATA_LEARN_CARDS.map((card, i) => (
               <CardWrapper
                 key={i}
@@ -78,16 +72,16 @@ export const LearnCards: FC = ({}) => {
                 title={card.title}
               />
             ))}
-          </motion.section>
+          </section>
           <div className={`${s.actions} text-center`}>
             <Button
               as={Link}
               href="/dashboard"
               radius="full"
-              className="w-[200px] font-semibold hover:bg-slate-300 bg-white text-black"
+              className="w-[200px] font-semibold hover:bg-slate-300 bg-white text-black group "
             >
               <p>Start Learning</p>
-              <FaArrowRight size={13} />
+              <FaArrowRight className="" size={13} />
             </Button>
           </div>
         </section>

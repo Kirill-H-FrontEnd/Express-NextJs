@@ -27,19 +27,19 @@ export const InfoModal: FC = ({}) => {
         <section
           className={`${
             s.InfoModal
-          } w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md sm:border-1 border-slate-700  ${
+          } w-full sm:w-[450px] left-0 bottom-0 sm:left-2 sm:bottom-2 bg-black/10 backdrop-blur-md fixed p-4 sm:rounded-md shadow-md sm:border-1 border-borderDark  ${
             pathName === "/" ? "" : "hidden"
           }`}
         >
           <section className="relative z-[150]">
             <h5
-              className={`text-[15px]  font-normal text-white leading-6 sm:text-balance`}
+              className={`text-[14px]  font-normal text-white leading-6 sm:text-balance`}
             >
               <span
                 style={GeistSans.style}
-                className="text-transparent bg-clip-text bg-gradient-to-t from-violet to-white text-lg font-medium"
+                className="text-transparent bg-clip-text bg-gradient-to-tr from-bluePrimary to-white text-lg font-medium"
               >
-                Welcome!
+                Welcome to Express.ts!
               </span>{" "}
               This website is a template for a web framework and is not used for
               commercial purposes.Thank you and enjoy watching!
@@ -54,7 +54,13 @@ export const InfoModal: FC = ({}) => {
               </Button>
             </div>
           </section>
-          <BorderBeam size={70} duration={12} className="hidden sm:block" />
+          <BorderBeam
+            colorFrom="#0072F5"
+            colorTo="#fff"
+            size={70}
+            duration={12}
+            className="hidden sm:block"
+          />
         </section>
       )}
     </>

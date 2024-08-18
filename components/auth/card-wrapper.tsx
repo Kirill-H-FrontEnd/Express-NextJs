@@ -29,7 +29,7 @@ export const CardWrapper: FC<TCardWrapper> = ({
   contentPrivacy,
 }) => {
   return (
-    <section className="z-[10] w-[340px] sm:w-[450px]">
+    <section className="z-[10] w-[350px] sm:w-[450px]">
       <Card className=" bg-transparent z-[20]">
         <div className="">
           <CardHeader>

@@ -17,17 +17,15 @@ const inter = Inter({
 // > Utils
 import { cn } from "@/lib/utils";
 // > Components
-import DotPattern from "@/components/magicui/bg/dot-pattern";
 import ShimmerButton from "@/components/magicui/shimmer-button";
 import Particles from "@/components/magicui/bg/particles";
-import LinearGradient from "@/components/magicui/bg/linear-gradient";
-// > Hooks
-import useMediaQuery from "@/hooks/useMediaQuery";
-import { BackgroundBeams } from "@/components/magicui/background-beams";
 import GridPattern from "@/components/magicui/bg/grid-pattern";
 import RadialGradient from "@/components/magicui/bg/radial-gradient";
+// > Hooks
+import useMediaQuery from "@/hooks/useMediaQuery";
 
 export const Hero: FC = ({}) => {
+  const words = ["better", "cute", "beautiful", "modern"];
   const isDesktop = useMediaQuery("(min-width: 768px)");
   // Scroll to
   const handleClick = () => {
@@ -48,13 +46,15 @@ export const Hero: FC = ({}) => {
           <section
             className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
           >
-            <article className={`${s.article} text-center select-text`}>
+            <article
+              className={`${s.article} relative text-center select-text`}
+            >
               <h1
                 className={`${inter.className} font-extrabold sm:font-extrabold text-white leading-[1.2] mb-4 text-balance
             `}
               >
                 The{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-white from-10% via-blue-500 via-30%  to-green-600 ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-white from via-bluePrimary via-10%  to-green-600 ">
                   Progressive
                 </span>{" "}
                 TypeScript Framework
@@ -63,7 +63,7 @@ export const Hero: FC = ({}) => {
               <p className="text-slate-300 leading-relaxed sm:leading-normal max-w-[900px] m-auto mb-8 font-normal">
                 Used by some of the world's largest companies, Express enables
                 you to create{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-blue-500 to-white ">
+                <span className="text-transparent bg-clip-text bg-gradient-to-tr from-bluePrimary to-white ">
                   high-quality web applications
                 </span>{" "}
                 with the power of TypeScript.
@@ -108,7 +108,7 @@ export const Hero: FC = ({}) => {
         x={-1}
         y={-1}
         className={cn(
-          "[mask-image:radial-gradient(450px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-borderDark/35"
+          "[mask-image:radial-gradient(450px_circle_at_center,white,transparent)] sm:[mask-image:radial-gradient(650px_circle_at_center,white,transparent)] stroke-borderDark/40"
         )}
       />
       {isDesktop && (

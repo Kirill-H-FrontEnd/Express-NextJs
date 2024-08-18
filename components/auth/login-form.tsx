@@ -97,11 +97,11 @@ export const LoginForm: FC = ({}) => {
         <>
           <p className="text-xs text-gray-600 text-center leading-5">
             By sign in, you agree to our{" "}
-            <Link className="text-purple-600" href={""}>
+            <Link className="text-bluePrimary" href={""}>
               Terms of Service
             </Link>{" "}
             and{" "}
-            <Link className="text-purple-600" href={""}>
+            <Link className="text-bluePrimary" href={""}>
               Privacy.
             </Link>
           </p>
@@ -210,7 +210,6 @@ export const LoginForm: FC = ({}) => {
           <ShimmerButton
             disabled={isPending}
             type="submit"
-            background="#241A3E"
             className={`w-full shadow-2xl text-white text-sm font-medium h-[42px] ${
               isPending ? "opacity-50 cursor-no-drop" : ""
             }`}

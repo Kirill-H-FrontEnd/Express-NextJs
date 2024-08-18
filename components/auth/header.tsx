@@ -24,11 +24,14 @@ export const Header: FC<THeader> = ({
 }) => {
   return (
     <div className="text-center">
-      <h1 style={inter.style} className="text-2xl font-semibold text-white">
+      <h1
+        style={inter.style}
+        className="text-xl sm:text-2xl font-semibold text-white"
+      >
         {title}
       </h1>
       <div
-        className="text-slate-500 mt-1 font-normal text-sm grid grid-cols-2-auto justify-center gap-2
+        className="text-gray-600 mt-1 font-normal text-sm grid grid-cols-2-auto justify-center gap-2
       "
       >
         <p className="max-w-[380px]">{label}</p>
