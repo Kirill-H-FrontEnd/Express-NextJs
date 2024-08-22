@@ -13,10 +13,10 @@ Welcome to the Express.ts project repository! We are here to show you an incredi
 
 We've assembled quite the tech stack to bring Express to life:
 
-- React
-- NextJs
-- TypeScript
-- SCSS
+- [React](https://github.com/username)
+- [NextJs](https://github.com/username)
+- [TypeScript](https://github.com/username)
+- [Scss](https://github.com/username)
 
 **Libraries:** `Tailwind CSS`, `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
 
