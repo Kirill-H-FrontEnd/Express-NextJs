@@ -18,7 +18,7 @@ We've assembled quite the tech stack to bring Express to life:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Scss](https://sasscss.org/)
 
-**Libraries:** `Tailwind CSS`, `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
+**Libraries:** [`TailwindCss`](https://react.dev/), `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
 
 ## 🚀 Getting Started
 
