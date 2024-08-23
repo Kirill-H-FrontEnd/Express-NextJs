@@ -104,7 +104,7 @@ export const Footer: FC = ({}) => {
                   Stay updated on new releases and features, guides, and case
                   studies.
                 </p>
-                <div className={`${s.actions} relative`}>
+                <div className={`${s.actions} relative `}>
                   <Dialog open={open} onOpenChange={setOpen}>
                     <DialogTrigger asChild>
                       <ShimmerButton

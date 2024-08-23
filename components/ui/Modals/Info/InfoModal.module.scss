@@ -3,10 +3,9 @@
     visibility: hidden;
     opacity: 0;
     transform: translate(0px, 200px);
-    animation: InfoModal 0.5s ease forwards 2s;
+    animation: InfoModal 0.5s ease forwards 0s;
     section {
         display: grid;
-
         gap: 10px;
         justify-content: space-between;
         align-items: center;
