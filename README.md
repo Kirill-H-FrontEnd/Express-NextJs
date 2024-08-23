@@ -1,24 +1,24 @@
-# [Express | NextJs](https://express-next-js.vercel.app)
+# <h3 align="center">Express | NextJs</h3>
+<h4 align="center">Welcome to the Express.ts project repository! We are here to show you an incredible website template for web framework!</h3>
 
-Welcome to the Express.ts project repository! We are here to show you an incredible website template for web framework!
+[![Banner](./public/Express-NextJs-banner-home.png)](https://express-next-js.vercel.app)
+[![Banner](./public/Express-NextJs-banner-docs.png)](https://express-next-js.vercel.app)
 
-![Banner](./public/Express-NextJs-banner-home.png)
-![Banner](./public/Express-NextJs-banner-docs.png)
 
 ## 🤖 About Express
 
-`📋 This is a beautiful and very simple template for web-framework. This is just template and it consists only of a main page and a beautiful documentation page. Also this website has Two-Factor authentication when using NextAuth and Prisma for db.`
+📋 This is a beautiful and very simple template for web-framework. This is just template and it consists only of a main page and a beautiful documentation page. Also this website has Two-Factor authentication when using NextAuth and Prisma for db.
 
 ## 🛠 Technologies Used
 
 We've assembled quite the tech stack to bring Express to life:
 
-- `React`
-- `NextJs`
-- `TypeScript`
-- `SCSS`
+- [React](https://react.dev/)
+- [NextJs](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Scss](https://sasscss.org/)
 
-**Libraries:** `Tailwind CSS`, `NextUI`, `Framer Motion`, `ShadcnUI`, `Prisma`, `Atropos`, `NextAuth`, `Resend`, `Zod`
+**Libraries:** [`TailwindCss`](https://tailwindcss.com/), [`NextUI`](https://nextui.org/),[`Framer Motion`](https://www.framer.com/motion/), [`ShadcnUI`](https://ui.shadcn.com/),[`Prisma`](https://www.prisma.io/),[`Atropos`](https://atroposjs.com/), [`NextAuth`](https://next-auth.js.org/), [`Resend`](https://resend.com/), [`Zod`](https://zod.dev/)`
 
 ## 🚀 Getting Started
 
