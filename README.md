@@ -2,9 +2,6 @@
 
 <h4 align="center">Welcome to the Express.ts project repository! We are here to show you an incredible website template for web framework!</h3>
 
-[![Banner](./public/express.png)](https://express-next-js.vercel.app)
-[![Banner](./public/Express-NextJs-banner-docs.png)](https://express-next-js.vercel.app)
-
 ## 🤖 About Express
 
 This is a beautiful and very simple template for web-framework. This is just template and it consists only of a main page and a beautiful documentation page. Also this website has Two-Factor authentication when using NextAuth and Prisma for db.
@@ -46,3 +43,5 @@ Express.ts is a fictional company created for demonstration purposes only. Any r
 ## 🤝 Contributing
 
 While Express isn't a real company, your contributions to this project are real and valued! Feel free to open issues or submit pull requests if you have ideas for improvements. Thank you!
+
+[![Banner](./public/expressBanner.png)](https://express-next-js.vercel.app)
