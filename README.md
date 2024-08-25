@@ -1,9 +1,9 @@
 # <h3 align="center">Express | NextJs</h3>
+
 <h4 align="center">Welcome to the Express.ts project repository! We are here to show you an incredible website template for web framework!</h3>
 
-[![Banner](./public/Express-NextJs-banner-home.png)](https://express-next-js.vercel.app)
+[![Banner](./public/express.png)](https://express-next-js.vercel.app)
 [![Banner](./public/Express-NextJs-banner-docs.png)](https://express-next-js.vercel.app)
-
 
 ## 🤖 About Express
 
