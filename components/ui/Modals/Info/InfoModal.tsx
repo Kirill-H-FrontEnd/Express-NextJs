@@ -57,7 +57,7 @@ export const InfoModal: FC = ({}) => {
               ⚡Social and Source:
             </h5>
             <div className="text-white even:text-bluePrimary even:text-[14px] grid sm:grid-cols-2-auto gap-3">
-              <p>
+              <a href="https://github.com/Kirill-H-FrontEnd" target="_blank">
                 <Button
                   size="md"
                   fullWidth
@@ -67,8 +67,8 @@ export const InfoModal: FC = ({}) => {
                 >
                   <FaGithubAlt size={22} className="text-[#22262A]" />
                 </Button>
-              </p>
-              <p>
+              </a>
+              <a href="https://www.linkedin.com/in/kirill-h" target="_blank">
                 <Button
                   size="md"
                   fullWidth
@@ -78,7 +78,7 @@ export const InfoModal: FC = ({}) => {
                 >
                   <IoLogoLinkedin size={22} className="text-[#007BB5]" />
                 </Button>
-              </p>
+              </a>
             </div>
           </section>
           <BorderBeam
