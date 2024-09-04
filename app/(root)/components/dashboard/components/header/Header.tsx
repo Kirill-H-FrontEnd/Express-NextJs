@@ -46,7 +46,7 @@ export const Header: FC = ({}) => {
         maxWidth="full"
         onMenuOpenChange={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
-        className={`${s.Navbar} sticky top-0 left-0 z-[50] bg-black/40 border-b-1 backdrop-blur-sm border-borderDark  `}
+        className={`${s.Navbar} sticky top-0 left-0 z-[10] bg-black/40 border-b-1 backdrop-blur-sm border-borderDark  `}
       >
         <div className="container">
           <section className="grid grid-cols-2-auto gap-5 justify-between items-center relative z-10">
