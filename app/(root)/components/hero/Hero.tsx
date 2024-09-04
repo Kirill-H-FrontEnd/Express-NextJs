@@ -39,12 +39,12 @@ export const Hero: FC = ({}) => {
   };
   return (
     <section
-      className={`${s.home} relative w-full h-screen overflow-hidden select-none text-purple-800 bg-black`}
+      className={`${s.home} relative w-full py-[150px] sm:py-[200px]  overflow-hidden select-none text-purple-800 bg-black`}
     >
-      <div className="w-full h-screen ">
+      <div className="w-full ">
         <div className="container ">
           <section
-            className={`${s.wrapper} relative z-10 grid place-items-center h-screen `}
+            className={`${s.wrapper} relative z-10 grid place-items-center  `}
           >
             <article
               className={`${s.article} relative text-center select-text`}
