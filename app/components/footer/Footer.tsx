@@ -114,7 +114,10 @@ export const Footer: FC = ({}) => {
                         Subscription
                       </ShimmerButton>
                     </DialogTrigger>
-                    <DialogContent className=" bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center border-borderDark">
+                    <DialogContent
+                      onOpenAutoFocus={(event) => event.preventDefault()}
+                      className=" bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm:border-gray/20  grid place-items-center border-borderDark"
+                    >
                       <div>
                         <DialogHeader>
                           <DialogTitle

@@ -4,7 +4,6 @@ import Link from "next/link";
 import { TitleBanner } from "../../components/ui/titleBanner/title-banner";
 import { Cards } from "./_components/cards/cards";
 import { Aside } from "@/app/(docs)/docs/components/aside/Aside";
-import NavigationButtons from "@/app/(docs)/docs/components/ui/navButtons/nav-buttons";
 
 export default function Introduction() {
   const ASIDE_LINKS = [
@@ -197,7 +196,6 @@ export default function Introduction() {
           }
         />
         <Cards />
-        <NavigationButtons />
       </div>
     </>
   );

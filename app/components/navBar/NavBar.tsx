@@ -1,6 +1,6 @@
 "use client";
 // > React
-import { FC, useEffect, useState, forwardRef } from "react";
+import { FC, useEffect, useState } from "react";
 // > Next
 import { usePathname } from "next/navigation";
 // > Auth
@@ -38,7 +38,8 @@ import {
 } from "@/components/ui/dialog";
 import { SubscribeForm } from "../footer/subscribe-form";
 import { IoClose } from "react-icons/io5";
-export const NavBar: FC = forwardRef(({}, ref: any) => {
+import { useCurrentUser } from "@/hooks/use-current-user";
+export const NavBar: FC = ({}) => {
   const [isScroll, setScroll] = useState(false);
   const [openSubForm, setOpenSubForm] = useState(false);
   const pathName = usePathname();
@@ -93,18 +94,17 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
       href: "",
     },
   ];
-
+  const user = useCurrentUser();
   return (
     <>
       {hideNavigation && (
         <Navbar
           disableAnimation
-          ref={ref}
           maxWidth="full"
           className={`${
             s.navBar
-          } z-[50] fixed  bg-black/40  border-b-1 border-borderDark  ${
-            isMenuOpen ? " bg-black/70 " : ""
+          } z-[50] fixed top-0 left-0  bg-black/40  border-b-1 border-borderDark ${
+            isMenuOpen ? " bg-black/70" : ""
           } ${isScroll ? "backdrop-blur-md " : "backdrop-blur-sm"}`}
           onMenuOpenChange={setIsMenuOpen}
           isMenuOpen={isMenuOpen}
@@ -136,21 +136,34 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
               <nav
                 className={`hidden sm:grid grid-cols-3-auto gap-4 items-center`}
               >
-                <Link
-                  className="hidden md:block hover:text-slate-300 text-white"
-                  href="/auth/login"
-                >
-                  Login
-                </Link>
+                {user ? (
+                  <Button
+                    as={Link}
+                    radius="full"
+                    className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
+                    href={`/docs`}
+                  >
+                    Dashboard
+                  </Button>
+                ) : (
+                  <>
+                    <Link
+                      className="hidden md:block hover:text-slate-300 text-white"
+                      href="/auth/login"
+                    >
+                      Login
+                    </Link>
+                    <Button
+                      as={Link}
+                      radius="full"
+                      className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
+                      href={`/auth/register`}
+                    >
+                      Sign Up
+                    </Button>
+                  </>
+                )}
 
-                <Button
-                  as={Link}
-                  radius="full"
-                  className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
-                  href={`/auth/register`}
-                >
-                  Sign Up
-                </Button>
                 <div className="relative hidden sm:grid grid-cols-2-auto items-center gap-2 ">
                   <span className="absolute top-1/2 left-0 translate-x-1/2 -translate-y-1/2 w-[1px] h-[80%] bg-slate-500 rounded-full pointer-events-none"></span>
                   <Tooltip
@@ -203,14 +216,27 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                   </Link>
                 </NavbarMenuItem>
               ))}
-              <Button
-                as={Link}
-                radius="full"
-                className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
-                href={`/auth/register`}
-              >
-                Sign Up
-              </Button>
+
+              {user ? (
+                <Button
+                  as={Link}
+                  radius="full"
+                  className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
+                  href={`/docs`}
+                >
+                  Dashboard
+                </Button>
+              ) : (
+                <Button
+                  as={Link}
+                  radius="full"
+                  className="text-black bg-white font-semibold px-6 hover:bg-slate-300 "
+                  href={`/auth/register`}
+                >
+                  Sign Up
+                </Button>
+              )}
+
               <Dialog open={openSubForm} onOpenChange={setOpenSubForm}>
                 <DialogTrigger asChild>
                   <ShimmerButton
@@ -220,7 +246,10 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
                     Subscription
                   </ShimmerButton>
                 </DialogTrigger>
-                <DialogContent className=" bg-black sm:rounded-md overflow-hidden select-none  grid place-items-center">
+                <DialogContent
+                  onOpenAutoFocus={(event) => event.preventDefault()}
+                  className=" bg-black sm:rounded-md overflow-hidden select-none  grid place-items-center"
+                >
                   <div>
                     <DialogHeader>
                       <DialogTitle
@@ -247,4 +276,4 @@ export const NavBar: FC = forwardRef(({}, ref: any) => {
       )}
     </>
   );
-});
+};

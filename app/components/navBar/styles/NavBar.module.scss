@@ -1,7 +1,13 @@
 .navBar {
+	&[data-menu-open="true"] {
+		border-style: solid !important;
+		border-bottom: 1px;
+		border-color: #1b2430;
+	}
 	header {
 		padding-left: 0;
 		padding-right: 0;
+		padding-top: 0;
 	}
 	.navBarMenuToggle {
 		span {

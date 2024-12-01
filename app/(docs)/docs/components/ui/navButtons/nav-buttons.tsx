@@ -18,7 +18,7 @@ const NavigationButtons = () => {
 
   return (
     <div
-      className={`navigation-buttons grid w-full border-t-1 border-borderLight dark:border-borderDark mt-10 pt-7 ${
+      className={`grid w-full border-t-1 border-borderLight dark:border-borderDark mt-10 pt-7 ${
         pathName === "/docs"
           ? "justify-end"
           : "grid-cols-2-auto justify-between "
@@ -27,12 +27,12 @@ const NavigationButtons = () => {
       {prevPage && (
         <div className="ml-6">
           <Link className="group " href={prevPage.path}>
-            <p className="group-hover:text-bluePrimary text-[13px] text-gray-700 font-medium transition-colors">
+            <p className="md:group-hover:text-bluePrimary text-[13px] text-gray-700 font-medium transition-colors">
               previous
             </p>
-            <p className="relative font-semibold text-black dark:text-white text-[15px] ">
+            <p className="relative font-medium md:font-semibold text-black dark:text-white text-[13px] md:text-[15px] ">
               {prevPage.title}
-              <ChevronLeftIcon className="group-hover:-left-[24px] absolute top-1/2 -left-[20px] -translate-y-1/2 transition-all text-gray-600" />
+              <ChevronLeftIcon className="md:group-hover:-left-[24px] absolute top-1/2 -left-[20px] -translate-y-1/2 transition-all text-gray-600" />
             </p>
           </Link>
         </div>
@@ -40,12 +40,12 @@ const NavigationButtons = () => {
       {nextPage && (
         <div className="">
           <Link className="group" href={nextPage.path}>
-            <p className="group-hover:text-bluePrimary text-[13px] text-gray-700 font-medium transition-colors">
+            <p className="md:group-hover:text-bluePrimary text-[13px] text-gray-700 font-medium transition-colors">
               next
             </p>
-            <p className="relative font-semibold text-black dark:text-white text-[15px] pr-6">
+            <p className="relative font-medium md:font-semibold text-black dark:text-white text-[13px] md:text-[15px] pr-6">
               {nextPage.title}
-              <ChevronRightIcon className="group-hover:right-[2px] absolute top-1/2 right-[7px] -translate-y-1/2 transition-all text-gray-600" />
+              <ChevronRightIcon className="md:group-hover:right-[2px] absolute top-1/2 right-[7px] -translate-y-1/2 transition-all text-gray-600" />
             </p>
           </Link>
         </div>

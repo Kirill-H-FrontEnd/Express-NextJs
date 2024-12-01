@@ -25,7 +25,6 @@ import RadialGradient from "@/components/magicui/bg/radial-gradient";
 import useMediaQuery from "@/hooks/useMediaQuery";
 
 export const Hero: FC = ({}) => {
-  const words = ["better", "cute", "beautiful", "modern"];
   const isDesktop = useMediaQuery("(min-width: 768px)");
   // Scroll to
   const handleClick = () => {
@@ -37,6 +36,7 @@ export const Hero: FC = ({}) => {
       });
     }
   };
+
   return (
     <section
       className={`${s.home} relative w-full py-[150px] sm:py-[200px]  overflow-hidden select-none text-purple-800 bg-black`}
@@ -115,7 +115,7 @@ export const Hero: FC = ({}) => {
         <Particles
           className="absolute inset-0"
           quantity={300}
-          size={0.4}
+          size={0.6}
           ease={80}
           color={"#2D8EB4"}
           refresh

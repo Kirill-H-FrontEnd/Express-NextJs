@@ -271,7 +271,7 @@ export const NavBar: FC = ({}) => {
   return (
     <nav
       id="navbar"
-      className={`${s.navbar} sticky top-[121px] hidden h-[calc(100vh-110px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] `}
+      className={`${s.navbar} sticky top-[121px] hidden h-[calc(100vh-110px)]  md:flex md:shrink-0 md:flex-col overflow-y-scroll z-[45] pb-[20px]`}
     >
       <SearchBar />
       <ScrollShadow

@@ -119,6 +119,7 @@ export const Footer: FC = ({}) => {
                     </ShimmerButton>
                   </DialogTrigger>
                   <DialogContent
+                    onOpenAutoFocus={(event) => event.preventDefault()}
                     aria-describedby="Email modal."
                     className=" bg-white dark:bg-black  sm:rounded-md overflow-hidden select-none sm:border-1 sm: border-borderLight sm:dark:border-borderDark grid place-items-center "
                   >
